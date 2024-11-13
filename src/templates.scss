@@ -1,0 +1,106 @@
+.page-template--1 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    
+    img {
+        aspect-ratio: 1 / 1;
+    }
+}
+
+.page-template--2 {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.page-template--3-1 {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.page-template--3-2 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+}
+
+.page-template--3-3 {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.page-template--3-4 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+}
+
+.page-template--4-1 {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+    "one one one two two two"
+    "three three four four five five";
+}
+
+.page-template--4-2 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+    "one four"
+    "one four"
+    "two four"
+    "two five"
+    "three five"
+    "three five";
+}
+
+.page-template--4-3 {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+    "one one two two three three"
+    "four four five five";
+}
+
+
+.page-template--4-4 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+    "one three"
+    "one three"
+    "one four"
+    "two four"
+    "two five"
+    "two five";
+}
+
+.page-template--4-1, .page-template--4-2, .page-template--4-3, .page-template--4-4 {
+    & > div:nth-child(1) {
+        grid-area: one;
+    }
+
+    & > div:nth-child(2) {
+        grid-area: two;
+    }
+
+    & > div:nth-child(3) {
+        grid-area: three;
+    }
+
+    & > div:nth-child(4) {
+        grid-area: four;
+    }
+
+    & > div:nth-child(5) {
+        grid-area: five;
+    }
+}
+
+.page-template--5-1 {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.page-template--5-2 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}

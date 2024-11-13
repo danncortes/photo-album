@@ -1,0 +1,23 @@
+.page-format--square {
+    width: 400px;
+    height: 400px;
+}
+
+.page {
+    display: grid;
+    gap: 4px;
+    padding: 4px;
+    box-sizing: border-box;
+    background-color: white;
+    margin-bottom: 6px;
+}
+
+.page .image-container {
+    overflow: hidden;
+}
+
+.page .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

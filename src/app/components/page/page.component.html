@@ -1,0 +1,14 @@
+@if (page()) {
+    <ng-container>
+        <div class="page page-format--{{ page()!.format }} page-template--{{page()!.template}}" #captureDiv>
+            @for (photo of page()!.photos; track $index) {
+                <!-- <div class="page__photo" [style.backgroundImage]=""></div> -->
+                <!-- <div class="page__photo"></div> -->
+                <div class="image-container">
+                    <img class="page__photo" [src]="getPhotoSrc(photo)" alt="" [style]="getImgStyles(photo.styles)">
+                </div>
+            }
+        </div>
+        <button (click)="capture()">Download as PNG</button>
+    </ng-container>
+}

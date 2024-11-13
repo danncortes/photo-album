@@ -1,0 +1,22 @@
+<div class="gallery">
+    @for (group of photosArray(); track $index) {
+        <div class="gallery-group">
+            <h3 class="gallery-group__title">{{group[0]}}</h3>
+            <div class="photos">
+                <div class="photo" *ngFor="let entry of group[1] | keyvalue">
+                    <p class="name">
+                        {{entry.key}}
+                    </p>
+                    <img src="{{getImgSrc({
+                        folder: group[0],
+                        fileName: entry.key
+                    })}}" alt="photo" />
+                    <p class="pages">
+                        {{getPages(entry.value.pages)}}
+                        {{test(photosArray())}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+</div>

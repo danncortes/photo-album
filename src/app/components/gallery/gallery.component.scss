@@ -1,0 +1,35 @@
+.gallery {
+    padding: 10px 10px 0px;
+    white-space: nowrap;
+    overflow-x: auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.gallery-group {
+    padding: 8px;
+    display: inline-grid;
+    background-color: white;
+
+    &__title {
+        font-weight: 400;
+        margin: 0 0 10px 0
+    }
+}
+
+.gallery .photos {
+    
+    gap: 6px;
+    display: inline-flex;
+}
+
+.gallery .photo .name, .gallery .photo .pages {
+    font-size: 0.7rem;
+    margin: 0;
+}
+
+
+.gallery img {
+    height: 100px;
+    width: auto;
+}

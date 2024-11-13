@@ -1,0 +1,7 @@
+@if (album()) {
+    <ng-container>
+        <h2>{{album()?.name}}</h2>
+        <app-gallery [photos]="album()!.photosDicc" [url]="album()!.baseUrl"></app-gallery>
+        <app-pages [pages]="album()!.pages" [url]="album()!.baseUrl"></app-pages>
+    </ng-container>
+}

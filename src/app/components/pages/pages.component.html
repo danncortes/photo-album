@@ -1,0 +1,10 @@
+<div class="pages-container">
+    <div class="pages">
+        @for (page of pages(); track $index) {
+            <div class="page-container">
+                <p>Page {{($index + 1)}}</p>
+                <app-page [page]="page" [url]="url()"></app-page>
+            </div>
+        }
+    </div>
+</div>
