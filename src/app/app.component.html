@@ -1,6 +1,8 @@
 <div>
+    <app-templates></app-templates>
+
     @for (album of configService.config()?.albums; track $index) {
-      <app-album [album]="album"></app-album>
+        <app-album [album]="album" [index]="$index"></app-album>
     }
 </div>
 <router-outlet />

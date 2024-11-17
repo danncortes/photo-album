@@ -4,32 +4,39 @@
     overflow-x: auto;
     width: 100%;
     box-sizing: border-box;
-}
 
-.gallery-group {
-    padding: 8px;
-    display: inline-grid;
-    background-color: white;
+    &-group {
+        padding: 8px;
+        display: inline-grid;
+        background-color: white;
 
-    &__title {
-        font-weight: 400;
-        margin: 0 0 10px 0
+        &__title {
+            font-size: 1.2rem;
+            line-height: unset;
+            font-weight: 400;
+            margin: 0 0 10px 0;
+        }
     }
-}
 
-.gallery .photos {
-    
-    gap: 6px;
-    display: inline-flex;
-}
+    &-photos {
+        gap: 6px;
+        display: inline-flex;
+    }
 
-.gallery .photo .name, .gallery .photo .pages {
-    font-size: 0.7rem;
-    margin: 0;
-}
+    &-thumbnail {
+        &__name,
+        &__pages {
+            font-size: 0.7rem;
+            margin: 0;
+        }
 
+        &__name {
+            color: #333;
+        }
 
-.gallery img {
-    height: 100px;
-    width: auto;
+        img {
+            height: 100px;
+            width: auto;
+        }
+    }
 }

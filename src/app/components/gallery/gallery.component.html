@@ -1,20 +1,52 @@
 <div class="gallery">
     @for (group of photosArray(); track $index) {
         <div class="gallery-group">
-            <h3 class="gallery-group__title">{{group[0]}}</h3>
-            <div class="photos">
-                <div class="photo" *ngFor="let entry of group[1] | keyvalue">
-                    <p class="name">
-                        {{entry.key}}
+            <h3 class="gallery-group__title mat-display-small">
+                {{ group[0] }}
+            </h3>
+            <div class="gallery-photos">
+                <div
+                    class="gallery-thumbnail"
+                    *ngFor="let entry of group[1] | keyvalue"
+                    [matMenuTriggerFor]="menu"
+                >
+                    <p class="gallery-thumbnail__name">
+                        {{ entry.key }}
                     </p>
-                    <img src="{{getImgSrc({
-                        folder: group[0],
-                        fileName: entry.key
-                    })}}" alt="photo" />
-                    <p class="pages">
-                        {{getPages(entry.value.pages)}}
-                        {{test(photosArray())}}
+                    <img
+                        src="{{
+                            getImgSrc({
+                                folder: group[0],
+                                fileName: entry.key,
+                            })
+                        }}"
+                        alt="photo"
+                    />
+                    <p class="gallery-thumbnail__pages">
+                        {{ getPagesPerThumbnail(entry.value.pages) }}
                     </p>
+                    <mat-menu #menu="matMenu">
+                        @for (
+                            page of getPagesOptions(entry.value.pages);
+                            track $index
+                        ) {
+                            <div
+                                mat-menu-item
+                                (click)="
+                                    addPhotoToPage({
+                                        groupName: group[0],
+                                        fileName: entry.key,
+                                        pageIndex: $index,
+                                    })
+                                "
+                            >
+                                <span>Page {{ $index + 1 }}</span>
+                                @if (page) {
+                                    <span> - ✔️</span>
+                                }
+                            </div>
+                        }
+                    </mat-menu>
                 </div>
             </div>
         </div>

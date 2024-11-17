@@ -10,76 +10,76 @@
                         "pages": []
                     },
                     "IMG_2063.png": {
-                        "pages": [4]
+                        "pages": [3]
                     },
                     "IMG_2073.png": {
-                        "pages": [4]
+                        "pages": [3]
                     },
                     "IMG_2074.png": {
-                        "pages": [1]
+                        "pages": [0]
                     },
                     "IMG_2075.png": {
-                        "pages": [1]
+                        "pages": [0]
                     },
                     "IMG_2076.png": {
                         "pages": []
                     },
                     "IMG_2077.png": {
-                        "pages": [1]
+                        "pages": [0]
                     },
                     "IMG_2081.png": {
-                        "pages": [1]
+                        "pages": [0]
                     },
                     "IMG_2085.png": {
                         "pages": []
                     },
                     "IMG_2087.png": {
-                        "pages": [2]
+                        "pages": [1]
                     },
                     "IMG_2088.png": {
-                        "pages": [2]
+                        "pages": [1]
                     },
                     "IMG_2089.png": {
                         "pages": []
                     },
                     "IMG_2090.png": {
-                        "pages": [2]
+                        "pages": [1]
                     },
                     "IMG_2092.png": {
-                        "pages": [2]
+                        "pages": [1]
                     },
                     "IMG_2093.png": {
-                        "pages": [2]
+                        "pages": [1]
                     },
                     "IMG_2094.png": {
                         "pages": []
                     },
                     "IMG_2096.png": {
-                        "pages": [3]
+                        "pages": [2]
                     },
                     "IMG_2100.png": {
                         "pages": []
                     },
                     "IMG_2106.png": {
-                        "pages": [3]
+                        "pages": [2]
                     },
                     "IMG_2108.png": {
                         "pages": []
                     },
                     "IMG_2109.png": {
-                        "pages": [3]
+                        "pages": [2]
                     },
                     "IMG_2111.png": {
-                        "pages": [3]
+                        "pages": [2]
                     },
                     "IMG_2116.png": {
-                        "pages": [3]
+                        "pages": [2]
                     },
                     "IMG_2119.png": {
-                        "pages": [4]
+                        "pages": [3]
                     },
                     "IMG_2133.png": {
-                        "pages": [4]
+                        "pages": [3]
                     },
                     "IMG_2135.png": {
                         "pages": []
@@ -97,13 +97,13 @@
                         "pages": []
                     },
                     "benni-aaron.png": {
-                        "pages": [8]
+                        "pages": [7]
                     },
                     "IMG_2154.png": {
-                        "pages": [5]
+                        "pages": [4]
                     },
                     "IMG_2155.png": {
-                        "pages": [5]
+                        "pages": [4]
                     },
                     "IMG_2159.png": {
                         "pages": []
@@ -142,22 +142,22 @@
                         "pages": []
                     },
                     "IMG_2216.png": {
-                        "pages": [6]
+                        "pages": [5]
                     },
                     "IMG_2217.png": {
-                        "pages": [6]
+                        "pages": [5]
                     },
                     "IMG_2218.png": {
                         "pages": []
                     },
                     "IMG_2219.png": {
-                        "pages": [6]
+                        "pages": [5]
                     },
                     "IMG_2220.png": {
                         "pages": []
                     },
                     "IMG_2221.png": {
-                        "pages": [6]
+                        "pages": [5]
                     },
                     "IMG_2510.png": {
                         "pages": [5]
@@ -166,31 +166,31 @@
                         "pages": []
                     },
                     "IMG_2527.png": {
-                        "pages": [5]
+                        "pages": [4]
                     },
                     "IMG_2535.png": {
-                        "pages": [5]
+                        "pages": [4]
                     },
                     "IMG_2590.png": {
-                        "pages": [7]
+                        "pages": [6]
                     },
                     "IMG_2596.png": {
-                        "pages": [7]
+                        "pages": [6]
                     },
                     "IMG_2657.png": {
-                        "pages": [7]
+                        "pages": [6]
                     },
                     "IMG_2659.png": {
-                        "pages": [7]
+                        "pages": [6]
                     },
                     "IMG_3112.png": {
-                        "pages": [7]
+                        "pages": [6]
                     },
                     "IMG_3145.png": {
-                        "pages": [7]
+                        "pages": [6]
                     },
                     "IMG_3148.png": {
-                        "pages": [8]
+                        "pages": [7]
                     },
                     "IMG_3178.png": {
                         "pages": []
@@ -202,24 +202,24 @@
                         "pages": []
                     },
                     "IMG_3193.png": {
-                        "pages": [8]
+                        "pages": [7]
                     },
                     "IMG_3196.png": {
-                        "pages": [8]
+                        "pages": [7]
                     },
                     "IMG_3207.png": {
-                        "pages": [8]
+                        "pages": [7]
                     },
                     "IMG_3211.png": {
                         "pages": []
                     },
                     "IMG_3215.png": {
-                        "pages": [8]
+                        "pages": [7]
                     }
                 },
                 "09-septiembre": {
                     "IMG_2336.png": {
-                        "pages": []
+                        "pages": [8]
                     },
                     "IMG_2338.png": {
                         "pages": []
@@ -919,7 +919,7 @@
             "pages": [
                 {
                     "format": "square",
-                    "template": "3-1",
+                    "template": "4-2-1",
                     "photos": [
                         {
                             "folder": "08-agosto",
@@ -945,7 +945,7 @@
                 },
                 {
                     "format": "square",
-                    "template": "4-1",
+                    "template": "5-1-1",
                     "photos": [
                         {
                             "folder": "08-agosto",
@@ -976,7 +976,7 @@
                 },
                 {
                     "format": "square",
-                    "template": "4-2",
+                    "template": "5-1-2",
                     "photos": [
                         {
                             "folder": "08-agosto",
@@ -1007,7 +1007,7 @@
                 },
                 {
                     "format": "square",
-                    "template": "3-3",
+                    "template": "4-2-3",
                     "photos": [
                         {
                             "folder": "08-agosto",
@@ -1033,7 +1033,7 @@
                 },
                 {
                     "format": "square",
-                    "template": "4-2",
+                    "template": "5-1-2",
                     "photos": [
                         {
                             "folder": "08-agosto",
@@ -1064,7 +1064,7 @@
                 },
                 {
                     "format": "square",
-                    "template": "1",
+                    "template": "4-1",
                     "photos": [
                         {
                             "folder": "08-agosto",
@@ -1090,7 +1090,7 @@
                 },
                 {
                     "format": "square",
-                    "template": "5-1",
+                    "template": "6-1-1",
                     "photos": [
                         {
                             "folder": "08-agosto",
@@ -1126,7 +1126,7 @@
                 },
                 {
                     "format": "square",
-                    "template": "5-2",
+                    "template": "6-1-2",
                     "photos": [
                         {
                             "folder": "08-agosto",
@@ -1161,29 +1161,30 @@
                     ]
                 },
                 {
-                    "photos": [],
+                    "photos": [
+                        {
+                            "fileName": "IMG_2336.png",
+                            "folder": "09-septiembre",
+                            "styles": []
+                        },
+                        {
+                            "fileName": "",
+                            "folder": "",
+                            "styles": []
+                        },
+                        {
+                            "fileName": "",
+                            "folder": "",
+                            "styles": []
+                        },
+                        {
+                            "fileName": "",
+                            "folder": "",
+                            "styles": []
+                        }
+                    ],
                     "format": "square",
-                    "template": "1"
-                },
-                {
-                    "photos": [],
-                    "format": "square",
-                    "template": "1"
-                },
-                {
-                    "photos": [],
-                    "format": "square",
-                    "template": "1"
-                },
-                {
-                    "photos": [],
-                    "format": "square",
-                    "template": "1"
-                },
-                {
-                    "photos": [],
-                    "format": "square",
-                    "template": "1"
+                    "template": "4-1"
                 }
             ]
         }

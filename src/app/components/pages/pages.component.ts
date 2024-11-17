@@ -1,15 +1,15 @@
-import { Component, input, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { PageComponent } from '../page/page.component';
 import { Pages } from '../../../types';
 
 @Component({
-  selector: 'app-pages',
-  standalone: true,
-  imports: [PageComponent],
-  templateUrl: './pages.component.html',
-  styleUrl: './pages.component.scss'
+    selector: 'app-pages',
+    standalone: true,
+    imports: [PageComponent],
+    templateUrl: './pages.component.html',
+    styleUrl: './pages.component.scss',
 })
 export class PagesComponent {
-  pages = input<Pages>();
-  url = input('')
+    pages = input.required<Pages>();
+    url = input.required();
 }
