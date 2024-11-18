@@ -2,7 +2,7 @@
     @for (templateType of configService.templates(); track $index) {
         <div class="template-type-row">
             @for (template of templateType; track $index) {
-                <div class="page-template--{{ template }}">
+                <div class="page-template--{{ template }}" [title]="template">
                     <ng-container *ngFor="let i of getArray(template)">
                         <div></div>
                     </ng-container>

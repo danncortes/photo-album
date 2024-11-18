@@ -1,15 +1,8 @@
 import { KeyValuePipe, NgFor } from '@angular/common';
-import { Component, computed, input } from '@angular/core';
-import { GroupedDicc, PhotoInPage } from '../../../types';
+import { Component, input } from '@angular/core';
+import { GroupedDicc } from '../../../types';
 import { MatMenuModule } from '@angular/material/menu';
 import { ConfigService } from '../../services/config.service';
-
-type PhotosArray = [
-    string,
-    {
-        [key: string]: PhotoInPage;
-    },
-][];
 
 @Component({
     selector: 'app-gallery',
@@ -22,7 +15,6 @@ export class GalleryComponent {
     photos = input.required<GroupedDicc>();
     url = input.required();
     albumIndex = input.required<number>();
-    photosArray = computed<PhotosArray>(() => Object.entries(this.photos()));
 
     constructor(private configService: ConfigService) {}
 

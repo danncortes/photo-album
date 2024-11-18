@@ -11,5 +11,6 @@ import { Pages } from '../../../types';
 })
 export class PagesComponent {
     pages = input.required<Pages>();
-    url = input.required();
+    baseUrl = input.required();
+    albumIndex = input.required<number>();
 }

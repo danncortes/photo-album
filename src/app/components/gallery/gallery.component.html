@@ -1,54 +1,52 @@
 <div class="gallery">
-    @for (group of photosArray(); track $index) {
-        <div class="gallery-group">
-            <h3 class="gallery-group__title mat-display-small">
-                {{ group[0] }}
-            </h3>
-            <div class="gallery-photos">
-                <div
-                    class="gallery-thumbnail"
-                    *ngFor="let entry of group[1] | keyvalue"
-                    [matMenuTriggerFor]="menu"
-                >
-                    <p class="gallery-thumbnail__name">
-                        {{ entry.key }}
-                    </p>
-                    <img
-                        src="{{
-                            getImgSrc({
-                                folder: group[0],
-                                fileName: entry.key,
-                            })
-                        }}"
-                        alt="photo"
-                    />
-                    <p class="gallery-thumbnail__pages">
-                        {{ getPagesPerThumbnail(entry.value.pages) }}
-                    </p>
-                    <mat-menu #menu="matMenu">
-                        @for (
-                            page of getPagesOptions(entry.value.pages);
-                            track $index
-                        ) {
-                            <div
-                                mat-menu-item
-                                (click)="
-                                    addPhotoToPage({
-                                        groupName: group[0],
-                                        fileName: entry.key,
-                                        pageIndex: $index,
-                                    })
-                                "
-                            >
-                                <span>Page {{ $index + 1 }}</span>
-                                @if (page) {
-                                    <span> - ✔️</span>
-                                }
-                            </div>
-                        }
-                    </mat-menu>
-                </div>
+    <div class="gallery-group" *ngFor="let group of photos() | keyvalue">
+        <h3 class="gallery-group__title mat-display-small">
+            {{ group.key }}
+        </h3>
+        <div class="gallery-photos">
+            <div
+                class="gallery-thumbnail"
+                *ngFor="let photo of group.value | keyvalue"
+                [matMenuTriggerFor]="menu"
+            >
+                <p class="gallery-thumbnail__name">
+                    {{ photo.key }}
+                </p>
+                <img
+                    src="{{
+                        getImgSrc({
+                            folder: group.key,
+                            fileName: photo.key,
+                        })
+                    }}"
+                    alt="photo"
+                />
+                <p class="gallery-thumbnail__pages">
+                    {{ getPagesPerThumbnail(photo.value.pages) }}
+                </p>
+                <mat-menu #menu="matMenu">
+                    @for (
+                        page of getPagesOptions(photo.value.pages);
+                        track $index
+                    ) {
+                        <div
+                            mat-menu-item
+                            (click)="
+                                addPhotoToPage({
+                                    groupName: group.key,
+                                    fileName: photo.key,
+                                    pageIndex: $index,
+                                })
+                            "
+                        >
+                            <span>Page {{ $index + 1 }}</span>
+                            @if (page) {
+                                <span> - ✔️</span>
+                            }
+                        </div>
+                    }
+                </mat-menu>
             </div>
         </div>
-    }
+    </div>
 </div>

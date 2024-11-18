@@ -7,8 +7,9 @@
 
     &-group {
         padding: 8px;
-        display: inline-grid;
+        //display: inline-grid;
         background-color: white;
+        width: fit-content;
 
         &__title {
             font-size: 1.2rem;

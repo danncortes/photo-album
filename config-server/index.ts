@@ -50,7 +50,7 @@ async function checkAndUpdateConfig() {
 
     let folderPhotos: { [key: string]: string[] } = {};
 
-    for await (let folder of folders) {
+    for await (const folder of folders) {
         const folderPath = `${albumUrl}/${folder}`;
         let files: string[] = [];
 
@@ -69,7 +69,7 @@ async function checkAndUpdateConfig() {
 
     let albumStructureChanged = false;
 
-    for (let folderName in folderPhotos) {
+    for (const folderName in folderPhotos) {
         if (!(folderName in albumsConfig.albums[0].photosDicc)) {
             albumsConfig.albums[0].photosDicc = {
                 ...albumsConfig.albums[0].photosDicc,
@@ -78,7 +78,7 @@ async function checkAndUpdateConfig() {
             albumStructureChanged = true;
         }
 
-        for (let photoName of folderPhotos[folderName]) {
+        for (const photoName of folderPhotos[folderName]) {
             if (!(photoName in albumsConfig.albums[0].photosDicc[folderName])) {
                 albumsConfig.albums[0].photosDicc[folderName][photoName] = {
                     pages: [],

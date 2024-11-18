@@ -9,11 +9,20 @@
             <div class="image-container">
                 @if (photo.fileName) {
                     <img
+                        [matMenuTriggerFor]="menu"
                         class="page__photo"
                         [src]="getPhotoSrc(photo)"
                         alt=""
                         [style]="getImgStyles(photo.styles)"
                     />
+                    <mat-menu #menu="matMenu">
+                        <button
+                            mat-menu-item
+                            (click)="removePhoto($index, photo)"
+                        >
+                            Remove
+                        </button>
+                    </mat-menu>
                 }
             </div>
         }

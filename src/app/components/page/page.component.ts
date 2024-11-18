@@ -2,23 +2,26 @@ import { Component, ElementRef, input, ViewChild } from '@angular/core';
 import domtoimage from 'dom-to-image-more';
 import { Page, PhotoConfig } from '../../../types';
 import { ConfigService } from '../../services/config.service';
+import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
     selector: 'app-page',
     standalone: true,
-    imports: [],
+    imports: [MatMenuModule],
     templateUrl: './page.component.html',
     styleUrl: './page.component.scss',
 })
 export class PageComponent {
     page = input.required<Page>();
-    url = input.required();
+    baseUrl = input.required();
+    albumIndex = input.required<number>();
+    pageIndex = input.required<number>();
 
     constructor(private configService: ConfigService) {}
 
     getPhotoSrc(photo: PhotoConfig) {
         const { folder, fileName } = photo;
-        return `${this.url()}/${folder}/${fileName}`;
+        return `${this.baseUrl()}/${folder}/${fileName}`;
     }
 
     getImgStyles(styles: string[]): string {
@@ -26,6 +29,15 @@ export class PageComponent {
             return styles.join(';');
         }
         return '';
+    }
+
+    removePhoto(photoIndex: number, photo: PhotoConfig) {
+        this.configService.removePhoto({
+            albumIndex: this.albumIndex(),
+            pageIndex: this.pageIndex(),
+            photoIndex,
+            photo,
+        });
     }
 
     @ViewChild('captureDiv', { static: false }) captureDiv!: ElementRef;

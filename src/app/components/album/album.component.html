@@ -8,5 +8,9 @@
         [url]="album().baseUrl"
         [albumIndex]="index()"
     ></app-gallery>
-    <app-pages [pages]="album().pages" [url]="album().baseUrl"></app-pages>
+    <app-pages
+        [pages]="album().pages"
+        [baseUrl]="album().baseUrl"
+        [albumIndex]="index()"
+    ></app-pages>
 </ng-container>
