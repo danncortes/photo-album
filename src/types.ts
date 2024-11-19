@@ -1,13 +1,26 @@
 export type AlbumsConfig = {
-    albums: Array<Album>;
+    [key: string]: Album;
 };
 
 export type Album = {
     type: 'grouped' | 'single';
     name: string;
+    id: string;
     baseUrl: string;
+    settings: AlbumSettings;
     photosDicc: GroupedDicc;
     pages: Pages;
+};
+
+export type AlbumPreview = Pick<
+    Album,
+    'type' | 'name' | 'id' | 'baseUrl' | 'settings'
+>;
+
+export type AlbumSettings = {
+    page: {
+        gap: string;
+    };
 };
 
 export type GroupedDicc = {

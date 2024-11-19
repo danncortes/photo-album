@@ -1,43 +1,47 @@
-import { Component, ElementRef, input, ViewChild } from '@angular/core';
+import { Component, ElementRef, inject, input, ViewChild } from '@angular/core';
 import domtoimage from 'dom-to-image-more';
-import { Page, PhotoConfig } from '../../../types';
+import { Page } from '../../../types';
 import { ConfigService } from '../../services/config.service';
-import { MatMenuModule } from '@angular/material/menu';
+import { Dialog, DialogRef } from '@angular/cdk/dialog';
+import { TemplatesComponent } from '../templates/templates.component';
+import { PhotoComponent } from '../photo/photo.component';
 
 @Component({
     selector: 'app-page',
     standalone: true,
-    imports: [MatMenuModule],
+    imports: [PhotoComponent],
     templateUrl: './page.component.html',
     styleUrl: './page.component.scss',
 })
 export class PageComponent {
     page = input.required<Page>();
     baseUrl = input.required();
-    albumIndex = input.required<number>();
     pageIndex = input.required<number>();
+    dialog = inject(Dialog);
 
     constructor(private configService: ConfigService) {}
 
-    getPhotoSrc(photo: PhotoConfig) {
-        const { folder, fileName } = photo;
-        return `${this.baseUrl()}/${folder}/${fileName}`;
-    }
+    openTemplateDialog() {
+        const dialogRef: DialogRef<string, TemplatesComponent> =
+            this.dialog.open(TemplatesComponent, {
+                minWidth: '600px',
+                data: this.configService.templates(),
+            });
 
-    getImgStyles(styles: string[]): string {
-        if (styles) {
-            return styles.join(';');
-        }
-        return '';
-    }
-
-    removePhoto(photoIndex: number, photo: PhotoConfig) {
-        this.configService.removePhoto({
-            albumIndex: this.albumIndex(),
-            pageIndex: this.pageIndex(),
-            photoIndex,
-            photo,
+        dialogRef.closed.subscribe((template: string | undefined) => {
+            if (template) {
+                this.changePageTemplate(template);
+            }
         });
+    }
+
+    changePageTemplate(template: string) {
+        if (this.page().template !== template) {
+            this.configService.changePageTemplate({
+                pageIndex: this.pageIndex(),
+                template,
+            });
+        }
     }
 
     @ViewChild('captureDiv', { static: false }) captureDiv!: ElementRef;

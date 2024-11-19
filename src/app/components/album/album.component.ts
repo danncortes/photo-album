@@ -1,32 +1,47 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { Dialog, DialogRef } from '@angular/cdk/dialog';
 import { GalleryComponent } from '../gallery/gallery.component';
 import { PagesComponent } from '../pages/pages.component';
-import { Album } from '../../../types';
 import { ConfigService } from '../../services/config.service';
-import { MatButtonModule } from '@angular/material/button';
+import { TemplatesComponent } from '../templates/templates.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-album',
     standalone: true,
-    imports: [GalleryComponent, PagesComponent, MatButtonModule],
+    imports: [GalleryComponent, PagesComponent],
     templateUrl: './album.component.html',
     styleUrl: './album.component.scss',
 })
-export class AlbumComponent {
-    album = input.required<Album>();
-    index = input.required<number>();
+export class AlbumComponent implements OnInit {
+    dialog = inject(Dialog);
 
-    constructor(private configService: ConfigService) {}
+    constructor(
+        public configService: ConfigService,
+        private route: ActivatedRoute,
+    ) {}
 
-    addPage() {
-        this.configService.addPage(this.index()!, {
-            photos: Array.from({ length: 4 }).map(() => ({
-                fileName: '',
-                folder: '',
-                styles: [],
-            })),
-            format: 'square',
-            template: '4-1',
+    ngOnInit() {
+        this.route.params.subscribe((params) => {
+            this.configService.getAlbum(params['id']);
         });
+    }
+
+    openAddPageDialog() {
+        const dialogRef: DialogRef<string, TemplatesComponent> =
+            this.dialog.open(TemplatesComponent, {
+                minWidth: '600px',
+                data: this.configService.templates(),
+            });
+
+        dialogRef.closed.subscribe((template: string | undefined) => {
+            if (template) {
+                this.addPage(template);
+            }
+        });
+    }
+
+    addPage(template: string) {
+        this.configService.addPage(template);
     }
 }

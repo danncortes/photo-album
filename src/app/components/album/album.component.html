@@ -1,16 +1,20 @@
 <ng-container>
-    <div class="album-header flex">
-        <h2>{{ album().name }}</h2>
-        <button mat-raised-button (click)="addPage()">+ Page</button>
-    </div>
-    <app-gallery
-        [photos]="album().photosDicc"
-        [url]="album().baseUrl"
-        [albumIndex]="index()"
-    ></app-gallery>
-    <app-pages
-        [pages]="album().pages"
-        [baseUrl]="album().baseUrl"
-        [albumIndex]="index()"
-    ></app-pages>
+    @if (configService.isAlbumLoading()) {
+        <div>Loading...</div>
+    } @else {
+        <button class="add-page-button" (click)="openAddPageDialog()">
+            📄+ Page
+        </button>
+        <div class="album-header flex">
+            <h2>{{ configService.config.getValue()!.name }}</h2>
+        </div>
+        <app-gallery
+            [photos]="configService.photosDictionary.getValue()!"
+            [url]="configService.config.getValue()!.baseUrl"
+        ></app-gallery>
+        <app-pages
+            [pages]="configService.pages.getValue()!"
+            [baseUrl]="configService.config.getValue()!.baseUrl"
+        ></app-pages>
+    }
 </ng-container>

@@ -1,0 +1,16 @@
+:host {
+    position: relative;
+}
+
+.add-page-button {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    background-color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 0 0 5px 5px;
+    border: 1px solid #ccc;
+}

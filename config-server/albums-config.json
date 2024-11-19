@@ -1,1550 +1,2240 @@
 {
-    "albums": [
-        {
-            "type": "grouped",
-            "name": "2023",
-            "baseUrl": "'../../../assets/albums/2023",
-            "photosDicc": {
-                "08-agosto": {
-                    "IMG_2056.png": {
-                        "pages": []
-                    },
-                    "IMG_2063.png": {
-                        "pages": [3]
-                    },
-                    "IMG_2073.png": {
-                        "pages": [3]
-                    },
-                    "IMG_2074.png": {
-                        "pages": [0]
-                    },
-                    "IMG_2075.png": {
-                        "pages": [0]
-                    },
-                    "IMG_2076.png": {
-                        "pages": []
-                    },
-                    "IMG_2077.png": {
-                        "pages": [0]
-                    },
-                    "IMG_2081.png": {
-                        "pages": [0]
-                    },
-                    "IMG_2085.png": {
-                        "pages": []
-                    },
-                    "IMG_2087.png": {
-                        "pages": [1]
-                    },
-                    "IMG_2088.png": {
-                        "pages": [1]
-                    },
-                    "IMG_2089.png": {
-                        "pages": []
-                    },
-                    "IMG_2090.png": {
-                        "pages": [1]
-                    },
-                    "IMG_2092.png": {
-                        "pages": [1]
-                    },
-                    "IMG_2093.png": {
-                        "pages": [1]
-                    },
-                    "IMG_2094.png": {
-                        "pages": []
-                    },
-                    "IMG_2096.png": {
-                        "pages": [2]
-                    },
-                    "IMG_2100.png": {
-                        "pages": []
-                    },
-                    "IMG_2106.png": {
-                        "pages": [2]
-                    },
-                    "IMG_2108.png": {
-                        "pages": []
-                    },
-                    "IMG_2109.png": {
-                        "pages": [2]
-                    },
-                    "IMG_2111.png": {
-                        "pages": [2]
-                    },
-                    "IMG_2116.png": {
-                        "pages": [2]
-                    },
-                    "IMG_2119.png": {
-                        "pages": [3]
-                    },
-                    "IMG_2133.png": {
-                        "pages": [3]
-                    },
-                    "IMG_2135.png": {
-                        "pages": []
-                    },
-                    "IMG_2140.png": {
-                        "pages": []
-                    },
-                    "IMG_2142.png": {
-                        "pages": []
-                    },
-                    "IMG_2143.png": {
-                        "pages": []
-                    },
-                    "IMG_2151.png": {
-                        "pages": []
-                    },
-                    "benni-aaron.png": {
-                        "pages": [7]
-                    },
-                    "IMG_2154.png": {
-                        "pages": [4]
-                    },
-                    "IMG_2155.png": {
-                        "pages": [4]
-                    },
-                    "IMG_2159.png": {
-                        "pages": []
-                    },
-                    "IMG_2160.png": {
-                        "pages": []
-                    },
-                    "IMG_2161.png": {
-                        "pages": []
-                    },
-                    "IMG_2162.png": {
-                        "pages": []
-                    },
-                    "IMG_2163.png": {
-                        "pages": []
-                    },
-                    "IMG_2164.png": {
-                        "pages": []
-                    },
-                    "IMG_2172.png": {
-                        "pages": []
-                    },
-                    "IMG_2180.png": {
-                        "pages": []
-                    },
-                    "IMG_2181.png": {
-                        "pages": []
-                    },
-                    "IMG_2186.png": {
-                        "pages": []
-                    },
-                    "IMG_2187.png": {
-                        "pages": []
-                    },
-                    "IMG_2189.png": {
-                        "pages": []
-                    },
-                    "IMG_2216.png": {
-                        "pages": [5]
-                    },
-                    "IMG_2217.png": {
-                        "pages": [5]
-                    },
-                    "IMG_2218.png": {
-                        "pages": []
-                    },
-                    "IMG_2219.png": {
-                        "pages": [5]
-                    },
-                    "IMG_2220.png": {
-                        "pages": []
-                    },
-                    "IMG_2221.png": {
-                        "pages": [5]
-                    },
-                    "IMG_2510.png": {
-                        "pages": [5]
-                    },
-                    "IMG_2515.png": {
-                        "pages": []
-                    },
-                    "IMG_2527.png": {
-                        "pages": [4]
-                    },
-                    "IMG_2535.png": {
-                        "pages": [4]
-                    },
-                    "IMG_2590.png": {
-                        "pages": [6]
-                    },
-                    "IMG_2596.png": {
-                        "pages": [6]
-                    },
-                    "IMG_2657.png": {
-                        "pages": [6]
-                    },
-                    "IMG_2659.png": {
-                        "pages": [6]
-                    },
-                    "IMG_3112.png": {
-                        "pages": [6]
-                    },
-                    "IMG_3145.png": {
-                        "pages": [6]
-                    },
-                    "IMG_3148.png": {
-                        "pages": [7]
-                    },
-                    "IMG_3178.png": {
-                        "pages": []
-                    },
-                    "IMG_3184.png": {
-                        "pages": []
-                    },
-                    "IMG_3189.png": {
-                        "pages": []
-                    },
-                    "IMG_3193.png": {
-                        "pages": [7]
-                    },
-                    "IMG_3196.png": {
-                        "pages": [7]
-                    },
-                    "IMG_3207.png": {
-                        "pages": [7]
-                    },
-                    "IMG_3211.png": {
-                        "pages": []
-                    },
-                    "IMG_3215.png": {
-                        "pages": [7]
-                    }
-                },
-                "09-septiembre": {
-                    "IMG_2336.png": {
-                        "pages": []
-                    },
-                    "IMG_2338.png": {
-                        "pages": [8]
-                    },
-                    "IMG_2340.png": {
-                        "pages": []
-                    },
-                    "IMG_2341.png": {
-                        "pages": []
-                    },
-                    "IMG_2346.png": {
-                        "pages": []
-                    },
-                    "IMG_2348.png": {
-                        "pages": []
-                    },
-                    "IMG_2355.png": {
-                        "pages": []
-                    },
-                    "IMG_2356.png": {
-                        "pages": []
-                    },
-                    "IMG_2368.png": {
-                        "pages": []
-                    },
-                    "IMG_2371.png": {
-                        "pages": []
-                    },
-                    "IMG_2373.png": {
-                        "pages": [8]
-                    },
-                    "IMG_2374.png": {
-                        "pages": []
-                    },
-                    "IMG_2375.png": {
-                        "pages": []
-                    },
-                    "IMG_2394.png": {
-                        "pages": []
-                    },
-                    "IMG_2395.png": {
-                        "pages": [8]
-                    },
-                    "IMG_2401.png": {
-                        "pages": [8]
-                    },
-                    "IMG_2436.png": {
-                        "pages": [8]
-                    },
-                    "IMG_2439.png": {
-                        "pages": []
-                    },
-                    "IMG_2440.png": {
-                        "pages": []
-                    },
-                    "IMG_2441.png": {
-                        "pages": [9]
-                    },
-                    "IMG_2446.png": {
-                        "pages": []
-                    },
-                    "IMG_2450.png": {
-                        "pages": [9]
-                    },
-                    "IMG_2452.png": {
-                        "pages": [9]
-                    },
-                    "IMG_2462.png": {
-                        "pages": []
-                    },
-                    "IMG_2465.png": {
-                        "pages": []
-                    },
-                    "IMG_2467.png": {
-                        "pages": []
-                    },
-                    "IMG_2489.png": {
-                        "pages": []
-                    },
-                    "IMG_2496.png": {
-                        "pages": []
-                    },
-                    "IMG_2497.png": {
-                        "pages": []
-                    },
-                    "IMG_2498.png": {
-                        "pages": []
-                    },
-                    "IMG_2515.png": {
-                        "pages": [10]
-                    },
-                    "IMG_2521.png": {
-                        "pages": []
-                    },
-                    "IMG_2524.png": {
-                        "pages": [10]
-                    },
-                    "IMG_2526.png": {
-                        "pages": []
-                    },
-                    "IMG_3220.png": {
-                        "pages": [10]
-                    },
-                    "IMG_3226.png": {
-                        "pages": [10]
-                    },
-                    "IMG_3228.png": {
-                        "pages": []
-                    },
-                    "IMG_3231.png": {
-                        "pages": [10]
-                    },
-                    "IMG_3235.png": {
-                        "pages": []
-                    },
-                    "IMG_3237.png": {
-                        "pages": [11]
-                    },
-                    "IMG_3243.png": {
-                        "pages": []
-                    },
-                    "IMG_3244.png": {
-                        "pages": []
-                    },
-                    "IMG_3250.png": {
-                        "pages": [11]
-                    },
-                    "IMG_3252.png": {
-                        "pages": [11]
-                    },
-                    "IMG_3254.png": {
-                        "pages": [11]
-                    },
-                    "IMG_3256.png": {
-                        "pages": []
-                    },
-                    "IMG_3284.png": {
-                        "pages": [11]
-                    },
-                    "IMG_3296.png": {
-                        "pages": [11]
-                    },
-                    "IMG_3298.png": {
-                        "pages": []
-                    },
-                    "IMG_3310.png": {
-                        "pages": []
-                    },
-                    "IMG_3333.png": {
-                        "pages": []
-                    },
-                    "IMG_3335.png": {
-                        "pages": []
-                    },
-                    "IMG_3349.png": {
-                        "pages": []
-                    },
-                    "IMG_3382.png": {
-                        "pages": []
-                    },
-                    "IMG_3391.png": {
-                        "pages": [12]
-                    },
-                    "IMG_3392.png": {
-                        "pages": []
-                    },
-                    "IMG_3401.png": {
-                        "pages": [12]
-                    },
-                    "IMG_3405.png": {
-                        "pages": [12]
-                    },
-                    "IMG_3417.png": {
-                        "pages": [12]
-                    },
-                    "IMG_3422.png": {
-                        "pages": [12]
-                    },
-                    "IMG_3442.png": {
-                        "pages": [13]
-                    },
-                    "IMG_3453.png": {
-                        "pages": []
-                    },
-                    "IMG_3455.png": {
-                        "pages": [13]
-                    },
-                    "IMG_3466.png": {
-                        "pages": [13]
-                    },
-                    "IMG_3470.png": {
-                        "pages": [13]
-                    },
-                    "IMG_3477.png": {
-                        "pages": []
-                    }
-                },
-                "10-octubre": {
-                    "IMG_2555.png": {
-                        "pages": [14]
-                    },
-                    "IMG_2562.png": {
-                        "pages": []
-                    },
-                    "IMG_2590.png": {
-                        "pages": []
-                    },
-                    "IMG_2592.png": {
-                        "pages": [14]
-                    },
-                    "IMG_2603.png": {
-                        "pages": []
-                    },
-                    "IMG_2668.png": {
-                        "pages": [14]
-                    },
-                    "IMG_2692.png": {
-                        "pages": [14]
-                    },
-                    "IMG_2693.png": {
-                        "pages": []
-                    },
-                    "IMG_2694.png": {
-                        "pages": [14]
-                    },
-                    "IMG_3510.png": {
-                        "pages": [15]
-                    },
-                    "IMG_3512.png": {
-                        "pages": []
-                    },
-                    "IMG_3519.png": {
-                        "pages": [15]
-                    },
-                    "IMG_3532.png": {
-                        "pages": []
-                    },
-                    "IMG_3548.png": {
-                        "pages": [15]
-                    },
-                    "IMG_3551.png": {
-                        "pages": [15]
-                    },
-                    "IMG_3558.png": {
-                        "pages": [15]
-                    },
-                    "IMG_3560.png": {
-                        "pages": [16]
-                    },
-                    "IMG_3566.png": {
-                        "pages": [16]
-                    },
-                    "IMG_3568.png": {
-                        "pages": []
-                    },
-                    "IMG_3570.png": {
-                        "pages": []
-                    },
-                    "IMG_3577.png": {
-                        "pages": [17]
-                    },
-                    "IMG_3585.png": {
-                        "pages": [17]
-                    },
-                    "IMG_3589.png": {
-                        "pages": []
-                    },
-                    "IMG_3610.png": {
-                        "pages": []
-                    },
-                    "IMG_3613.png": {
-                        "pages": []
-                    },
-                    "IMG_3615.png": {
-                        "pages": [16]
-                    },
-                    "IMG_3616.png": {
-                        "pages": []
-                    },
-                    "IMG_3619.png": {
-                        "pages": [17]
-                    },
-                    "IMG_3639.png": {
-                        "pages": [16]
-                    },
-                    "IMG_3644.png": {
-                        "pages": []
-                    },
-                    "IMG_3649.png": {
-                        "pages": []
-                    }
-                },
-                "11-noviembre": {
-                    "IMG_3667.png": {
-                        "pages": [18]
-                    },
-                    "IMG_3671.png": {
-                        "pages": []
-                    },
-                    "IMG_3672.png": {
-                        "pages": [18]
-                    },
-                    "IMG_3674.png": {
-                        "pages": []
-                    },
-                    "IMG_3675.png": {
-                        "pages": [18]
-                    },
-                    "IMG_3684.png": {
-                        "pages": [19]
-                    },
-                    "IMG_3685.png": {
-                        "pages": []
-                    },
-                    "IMG_3688.png": {
-                        "pages": [19]
-                    },
-                    "IMG_3689.png": {
-                        "pages": []
-                    },
-                    "IMG_3690.png": {
-                        "pages": [19]
-                    },
-                    "IMG_3696.png": {
-                        "pages": [20]
-                    },
-                    "IMG_3825.png": {
-                        "pages": [20]
-                    },
-                    "IMG_3828.png": {
-                        "pages": []
-                    },
-                    "IMG_3836.png": {
-                        "pages": [20]
-                    },
-                    "IMG_3851.png": {
-                        "pages": [21]
-                    },
-                    "IMG_3860.png": {
-                        "pages": [21]
-                    },
-                    "IMG_3863.png": {
-                        "pages": [21]
-                    },
-                    "IMG_3865.png": {
-                        "pages": [21]
-                    },
-                    "IMG_3867.png": {
-                        "pages": [21]
-                    },
-                    "IMG_3874.png": {
-                        "pages": [21]
-                    }
-                },
-                "12-diciembre": {
-                    "2023-dic1.png": {
-                        "pages": []
-                    },
-                    "2023-dic10.png": {
-                        "pages": []
-                    },
-                    "2023-dic11.png": {
-                        "pages": []
-                    },
-                    "2023-dic12.png": {
-                        "pages": []
-                    },
-                    "2023-dic13.png": {
-                        "pages": []
-                    },
-                    "2023-dic14.png": {
-                        "pages": []
-                    },
-                    "2023-dic15.png": {
-                        "pages": []
-                    },
-                    "2023-dic16.png": {
-                        "pages": []
-                    },
-                    "2023-dic17.png": {
-                        "pages": []
-                    },
-                    "2023-dic2.png": {
-                        "pages": []
-                    },
-                    "2023-dic3.png": {
-                        "pages": []
-                    },
-                    "2023-dic4.png": {
-                        "pages": []
-                    },
-                    "2023-dic5.png": {
-                        "pages": []
-                    },
-                    "2023-dic6.png": {
-                        "pages": []
-                    },
-                    "2023-dic7.png": {
-                        "pages": []
-                    },
-                    "2023-dic8.png": {
-                        "pages": []
-                    },
-                    "2023-dic9.png": {
-                        "pages": []
-                    },
-                    "IMG_2844.png": {
-                        "pages": []
-                    },
-                    "IMG_2861.png": {
-                        "pages": []
-                    },
-                    "IMG_2864.png": {
-                        "pages": []
-                    },
-                    "IMG_2874.png": {
-                        "pages": []
-                    },
-                    "IMG_2884.png": {
-                        "pages": []
-                    },
-                    "IMG_2885.png": {
-                        "pages": []
-                    },
-                    "IMG_2896.png": {
-                        "pages": []
-                    },
-                    "IMG_2897.png": {
-                        "pages": []
-                    },
-                    "IMG_2898.png": {
-                        "pages": []
-                    },
-                    "IMG_2926.png": {
-                        "pages": []
-                    },
-                    "IMG_2956.png": {
-                        "pages": []
-                    },
-                    "IMG_2958.png": {
-                        "pages": []
-                    },
-                    "IMG_2960.png": {
-                        "pages": []
-                    },
-                    "IMG_2961.png": {
-                        "pages": []
-                    },
-                    "IMG_2965.png": {
-                        "pages": []
-                    },
-                    "IMG_2967.png": {
-                        "pages": []
-                    },
-                    "IMG_2969.png": {
-                        "pages": []
-                    },
-                    "IMG_2970.png": {
-                        "pages": []
-                    },
-                    "IMG_2971.png": {
-                        "pages": []
-                    },
-                    "IMG_2975.png": {
-                        "pages": []
-                    },
-                    "IMG_2978.png": {
-                        "pages": []
-                    },
-                    "IMG_2979.png": {
-                        "pages": []
-                    },
-                    "IMG_2981.png": {
-                        "pages": []
-                    },
-                    "IMG_2993.png": {
-                        "pages": []
-                    },
-                    "IMG_3065.png": {
-                        "pages": []
-                    },
-                    "IMG_3067.png": {
-                        "pages": []
-                    },
-                    "IMG_3068.png": {
-                        "pages": []
-                    },
-                    "IMG_3070.png": {
-                        "pages": []
-                    },
-                    "IMG_3077.png": {
-                        "pages": []
-                    },
-                    "IMG_3078.png": {
-                        "pages": []
-                    },
-                    "IMG_3081.png": {
-                        "pages": []
-                    },
-                    "IMG_3083.png": {
-                        "pages": []
-                    },
-                    "IMG_3086.png": {
-                        "pages": []
-                    },
-                    "IMG_3090.png": {
-                        "pages": []
-                    },
-                    "IMG_3091.png": {
-                        "pages": []
-                    },
-                    "IMG_3092.png": {
-                        "pages": []
-                    },
-                    "IMG_3096.png": {
-                        "pages": []
-                    },
-                    "IMG_3097.png": {
-                        "pages": []
-                    },
-                    "IMG_3098.png": {
-                        "pages": []
-                    },
-                    "IMG_3099.png": {
-                        "pages": []
-                    },
-                    "IMG_3104.png": {
-                        "pages": []
-                    },
-                    "IMG_3106.png": {
-                        "pages": []
-                    },
-                    "IMG_3109.png": {
-                        "pages": []
-                    },
-                    "IMG_3122.png": {
-                        "pages": []
-                    },
-                    "IMG_3125.png": {
-                        "pages": []
-                    },
-                    "IMG_3155.png": {
-                        "pages": []
-                    },
-                    "IMG_3156.png": {
-                        "pages": []
-                    },
-                    "IMG_3163.png": {
-                        "pages": []
-                    },
-                    "IMG_3446.png": {
-                        "pages": []
-                    },
-                    "IMG_3447.png": {
-                        "pages": []
-                    },
-                    "IMG_3893.png": {
-                        "pages": []
-                    },
-                    "IMG_3896.png": {
-                        "pages": []
-                    },
-                    "IMG_3898.png": {
-                        "pages": []
-                    },
-                    "IMG_3899.png": {
-                        "pages": []
-                    },
-                    "IMG_3901.png": {
-                        "pages": []
-                    },
-                    "IMG_3943.png": {
-                        "pages": []
-                    },
-                    "IMG_3964.png": {
-                        "pages": []
-                    },
-                    "IMG_3980.png": {
-                        "pages": []
-                    },
-                    "IMG_4012.png": {
-                        "pages": []
-                    },
-                    "IMG_4015.png": {
-                        "pages": []
-                    },
-                    "IMG_4026.png": {
-                        "pages": []
-                    },
-                    "IMG_4031.png": {
-                        "pages": []
-                    },
-                    "IMG_4040.png": {
-                        "pages": []
-                    },
-                    "IMG_4052.png": {
-                        "pages": []
-                    },
-                    "IMG_4084.png": {
-                        "pages": []
-                    },
-                    "IMG_4140.png": {
-                        "pages": []
-                    },
-                    "IMG_4151.png": {
-                        "pages": []
-                    },
-                    "IMG_4155.png": {
-                        "pages": []
-                    },
-                    "IMG_4161.png": {
-                        "pages": []
-                    },
-                    "IMG_4167.png": {
-                        "pages": []
-                    },
-                    "IMG_4171.png": {
-                        "pages": []
-                    },
-                    "IMG_4178.png": {
-                        "pages": []
-                    },
-                    "IMG_4194.png": {
-                        "pages": []
-                    },
-                    "IMG_4204.png": {
-                        "pages": []
-                    },
-                    "IMG_4205.png": {
-                        "pages": []
-                    },
-                    "IMG_4223.png": {
-                        "pages": []
-                    },
-                    "IMG_4255.png": {
-                        "pages": []
-                    },
-                    "IMG_4257.png": {
-                        "pages": []
-                    },
-                    "IMG_4260.png": {
-                        "pages": []
-                    },
-                    "IMG_4262.png": {
-                        "pages": []
-                    },
-                    "IMG_4310.png": {
-                        "pages": []
-                    },
-                    "IMG_4311.png": {
-                        "pages": []
-                    },
-                    "IMG_4312.png": {
-                        "pages": []
-                    },
-                    "IMG_4326.png": {
-                        "pages": []
-                    },
-                    "IMG_4329.png": {
-                        "pages": []
-                    },
-                    "IMG_4343.png": {
-                        "pages": []
-                    },
-                    "IMG_4379.png": {
-                        "pages": []
-                    },
-                    "IMG_4385.png": {
-                        "pages": []
-                    },
-                    "IMG_4392.png": {
-                        "pages": []
-                    },
-                    "IMG_4432.png": {
-                        "pages": []
-                    },
-                    "IMG_4447.png": {
-                        "pages": []
-                    },
-                    "IMG_4455.png": {
-                        "pages": []
-                    },
-                    "IMG_4466.png": {
-                        "pages": []
-                    },
-                    "IMG_4514.png": {
-                        "pages": []
-                    },
-                    "IMG_4520.png": {
-                        "pages": []
-                    },
-                    "IMG_4535.png": {
-                        "pages": []
-                    }
-                }
-            },
-            "pages": [
-                {
-                    "format": "square",
-                    "template": "4-2-1",
-                    "photos": [
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2075.png",
-                            "styles": []
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2074.png",
-                            "styles": []
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2077.png",
-                            "styles": []
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2081.png",
-                            "styles": []
-                        }
-                    ]
-                },
-                {
-                    "format": "square",
-                    "template": "5-1-1",
-                    "photos": [
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2092.png",
-                            "styles": []
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2093.png",
-                            "styles": []
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2087.png",
-                            "styles": []
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2088.png",
-                            "styles": []
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2090.png",
-                            "styles": ["object-position: left"]
-                        }
-                    ]
-                },
-                {
-                    "format": "square",
-                    "template": "5-1-2",
-                    "photos": [
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2106.png",
-                            "styles": []
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2109.png",
-                            "styles": ["object-position: top"]
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2111.png",
-                            "styles": []
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2116.png",
-                            "styles": []
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2096.png",
-                            "styles": ["object-position: top right"]
-                        }
-                    ]
-                },
-                {
-                    "format": "square",
-                    "template": "4-2-3",
-                    "photos": [
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2119.png",
-                            "styles": []
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2133.png",
-                            "styles": []
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2063.png",
-                            "styles": []
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2073.png",
-                            "styles": []
-                        }
-                    ]
-                },
-                {
-                    "format": "square",
-                    "template": "5-1-2",
-                    "photos": [
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2535.png",
-                            "styles": ["object-position: top"]
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2154.png",
-                            "styles": ["object-position: top"]
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2155.png",
-                            "styles": ["object-position: top"]
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2510.png",
-                            "styles": ["object-position: bottom"]
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2527.png",
-                            "styles": ["object-position: top"]
-                        }
-                    ]
-                },
-                {
-                    "format": "square",
-                    "template": "4-1",
-                    "photos": [
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2216.png",
-                            "styles": [""]
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2219.png",
-                            "styles": ["object-position: right"]
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2217.png",
-                            "styles": ["object-position: right"]
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2221.png",
-                            "styles": []
-                        }
-                    ]
-                },
-                {
-                    "format": "square",
-                    "template": "6-1-1",
-                    "photos": [
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2596.png",
-                            "styles": [""]
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2590.png",
-                            "styles": []
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2657.png",
-                            "styles": []
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_3112.png",
-                            "styles": []
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_3145.png",
-                            "styles": []
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_2659.png",
-                            "styles": []
-                        }
-                    ]
-                },
-                {
-                    "format": "square",
-                    "template": "6-1-2",
-                    "photos": [
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_3193.png",
-                            "styles": [""]
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_3215.png",
-                            "styles": []
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_3196.png",
-                            "styles": []
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_3148.png",
-                            "styles": []
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "IMG_3207.png",
-                            "styles": []
-                        },
-                        {
-                            "folder": "08-agosto",
-                            "fileName": "benni-aaron.png",
-                            "styles": []
-                        }
-                    ]
-                },
-                {
-                    "photos": [
-                        {
-                            "fileName": "IMG_2436.png",
-                            "folder": "09-septiembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_2373.png",
-                            "folder": "09-septiembre",
-                            "styles": ["object-position: top"]
-                        },
-                        {
-                            "fileName": "IMG_2338.png",
-                            "folder": "09-septiembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_2401.png",
-                            "folder": "09-septiembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_2395.png",
-                            "folder": "09-septiembre",
-                            "styles": []
-                        }
-                    ],
-                    "format": "square",
-                    "template": "5-1-2"
-                },
-                {
-                    "photos": [
-                        {
-                            "fileName": "IMG_2450.png",
-                            "folder": "09-septiembre",
-                            "styles": ["object-position: top"]
-                        },
-                        {
-                            "fileName": "IMG_2452.png",
-                            "folder": "09-septiembre",
-                            "styles": ["object-position: top"]
-                        },
-                        {
-                            "fileName": "IMG_2441.png",
-                            "folder": "09-septiembre",
-                            "styles": ["object-position: top"]
-                        }
-                    ],
-                    "format": "square",
-                    "template": "3-1-1"
-                },
-                {
-                    "photos": [
-                        {
-                            "fileName": "IMG_3226.png",
-                            "folder": "09-septiembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3231.png",
-                            "folder": "09-septiembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_2524.png",
-                            "folder": "09-septiembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_2515.png",
-                            "folder": "09-septiembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3220.png",
-                            "folder": "09-septiembre",
-                            "styles": []
-                        }
-                    ],
-                    "format": "square",
-                    "template": "5-3-1"
-                },
-                {
-                    "photos": [
-                        {
-                            "fileName": "IMG_3250.png",
-                            "folder": "09-septiembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3252.png",
-                            "folder": "09-septiembre",
-                            "styles": ["object-position: right"]
-                        },
-                        {
-                            "fileName": "IMG_3254.png",
-                            "folder": "09-septiembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3237.png",
-                            "folder": "09-septiembre",
-                            "styles": ["object-position: left"]
-                        },
-                        {
-                            "fileName": "IMG_3284.png",
-                            "folder": "09-septiembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3296.png",
-                            "folder": "09-septiembre",
-                            "styles": []
-                        }
-                    ],
-                    "format": "square",
-                    "template": "6-1-1"
-                },
-                {
-                    "photos": [
-                        {
-                            "fileName": "IMG_3391.png",
-                            "folder": "09-septiembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3401.png",
-                            "folder": "09-septiembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3405.png",
-                            "folder": "09-septiembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3417.png",
-                            "folder": "09-septiembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3422.png",
-                            "folder": "09-septiembre",
-                            "styles": []
-                        }
-                    ],
-                    "format": "square",
-                    "template": "5-1-3"
-                },
-                {
-                    "photos": [
-                        {
-                            "fileName": "IMG_3442.png",
-                            "folder": "09-septiembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3455.png",
-                            "folder": "09-septiembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3466.png",
-                            "folder": "09-septiembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3470.png",
-                            "folder": "09-septiembre",
-                            "styles": []
-                        }
-                    ],
-                    "format": "square",
-                    "template": "4-1"
-                },
-                {
-                    "photos": [
-                        {
-                            "fileName": "IMG_2592.png",
-                            "folder": "10-octubre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_2668.png",
-                            "folder": "10-octubre",
-                            "styles": ["object-position: bottom"]
-                        },
-                        {
-                            "fileName": "IMG_2555.png",
-                            "folder": "10-octubre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_2692.png",
-                            "folder": "10-octubre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_2694.png",
-                            "folder": "10-octubre",
-                            "styles": []
-                        }
-                    ],
-                    "format": "square",
-                    "template": "5-3-5"
-                },
-                {
-                    "photos": [
-                        {
-                            "fileName": "IMG_3510.png",
-                            "folder": "10-octubre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3519.png",
-                            "folder": "10-octubre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3548.png",
-                            "folder": "10-octubre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3551.png",
-                            "folder": "10-octubre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3558.png",
-                            "folder": "10-octubre",
-                            "styles": []
-                        }
-                    ],
-                    "format": "square",
-                    "template": "5-1-1"
-                },
-                {
-                    "photos": [
-                        {
-                            "fileName": "IMG_3615.png",
-                            "folder": "10-octubre",
-                            "styles": ["object-position: top"]
-                        },
-                        {
-                            "fileName": "IMG_3560.png",
-                            "folder": "10-octubre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3566.png",
-                            "folder": "10-octubre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3639.png",
-                            "folder": "10-octubre",
-                            "styles": ["object-position: top"]
-                        }
-                    ],
-                    "format": "square",
-                    "template": "4-3-4"
-                },
-                {
-                    "photos": [
-                        {
-                            "fileName": "IMG_3577.png",
-                            "folder": "10-octubre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3619.png",
-                            "folder": "10-octubre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3585.png",
-                            "folder": "10-octubre",
-                            "styles": []
-                        }
-                    ],
-                    "format": "square",
-                    "template": "3-1-4"
-                },
-                {
-                    "photos": [
-                        {
-                            "fileName": "IMG_3672.png",
-                            "folder": "11-noviembre",
-                            "styles": ["object-position: bottom"]
-                        },
-                        {
-                            "fileName": "IMG_3667.png",
-                            "folder": "11-noviembre",
-                            "styles": ["object-position: bottom"]
-                        },
-                        {
-                            "fileName": "IMG_3675.png",
-                            "folder": "11-noviembre",
-                            "styles": ["object-position: bottom"]
-                        }
-                    ],
-                    "format": "square",
-                    "template": "3-1-2"
-                },
-                {
-                    "photos": [
-                        {
-                            "fileName": "IMG_3688.png",
-                            "folder": "11-noviembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3690.png",
-                            "folder": "11-noviembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3684.png",
-                            "folder": "11-noviembre",
-                            "styles": []
-                        }
-                    ],
-                    "format": "square",
-                    "template": "3-1-4"
-                },
-                {
-                    "photos": [
-                        {
-                            "fileName": "IMG_3696.png",
-                            "folder": "11-noviembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3825.png",
-                            "folder": "11-noviembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3836.png",
-                            "folder": "11-noviembre",
-                            "styles": []
-                        }
-                    ],
-                    "format": "square",
-                    "template": "3-1-2"
-                },
-                {
-                    "photos": [
-                        {
-                            "fileName": "IMG_3851.png",
-                            "folder": "11-noviembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3860.png",
-                            "folder": "11-noviembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3863.png",
-                            "folder": "11-noviembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3865.png",
-                            "folder": "11-noviembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3867.png",
-                            "folder": "11-noviembre",
-                            "styles": []
-                        },
-                        {
-                            "fileName": "IMG_3874.png",
-                            "folder": "11-noviembre",
-                            "styles": []
-                        }
-                    ],
-                    "format": "square",
-                    "template": "6-1-1"
-                }
-            ]
+  "2023": {
+    "name": "2023",
+    "id": "2023",
+    "settings": {
+      "page": {
+        "gap": "1"
+      }
+    },
+    "type": "grouped",
+    "baseUrl": "'../../../assets/albums/2023",
+    "photosDicc": {
+      "08-agosto": {
+        "IMG_2056.png": {
+          "pages": []
+        },
+        "IMG_2063.png": {
+          "pages": [
+            3
+          ]
+        },
+        "IMG_2073.png": {
+          "pages": [
+            3
+          ]
+        },
+        "IMG_2074.png": {
+          "pages": []
+        },
+        "IMG_2075.png": {
+          "pages": []
+        },
+        "IMG_2076.png": {
+          "pages": []
+        },
+        "IMG_2077.png": {
+          "pages": []
+        },
+        "IMG_2081.png": {
+          "pages": [
+            0
+          ]
+        },
+        "IMG_2085.png": {
+          "pages": []
+        },
+        "IMG_2087.png": {
+          "pages": [
+            1
+          ]
+        },
+        "IMG_2088.png": {
+          "pages": [
+            1
+          ]
+        },
+        "IMG_2089.png": {
+          "pages": []
+        },
+        "IMG_2090.png": {
+          "pages": [
+            1
+          ]
+        },
+        "IMG_2092.png": {
+          "pages": [
+            1
+          ]
+        },
+        "IMG_2093.png": {
+          "pages": [
+            1
+          ]
+        },
+        "IMG_2094.png": {
+          "pages": []
+        },
+        "IMG_2096.png": {
+          "pages": [
+            2
+          ]
+        },
+        "IMG_2100.png": {
+          "pages": []
+        },
+        "IMG_2106.png": {
+          "pages": [
+            2
+          ]
+        },
+        "IMG_2108.png": {
+          "pages": []
+        },
+        "IMG_2109.png": {
+          "pages": [
+            2
+          ]
+        },
+        "IMG_2111.png": {
+          "pages": [
+            2
+          ]
+        },
+        "IMG_2116.png": {
+          "pages": [
+            2
+          ]
+        },
+        "IMG_2119.png": {
+          "pages": [
+            3
+          ]
+        },
+        "IMG_2133.png": {
+          "pages": [
+            3
+          ]
+        },
+        "IMG_2135.png": {
+          "pages": []
+        },
+        "IMG_2140.png": {
+          "pages": []
+        },
+        "IMG_2142.png": {
+          "pages": []
+        },
+        "IMG_2143.png": {
+          "pages": []
+        },
+        "IMG_2151.png": {
+          "pages": []
+        },
+        "benni-aaron.png": {
+          "pages": [
+            7
+          ]
+        },
+        "IMG_2154.png": {
+          "pages": [
+            4
+          ]
+        },
+        "IMG_2155.png": {
+          "pages": [
+            4
+          ]
+        },
+        "IMG_2159.png": {
+          "pages": []
+        },
+        "IMG_2160.png": {
+          "pages": []
+        },
+        "IMG_2161.png": {
+          "pages": []
+        },
+        "IMG_2162.png": {
+          "pages": []
+        },
+        "IMG_2163.png": {
+          "pages": []
+        },
+        "IMG_2164.png": {
+          "pages": []
+        },
+        "IMG_2172.png": {
+          "pages": []
+        },
+        "IMG_2180.png": {
+          "pages": []
+        },
+        "IMG_2181.png": {
+          "pages": []
+        },
+        "IMG_2186.png": {
+          "pages": []
+        },
+        "IMG_2187.png": {
+          "pages": []
+        },
+        "IMG_2189.png": {
+          "pages": []
+        },
+        "IMG_2216.png": {
+          "pages": [
+            5
+          ]
+        },
+        "IMG_2217.png": {
+          "pages": [
+            5
+          ]
+        },
+        "IMG_2218.png": {
+          "pages": []
+        },
+        "IMG_2219.png": {
+          "pages": [
+            5
+          ]
+        },
+        "IMG_2220.png": {
+          "pages": []
+        },
+        "IMG_2221.png": {
+          "pages": [
+            5
+          ]
+        },
+        "IMG_2510.png": {
+          "pages": [
+            5
+          ]
+        },
+        "IMG_2515.png": {
+          "pages": []
+        },
+        "IMG_2527.png": {
+          "pages": [
+            4
+          ]
+        },
+        "IMG_2535.png": {
+          "pages": [
+            4
+          ]
+        },
+        "IMG_2590.png": {
+          "pages": [
+            6
+          ]
+        },
+        "IMG_2596.png": {
+          "pages": [
+            6
+          ]
+        },
+        "IMG_2657.png": {
+          "pages": [
+            6
+          ]
+        },
+        "IMG_2659.png": {
+          "pages": [
+            6
+          ]
+        },
+        "IMG_3112.png": {
+          "pages": [
+            6
+          ]
+        },
+        "IMG_3145.png": {
+          "pages": [
+            6
+          ]
+        },
+        "IMG_3148.png": {
+          "pages": [
+            7
+          ]
+        },
+        "IMG_3178.png": {
+          "pages": []
+        },
+        "IMG_3184.png": {
+          "pages": []
+        },
+        "IMG_3189.png": {
+          "pages": []
+        },
+        "IMG_3193.png": {
+          "pages": [
+            7
+          ]
+        },
+        "IMG_3196.png": {
+          "pages": [
+            7
+          ]
+        },
+        "IMG_3207.png": {
+          "pages": [
+            7
+          ]
+        },
+        "IMG_3211.png": {
+          "pages": []
+        },
+        "IMG_3215.png": {
+          "pages": [
+            7
+          ]
         }
+      },
+      "09-septiembre": {
+        "IMG_2336.png": {
+          "pages": []
+        },
+        "IMG_2338.png": {
+          "pages": [
+            8
+          ]
+        },
+        "IMG_2340.png": {
+          "pages": []
+        },
+        "IMG_2341.png": {
+          "pages": []
+        },
+        "IMG_2346.png": {
+          "pages": []
+        },
+        "IMG_2348.png": {
+          "pages": []
+        },
+        "IMG_2355.png": {
+          "pages": []
+        },
+        "IMG_2356.png": {
+          "pages": []
+        },
+        "IMG_2368.png": {
+          "pages": []
+        },
+        "IMG_2371.png": {
+          "pages": []
+        },
+        "IMG_2373.png": {
+          "pages": [
+            8
+          ]
+        },
+        "IMG_2374.png": {
+          "pages": []
+        },
+        "IMG_2375.png": {
+          "pages": []
+        },
+        "IMG_2394.png": {
+          "pages": []
+        },
+        "IMG_2395.png": {
+          "pages": [
+            8
+          ]
+        },
+        "IMG_2401.png": {
+          "pages": [
+            8
+          ]
+        },
+        "IMG_2436.png": {
+          "pages": [
+            8
+          ]
+        },
+        "IMG_2439.png": {
+          "pages": []
+        },
+        "IMG_2440.png": {
+          "pages": []
+        },
+        "IMG_2441.png": {
+          "pages": [
+            9
+          ]
+        },
+        "IMG_2446.png": {
+          "pages": []
+        },
+        "IMG_2450.png": {
+          "pages": [
+            9
+          ]
+        },
+        "IMG_2452.png": {
+          "pages": [
+            9
+          ]
+        },
+        "IMG_2462.png": {
+          "pages": []
+        },
+        "IMG_2465.png": {
+          "pages": []
+        },
+        "IMG_2467.png": {
+          "pages": []
+        },
+        "IMG_2489.png": {
+          "pages": []
+        },
+        "IMG_2496.png": {
+          "pages": []
+        },
+        "IMG_2497.png": {
+          "pages": []
+        },
+        "IMG_2498.png": {
+          "pages": []
+        },
+        "IMG_2515.png": {
+          "pages": [
+            10
+          ]
+        },
+        "IMG_2521.png": {
+          "pages": []
+        },
+        "IMG_2524.png": {
+          "pages": [
+            10
+          ]
+        },
+        "IMG_2526.png": {
+          "pages": []
+        },
+        "IMG_3220.png": {
+          "pages": [
+            10
+          ]
+        },
+        "IMG_3226.png": {
+          "pages": [
+            10
+          ]
+        },
+        "IMG_3228.png": {
+          "pages": []
+        },
+        "IMG_3231.png": {
+          "pages": [
+            10
+          ]
+        },
+        "IMG_3235.png": {
+          "pages": []
+        },
+        "IMG_3237.png": {
+          "pages": [
+            11
+          ]
+        },
+        "IMG_3243.png": {
+          "pages": []
+        },
+        "IMG_3244.png": {
+          "pages": []
+        },
+        "IMG_3250.png": {
+          "pages": [
+            11
+          ]
+        },
+        "IMG_3252.png": {
+          "pages": [
+            11
+          ]
+        },
+        "IMG_3254.png": {
+          "pages": [
+            11
+          ]
+        },
+        "IMG_3256.png": {
+          "pages": []
+        },
+        "IMG_3284.png": {
+          "pages": [
+            11
+          ]
+        },
+        "IMG_3296.png": {
+          "pages": [
+            11
+          ]
+        },
+        "IMG_3298.png": {
+          "pages": []
+        },
+        "IMG_3310.png": {
+          "pages": []
+        },
+        "IMG_3333.png": {
+          "pages": []
+        },
+        "IMG_3335.png": {
+          "pages": []
+        },
+        "IMG_3349.png": {
+          "pages": []
+        },
+        "IMG_3382.png": {
+          "pages": []
+        },
+        "IMG_3391.png": {
+          "pages": [
+            12
+          ]
+        },
+        "IMG_3392.png": {
+          "pages": []
+        },
+        "IMG_3401.png": {
+          "pages": [
+            12
+          ]
+        },
+        "IMG_3405.png": {
+          "pages": [
+            12
+          ]
+        },
+        "IMG_3417.png": {
+          "pages": [
+            12
+          ]
+        },
+        "IMG_3422.png": {
+          "pages": [
+            12
+          ]
+        },
+        "IMG_3442.png": {
+          "pages": [
+            13
+          ]
+        },
+        "IMG_3453.png": {
+          "pages": []
+        },
+        "IMG_3455.png": {
+          "pages": [
+            13
+          ]
+        },
+        "IMG_3466.png": {
+          "pages": [
+            13
+          ]
+        },
+        "IMG_3470.png": {
+          "pages": [
+            13
+          ]
+        },
+        "IMG_3477.png": {
+          "pages": []
+        }
+      },
+      "10-octubre": {
+        "IMG_2555.png": {
+          "pages": [
+            14
+          ]
+        },
+        "IMG_2562.png": {
+          "pages": []
+        },
+        "IMG_2590.png": {
+          "pages": []
+        },
+        "IMG_2592.png": {
+          "pages": [
+            14
+          ]
+        },
+        "IMG_2603.png": {
+          "pages": []
+        },
+        "IMG_2668.png": {
+          "pages": [
+            14
+          ]
+        },
+        "IMG_2692.png": {
+          "pages": [
+            14
+          ]
+        },
+        "IMG_2693.png": {
+          "pages": []
+        },
+        "IMG_2694.png": {
+          "pages": [
+            14
+          ]
+        },
+        "IMG_3510.png": {
+          "pages": [
+            15
+          ]
+        },
+        "IMG_3512.png": {
+          "pages": []
+        },
+        "IMG_3519.png": {
+          "pages": [
+            15
+          ]
+        },
+        "IMG_3532.png": {
+          "pages": []
+        },
+        "IMG_3548.png": {
+          "pages": [
+            15
+          ]
+        },
+        "IMG_3551.png": {
+          "pages": [
+            15
+          ]
+        },
+        "IMG_3558.png": {
+          "pages": [
+            15
+          ]
+        },
+        "IMG_3560.png": {
+          "pages": [
+            16
+          ]
+        },
+        "IMG_3566.png": {
+          "pages": [
+            16
+          ]
+        },
+        "IMG_3568.png": {
+          "pages": []
+        },
+        "IMG_3570.png": {
+          "pages": []
+        },
+        "IMG_3577.png": {
+          "pages": [
+            17
+          ]
+        },
+        "IMG_3585.png": {
+          "pages": [
+            17
+          ]
+        },
+        "IMG_3589.png": {
+          "pages": []
+        },
+        "IMG_3610.png": {
+          "pages": []
+        },
+        "IMG_3613.png": {
+          "pages": []
+        },
+        "IMG_3615.png": {
+          "pages": [
+            16
+          ]
+        },
+        "IMG_3616.png": {
+          "pages": []
+        },
+        "IMG_3619.png": {
+          "pages": [
+            17
+          ]
+        },
+        "IMG_3639.png": {
+          "pages": [
+            16
+          ]
+        },
+        "IMG_3644.png": {
+          "pages": []
+        },
+        "IMG_3649.png": {
+          "pages": []
+        }
+      },
+      "11-noviembre": {
+        "IMG_3667.png": {
+          "pages": [
+            18
+          ]
+        },
+        "IMG_3671.png": {
+          "pages": []
+        },
+        "IMG_3672.png": {
+          "pages": [
+            18
+          ]
+        },
+        "IMG_3674.png": {
+          "pages": []
+        },
+        "IMG_3675.png": {
+          "pages": [
+            18
+          ]
+        },
+        "IMG_3684.png": {
+          "pages": [
+            19
+          ]
+        },
+        "IMG_3685.png": {
+          "pages": []
+        },
+        "IMG_3688.png": {
+          "pages": [
+            19
+          ]
+        },
+        "IMG_3689.png": {
+          "pages": []
+        },
+        "IMG_3690.png": {
+          "pages": [
+            19
+          ]
+        },
+        "IMG_3696.png": {
+          "pages": [
+            20
+          ]
+        },
+        "IMG_3825.png": {
+          "pages": [
+            20
+          ]
+        },
+        "IMG_3828.png": {
+          "pages": []
+        },
+        "IMG_3836.png": {
+          "pages": [
+            20
+          ]
+        },
+        "IMG_3851.png": {
+          "pages": [
+            21
+          ]
+        },
+        "IMG_3860.png": {
+          "pages": [
+            21
+          ]
+        },
+        "IMG_3863.png": {
+          "pages": [
+            21
+          ]
+        },
+        "IMG_3865.png": {
+          "pages": [
+            21
+          ]
+        },
+        "IMG_3867.png": {
+          "pages": [
+            21
+          ]
+        },
+        "IMG_3874.png": {
+          "pages": [
+            21
+          ]
+        }
+      },
+      "12-diciembre": {
+        "2023-dic1.png": {
+          "pages": [
+            22
+          ]
+        },
+        "2023-dic10.png": {
+          "pages": []
+        },
+        "2023-dic11.png": {
+          "pages": [
+            22
+          ]
+        },
+        "2023-dic12.png": {
+          "pages": [
+            22
+          ]
+        },
+        "2023-dic13.png": {
+          "pages": [
+            26
+          ]
+        },
+        "2023-dic14.png": {
+          "pages": [
+            31
+          ]
+        },
+        "2023-dic15.png": {
+          "pages": []
+        },
+        "2023-dic16.png": {
+          "pages": [
+            22
+          ]
+        },
+        "2023-dic17.png": {
+          "pages": [
+            28
+          ]
+        },
+        "2023-dic2.png": {
+          "pages": []
+        },
+        "2023-dic3.png": {
+          "pages": []
+        },
+        "2023-dic4.png": {
+          "pages": [
+            26
+          ]
+        },
+        "2023-dic5.png": {
+          "pages": [
+            26
+          ]
+        },
+        "2023-dic6.png": {
+          "pages": []
+        },
+        "2023-dic7.png": {
+          "pages": []
+        },
+        "2023-dic8.png": {
+          "pages": []
+        },
+        "2023-dic9.png": {
+          "pages": [
+            32
+          ]
+        },
+        "IMG_2844.png": {
+          "pages": [
+            25
+          ]
+        },
+        "IMG_2861.png": {
+          "pages": []
+        },
+        "IMG_2864.png": {
+          "pages": []
+        },
+        "IMG_2874.png": {
+          "pages": [
+            23
+          ]
+        },
+        "IMG_2884.png": {
+          "pages": []
+        },
+        "IMG_2885.png": {
+          "pages": [
+            24
+          ]
+        },
+        "IMG_2896.png": {
+          "pages": []
+        },
+        "IMG_2897.png": {
+          "pages": []
+        },
+        "IMG_2898.png": {
+          "pages": [
+            24
+          ]
+        },
+        "IMG_2926.png": {
+          "pages": [
+            24
+          ]
+        },
+        "IMG_2956.png": {
+          "pages": []
+        },
+        "IMG_2958.png": {
+          "pages": []
+        },
+        "IMG_2960.png": {
+          "pages": [
+            28
+          ]
+        },
+        "IMG_2961.png": {
+          "pages": []
+        },
+        "IMG_2965.png": {
+          "pages": [
+            28
+          ]
+        },
+        "IMG_2967.png": {
+          "pages": [
+            26
+          ]
+        },
+        "IMG_2969.png": {
+          "pages": []
+        },
+        "IMG_2970.png": {
+          "pages": []
+        },
+        "IMG_2971.png": {
+          "pages": []
+        },
+        "IMG_2975.png": {
+          "pages": []
+        },
+        "IMG_2978.png": {
+          "pages": []
+        },
+        "IMG_2979.png": {
+          "pages": [
+            28
+          ]
+        },
+        "IMG_2981.png": {
+          "pages": []
+        },
+        "IMG_2993.png": {
+          "pages": [
+            30
+          ]
+        },
+        "IMG_3065.png": {
+          "pages": [
+            31
+          ]
+        },
+        "IMG_3067.png": {
+          "pages": [
+            29
+          ]
+        },
+        "IMG_3068.png": {
+          "pages": []
+        },
+        "IMG_3070.png": {
+          "pages": []
+        },
+        "IMG_3077.png": {
+          "pages": []
+        },
+        "IMG_3078.png": {
+          "pages": [
+            29
+          ]
+        },
+        "IMG_3081.png": {
+          "pages": [
+            29
+          ]
+        },
+        "IMG_3083.png": {
+          "pages": []
+        },
+        "IMG_3086.png": {
+          "pages": []
+        },
+        "IMG_3090.png": {
+          "pages": []
+        },
+        "IMG_3091.png": {
+          "pages": [
+            31
+          ]
+        },
+        "IMG_3092.png": {
+          "pages": []
+        },
+        "IMG_3096.png": {
+          "pages": []
+        },
+        "IMG_3097.png": {
+          "pages": [
+            31
+          ]
+        },
+        "IMG_3098.png": {
+          "pages": []
+        },
+        "IMG_3099.png": {
+          "pages": []
+        },
+        "IMG_3104.png": {
+          "pages": []
+        },
+        "IMG_3106.png": {
+          "pages": []
+        },
+        "IMG_3109.png": {
+          "pages": []
+        },
+        "IMG_3122.png": {
+          "pages": []
+        },
+        "IMG_3125.png": {
+          "pages": []
+        },
+        "IMG_3155.png": {
+          "pages": []
+        },
+        "IMG_3156.png": {
+          "pages": [
+            32
+          ]
+        },
+        "IMG_3163.png": {
+          "pages": []
+        },
+        "IMG_3446.png": {
+          "pages": [
+            25
+          ]
+        },
+        "IMG_3447.png": {
+          "pages": []
+        },
+        "IMG_3893.png": {
+          "pages": [
+            23
+          ]
+        },
+        "IMG_3896.png": {
+          "pages": []
+        },
+        "IMG_3898.png": {
+          "pages": []
+        },
+        "IMG_3899.png": {
+          "pages": []
+        },
+        "IMG_3901.png": {
+          "pages": [
+            23
+          ]
+        },
+        "IMG_3943.png": {
+          "pages": [
+            23
+          ]
+        },
+        "IMG_3964.png": {
+          "pages": [
+            23
+          ]
+        },
+        "IMG_3980.png": {
+          "pages": []
+        },
+        "IMG_4012.png": {
+          "pages": []
+        },
+        "IMG_4015.png": {
+          "pages": []
+        },
+        "IMG_4026.png": {
+          "pages": []
+        },
+        "IMG_4031.png": {
+          "pages": []
+        },
+        "IMG_4040.png": {
+          "pages": []
+        },
+        "IMG_4052.png": {
+          "pages": []
+        },
+        "IMG_4084.png": {
+          "pages": [
+            24
+          ]
+        },
+        "IMG_4140.png": {
+          "pages": [
+            25
+          ]
+        },
+        "IMG_4151.png": {
+          "pages": []
+        },
+        "IMG_4155.png": {
+          "pages": [
+            27
+          ]
+        },
+        "IMG_4161.png": {
+          "pages": [
+            27
+          ]
+        },
+        "IMG_4167.png": {
+          "pages": [
+            27
+          ]
+        },
+        "IMG_4171.png": {
+          "pages": [
+            27
+          ]
+        },
+        "IMG_4178.png": {
+          "pages": [
+            28
+          ]
+        },
+        "IMG_4194.png": {
+          "pages": []
+        },
+        "IMG_4204.png": {
+          "pages": []
+        },
+        "IMG_4205.png": {
+          "pages": []
+        },
+        "IMG_4223.png": {
+          "pages": [
+            30
+          ]
+        },
+        "IMG_4255.png": {
+          "pages": [
+            29
+          ]
+        },
+        "IMG_4257.png": {
+          "pages": [
+            32
+          ]
+        },
+        "IMG_4260.png": {
+          "pages": []
+        },
+        "IMG_4262.png": {
+          "pages": [
+            30
+          ]
+        },
+        "IMG_4310.png": {
+          "pages": [
+            30
+          ]
+        },
+        "IMG_4311.png": {
+          "pages": []
+        },
+        "IMG_4312.png": {
+          "pages": [
+            30
+          ]
+        },
+        "IMG_4326.png": {
+          "pages": [
+            29
+          ]
+        },
+        "IMG_4329.png": {
+          "pages": []
+        },
+        "IMG_4343.png": {
+          "pages": []
+        },
+        "IMG_4379.png": {
+          "pages": []
+        },
+        "IMG_4385.png": {
+          "pages": []
+        },
+        "IMG_4392.png": {
+          "pages": []
+        },
+        "IMG_4432.png": {
+          "pages": [
+            31
+          ]
+        },
+        "IMG_4447.png": {
+          "pages": [
+            25
+          ]
+        },
+        "IMG_4455.png": {
+          "pages": []
+        },
+        "IMG_4466.png": {
+          "pages": []
+        },
+        "IMG_4514.png": {
+          "pages": []
+        },
+        "IMG_4520.png": {
+          "pages": [
+            32
+          ]
+        },
+        "IMG_4535.png": {
+          "pages": [
+            32
+          ]
+        }
+      }
+    },
+    "pages": [
+      {
+        "format": "square",
+        "template": "1",
+        "photos": [
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2081.png",
+            "styles": []
+          }
+        ]
+      },
+      {
+        "format": "square",
+        "template": "5-1-1",
+        "photos": [
+          {
+            "fileName": "IMG_2092.png",
+            "folder": "08-agosto",
+            "styles": []
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2093.png",
+            "styles": []
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2087.png",
+            "styles": []
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2088.png",
+            "styles": [
+              "object-position: left;"
+            ]
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2090.png",
+            "styles": [
+              "object-position: left;"
+            ]
+          }
+        ]
+      },
+      {
+        "format": "square",
+        "template": "5-1-2",
+        "photos": [
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2106.png",
+            "styles": []
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2109.png",
+            "styles": [
+              "object-position: top;"
+            ]
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2111.png",
+            "styles": []
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2116.png",
+            "styles": []
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2096.png",
+            "styles": [
+              "object-position: top;"
+            ]
+          }
+        ]
+      },
+      {
+        "format": "square",
+        "template": "4-2-3",
+        "photos": [
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2119.png",
+            "styles": []
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2133.png",
+            "styles": [
+              "object-position: right;"
+            ]
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2063.png",
+            "styles": []
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2073.png",
+            "styles": []
+          }
+        ]
+      },
+      {
+        "format": "square",
+        "template": "5-1-2",
+        "photos": [
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2535.png",
+            "styles": [
+              "object-position: top"
+            ]
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2154.png",
+            "styles": [
+              "object-position: top"
+            ]
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2155.png",
+            "styles": [
+              "object-position: top;"
+            ]
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2510.png",
+            "styles": [
+              "object-position: bottom"
+            ]
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2527.png",
+            "styles": [
+              "object-position: top"
+            ]
+          }
+        ]
+      },
+      {
+        "format": "square",
+        "template": "4-1",
+        "photos": [
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2216.png",
+            "styles": [
+              ""
+            ]
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2219.png",
+            "styles": [
+              "object-position: right"
+            ]
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2217.png",
+            "styles": [
+              "object-position: right"
+            ]
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2221.png",
+            "styles": []
+          }
+        ]
+      },
+      {
+        "format": "square",
+        "template": "6-1-1",
+        "photos": [
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2596.png",
+            "styles": [
+              ""
+            ]
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2590.png",
+            "styles": []
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2657.png",
+            "styles": []
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_3112.png",
+            "styles": []
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_3145.png",
+            "styles": []
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_2659.png",
+            "styles": []
+          }
+        ]
+      },
+      {
+        "format": "square",
+        "template": "6-1-2",
+        "photos": [
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_3193.png",
+            "styles": [
+              ""
+            ]
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_3215.png",
+            "styles": []
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_3196.png",
+            "styles": []
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_3148.png",
+            "styles": []
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "IMG_3207.png",
+            "styles": []
+          },
+          {
+            "folder": "08-agosto",
+            "fileName": "benni-aaron.png",
+            "styles": []
+          }
+        ]
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_2436.png",
+            "folder": "09-septiembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_2373.png",
+            "folder": "09-septiembre",
+            "styles": [
+              "object-position: top"
+            ]
+          },
+          {
+            "fileName": "IMG_2338.png",
+            "folder": "09-septiembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_2401.png",
+            "folder": "09-septiembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_2395.png",
+            "folder": "09-septiembre",
+            "styles": []
+          }
+        ],
+        "format": "square",
+        "template": "5-1-2"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_2450.png",
+            "folder": "09-septiembre",
+            "styles": [
+              "object-position: top"
+            ]
+          },
+          {
+            "fileName": "IMG_2452.png",
+            "folder": "09-septiembre",
+            "styles": [
+              "object-position: top"
+            ]
+          },
+          {
+            "fileName": "IMG_2441.png",
+            "folder": "09-septiembre",
+            "styles": [
+              "object-position: top"
+            ]
+          }
+        ],
+        "format": "square",
+        "template": "3-1-1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_3226.png",
+            "folder": "09-septiembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3231.png",
+            "folder": "09-septiembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_2524.png",
+            "folder": "09-septiembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_2515.png",
+            "folder": "09-septiembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3220.png",
+            "folder": "09-septiembre",
+            "styles": []
+          }
+        ],
+        "format": "square",
+        "template": "5-3-1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_3250.png",
+            "folder": "09-septiembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3252.png",
+            "folder": "09-septiembre",
+            "styles": [
+              "object-position: right"
+            ]
+          },
+          {
+            "fileName": "IMG_3254.png",
+            "folder": "09-septiembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3237.png",
+            "folder": "09-septiembre",
+            "styles": [
+              "object-position: left"
+            ]
+          },
+          {
+            "fileName": "IMG_3284.png",
+            "folder": "09-septiembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3296.png",
+            "folder": "09-septiembre",
+            "styles": []
+          }
+        ],
+        "format": "square",
+        "template": "6-1-1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_3391.png",
+            "folder": "09-septiembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3401.png",
+            "folder": "09-septiembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3405.png",
+            "folder": "09-septiembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3417.png",
+            "folder": "09-septiembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3422.png",
+            "folder": "09-septiembre",
+            "styles": []
+          }
+        ],
+        "format": "square",
+        "template": "5-1-3"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_3442.png",
+            "folder": "09-septiembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3455.png",
+            "folder": "09-septiembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3466.png",
+            "folder": "09-septiembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3470.png",
+            "folder": "09-septiembre",
+            "styles": []
+          }
+        ],
+        "format": "square",
+        "template": "4-1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_2592.png",
+            "folder": "10-octubre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_2668.png",
+            "folder": "10-octubre",
+            "styles": [
+              "object-position: bottom"
+            ]
+          },
+          {
+            "fileName": "IMG_2555.png",
+            "folder": "10-octubre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_2692.png",
+            "folder": "10-octubre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_2694.png",
+            "folder": "10-octubre",
+            "styles": []
+          }
+        ],
+        "format": "square",
+        "template": "5-3-5"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_3510.png",
+            "folder": "10-octubre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3519.png",
+            "folder": "10-octubre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3548.png",
+            "folder": "10-octubre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3551.png",
+            "folder": "10-octubre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3558.png",
+            "folder": "10-octubre",
+            "styles": []
+          }
+        ],
+        "format": "square",
+        "template": "5-1-1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_3615.png",
+            "folder": "10-octubre",
+            "styles": [
+              "object-position: top"
+            ]
+          },
+          {
+            "fileName": "IMG_3560.png",
+            "folder": "10-octubre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3566.png",
+            "folder": "10-octubre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3639.png",
+            "folder": "10-octubre",
+            "styles": [
+              "object-position: top"
+            ]
+          }
+        ],
+        "format": "square",
+        "template": "4-3-4"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_3577.png",
+            "folder": "10-octubre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3619.png",
+            "folder": "10-octubre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3585.png",
+            "folder": "10-octubre",
+            "styles": []
+          }
+        ],
+        "format": "square",
+        "template": "3-1-4"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_3672.png",
+            "folder": "11-noviembre",
+            "styles": [
+              "object-position: bottom"
+            ]
+          },
+          {
+            "fileName": "IMG_3667.png",
+            "folder": "11-noviembre",
+            "styles": [
+              "object-position: bottom"
+            ]
+          },
+          {
+            "fileName": "IMG_3675.png",
+            "folder": "11-noviembre",
+            "styles": [
+              "object-position: bottom"
+            ]
+          }
+        ],
+        "format": "square",
+        "template": "3-1-2"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_3688.png",
+            "folder": "11-noviembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3690.png",
+            "folder": "11-noviembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3684.png",
+            "folder": "11-noviembre",
+            "styles": []
+          }
+        ],
+        "format": "square",
+        "template": "3-1-4"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_3696.png",
+            "folder": "11-noviembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3825.png",
+            "folder": "11-noviembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3836.png",
+            "folder": "11-noviembre",
+            "styles": []
+          }
+        ],
+        "format": "square",
+        "template": "3-1-2"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_3851.png",
+            "folder": "11-noviembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3860.png",
+            "folder": "11-noviembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3863.png",
+            "folder": "11-noviembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3865.png",
+            "folder": "11-noviembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3867.png",
+            "folder": "11-noviembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3874.png",
+            "folder": "11-noviembre",
+            "styles": []
+          }
+        ],
+        "format": "square",
+        "template": "6-1-1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "2023-dic1.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "2023-dic16.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "2023-dic12.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "2023-dic11.png",
+            "folder": "12-diciembre",
+            "styles": []
+          }
+        ],
+        "format": "square",
+        "template": "4-3-3"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_2874.png",
+            "folder": "12-diciembre",
+            "styles": [
+              "object-position: top"
+            ]
+          },
+          {
+            "fileName": "IMG_3943.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3893.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3901.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3964.png",
+            "folder": "12-diciembre",
+            "styles": []
+          }
+        ],
+        "format": "square",
+        "template": "5-1-1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_2885.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_2926.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_4084.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_2898.png",
+            "folder": "12-diciembre",
+            "styles": []
+          }
+        ],
+        "format": "square",
+        "template": "4-2-1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_3446.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_2844.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_4447.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_4140.png",
+            "folder": "12-diciembre",
+            "styles": []
+          }
+        ],
+        "format": "square",
+        "template": "4-3-3"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "2023-dic4.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "2023-dic13.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_2967.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "2023-dic5.png",
+            "folder": "12-diciembre",
+            "styles": []
+          }
+        ],
+        "format": "square",
+        "template": "4-3-1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_4155.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_4161.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_4167.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_4171.png",
+            "folder": "12-diciembre",
+            "styles": []
+          }
+        ],
+        "format": "square",
+        "template": "4-3-3"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_2960.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_4178.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_2979.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_2965.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "2023-dic17.png",
+            "folder": "12-diciembre",
+            "styles": []
+          }
+        ],
+        "format": "square",
+        "template": "5-3-5"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_3067.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_4255.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3078.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3081.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_4326.png",
+            "folder": "12-diciembre",
+            "styles": []
+          }
+        ],
+        "format": "square",
+        "template": "5-3-1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_2993.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_4223.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_4262.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_4310.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_4312.png",
+            "folder": "12-diciembre",
+            "styles": []
+          }
+        ],
+        "format": "square",
+        "template": "5-3-5"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_3065.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "2023-dic14.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3091.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3097.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_4432.png",
+            "folder": "12-diciembre",
+            "styles": []
+          }
+        ],
+        "format": "square",
+        "template": "5-3-1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "2023-dic9.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_3156.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_4257.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_4520.png",
+            "folder": "12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_4535.png",
+            "folder": "12-diciembre",
+            "styles": []
+          }
+        ],
+        "format": "square",
+        "template": "5-1-2"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          }
+        ],
+        "format": "square",
+        "template": "4-1"
+      }
     ]
+  },
+  "2024": {
+    "name": "2024",
+    "id": "2024",
+    "settings": {
+      "page": {
+        "gap": "1"
+      }
+    },
+    "type": "grouped",
+    "baseUrl": "'../../../assets/albums/2024"
+  }
 }

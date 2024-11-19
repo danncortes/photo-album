@@ -1,13 +1,26 @@
 <div class="templates">
-    @for (templateType of configService.templates(); track $index) {
-        <div class="template-type-row">
-            @for (template of templateType; track $index) {
-                <div class="page-template--{{ template }}" [title]="template">
-                    <ng-container *ngFor="let i of getArray(template)">
-                        <div></div>
-                    </ng-container>
-                </div>
-            }
+    @for (templateGroups of data; track $index) {
+        <div class="template-group">
+            <p class="template-group__title">{{ $index + 1 }} Photo</p>
+            <div class="template-types">
+                @for (group of templateGroups; track $index) {
+                    <div class="template-type">
+                        @for (template of group; track $index) {
+                            <div
+                                class="page-template--{{ template }}"
+                                [title]="template"
+                                (click)="selectTemplate(template)"
+                            >
+                                <ng-container
+                                    *ngFor="let i of getPhotosNumber(template)"
+                                >
+                                    <div></div>
+                                </ng-container>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
         </div>
     }
 </div>

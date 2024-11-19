@@ -1,20 +1,19 @@
 import { KeyValuePipe, NgFor } from '@angular/common';
 import { Component, input } from '@angular/core';
 import { GroupedDicc } from '../../../types';
-import { MatMenuModule } from '@angular/material/menu';
 import { ConfigService } from '../../services/config.service';
+import { CdkMenu, CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
 
 @Component({
     selector: 'app-gallery',
     standalone: true,
-    imports: [NgFor, KeyValuePipe, MatMenuModule],
+    imports: [NgFor, KeyValuePipe, CdkMenuTrigger, CdkMenu, CdkMenuItem],
     templateUrl: './gallery.component.html',
     styleUrl: './gallery.component.scss',
 })
 export class GalleryComponent {
     photos = input.required<GroupedDicc>();
     url = input.required();
-    albumIndex = input.required<number>();
 
     constructor(private configService: ConfigService) {}
 
@@ -29,11 +28,9 @@ export class GalleryComponent {
     }
 
     getPagesOptions(pagesPerThumbnail: number[]): boolean[] | undefined {
-        return this.configService
-            .config()
-            ?.albums[
-                this.albumIndex()
-            ].pages.map((page, index) => pagesPerThumbnail.includes(index));
+        return this.configService.pages
+            .getValue()!
+            .map((page, index) => pagesPerThumbnail.includes(index));
     }
 
     getPagesPerThumbnail(pages: number[]): string {
@@ -41,19 +38,18 @@ export class GalleryComponent {
     }
 
     addPhotoToPage({
-        groupName,
+        folderName,
         pageIndex,
         fileName,
     }: {
-        groupName: string;
+        folderName: string;
         pageIndex: number;
         fileName: string;
     }) {
         this.configService.addPhoto({
-            albumIndex: this.albumIndex(),
             pageIndex,
             fileName,
-            groupName,
+            folderName,
         });
     }
 }

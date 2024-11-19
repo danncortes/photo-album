@@ -1,0 +1,65 @@
+<ng-container>
+    @if (photo().fileName) {
+        <img
+            [cdkMenuTriggerFor]="menu"
+            class="photo"
+            [src]="getPhotoSrc(photo())"
+            alt=""
+            [style]="getImgStyles(photo().styles)"
+        />
+        <ng-template #menu>
+            <div cdkMenu class="options-menu">
+                <div class="align-section options-menu__option">
+                    <div
+                        *ngFor="
+                            let option of alignmentOptions;
+                            let alignmentIndex = index
+                        "
+                        class="options-menu__option align-section__option {{
+                            isAlignmentActive({
+                                alignment: option,
+                            })
+                                ? 'active'
+                                : ''
+                        }}"
+                        (click)="
+                            togglePhotoAlignment({
+                                photoIndex: photoIndex(),
+                                alignment: option,
+                            })
+                        "
+                    >
+                        {{ option }}
+                    </div>
+                </div>
+                <div class="shift-section options-menu__option">
+                    <div>Shift position</div>
+                    <div class="shift-section__options">
+                        <div
+                            *ngFor="
+                                let option of shiftOptions;
+                                let shiftIndex = index
+                            "
+                            (click)="
+                                shiftPhotoPosition({
+                                    photoIndex: photoIndex(),
+                                    shift: option,
+                                })
+                            "
+                            class="shift__option"
+                        >
+                            {{ option }}
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    (click)="removePhoto(photoIndex(), photo())"
+                    class="options-menu__option"
+                >
+                    Remove 🗑️
+                </div>
+            </div>
+        </ng-template>
+    }
+</ng-container>

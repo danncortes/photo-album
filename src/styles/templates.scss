@@ -129,6 +129,15 @@ div[class*='page-template--4-2-'] {
         'two four';
 }
 
+.page-template--4-4-1 {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        'one one two'
+        'one one three'
+        'one one four';
+}
+
 .page-template--5-1-1 {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -221,27 +230,27 @@ div[class*='page-template--4-2-'] {
 }
 
 div[class*='page-template--'] {
-    & > div:nth-child(1) {
+    & > *:nth-child(1) {
         grid-area: one;
     }
 
-    & > div:nth-child(2) {
+    & > *:nth-child(2) {
         grid-area: two;
     }
 
-    & > div:nth-child(3) {
+    & > *:nth-child(3) {
         grid-area: three;
     }
 
-    & > div:nth-child(4) {
+    & > *:nth-child(4) {
         grid-area: four;
     }
 
-    & > div:nth-child(5) {
+    & > *:nth-child(5) {
         grid-area: five;
     }
 
-    & > div:nth-child(6) {
+    & > *:nth-child(6) {
         grid-area: six;
     }
 }
