@@ -19,5 +19,10 @@
         <button class="page-options__format" (click)="openTemplateDialog()">
             Format & Template
         </button>
+        <div class="page-options__shift-page">
+            <button (click)="shiftPagePosition('◀️')">◀️</button>
+            <button (click)="shiftPagePosition('▶️')">▶️</button>
+        </div>
+        <button (click)="removePage()">🗑️</button>
     </div>
 </ng-container>

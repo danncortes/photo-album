@@ -44,6 +44,17 @@ export class PageComponent {
         }
     }
 
+    removePage(): void {
+        this.configService.removePage(this.pageIndex());
+    }
+
+    shiftPagePosition(shift: '◀️' | '▶️') {
+        this.configService.shiftPagePosition({
+            pageIndex: this.pageIndex(),
+            shift,
+        });
+    }
+
     @ViewChild('captureDiv', { static: false }) captureDiv!: ElementRef;
 
     capture() {

@@ -801,7 +801,9 @@
           ]
         },
         "2023-dic15.png": {
-          "pages": []
+          "pages": [
+            33
+          ]
         },
         "2023-dic16.png": {
           "pages": [
@@ -817,7 +819,9 @@
           "pages": []
         },
         "2023-dic3.png": {
-          "pages": []
+          "pages": [
+            33
+          ]
         },
         "2023-dic4.png": {
           "pages": [
@@ -830,10 +834,14 @@
           ]
         },
         "2023-dic6.png": {
-          "pages": []
+          "pages": [
+            33
+          ]
         },
         "2023-dic7.png": {
-          "pages": []
+          "pages": [
+            33
+          ]
         },
         "2023-dic8.png": {
           "pages": []
@@ -2201,23 +2209,23 @@
       {
         "photos": [
           {
-            "fileName": "",
-            "folder": "",
+            "fileName": "2023-dic15.png",
+            "folder": "12-diciembre",
             "styles": []
           },
           {
-            "fileName": "",
-            "folder": "",
+            "fileName": "2023-dic6.png",
+            "folder": "12-diciembre",
             "styles": []
           },
           {
-            "fileName": "",
-            "folder": "",
+            "fileName": "2023-dic3.png",
+            "folder": "12-diciembre",
             "styles": []
           },
           {
-            "fileName": "",
-            "folder": "",
+            "fileName": "2023-dic7.png",
+            "folder": "12-diciembre",
             "styles": []
           }
         ],
