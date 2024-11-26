@@ -2,30 +2,43 @@ export type AlbumsConfig = {
     [key: string]: Album;
 };
 
-export type Album = {
-    type: 'grouped' | 'single';
+export type Album = GroupedAlbum | UngroupedAlbum;
+
+type BaseAlbum = {
     name: string;
     id: string;
     baseUrl: string;
     settings: AlbumSettings;
-    photosDicc: GroupedDicc;
+};
+
+export type GroupedAlbum = {
+    isGrouped: true; // `isGrouped` is `true`
+    photosDictionary: GroupedDictionary; // `photosDictionary` is `GroupedDictionary`
     pages: Pages;
+} & BaseAlbum;
+
+export type UngroupedAlbum = {
+    isGrouped: false; // `isGrouped` is `false`
+    photosDictionary: PhotosDictionary; // `photosDictionary` is `PhotosDictionary`
+    pages: Pages;
+} & BaseAlbum;
+
+export type GroupedDictionary = {
+    [key: string]: PhotosDictionary;
+};
+
+export type PhotosDictionary = {
+    [key: string]: PhotoInPage;
 };
 
 export type AlbumPreview = Pick<
     Album,
-    'type' | 'name' | 'id' | 'baseUrl' | 'settings'
+    'isGrouped' | 'name' | 'id' | 'baseUrl' | 'settings'
 >;
 
 export type AlbumSettings = {
     page: {
         gap: string;
-    };
-};
-
-export type GroupedDicc = {
-    [key: string]: {
-        [key: string]: PhotoInPage;
     };
 };
 
@@ -38,7 +51,7 @@ export type PhotoInPage = {
 };
 
 export type PhotoConfig = {
-    folder: string;
+    folder: string | null;
     fileName: string;
     styles: Array<string>;
 };

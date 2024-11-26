@@ -1,0 +1,42 @@
+<ng-content>
+    <div [cdkMenuTriggerFor]="menu" class="gallery-thumbnail">
+        <p class="gallery-thumbnail__name">
+            {{ photo()[0] }}
+        </p>
+        <img
+            src="{{
+                getImgSrc({
+                    fileName: photo()[0],
+                })
+            }}"
+            alt="photo"
+        />
+        <div class="gallery-thumbnail__pages-container">
+            @for (pageIndex of photo()[1].pages; track $index) {
+                <div class="gallery-thumbnail__page">
+                    {{ pageIndex + 1 }}
+                </div>
+            }
+        </div>
+    </div>
+    <ng-template #menu>
+        <div cdkMenu class="thumbnail-pages-menu">
+            @for (page of getPagesOptions(photo()[1].pages); track $index) {
+                <div
+                    class="thumbnail-pages-menu__option {{
+                        page ? 'active' : ''
+                    }}"
+                    cdkMenuItem
+                    (click)="
+                        addPhotoToPage({
+                            fileName: photo()[0],
+                            pageIndex: $index,
+                        })
+                    "
+                >
+                    <span>{{ $index + 1 }}</span>
+                </div>
+            }
+        </div>
+    </ng-template>
+</ng-content>

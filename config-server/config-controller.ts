@@ -20,12 +20,12 @@ export async function getAlbums(req: Request, res: Response) {
 
         for (const key in albumsConfig) {
             const album = albumsConfig[key];
-            const { id, name, type, settings, baseUrl } = album;
+            const { id, name, isGrouped: grouped, settings, baseUrl } = album;
 
             albumsPreview.push({
                 id,
                 name,
-                type,
+                isGrouped: grouped,
                 settings,
                 baseUrl,
             });
@@ -54,7 +54,7 @@ export async function getAlbum(req: Request, res: Response) {
     }
 }
 
-export async function saveConfig(req: Request, res: Response) {
+export async function saveAlbum(req: Request, res: Response) {
     const config = req.body.config as Album;
     const { id } = config;
 
@@ -83,4 +83,10 @@ export async function getConfig(req: Request, res: Response) {
         console.error(`Error getting Albums config ${configPath}:`, error);
         res.status(500).send('Error');
     }
+}
+
+export async function checkAlbums(req: Request, res: Response) {
+    try {
+        res.status(200).send({ status: 'ok' });
+    } catch (error) {}
 }

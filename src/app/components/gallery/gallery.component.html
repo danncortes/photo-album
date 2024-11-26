@@ -1,55 +1,16 @@
 <div class="gallery">
-    <div class="gallery-group" *ngFor="let folder of photos() | keyvalue">
-        <h3 class="gallery-group__title">
-            {{ folder.key }}
-        </h3>
-        <div class="gallery-photos">
-            <div
-                class="gallery-thumbnail"
-                *ngFor="let photo of folder.value | keyvalue"
-            >
-                <div [cdkMenuTriggerFor]="menu">
-                    <p class="gallery-thumbnail__name">
-                        {{ photo.key }}
-                    </p>
-                    <img
-                        src="{{
-                            getImgSrc({
-                                folder: folder.key,
-                                fileName: photo.key,
-                            })
-                        }}"
-                        alt="photo"
-                    />
-                    <p class="gallery-thumbnail__pages">
-                        {{ getPagesPerThumbnail(photo.value.pages) }}
-                    </p>
-                </div>
-                <ng-template #menu>
-                    <div cdkMenu class="thumbnail-pages-menu">
-                        @for (
-                            page of getPagesOptions(photo.value.pages);
-                            track $index
-                        ) {
-                            <div
-                                class="thumbnail-pages-menu__option {{
-                                    page ? 'active' : ''
-                                }}"
-                                cdkMenuItem
-                                (click)="
-                                    addPhotoToPage({
-                                        folderName: folder.key,
-                                        fileName: photo.key,
-                                        pageIndex: $index,
-                                    })
-                                "
-                            >
-                                <span>{{ $index + 1 }}</span>
-                            </div>
-                        }
-                    </div>
-                </ng-template>
-            </div>
+    @if (album().isGrouped) {
+        <app-folder [photosDictionary]="getGroupedDictionary()"></app-folder>
+    }
+
+    @if (photosArray().length) {
+        <div class="gallery__thumbnails">
+            <app-thumbnail
+                *ngFor="let photo of photosArray()"
+                [url]="url()"
+                [photo]="photo"
+                [activeFolder]="activeFolder()"
+            ></app-thumbnail>
         </div>
-    </div>
+    }
 </div>

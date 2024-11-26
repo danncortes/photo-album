@@ -1,55 +1,38 @@
-import { KeyValuePipe, NgFor } from '@angular/common';
-import { Component, input } from '@angular/core';
-import { GroupedDicc } from '../../../types';
+import { NgFor } from '@angular/common';
+import { Component, computed, input } from '@angular/core';
+import { Album, GroupedDictionary, PhotoInPage } from '../../../types';
 import { ConfigService } from '../../services/config.service';
-import { CdkMenu, CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
+import { ThumbnailComponent } from '../thumbnail/thumbnail.component';
+import { FolderComponent } from '../folder/folder.component';
 
 @Component({
     selector: 'app-gallery',
     standalone: true,
-    imports: [NgFor, KeyValuePipe, CdkMenuTrigger, CdkMenu, CdkMenuItem],
+    imports: [NgFor, ThumbnailComponent, FolderComponent],
     templateUrl: './gallery.component.html',
     styleUrl: './gallery.component.scss',
 })
 export class GalleryComponent {
-    photos = input.required<GroupedDicc>();
-    url = input.required();
+    album = input.required<Album>();
+    url = input.required<string>();
+    activeFolder = input.required<string | null>();
 
-    constructor(private configService: ConfigService) {}
+    constructor(public configService: ConfigService) {}
 
-    getImgSrc({
-        fileName,
-        folder,
-    }: {
-        fileName: string;
-        folder: string;
-    }): string {
-        return `${this.url()}/${folder}/${fileName}`;
-    }
+    photosArray = computed<[string, PhotoInPage][]>(() => {
+        if (this.album().isGrouped) {
+            if (this.activeFolder()) {
+                return Object.entries(
+                    this.album().photosDictionary[this.activeFolder()!],
+                );
+            }
+            return [];
+        } else {
+            return Object.entries(this.album().photosDictionary);
+        }
+    });
 
-    getPagesOptions(pagesPerThumbnail: number[]): boolean[] | undefined {
-        return this.configService.pages
-            .getValue()!
-            .map((page, index) => pagesPerThumbnail.includes(index));
-    }
-
-    getPagesPerThumbnail(pages: number[]): string {
-        return pages.map((page) => page + 1).join(',');
-    }
-
-    addPhotoToPage({
-        folderName,
-        pageIndex,
-        fileName,
-    }: {
-        folderName: string;
-        pageIndex: number;
-        fileName: string;
-    }) {
-        this.configService.addPhoto({
-            pageIndex,
-            fileName,
-            folderName,
-        });
+    getGroupedDictionary(): GroupedDictionary {
+        return this.album().photosDictionary as GroupedDictionary;
     }
 }

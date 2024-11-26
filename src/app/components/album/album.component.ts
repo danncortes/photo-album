@@ -5,6 +5,7 @@ import { PagesComponent } from '../pages/pages.component';
 import { ConfigService } from '../../services/config.service';
 import { TemplatesComponent } from '../templates/templates.component';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-album',
@@ -19,6 +20,7 @@ export class AlbumComponent implements OnInit {
     constructor(
         public configService: ConfigService,
         private route: ActivatedRoute,
+        private router: Router,
     ) {}
 
     ngOnInit() {
@@ -43,5 +45,9 @@ export class AlbumComponent implements OnInit {
 
     addPage(template: string) {
         this.configService.addPage(template);
+    }
+
+    goHome() {
+        this.router.navigate(['/']);
     }
 }

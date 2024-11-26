@@ -1,43 +1,13 @@
 .gallery {
-    padding: 10px 10px 0px;
-    white-space: nowrap;
-    overflow-x: auto;
-    width: 100%;
-    box-sizing: border-box;
+    padding: 1rem;
 
-    &-group {
-        padding: 8px;
-        //display: inline-grid;
-        background-color: white;
-        width: fit-content;
-
-        &__title {
-            font-size: 1.2rem;
-            line-height: unset;
-            font-weight: 400;
-            margin: 0 0 10px 0;
-        }
-    }
-
-    &-photos {
-        gap: 6px;
+    &__thumbnails {
+        padding: 0.5rem;
+        gap: 0.5rem;
         display: inline-flex;
-    }
-
-    &-thumbnail {
-        &__name,
-        &__pages {
-            font-size: 0.7rem;
-            margin: 0;
-        }
-
-        &__name {
-            color: #333;
-        }
-
-        img {
-            height: 100px;
-            width: auto;
-        }
+        background-color: white;
+        width: 100%;
+        overflow-x: auto;
+        box-sizing: border-box;
     }
 }

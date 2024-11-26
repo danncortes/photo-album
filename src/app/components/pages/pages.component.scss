@@ -4,8 +4,12 @@
     overflow-x: auto;
 }
 
+.page-title {
+    margin-top: 0;
+}
+
 .pages {
     display: inline-flex;
-    gap: 10px;
-    padding: 10px;
+    gap: 1rem;
+    padding: 1rem;
 }

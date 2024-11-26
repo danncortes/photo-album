@@ -6,15 +6,19 @@
             📄+ Page
         </button>
         <div class="album-header flex">
-            <h2>{{ configService.config.getValue()!.name }}</h2>
+            <button (click)="goHome()">Albums</button> /
+            <h2 class="album-name">
+                {{ configService.album.getValue()!.name }}
+            </h2>
         </div>
         <app-gallery
-            [photos]="configService.photosDictionary.getValue()!"
-            [url]="configService.config.getValue()!.baseUrl"
+            [album]="configService.album.getValue()!"
+            [url]="configService.album.getValue()!.baseUrl"
+            [activeFolder]="configService.activeFolder()"
         ></app-gallery>
         <app-pages
-            [pages]="configService.pages.getValue()!"
-            [baseUrl]="configService.config.getValue()!.baseUrl"
+            [pages]="configService.album.getValue()!.pages"
+            [baseUrl]="configService.album.getValue()!.baseUrl"
         ></app-pages>
     }
 </ng-container>

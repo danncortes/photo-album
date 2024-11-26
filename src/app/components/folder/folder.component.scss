@@ -1,0 +1,32 @@
+.folders {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.folder-button {
+    padding: 0.3rem;
+    display: grid;
+    background-color: transparent;
+    border: 1px solid #bbb;
+    cursor: pointer;
+    border-radius: 0.15rem;
+    margin-bottom: 0.3rem;
+
+    &--active {
+        background-color: white;
+        border: none;
+        margin-bottom: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    &__icon {
+        font-size: 1.4rem;
+    }
+
+    &__name {
+        font-size: 0.7rem;
+        font-weight: 400;
+        color: #666;
+    }
+}

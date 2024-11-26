@@ -2,6 +2,14 @@
     position: relative;
 }
 
+.album-header {
+    padding: 1rem 1rem 0 1rem;
+}
+.album-name {
+    margin: 0;
+    font-weight: 500;
+}
+
 .add-page-button {
     position: fixed;
     top: 0;

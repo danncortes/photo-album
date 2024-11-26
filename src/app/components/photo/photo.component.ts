@@ -1,13 +1,13 @@
 import { Component, input } from '@angular/core';
 import { PhotoConfig } from '../../../types';
 import { ConfigService } from '../../services/config.service';
-import { CdkMenu, CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
+import { CdkMenu, CdkMenuTrigger } from '@angular/cdk/menu';
 import { NgFor } from '@angular/common';
 
 @Component({
     selector: 'app-photo',
     standalone: true,
-    imports: [CdkMenu, CdkMenuItem, CdkMenuTrigger, NgFor],
+    imports: [CdkMenu, CdkMenuTrigger, NgFor],
     templateUrl: './photo.component.html',
     styleUrl: './photo.component.scss',
 })
@@ -24,7 +24,7 @@ export class PhotoComponent {
 
     getPhotoSrc(photo: PhotoConfig) {
         const { folder, fileName } = photo;
-        return `${this.baseUrl()}/${folder}/${fileName}`;
+        return `${this.baseUrl()}${folder ? `/${folder}` : ''}/${fileName}`;
     }
 
     getImgStyles(styles: string[]): string {
