@@ -3,11 +3,7 @@
         @for (page of pages(); track $index) {
             <div class="page-container">
                 <p class="page-title">Page {{ $index + 1 }}</p>
-                <app-page
-                    [page]="page"
-                    [baseUrl]="baseUrl()"
-                    [pageIndex]="$index"
-                ></app-page>
+                <app-page [page]="page" [pageIndex]="$index"></app-page>
             </div>
         }
     </div>

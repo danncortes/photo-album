@@ -7,7 +7,6 @@
         <div class="gallery__thumbnails">
             <app-thumbnail
                 *ngFor="let photo of photosArray()"
-                [url]="url()"
                 [photo]="photo"
                 [activeFolder]="activeFolder()"
             ></app-thumbnail>

@@ -15,7 +15,6 @@ export class PhotoComponent {
     photo = input.required<PhotoConfig>();
     photoIndex = input.required<number>();
     pageIndex = input.required<number>();
-    baseUrl = input.required();
 
     alignmentOptions = ['top', 'bottom', 'right', 'left'];
     shiftOptions = ['◀️', '▶️'];
@@ -24,7 +23,8 @@ export class PhotoComponent {
 
     getPhotoSrc(photo: PhotoConfig) {
         const { folder, fileName } = photo;
-        return `${this.baseUrl()}${folder ? `/${folder}` : ''}/${fileName}`;
+        const { id } = this.configService.album.getValue()!;
+        return `assets/albums/${id}${folder ? `/${folder}` : ''}/${fileName}`;
     }
 
     getImgStyles(styles: string[]): string {

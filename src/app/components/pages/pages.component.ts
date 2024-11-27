@@ -11,5 +11,4 @@ import { Pages } from '../../../types';
 })
 export class PagesComponent {
     pages = input.required<Pages>();
-    baseUrl = input.required();
 }

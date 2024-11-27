@@ -14,7 +14,6 @@ import { FolderComponent } from '../folder/folder.component';
 })
 export class GalleryComponent {
     album = input.required<Album>();
-    url = input.required<string>();
     activeFolder = input.required<string | null>();
 
     constructor(public configService: ConfigService) {}

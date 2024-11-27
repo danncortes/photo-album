@@ -3,14 +3,14 @@ import {
     saveAlbum,
     getAlbums,
     getAlbum,
-    checkAlbums,
+    checkAlbum,
 } from './config-controller';
 
 const router = express();
 
 router.get(`/albums`, getAlbums);
-router.get(`/albums/:id`, getAlbum);
+router.get(`/album/:id`, getAlbum);
+router.get(`/album/check/:id`, checkAlbum);
 router.post(`/album/save`, saveAlbum);
-router.post(`/albums/check`, checkAlbums);
 
 export default [router];

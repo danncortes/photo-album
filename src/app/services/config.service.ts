@@ -7,7 +7,7 @@ import {
     PhotosDictionary,
 } from '../../types';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, filter, Subject } from 'rxjs';
+import { BehaviorSubject, concatMap, filter, Subject } from 'rxjs';
 import { NavigationStart, Router } from '@angular/router';
 
 @Injectable({
@@ -84,8 +84,8 @@ export class ConfigService {
         this.activeFolder.set(folderName);
     }
 
-    requestCheckAlbums() {
-        return this.http.get('http://localhost:3333/albums/check');
+    requestCheckAlbum(id: string) {
+        return this.http.get(`http://localhost:3333/album/check/${id}`);
     }
 
     getAlbums() {
@@ -106,13 +106,38 @@ export class ConfigService {
     }
 
     getAlbum(id: string) {
-        this.isAlbumLoading.set(true);
-        this.http
-            .get(`http://localhost:3333/albums/${id}`)
-            .subscribe((response) => {
+        const responseSubject = new Subject<void>();
+        this.http.get(`http://localhost:3333/album/${id}`).subscribe({
+            next: (response) => {
                 this.album.next(response as Album);
+                responseSubject.next();
+            },
+            error: (error) => {
+                responseSubject.error(error);
+            },
+        });
+
+        return responseSubject;
+    }
+
+    checkAndGetAlbum(id: string) {
+        this.isAlbumLoading.set(true);
+        const responseSubject = new Subject<void>();
+        this.requestCheckAlbum(id)
+            .pipe(concatMap(() => this.getAlbum(id)))
+            .subscribe({
+                next: () => {
+                    responseSubject.next();
+                },
+                error: (error) => {
+                    responseSubject.error(error);
+                },
+            })
+            .add(() => {
                 this.isAlbumLoading.set(false);
             });
+
+        return responseSubject;
     }
 
     saveAlbum() {
@@ -719,6 +744,10 @@ export class ConfigService {
 
             this.albumChanged.next('Page position changed');
         }
+    }
+
+    clearAlbum() {
+        this.album.next(null);
     }
 
     test(val: any) {

@@ -1,5 +1,5 @@
 <ng-container>
-    @if (configService.isAlbumLoading()) {
+    @if (configService.isAlbumLoading() && !configService.album.getValue()) {
         <div>Loading...</div>
     } @else {
         <button class="add-page-button" (click)="openAddPageDialog()">
@@ -13,12 +13,8 @@
         </div>
         <app-gallery
             [album]="configService.album.getValue()!"
-            [url]="configService.album.getValue()!.baseUrl"
             [activeFolder]="configService.activeFolder()"
         ></app-gallery>
-        <app-pages
-            [pages]="configService.album.getValue()!.pages"
-            [baseUrl]="configService.album.getValue()!.baseUrl"
-        ></app-pages>
+        <app-pages [pages]="configService.album.getValue()!.pages"></app-pages>
     }
 </ng-container>

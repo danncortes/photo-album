@@ -15,7 +15,6 @@ import { PhotoComponent } from '../photo/photo.component';
 })
 export class PageComponent {
     page = input.required<Page>();
-    baseUrl = input.required();
     pageIndex = input.required<number>();
     dialog = inject(Dialog);
 

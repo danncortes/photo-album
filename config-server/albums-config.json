@@ -8,7 +8,7 @@
       }
     },
     "isGrouped": true,
-    "baseUrl": "'../../../assets/albums/2023",
+    "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/Albunes Foto Familia/benni/2023",
     "photosDictionary": {
       "08-agosto": {
         "IMG_2056.png": {
@@ -2315,29 +2315,18 @@
       }
     },
     "isGrouped": true,
-    "baseUrl": "'../../../assets/albums/2024"
+    "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/Albunes Foto Familia/benni/2024"
   },
-  "otro": {
-    "name": "otro",
-    "id": "otro",
-    "settings": {
-      "page": {
-        "gap": "1"
-      }
-    },
-    "isGrouped": false,
-    "baseUrl": "'../../../assets/albums/otro"
-  },
-  "prueba-nueva": {
+  "prueba": {
     "name": "prueba-nueva",
-    "id": "prueba-nueva",
+    "id": "prueba",
     "settings": {
       "page": {
         "gap": "1"
       }
     },
     "isGrouped": false,
-    "baseUrl": "'../../../assets/albums/prueba",
+    "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/marcos-photos/prueba",
     "photosDictionary": {
       "IMG_0389.png": {
         "pages": []
@@ -2346,6 +2335,39 @@
         "pages": [
           0
         ]
+      },
+      "IMG_0398.png": {
+        "pages": []
+      },
+      "IMG_0406.png": {
+        "pages": []
+      },
+      "IMG_0407.png": {
+        "pages": []
+      },
+      "IMG_0423.png": {
+        "pages": []
+      },
+      "IMG_0424.png": {
+        "pages": []
+      },
+      "IMG_0430.png": {
+        "pages": []
+      },
+      "IMG_0444.png": {
+        "pages": []
+      },
+      "IMG_0450.png": {
+        "pages": []
+      },
+      "IMG_0451.png": {
+        "pages": []
+      },
+      "IMG_0470.png": {
+        "pages": []
+      },
+      "IMG_0476.png": {
+        "pages": []
       }
     },
     "pages": [

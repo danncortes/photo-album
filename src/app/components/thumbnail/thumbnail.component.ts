@@ -11,13 +11,13 @@ import { CdkMenu, CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
 })
 export class ThumbnailComponent {
     activeFolder = input<string | null>();
-    url = input.required<string>();
     photo = input.required<[string, { pages: number[] }]>();
 
     constructor(private configService: ConfigService) {}
 
     getImgSrc({ fileName }: { fileName: string }): string {
-        return `${this.url()}${this.activeFolder() ? `/${this.activeFolder()}` : ''}/${fileName}`;
+        const { id } = this.configService.album.getValue()!;
+        return `assets/albums/${id}${this.activeFolder() ? `/${this.activeFolder()}` : ''}/${fileName}`;
     }
 
     getPagesPerThumbnail(pages: number[]): string {

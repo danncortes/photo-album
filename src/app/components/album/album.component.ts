@@ -21,13 +21,19 @@ export class AlbumComponent implements OnInit {
         public configService: ConfigService,
         private route: ActivatedRoute,
         private router: Router,
-    ) {}
-
-    ngOnInit() {
+    ) {
         this.route.params.subscribe((params) => {
-            this.configService.getAlbum(params['id']);
+            const { id } = params;
+
+            if (id !== configService.album.getValue()?.id) {
+                configService.clearAlbum();
+            }
+
+            this.configService.checkAndGetAlbum(id);
         });
     }
+
+    ngOnInit() {}
 
     openAddPageDialog() {
         const dialogRef: DialogRef<string, TemplatesComponent> =

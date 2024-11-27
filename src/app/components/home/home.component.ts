@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ConfigService } from '../../services/config.service';
 import { Router } from '@angular/router';
-import { concatMap } from 'rxjs';
 
 @Component({
     selector: 'app-home',
@@ -15,14 +14,7 @@ export class HomeComponent {
         public configService: ConfigService,
         private router: Router,
     ) {
-        this.configService
-            .requestCheckAlbums()
-            .pipe(
-                concatMap(() => {
-                    return this.configService.getAlbums();
-                }),
-            )
-            .subscribe();
+        this.configService.getAlbums();
     }
 
     openAlbum(id: string) {

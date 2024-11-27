@@ -7,7 +7,7 @@ export type Album = GroupedAlbum | UngroupedAlbum;
 type BaseAlbum = {
     name: string;
     id: string;
-    baseUrl: string;
+    originFolder: string;
     settings: AlbumSettings;
 };
 
@@ -33,7 +33,7 @@ export type PhotosDictionary = {
 
 export type AlbumPreview = Pick<
     Album,
-    'isGrouped' | 'name' | 'id' | 'baseUrl' | 'settings'
+    'isGrouped' | 'name' | 'id' | 'originFolder' | 'settings'
 >;
 
 export type AlbumSettings = {
