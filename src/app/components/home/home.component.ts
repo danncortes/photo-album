@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { ConfigService } from '../../services/config.service';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { ConfigService } from '../../services/config.service';
 
 @Component({
     selector: 'app-home',
@@ -9,11 +10,13 @@ import { Router } from '@angular/router';
     templateUrl: './home.component.html',
     styleUrl: './home.component.scss',
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
     constructor(
         public configService: ConfigService,
         private router: Router,
-    ) {
+    ) {}
+
+    ngOnInit(): void {
         this.configService.getAlbums();
     }
 

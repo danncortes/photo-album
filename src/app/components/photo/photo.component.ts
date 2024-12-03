@@ -1,8 +1,9 @@
 import { Component, input } from '@angular/core';
-import { PhotoConfig } from '../../../types';
-import { ConfigService } from '../../services/config.service';
 import { CdkMenu, CdkMenuTrigger } from '@angular/cdk/menu';
 import { NgFor } from '@angular/common';
+
+import { PhotoConfig } from '../../../types';
+import { ConfigService } from '../../services/config.service';
 
 @Component({
     selector: 'app-photo',

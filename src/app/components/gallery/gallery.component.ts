@@ -1,5 +1,6 @@
 import { NgFor } from '@angular/common';
 import { Component, computed, input } from '@angular/core';
+
 import { Album, GroupedDictionary, PhotoInPage } from '../../../types';
 import { ConfigService } from '../../services/config.service';
 import { ThumbnailComponent } from '../thumbnail/thumbnail.component';

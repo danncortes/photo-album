@@ -112,9 +112,10 @@ export async function saveAlbum(req: Request, res: Response) {
 
 async function updatePhotosDictionary(
     photosDictionary: PhotosDictionary,
-    photoFilesFromFolder: string[],
+    directoryPath: string,
 ): Promise<PhotosDictionary> {
     try {
+        const photoFilesFromFolder = await fs.readdir(directoryPath);
         const newPhotosDictionary: PhotosDictionary = { ...photosDictionary };
         // Filter only supported image files
         const supportedFilesFromFolder = photoFilesFromFolder.filter(
@@ -164,23 +165,21 @@ export async function checkAlbum(req: Request, res: Response): Promise<void> {
         if (album.isGrouped) {
             for (const folder in album.photosDictionary) {
                 const path = `${album.originFolder}/${folder}`;
-                const photoFilesFromFolder = await fs.readdir(path);
                 const photosDictionary: PhotosDictionary =
                     album.photosDictionary[folder];
                 const newDictionary = await updatePhotosDictionary(
                     photosDictionary,
-                    photoFilesFromFolder,
+                    path,
                 );
 
                 newAlbum.photosDictionary[folder] = newDictionary;
             }
         } else {
             const path = `${album.originFolder}`;
-            const photoFilesFromFolder = await fs.readdir(path);
             const photosDictionary: PhotosDictionary = album.photosDictionary;
             const newDictionary = await updatePhotosDictionary(
                 photosDictionary,
-                photoFilesFromFolder,
+                path,
             );
 
             newAlbum.photosDictionary = newDictionary;

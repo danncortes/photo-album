@@ -1,6 +1,7 @@
 import { Component, input } from '@angular/core';
-import { ConfigService } from '../../services/config.service';
 import { KeyValuePipe, NgFor } from '@angular/common';
+
+import { ConfigService } from '../../services/config.service';
 import { GroupedDictionary } from '../../../types';
 
 @Component({

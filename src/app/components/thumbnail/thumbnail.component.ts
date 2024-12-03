@@ -1,6 +1,7 @@
 import { Component, input } from '@angular/core';
-import { ConfigService } from '../../services/config.service';
 import { CdkMenu, CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
+
+import { ConfigService } from '../../services/config.service';
 
 @Component({
     selector: 'app-thumbnail',

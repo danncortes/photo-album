@@ -14,7 +14,7 @@
         <app-gallery
             [album]="configService.album.getValue()!"
             [activeFolder]="configService.activeFolder()"
-        ></app-gallery>
-        <app-pages [pages]="configService.album.getValue()!.pages"></app-pages>
+        />
+        <app-pages [pages]="configService.album.getValue()!.pages" />
     }
 </ng-container>

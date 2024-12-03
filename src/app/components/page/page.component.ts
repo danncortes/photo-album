@@ -1,8 +1,9 @@
 import { Component, ElementRef, inject, input, ViewChild } from '@angular/core';
+import { Dialog, DialogRef } from '@angular/cdk/dialog';
 import domtoimage from 'dom-to-image-more';
+
 import { Page } from '../../../types';
 import { ConfigService } from '../../services/config.service';
-import { Dialog, DialogRef } from '@angular/cdk/dialog';
 import { TemplatesComponent } from '../templates/templates.component';
 import { PhotoComponent } from '../photo/photo.component';
 

@@ -1,6 +1,6 @@
 <div class="gallery">
     @if (album().isGrouped) {
-        <app-folder [photosDictionary]="getGroupedDictionary()"></app-folder>
+        <app-folder [photosDictionary]="getGroupedDictionary()" />
     }
 
     @if (photosArray().length) {
@@ -9,7 +9,7 @@
                 *ngFor="let photo of photosArray()"
                 [photo]="photo"
                 [activeFolder]="activeFolder()"
-            ></app-thumbnail>
+            />
         </div>
     }
 </div>

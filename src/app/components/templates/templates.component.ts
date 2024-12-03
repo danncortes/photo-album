@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
+
 import { ConfigService } from '../../services/config.service';
 import { Page } from '../../../types';
 

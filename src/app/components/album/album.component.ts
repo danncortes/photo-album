@@ -1,11 +1,12 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { Dialog, DialogRef } from '@angular/cdk/dialog';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+
 import { GalleryComponent } from '../gallery/gallery.component';
 import { PagesComponent } from '../pages/pages.component';
 import { ConfigService } from '../../services/config.service';
 import { TemplatesComponent } from '../templates/templates.component';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-album',
@@ -14,26 +15,20 @@ import { Router } from '@angular/router';
     templateUrl: './album.component.html',
     styleUrl: './album.component.scss',
 })
-export class AlbumComponent implements OnInit {
+export class AlbumComponent implements OnInit, OnDestroy {
     dialog = inject(Dialog);
 
     constructor(
         public configService: ConfigService,
         private route: ActivatedRoute,
         private router: Router,
-    ) {
+    ) {}
+
+    ngOnInit() {
         this.route.params.subscribe((params) => {
-            const { id } = params;
-
-            if (id !== configService.album.getValue()?.id) {
-                configService.clearAlbum();
-            }
-
-            this.configService.checkAndGetAlbum(id);
+            this.configService.checkAndGetAlbum(params['id']);
         });
     }
-
-    ngOnInit() {}
 
     openAddPageDialog() {
         const dialogRef: DialogRef<string, TemplatesComponent> =
@@ -55,5 +50,9 @@ export class AlbumComponent implements OnInit {
 
     goHome() {
         this.router.navigate(['/']);
+    }
+
+    ngOnDestroy(): void {
+        this.configService.clearAlbum();
     }
 }
