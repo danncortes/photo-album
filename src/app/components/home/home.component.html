@@ -1,5 +1,11 @@
-<ul class="albums-preview">
-    @for (item of configService.albumsPreview(); track $index) {
-        <li (click)="openAlbum(item.id)">{{ item.name }}</li>
-    }
-</ul>
+<div class="home__center">
+    <h1 class="home__title">Albums</h1>
+    <div class="home__albums">
+        @for (item of configService.albumsPreview(); track $index) {
+            <button class="button button--default" (click)="openAlbum(item.id)">
+                {{ item.name }}
+            </button>
+        }
+    </div>
+    <button class="button home__new-album">New album</button>
+</div>

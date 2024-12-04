@@ -1,13 +1,18 @@
 <ng-container>
     @if (configService.isAlbumLoading() && !configService.album.getValue()) {
-        <div>Loading...</div>
+        <div class="loader-container">
+            <span class="loader"></span>
+        </div>
     } @else {
         <button class="add-page-button" (click)="openAddPageDialog()">
             📄+ Page
         </button>
         <div class="album-header flex">
-            <button (click)="goHome()">Albums</button> /
-            <h2 class="album-name">
+            <button class="album-header__home-button" (click)="goHome()">
+                Albums
+            </button>
+            <span> / </span>
+            <h2 class="album-header__name">
                 {{ configService.album.getValue()!.name }}
             </h2>
         </div>

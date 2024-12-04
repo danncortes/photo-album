@@ -2,7 +2,6 @@
     <div class="pages">
         @for (page of pages(); track $index) {
             <div class="page-container">
-                <p class="page-title">Page {{ $index + 1 }}</p>
                 <app-page [page]="page" [pageIndex]="$index" />
             </div>
         }

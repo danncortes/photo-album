@@ -22,6 +22,40 @@ button {
     cursor: pointer;
 }
 
+button.button {
+    border: none;
+    height: 34px;
+    padding: 0.2rem 0.6rem;
+    border-radius: 0.2rem;
+    align-items: center;
+    display: flex;
+    color: #666;
+    box-sizing: border-box;
+    background-color: transparent;
+
+    &.button--default {
+        box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+        background-color: white;
+
+        &:hover {
+            background-color: #eee;
+            box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    &:hover {
+        color: black;
+    }
+
+    &.button--sm {
+        height: 26px;
+        padding: 0.2rem 0.5rem;
+    }
+
+    &.button--md {
+    }
+}
+
 .options-menu,
 .thumbnail-pages-menu {
     background-color: white;
@@ -71,5 +105,68 @@ button {
             color: white;
             background-color: cadetblue;
         }
+    }
+}
+
+.loader-container {
+    display: grid;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    justify-items: center;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    display: block;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 1s linear infinite;
+}
+.loader::before,
+.loader::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    animation: prixClipFix 2s linear infinite;
+}
+.loader::after {
+    transform: rotate3d(90, 90, 0, 180deg);
+    border-color: cadetblue;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes prixClipFix {
+    0% {
+        clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+    }
+    50% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+    }
+    75%,
+    100% {
+        clip-path: polygon(
+            50% 50%,
+            0 0,
+            100% 0,
+            100% 100%,
+            100% 100%,
+            100% 100%
+        );
     }
 }

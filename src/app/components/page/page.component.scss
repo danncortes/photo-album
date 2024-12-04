@@ -9,5 +9,25 @@
     padding: 4px;
     box-sizing: border-box;
     background-color: white;
-    margin-bottom: 6px;
+    margin-bottom: 0.6rem;
+    border-radius: 0.15rem;
+
+    &-controls {
+        justify-content: space-between;
+        align-items: center;
+
+        &__page {
+            color: #888;
+            padding-left: 0.6rem;
+        }
+    }
+
+    &-controls__right {
+        justify-content: end;
+        gap: 0.4rem;
+
+        &__shift-options {
+            gap: 0.4rem;
+        }
+    }
 }

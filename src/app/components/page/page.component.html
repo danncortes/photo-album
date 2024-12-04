@@ -12,14 +12,37 @@
         />
     }
 </div>
-<div class="page-options flex">
-    <button (click)="capture()">Download as PNG</button>
-    <button class="page-options__format" (click)="openTemplateDialog()">
-        Format & Template
-    </button>
-    <div class="page-options__shift-page">
-        <button (click)="shiftPagePosition('◀️')">◀️</button>
-        <button (click)="shiftPagePosition('▶️')">▶️</button>
+<div class="page-controls flex">
+    <span class="page-controls__page">{{ pageIndex() + 1 }}</span>
+    <div class="flex page-controls__right">
+        <button class="button button--sm button--default" (click)="capture()">
+            Download
+        </button>
+        <button
+            class="button button--sm button--default"
+            (click)="openTemplateDialog()"
+        >
+            Format & Template
+        </button>
+        <div class="page-options__shift-options flex">
+            <button
+                class="button button--sm button--default"
+                (click)="shiftPagePosition('◀️')"
+            >
+                ◀️
+            </button>
+            <button
+                class="button button--sm button--default"
+                (click)="shiftPagePosition('▶️')"
+            >
+                ▶️
+            </button>
+        </div>
+        <button
+            class="button button--sm button--default"
+            (click)="removePage()"
+        >
+            🗑️
+        </button>
     </div>
-    <button (click)="removePage()">🗑️</button>
 </div>
