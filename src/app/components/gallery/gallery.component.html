@@ -3,11 +3,11 @@
         <app-folder [photosDictionary]="getGroupedDictionary()" />
     }
 
-    @if (photosArray().length) {
+    @if (thumbnails().length) {
         <div class="gallery__thumbnails">
             <app-thumbnail
-                *ngFor="let photo of photosArray()"
-                [photo]="photo"
+                *ngFor="let thumbnail of thumbnails()"
+                [photo]="thumbnail"
                 [activeFolder]="activeFolder()"
             />
         </div>

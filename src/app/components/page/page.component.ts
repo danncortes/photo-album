@@ -1,8 +1,15 @@
-import { Component, ElementRef, inject, input, ViewChild } from '@angular/core';
+import {
+    Component,
+    computed,
+    ElementRef,
+    inject,
+    input,
+    ViewChild,
+} from '@angular/core';
 import { Dialog, DialogRef } from '@angular/cdk/dialog';
 import domtoimage from 'dom-to-image-more';
 
-import { Page } from '../../../types';
+import { AlbumSettings, Page } from '../../../types';
 import { ConfigService } from '../../services/config.service';
 import { TemplatesComponent } from '../templates/templates.component';
 import { PhotoComponent } from '../photo/photo.component';
@@ -18,8 +25,52 @@ export class PageComponent {
     page = input.required<Page>();
     pageIndex = input.required<number>();
     dialog = inject(Dialog);
+    pageHeight = 400;
 
     constructor(private configService: ConfigService) {}
+
+    pageFormat = computed(() => {
+        return (
+            this.page().format ||
+            this.configService.album.getValue()!.settings.format
+        );
+    });
+
+    pageWidth = computed(() => {
+        const { width, height } = this.pageFormat();
+        const proportion = Number(width) / Number(height);
+        return this.pageHeight * proportion + 'px';
+    });
+
+    gap = computed(() => {
+        const { height: pageHeightInCm } = this.pageFormat();
+
+        const gapInCm =
+            this.page().gap ||
+            this.configService.album.getValue()!.settings.gap;
+
+        return (
+            (this.pageHeight * Number(gapInCm)) / Number(pageHeightInCm) + 'px'
+        );
+    });
+
+    getPadding(position: string): string {
+        const { height: pageHeightInCm } = this.pageFormat();
+        const paddingPos = `padding-${position}`;
+        const padding =
+            this.page()[paddingPos as keyof Page] ||
+            this.configService.album.getValue()!.settings[
+                paddingPos as keyof AlbumSettings
+            ];
+
+        return (
+            (this.pageHeight * Number(padding)) / Number(pageHeightInCm) + 'px'
+        );
+    }
+
+    padding = computed(() => {
+        return `${this.getPadding('top')} ${this.getPadding('right')} ${this.getPadding('bottom')} ${this.getPadding('left')}`;
+    });
 
     openTemplateDialog() {
         const dialogRef: DialogRef<string, TemplatesComponent> =

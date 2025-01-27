@@ -1,14 +1,22 @@
-import { computed, Injectable, signal, WritableSignal } from '@angular/core';
+import {
+    computed,
+    effect,
+    Injectable,
+    signal,
+    WritableSignal,
+} from '@angular/core';
 import {
     Album,
     AlbumPreview,
+    GroupedAlbum,
     GroupedDictionary,
+    Pages,
     PhotoConfig,
     PhotosDictionary,
 } from '../../types';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, concatMap, filter, Subject } from 'rxjs';
-import { NavigationStart, Router } from '@angular/router';
+import { BehaviorSubject, concatMap, Subject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
     providedIn: 'root',
@@ -28,11 +36,10 @@ export class ConfigService {
 
     galleryPhotos = computed(() => {
         const album = this.album.getValue()!;
-        const activeFolder = this.activeFolder()!;
 
-        if (album && activeFolder) {
-            if (album.isGrouped) {
-                return album.photosDictionary[activeFolder];
+        if (album) {
+            if (album.isGrouped && album.activeFolder) {
+                return album.photosDictionary[album.activeFolder];
             } else {
                 return album.photosDictionary;
             }
@@ -47,6 +54,16 @@ export class ConfigService {
         [
             ['3-1-1', '3-1-2', '3-1-3', '3-1-4'],
             ['3-2-1', '3-2-2', '3-2-3', '3-2-4'],
+            [
+                '3-3-1',
+                '3-3-2',
+                '3-3-3',
+                '3-3-4',
+                '3-3-5',
+                '3-3-6',
+                '3-3-7',
+                '3-3-8',
+            ],
         ],
         [
             ['4-1'],
@@ -68,20 +85,25 @@ export class ConfigService {
         private http: HttpClient,
         public router: Router,
     ) {
-        this.router.events
-            .pipe(filter((event) => event instanceof NavigationStart))
-            .subscribe(() => {
-                this.activeFolder.set(null);
-            });
-
         this.albumChanged.subscribe((value) => {
             console.log('Album changed - ', value);
             this.saveAlbum();
         });
+
+        effect(() => {
+            if (this.activeFolder() !== null) {
+                this.album.next({
+                    ...this.album.getValue()!,
+                    activeFolder: this.activeFolder(),
+                } as GroupedAlbum);
+
+                this.albumChanged.next('Folder selected');
+            }
+        });
     }
 
     selectFolder(folderName: string) {
-        this.activeFolder.set(folderName);
+        this.activeFolder.update(() => folderName);
     }
 
     requestCheckAlbum(id: string) {
@@ -110,6 +132,13 @@ export class ConfigService {
         this.http.get(`http://localhost:3333/album/${id}`).subscribe({
             next: (response) => {
                 this.album.next(response as Album);
+
+                if ((response as Album).isGrouped) {
+                    this.activeFolder.set(
+                        (response as GroupedAlbum).activeFolder,
+                    );
+                }
+
                 responseSubject.next();
             },
             error: (error) => {
@@ -153,7 +182,7 @@ export class ConfigService {
     addPage(template: string) {
         const [pageNumbers] = template;
 
-        const pages = [
+        const pages: Pages = [
             ...this.album.getValue()!.pages,
             {
                 photos: Array.from({ length: Number(pageNumbers) }).map(() => ({
@@ -161,7 +190,6 @@ export class ConfigService {
                     folder: '',
                     styles: [],
                 })),
-                format: 'square',
                 template,
             },
         ];
@@ -220,12 +248,13 @@ export class ConfigService {
         }
 
         pages.splice(pageIndex, 1, page);
+        this.album.getValue()!.photosDictionary = photosDictionary;
 
-        this.album.next({
-            ...album,
-            photosDictionary,
-            pages,
-        } as Album);
+        // this.album.next({
+        //     ...album,
+        //     photosDictionary,
+        //     pages,
+        // } as Album);
 
         this.albumChanged.next('Photo added');
     }

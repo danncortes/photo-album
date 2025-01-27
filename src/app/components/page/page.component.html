@@ -1,8 +1,10 @@
 <div
-    class="page page-format--{{ page().format }} page-template--{{
-        page().template
-    }}"
+    class="page page-template--{{ page().template }}"
     #captureDiv
+    [style.height]="pageHeight + 'px'"
+    [style.width]="pageWidth()"
+    [style.gap]="gap()"
+    [style.padding]="padding()"
 >
     @for (photo of page().photos; track $index) {
         <app-photo
@@ -24,7 +26,7 @@
         >
             Format & Template
         </button>
-        <div class="page-options__shift-options flex">
+        <div class="page-controls__shift-options flex">
             <button
                 class="button button--sm button--default"
                 (click)="shiftPagePosition('◀️')"

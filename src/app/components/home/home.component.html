@@ -1,11 +1,16 @@
 <div class="home__center">
     <h1 class="home__title">Albums</h1>
     <div class="home__albums">
-        @for (item of configService.albumsPreview(); track $index) {
-            <button class="button button--default" (click)="openAlbum(item.id)">
-                {{ item.name }}
+        @for (album of configService.albumsPreview(); track $index) {
+            <button
+                class="button button--default"
+                (click)="openAlbum(album.id)"
+            >
+                {{ album.name }}
             </button>
         }
     </div>
-    <button class="button home__new-album">New album</button>
+    <button class="button home__new-album" (click)="openNewAlbumDialog()">
+        New album
+    </button>
 </div>

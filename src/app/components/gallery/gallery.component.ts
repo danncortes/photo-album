@@ -1,8 +1,12 @@
 import { NgFor } from '@angular/common';
 import { Component, computed, input } from '@angular/core';
 
-import { Album, GroupedDictionary, PhotoInPage } from '../../../types';
-import { ConfigService } from '../../services/config.service';
+import {
+    Album,
+    GroupedDictionary,
+    PhotoInPage,
+    PhotosDictionary,
+} from '../../../types';
 import { ThumbnailComponent } from '../thumbnail/thumbnail.component';
 import { FolderComponent } from '../folder/folder.component';
 
@@ -17,19 +21,24 @@ export class GalleryComponent {
     album = input.required<Album>();
     activeFolder = input.required<string | null>();
 
-    constructor(public configService: ConfigService) {}
+    constructor() {}
 
-    photosArray = computed<[string, PhotoInPage][]>(() => {
+    thumbnails = computed<[string, PhotoInPage][]>(() => {
+        let thumbnails: PhotosDictionary;
+
         if (this.album().isGrouped) {
             if (this.activeFolder()) {
-                return Object.entries(
-                    this.album().photosDictionary[this.activeFolder()!],
-                );
+                thumbnails = this.album().photosDictionary[
+                    this.activeFolder()!
+                ] as PhotosDictionary;
+            } else {
+                return [];
             }
-            return [];
         } else {
-            return Object.entries(this.album().photosDictionary);
+            thumbnails = this.album().photosDictionary as PhotosDictionary;
         }
+
+        return Object.entries(thumbnails);
     });
 
     getGroupedDictionary(): GroupedDictionary {

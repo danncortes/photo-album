@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { CdkMenu, CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
 
 import { ConfigService } from '../../services/config.service';
@@ -16,7 +16,7 @@ export class ThumbnailComponent {
 
     constructor(private configService: ConfigService) {}
 
-    getImgSrc({ fileName }: { fileName: string }): string {
+    getImgSrc(fileName: string): string {
         const { id } = this.configService.album.getValue()!;
         return `assets/albums/${id}${this.activeFolder() ? `/${this.activeFolder()}` : ''}/${fileName}`;
     }
@@ -41,7 +41,7 @@ export class ThumbnailComponent {
         this.configService.addPhoto({
             pageIndex,
             fileName,
-            folderName: this.configService.activeFolder()!,
+            folderName: this.configService.activeFolder(),
         });
     }
 }

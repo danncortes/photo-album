@@ -13,6 +13,7 @@ type BaseAlbum = {
 
 export type GroupedAlbum = {
     isGrouped: true; // `isGrouped` is `true`
+    activeFolder: string | null;
     photosDictionary: GroupedDictionary; // `photosDictionary` is `GroupedDictionary`
     pages: Pages;
 } & BaseAlbum;
@@ -37,9 +38,17 @@ export type AlbumPreview = Pick<
 >;
 
 export type AlbumSettings = {
-    page: {
-        gap: string;
-    };
+    format: PageFormat;
+    'padding-top': string;
+    'padding-bottom': string;
+    'padding-right': string;
+    'padding-left': string;
+    gap: string;
+};
+
+export type PageFormat = {
+    width: string;
+    height: string;
 };
 
 export type SingleDicc = PhotoInPage;
@@ -57,7 +66,12 @@ export type PhotoConfig = {
 };
 
 export type Page = {
-    format: string;
+    format?: PageFormat;
+    'padding-top'?: string;
+    'padding-bottom'?: string;
+    'padding-right'?: string;
+    'padding-left'?: string;
+    gap?: string;
     template: string;
     photos: Array<PhotoConfig>;
 };

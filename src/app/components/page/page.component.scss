@@ -1,16 +1,14 @@
 .page-format--square {
     width: 400px;
-    height: 400px;
 }
 
 .page {
+    height: 400px;
     display: grid;
-    gap: 4px;
-    padding: 4px;
     box-sizing: border-box;
     background-color: white;
     margin-bottom: 0.6rem;
-    border-radius: 0.15rem;
+    outline: 0.12rem solid white;
 
     &-controls {
         justify-content: space-between;
@@ -20,14 +18,14 @@
             color: #888;
             padding-left: 0.6rem;
         }
+
+        &__shift-options {
+            gap: 0.4rem;
+        }
     }
 
     &-controls__right {
         justify-content: end;
         gap: 0.4rem;
-
-        &__shift-options {
-            gap: 0.4rem;
-        }
     }
 }

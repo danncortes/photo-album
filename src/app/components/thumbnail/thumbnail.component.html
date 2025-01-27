@@ -1,15 +1,9 @@
 <ng-content>
     <div [cdkMenuTriggerFor]="menu" class="gallery-thumbnail">
-        <p class="gallery-thumbnail__name">
-            {{ photo()[0] }}
-        </p>
         <img
-            src="{{
-                getImgSrc({
-                    fileName: photo()[0],
-                })
-            }}"
-            alt="photo"
+            src="{{ getImgSrc(photo()[0]) }}"
+            [alt]="photo()[0]"
+            [title]="photo()[0]"
         />
         <div class="gallery-thumbnail__pages-container">
             @for (pageIndex of photo()[1].pages; track $index) {
