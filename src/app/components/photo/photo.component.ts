@@ -2,7 +2,7 @@ import { Component, input } from '@angular/core';
 import { CdkMenu, CdkMenuTrigger } from '@angular/cdk/menu';
 import { NgFor } from '@angular/common';
 
-import { PhotoConfig } from '../../../types';
+import { PhotoConfig, ShiftDirection } from '../../../types';
 import { ConfigService } from '../../services/config.service';
 
 @Component({
@@ -16,15 +16,16 @@ export class PhotoComponent {
     photo = input.required<PhotoConfig>();
     photoIndex = input.required<number>();
     pageIndex = input.required<number>();
+    pagesPhotosLength = input.required<number>();
 
     alignmentOptions = ['top', 'bottom', 'right', 'left'];
-    shiftOptions = ['◀️', '▶️'];
+    shiftOptions: ShiftDirection[] = ['◀️', '▶️'];
 
     constructor(private configService: ConfigService) {}
 
     getPhotoSrc(photo: PhotoConfig) {
         const { folder, fileName } = photo;
-        const { id } = this.configService.album.getValue()!;
+        const { id } = this.configService.album()!;
         return `assets/albums/${id}${folder ? `/${folder}` : ''}/${fileName}`;
     }
 
@@ -59,16 +60,23 @@ export class PhotoComponent {
 
     shiftPhotoPosition({
         photoIndex,
-        shift,
+        direction,
     }: {
         photoIndex: number;
-        shift: string;
+        direction: ShiftDirection;
     }) {
         this.configService.shiftPhotoPosition({
             pageIndex: this.pageIndex(),
             photoIndex,
-            shift,
+            direction,
         });
+    }
+
+    isShiftDisabled(direction: string, photoIndex: number): boolean {
+        return (
+            (direction === '◀️' && photoIndex === 0) ||
+            (direction === '▶️' && photoIndex === this.pagesPhotosLength() - 1)
+        );
     }
 
     isAlignmentActive({ alignment }: { alignment: string }) {
@@ -76,5 +84,9 @@ export class PhotoComponent {
             style.includes('object-position'),
         );
         return !!objectPosition?.includes(alignment);
+    }
+
+    trackByFn(i: number) {
+        return i;
     }
 }

@@ -19,6 +19,7 @@
         padding: 2px 5px;
         border: unset;
         border: 1px solid #ddd;
+        background-color: transparent;
 
         &.active {
             background-color: cadetblue;
@@ -31,10 +32,17 @@
     display: flex;
     gap: 6px;
     justify-content: end;
+    align-items: center;
 
     &__options {
         display: flex;
         gap: 5px;
+    }
+
+    &__option {
+        padding: 0;
+        background-color: transparent;
+        border: none;
     }
 }
 
@@ -48,4 +56,10 @@
 
 .shift__option {
     cursor: pointer;
+}
+
+.remove-photo {
+    background-color: transparent;
+    border: transparent;
+    width: 100%;
 }

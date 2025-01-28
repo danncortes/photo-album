@@ -24,14 +24,20 @@ button {
 
 button.button {
     border: none;
+    border-radius: 0.2rem;
+}
+
+button.button:disabled {
+    background-color: rgba(256, 256, 256, 0.7);
+}
+
+button.button:not(:disabled) {
     height: 34px;
     padding: 0.2rem 0.6rem;
-    border-radius: 0.2rem;
     align-items: center;
     display: flex;
     color: #666;
     box-sizing: border-box;
-    background-color: transparent;
 
     &.button--default {
         box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
@@ -78,7 +84,7 @@ button.button {
             background-color: #eee;
         }
 
-        &:not(:last-of-type) {
+        &:not(:last-child) {
             border-bottom: 1px solid #ddd;
         }
     }

@@ -9,7 +9,7 @@ import {
 import { Dialog, DialogRef } from '@angular/cdk/dialog';
 import domtoimage from 'dom-to-image-more';
 
-import { AlbumSettings, Page } from '../../../types';
+import { AlbumSettings, Page, ShiftDirection } from '../../../types';
 import { ConfigService } from '../../services/config.service';
 import { TemplatesComponent } from '../templates/templates.component';
 import { PhotoComponent } from '../photo/photo.component';
@@ -24,15 +24,16 @@ import { PhotoComponent } from '../photo/photo.component';
 export class PageComponent {
     page = input.required<Page>();
     pageIndex = input.required<number>();
+    pagesLength = input.required<number>();
     dialog = inject(Dialog);
     pageHeight = 400;
+    shiftOptions: ShiftDirection[] = ['◀️', '▶️'];
 
     constructor(private configService: ConfigService) {}
 
     pageFormat = computed(() => {
         return (
-            this.page().format ||
-            this.configService.album.getValue()!.settings.format
+            this.page().format || this.configService.album()!.settings.format
         );
     });
 
@@ -46,8 +47,7 @@ export class PageComponent {
         const { height: pageHeightInCm } = this.pageFormat();
 
         const gapInCm =
-            this.page().gap ||
-            this.configService.album.getValue()!.settings.gap;
+            this.page().gap || this.configService.album()!.settings.gap;
 
         return (
             (this.pageHeight * Number(gapInCm)) / Number(pageHeightInCm) + 'px'
@@ -59,7 +59,7 @@ export class PageComponent {
         const paddingPos = `padding-${position}`;
         const padding =
             this.page()[paddingPos as keyof Page] ||
-            this.configService.album.getValue()!.settings[
+            this.configService.album()!.settings[
                 paddingPos as keyof AlbumSettings
             ];
 
@@ -99,11 +99,18 @@ export class PageComponent {
         this.configService.removePage(this.pageIndex());
     }
 
-    shiftPagePosition(shift: '◀️' | '▶️') {
+    shiftPagePosition(direction: ShiftDirection) {
         this.configService.shiftPagePosition({
             pageIndex: this.pageIndex(),
-            shift,
+            direction,
         });
+    }
+
+    isShiftPageDisabled(direction: ShiftDirection, pageIndex: number) {
+        return (
+            (direction === '◀️' && pageIndex === 0) ||
+            (direction === '▶️' && pageIndex === this.pagesLength() - 1)
+        );
     }
 
     @ViewChild('captureDiv', { static: false }) captureDiv!: ElementRef;
@@ -130,5 +137,9 @@ export class PageComponent {
             .catch((error: any) => {
                 console.error('Failed to capture image', error);
             });
+    }
+
+    trackByFn(i: number) {
+        return i;
     }
 }

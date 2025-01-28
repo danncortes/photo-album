@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { CdkMenu, CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
 
 import { ConfigService } from '../../services/config.service';
@@ -17,7 +17,7 @@ export class ThumbnailComponent {
     constructor(private configService: ConfigService) {}
 
     getImgSrc(fileName: string): string {
-        const { id } = this.configService.album.getValue()!;
+        const { id } = this.configService.album()!;
         return `assets/albums/${id}${this.activeFolder() ? `/${this.activeFolder()}` : ''}/${fileName}`;
     }
 
@@ -26,8 +26,8 @@ export class ThumbnailComponent {
     }
 
     getPagesOptions(pagesPerThumbnail: number[]): boolean[] | undefined {
-        return this.configService.album
-            .getValue()!
+        return this.configService
+            .album()!
             .pages.map((page, index) => pagesPerThumbnail.includes(index));
     }
 

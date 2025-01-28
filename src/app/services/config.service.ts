@@ -1,10 +1,4 @@
-import {
-    computed,
-    effect,
-    Injectable,
-    signal,
-    WritableSignal,
-} from '@angular/core';
+import { computed, Injectable, signal, WritableSignal } from '@angular/core';
 import {
     Album,
     AlbumPreview,
@@ -13,9 +7,10 @@ import {
     Pages,
     PhotoConfig,
     PhotosDictionary,
+    ShiftDirection,
 } from '../../types';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, concatMap, Subject } from 'rxjs';
+import { concatMap, Subject } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -25,17 +20,17 @@ export class ConfigService {
     albumsPreview: WritableSignal<AlbumPreview[] | null> = signal(null);
     isAlbumPreviewLoading = signal(false);
 
-    album = new BehaviorSubject<Album | null>(null);
+    album: WritableSignal<Album | null> = signal(null);
     isAlbumLoading = signal(true);
 
     activeFolder = signal<string | null>(null);
 
     isAlbumGrouped = computed(() => {
-        return this.album.getValue()?.isGrouped || false;
+        return this.album()?.isGrouped || false;
     });
 
     galleryPhotos = computed(() => {
-        const album = this.album.getValue()!;
+        const album = this.album()!;
 
         if (album) {
             if (album.isGrouped && album.activeFolder) {
@@ -89,21 +84,21 @@ export class ConfigService {
             console.log('Album changed - ', value);
             this.saveAlbum();
         });
-
-        effect(() => {
-            if (this.activeFolder() !== null) {
-                this.album.next({
-                    ...this.album.getValue()!,
-                    activeFolder: this.activeFolder(),
-                } as GroupedAlbum);
-
-                this.albumChanged.next('Folder selected');
-            }
-        });
     }
 
     selectFolder(folderName: string) {
-        this.activeFolder.update(() => folderName);
+        this.activeFolder.set(folderName);
+
+        if (this.album()) {
+            this.album.update(
+                (album) =>
+                    ({
+                        ...album!,
+                        activeFolder: folderName,
+                    }) as GroupedAlbum,
+            );
+            this.albumChanged.next('Folder selected');
+        }
     }
 
     requestCheckAlbum(id: string) {
@@ -131,7 +126,7 @@ export class ConfigService {
         const responseSubject = new Subject<void>();
         this.http.get(`http://localhost:3333/album/${id}`).subscribe({
             next: (response) => {
-                this.album.next(response as Album);
+                this.album.set(response as Album);
 
                 if ((response as Album).isGrouped) {
                     this.activeFolder.set(
@@ -172,7 +167,7 @@ export class ConfigService {
     saveAlbum() {
         this.http
             .post('http://localhost:3333/album/save', {
-                config: this.album.getValue(),
+                config: this.album(),
             })
             .subscribe(() => {
                 console.log('Config saved');
@@ -183,7 +178,7 @@ export class ConfigService {
         const [pageNumbers] = template;
 
         const pages: Pages = [
-            ...this.album.getValue()!.pages,
+            ...this.album()!.pages,
             {
                 photos: Array.from({ length: Number(pageNumbers) }).map(() => ({
                     fileName: '',
@@ -194,10 +189,10 @@ export class ConfigService {
             },
         ];
 
-        this.album.next({
-            ...this.album.getValue()!,
+        this.album.update((album) => ({
+            ...album!,
             pages,
-        });
+        }));
 
         this.albumChanged.next('Page added');
     }
@@ -217,7 +212,7 @@ export class ConfigService {
             styles: [],
         };
 
-        const album = this.album.getValue()!;
+        const album = this.album()!;
         const emptyPhotoSlotIndex = album.pages[pageIndex].photos.findIndex(
             (photo) => photo.fileName === '',
         );
@@ -248,13 +243,12 @@ export class ConfigService {
         }
 
         pages.splice(pageIndex, 1, page);
-        this.album.getValue()!.photosDictionary = photosDictionary;
 
-        // this.album.next({
-        //     ...album,
-        //     photosDictionary,
-        //     pages,
-        // } as Album);
+        this.album.set({
+            ...album,
+            photosDictionary,
+            pages,
+        } as Album);
 
         this.albumChanged.next('Photo added');
     }
@@ -268,7 +262,7 @@ export class ConfigService {
         photoIndex: number;
         photo: PhotoConfig;
     }) {
-        const album = this.album.getValue()!;
+        const album = this.album()!;
         const { pages, photosDictionary } = album;
 
         pages[pageIndex].photos[photoIndex] = {
@@ -300,7 +294,7 @@ export class ConfigService {
             );
         }
 
-        this.album.next({
+        this.album.set({
             ...album,
             pages,
             photosDictionary,
@@ -316,7 +310,7 @@ export class ConfigService {
         pageIndex: number;
         template: string;
     }) {
-        const album = this.album.getValue()!;
+        const album = this.album()!;
         const { pages } = album;
         const [newPhotosNumber] = template;
         const [currentPhotosNumber] = pages[pageIndex].template;
@@ -374,7 +368,7 @@ export class ConfigService {
 
         pages[pageIndex].photos = newPhotosArray;
 
-        this.album.next({
+        this.album.set({
             ...album,
             pages,
         } as Album);
@@ -391,7 +385,7 @@ export class ConfigService {
         photoIndex: number;
         alignment: string;
     }) {
-        const album = this.album.getValue()!;
+        const album = this.album()!;
         const { pages } = album;
         const { styles } = pages[pageIndex].photos[photoIndex];
         const objectPositionProp = 'object-position';
@@ -450,7 +444,7 @@ export class ConfigService {
 
         pages[pageIndex].photos[photoIndex].styles = styles;
 
-        this.album.next({
+        this.album.set({
             ...album,
             pages,
         } as Album);
@@ -461,20 +455,28 @@ export class ConfigService {
     shiftPhotoPosition({
         pageIndex,
         photoIndex,
-        shift,
+        direction,
     }: {
         pageIndex: number;
         photoIndex: number;
-        shift: string;
+        direction: ShiftDirection;
     }) {
-        const album = this.album.getValue()!;
+        const album = this.album()!;
         const { pages } = album;
         const photos = [...pages[pageIndex].photos];
 
         const fromIndex = photoIndex;
+
+        if (
+            (direction === '◀️' && photoIndex === 0) ||
+            (direction === '▶️' && photoIndex === photos.length - 1)
+        ) {
+            return;
+        }
+
         let toIndex = photoIndex + 1;
 
-        if (shift === '◀️') {
+        if (direction === '◀️') {
             toIndex = photoIndex - 1;
         }
 
@@ -485,7 +487,7 @@ export class ConfigService {
 
         pages[pageIndex].photos = photos;
 
-        this.album.next({
+        this.album.set({
             ...album,
             pages,
         } as Album);
@@ -650,7 +652,7 @@ export class ConfigService {
     }
 
     removePage(pageIndex: number) {
-        const album = this.album.getValue()!;
+        const album = this.album()!;
         const { pages } = album;
         const photosToRemove = pages[pageIndex].photos.map(
             (photo) => photo.fileName,
@@ -692,7 +694,7 @@ export class ConfigService {
 
         pages.splice(pageIndex, 1);
 
-        this.album.next({
+        this.album.set({
             ...album,
             photosDictionary,
             pages,
@@ -712,17 +714,17 @@ export class ConfigService {
 
     shiftPagePosition({
         pageIndex,
-        shift,
+        direction,
     }: {
         pageIndex: number;
-        shift: '◀️' | '▶️';
+        direction: ShiftDirection;
     }) {
-        const album = this.album.getValue()!;
+        const album = this.album()!;
         const { pages } = album;
         let photosDictionary = album.photosDictionary;
         let shiftValue = 1;
 
-        if (shift === '◀️') {
+        if (direction === '◀️') {
             shiftValue = -1;
         }
 
@@ -765,7 +767,7 @@ export class ConfigService {
                 pages[pageIndex],
             ];
 
-            this.album.next({
+            this.album.set({
                 ...album,
                 photosDictionary,
                 pages,
@@ -776,7 +778,7 @@ export class ConfigService {
     }
 
     clearAlbum() {
-        this.album.next(null);
+        this.album.set(null);
     }
 
     test(val: any) {

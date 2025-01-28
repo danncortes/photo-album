@@ -75,3 +75,5 @@ export type Page = {
     template: string;
     photos: Array<PhotoConfig>;
 };
+
+export type ShiftDirection = '◀️' | '▶️';

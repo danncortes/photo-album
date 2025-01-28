@@ -2,7 +2,11 @@
     <div class="pages">
         @for (page of pages(); track $index) {
             <div class="page-container">
-                <app-page [page]="page" [pageIndex]="$index" />
+                <app-page
+                    [page]="page"
+                    [pageIndex]="$index"
+                    [pagesLength]="pages().length"
+                />
             </div>
         }
     </div>

@@ -10,7 +10,7 @@
         <ng-template #menu>
             <div cdkMenu class="options-menu">
                 <div class="align-section options-menu__option">
-                    <div
+                    <button
                         *ngFor="
                             let option of alignmentOptions;
                             let alignmentIndex = index
@@ -30,35 +30,36 @@
                         "
                     >
                         {{ option }}
-                    </div>
+                    </button>
                 </div>
                 <div class="shift-section options-menu__option">
                     <div>Shift position</div>
                     <div class="shift-section__options">
-                        <div
-                            *ngFor="
-                                let option of shiftOptions;
-                                let shiftIndex = index
-                            "
-                            (click)="
-                                shiftPhotoPosition({
-                                    photoIndex: photoIndex(),
-                                    shift: option,
-                                })
-                            "
-                            class="shift__option"
-                        >
-                            {{ option }}
-                        </div>
+                        @for (option of shiftOptions; track $index) {
+                            <button
+                                [disabled]="
+                                    isShiftDisabled(option, photoIndex())
+                                "
+                                (click)="
+                                    shiftPhotoPosition({
+                                        photoIndex: photoIndex(),
+                                        direction: option,
+                                    })
+                                "
+                                class="shift-section__option"
+                            >
+                                {{ option }}
+                            </button>
+                        }
                     </div>
                 </div>
 
-                <div
+                <button
                     (click)="removePhoto(photoIndex(), photo())"
-                    class="options-menu__option"
+                    class="options-menu__option remove-photo"
                 >
                     Remove 🗑️
-                </div>
+                </button>
             </div>
         </ng-template>
     }

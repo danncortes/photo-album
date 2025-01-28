@@ -1,14 +1,14 @@
 import { NgFor } from '@angular/common';
-import { Component, computed, input } from '@angular/core';
+import { Component, computed } from '@angular/core';
 
 import {
-    Album,
     GroupedDictionary,
     PhotoInPage,
     PhotosDictionary,
 } from '../../../types';
 import { ThumbnailComponent } from '../thumbnail/thumbnail.component';
 import { FolderComponent } from '../folder/folder.component';
+import { ConfigService } from '../../services/config.service';
 
 @Component({
     selector: 'app-gallery',
@@ -18,30 +18,32 @@ import { FolderComponent } from '../folder/folder.component';
     styleUrl: './gallery.component.scss',
 })
 export class GalleryComponent {
-    album = input.required<Album>();
-    activeFolder = input.required<string | null>();
-
-    constructor() {}
+    constructor(public configService: ConfigService) {}
 
     thumbnails = computed<[string, PhotoInPage][]>(() => {
         let thumbnails: PhotosDictionary;
 
-        if (this.album().isGrouped) {
-            if (this.activeFolder()) {
-                thumbnails = this.album().photosDictionary[
-                    this.activeFolder()!
+        if (this.configService.album()!.isGrouped) {
+            if (this.configService.activeFolder()) {
+                thumbnails = this.configService.album()!.photosDictionary[
+                    this.configService.activeFolder()!
                 ] as PhotosDictionary;
             } else {
                 return [];
             }
         } else {
-            thumbnails = this.album().photosDictionary as PhotosDictionary;
+            thumbnails = this.configService.album()!
+                .photosDictionary as PhotosDictionary;
         }
-
         return Object.entries(thumbnails);
     });
 
     getGroupedDictionary(): GroupedDictionary {
-        return this.album().photosDictionary as GroupedDictionary;
+        return this.configService.album()!
+            .photosDictionary as GroupedDictionary;
+    }
+
+    trackByFn(i: number) {
+        return i;
     }
 }
