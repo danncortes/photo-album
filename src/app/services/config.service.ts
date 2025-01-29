@@ -495,6 +495,24 @@ export class ConfigService {
         this.albumChanged.next('Photo position changed');
     }
 
+    movePageInDictionary({
+        dictionary,
+        photoFrom,
+        difference,
+    }: {
+        dictionary: PhotosDictionary;
+        photoFrom: string;
+        difference: number;
+    }) {
+        if (photoFrom in dictionary) {
+            const photoPages = dictionary[photoFrom].pages.map(
+                (pageNumber) => pageNumber + difference,
+            );
+
+            dictionary[photoFrom].pages = photoPages;
+        }
+    }
+
     movePagesInGroupedDictionary({
         dictionary,
         photos,
@@ -506,13 +524,11 @@ export class ConfigService {
     }): GroupedDictionary {
         for (const folder in dictionary) {
             for (const photoFrom of photos) {
-                if (photoFrom in dictionary[folder]) {
-                    const photoPages = dictionary[folder][photoFrom].pages.map(
-                        (pageNumber) => pageNumber + difference,
-                    );
-
-                    dictionary[folder][photoFrom].pages = photoPages;
-                }
+                this.movePageInDictionary({
+                    dictionary: dictionary[folder],
+                    photoFrom,
+                    difference,
+                });
             }
         }
 
@@ -529,16 +545,38 @@ export class ConfigService {
         difference: number;
     }): PhotosDictionary {
         for (const photoFrom of photos) {
-            if (photoFrom in dictionary) {
-                const photoPages = dictionary[photoFrom].pages.map(
-                    (pageNumber) => pageNumber + difference,
-                );
-
-                dictionary[photoFrom].pages = photoPages;
-            }
+            this.movePageInDictionary({
+                dictionary,
+                photoFrom,
+                difference,
+            });
         }
 
         return dictionary;
+    }
+
+    shiftPageInDictionary({
+        dictionary,
+        photoFrom,
+        toIndex,
+        fromIndex,
+    }: {
+        dictionary: PhotosDictionary;
+        photoFrom: string;
+        toIndex: number;
+        fromIndex: number;
+    }) {
+        if (photoFrom in dictionary) {
+            const photoPages = dictionary[photoFrom].pages;
+            const indexToChange = photoPages.findIndex(
+                (page) => page === fromIndex,
+            );
+
+            if (indexToChange >= 0) {
+                photoPages[indexToChange] = toIndex;
+                dictionary[photoFrom].pages = photoPages;
+            }
+        }
     }
 
     shiftPageInGroupedDictionary({
@@ -554,17 +592,12 @@ export class ConfigService {
     }): GroupedDictionary {
         for (const folder in dictionary) {
             for (const photoFrom of photos) {
-                if (photoFrom in dictionary[folder]) {
-                    const photoPages = dictionary[folder][photoFrom].pages;
-                    const indexToChange = photoPages.findIndex(
-                        (page) => page === fromIndex,
-                    );
-
-                    if (indexToChange >= 0) {
-                        photoPages[indexToChange] = toIndex;
-                        dictionary[folder][photoFrom].pages = photoPages;
-                    }
-                }
+                this.shiftPageInDictionary({
+                    dictionary: dictionary[folder],
+                    photoFrom,
+                    toIndex,
+                    fromIndex,
+                });
             }
         }
 
@@ -583,20 +616,37 @@ export class ConfigService {
         fromIndex: number;
     }): PhotosDictionary {
         for (const photoFrom of photos) {
-            if (photoFrom in dictionary) {
-                const photoPages = dictionary[photoFrom].pages;
-                const indexToChange = photoPages.findIndex(
-                    (page) => page === fromIndex,
-                );
-
-                if (indexToChange >= 0) {
-                    photoPages[indexToChange] = toIndex;
-                    dictionary[photoFrom].pages = photoPages;
-                }
-            }
+            this.shiftPageInDictionary({
+                dictionary,
+                photoFrom,
+                toIndex,
+                fromIndex,
+            });
         }
 
         return dictionary;
+    }
+
+    removePageFromDictionary({
+        photoToRemove,
+        photoDicc,
+        pageIndex,
+    }: {
+        photoToRemove: string;
+        photoDicc: PhotosDictionary;
+        pageIndex: number;
+    }) {
+        if (photoToRemove in photoDicc) {
+            const photoPages = photoDicc[photoToRemove].pages;
+            const indexToRemove = photoPages.findIndex(
+                (page) => page === pageIndex,
+            );
+
+            if (indexToRemove >= 0) {
+                photoPages.splice(indexToRemove, 1);
+                photoDicc[photoToRemove].pages = photoPages;
+            }
+        }
     }
 
     removePageFromGroupedDictionary({
@@ -610,17 +660,11 @@ export class ConfigService {
     }): GroupedDictionary {
         for (const folder in photoDicc) {
             for (const photoToRemove of photosToRemove) {
-                if (photoToRemove in photoDicc[folder]) {
-                    const photoPages = photoDicc[folder][photoToRemove].pages;
-                    const indexToRemove = photoPages.findIndex(
-                        (page) => page === pageIndex,
-                    );
-
-                    if (indexToRemove >= 0) {
-                        photoPages.splice(indexToRemove, 1);
-                        photoDicc[folder][photoToRemove].pages = photoPages;
-                    }
-                }
+                this.removePageFromDictionary({
+                    photoToRemove,
+                    photoDicc: photoDicc[folder],
+                    pageIndex,
+                });
             }
         }
         return photoDicc;
@@ -636,17 +680,11 @@ export class ConfigService {
         pageIndex: number;
     }): PhotosDictionary {
         for (const photoToRemove of photosToRemove) {
-            if (photoToRemove in photoDicc) {
-                const photoPages = photoDicc[photoToRemove].pages;
-                const indexToRemove = photoPages.findIndex(
-                    (page) => page === pageIndex,
-                );
-
-                if (indexToRemove >= 0) {
-                    photoPages.splice(indexToRemove, 1);
-                    photoDicc[photoToRemove].pages = photoPages;
-                }
-            }
+            this.removePageFromDictionary({
+                photoToRemove,
+                photoDicc: photoDicc,
+                pageIndex,
+            });
         }
         return photoDicc;
     }

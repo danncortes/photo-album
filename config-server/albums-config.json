@@ -3374,31 +3374,6 @@
           }
         ],
         "template": "6-1-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "",
-            "folder": "",
-            "styles": []
-          },
-          {
-            "fileName": "",
-            "folder": "",
-            "styles": []
-          }
-        ],
-        "template": "2-1-2"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "",
-            "folder": "",
-            "styles": []
-          }
-        ],
-        "template": "1"
       }
     ]
   },
