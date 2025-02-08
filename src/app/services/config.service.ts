@@ -105,6 +105,12 @@ export class ConfigService {
         return this.http.get(`http://localhost:3333/album/check/${id}`);
     }
 
+    createAlbum(album: Album) {
+        return this.http.post('http://localhost:3333/album/create', {
+            data: album,
+        });
+    }
+
     getAlbums() {
         const responseSubject = new Subject<void>();
         this.isAlbumPreviewLoading.set(true);

@@ -1,0 +1,15 @@
+<label [for]="id()">{{ label() }}</label>
+<input
+    class="text-input"
+    [class]="{ 'input-error': showError() }"
+    [type]="type()"
+    [id]="id()"
+    [value]="value()"
+    (input)="onInput($any($event.target).value)"
+    (blur)="onTouched()"
+/>
+@if (showError()) {
+    <div class="control-error">
+        {{ errorMessage() }}
+    </div>
+}

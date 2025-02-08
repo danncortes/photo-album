@@ -9,15 +9,18 @@ import {
 import { Dialog, DialogRef } from '@angular/cdk/dialog';
 import domtoimage from 'dom-to-image-more';
 
+import { OverlayModule } from '@angular/cdk/overlay';
+
 import { AlbumSettings, Page, ShiftDirection } from '../../../types';
 import { ConfigService } from '../../services/config.service';
 import { TemplatesComponent } from '../templates/templates.component';
 import { PhotoComponent } from '../photo/photo.component';
+import { CdkMenu, CdkMenuTrigger } from '@angular/cdk/menu';
 
 @Component({
     selector: 'app-page',
     standalone: true,
-    imports: [PhotoComponent],
+    imports: [PhotoComponent, OverlayModule],
     templateUrl: './page.component.html',
     styleUrl: './page.component.scss',
 })
@@ -28,6 +31,7 @@ export class PageComponent {
     dialog = inject(Dialog);
     pageHeight = 400;
     shiftOptions: ShiftDirection[] = ['◀️', '▶️'];
+    isOpen = false;
 
     constructor(private configService: ConfigService) {}
 
@@ -138,6 +142,8 @@ export class PageComponent {
                 console.error('Failed to capture image', error);
             });
     }
+
+    configPage(pageIndex: number) {}
 
     trackByFn(i: number) {
         return i;

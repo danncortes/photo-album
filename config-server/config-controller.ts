@@ -75,7 +75,7 @@ export async function getAlbum(req: Request, res: Response) {
             `Error getting Album ${req.params['id']} ${configPath}:`,
             error,
         );
-        res.status(500).send('Error');
+        res.status(400).send('Error');
     }
 }
 
@@ -107,6 +107,39 @@ export async function saveAlbum(req: Request, res: Response) {
     } catch (error) {
         console.error(`Error saving album:`, error);
         res.status(500).send('Error');
+    }
+}
+
+export async function createAlbum(req: Request, res: Response) {
+    const album = req.body.data as Album;
+    const { name, id, originFolder } = album;
+
+    try {
+        if (!name || !id || !originFolder) {
+            throw 'Incomplete data';
+        }
+
+        try {
+            await fs.symlink(
+                originFolder,
+                path.resolve(__dirname, '../src/assets/albums', id),
+                'dir',
+            );
+        } catch (error) {
+            res.status(400).send(error);
+            console.error('Error creating the symlink:', error);
+            return;
+        }
+
+        const albumsConfig: AlbumsConfig = await getAlbumsConfigFileData();
+
+        albumsConfig[id] = album;
+
+        await saveAlbumsConfigDataFile(configPath, albumsConfig);
+        res.status(200).send();
+    } catch (error) {
+        console.error(`Error creating album:`, error);
+        res.status(400).send(error);
     }
 }
 

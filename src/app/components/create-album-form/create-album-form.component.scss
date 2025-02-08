@@ -1,0 +1,11 @@
+.create-album-form {
+    .creation-error {
+        color: rgba(200, 0, 0, 1);
+        font-size: 0.8rem;
+    }
+    &__controls {
+        display: flex;
+        gap: 0.8rem;
+        justify-content: right;
+    }
+}

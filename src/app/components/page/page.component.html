@@ -18,6 +18,14 @@
 <div class="page-controls flex">
     <span class="page-controls__page">{{ pageIndex() + 1 }}</span>
     <div class="flex page-controls__right">
+        <button
+            class="button button--sm button--default"
+            cdkOverlayOrigin
+            #trigger="cdkOverlayOrigin"
+            (click)="isOpen = !isOpen"
+        >
+            Config
+        </button>
         <button class="button button--sm button--default" (click)="capture()">
             Download
         </button>
@@ -46,3 +54,11 @@
         </button>
     </div>
 </div>
+<ng-template
+    cdkConnectedOverlay
+    [cdkConnectedOverlayOrigin]="trigger"
+    [cdkConnectedOverlayOpen]="isOpen"
+    (detach)="isOpen = false"
+>
+    <div class="example-menu">Options</div>
+</ng-template>

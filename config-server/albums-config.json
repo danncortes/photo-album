@@ -3466,5 +3466,101 @@
         "template": "4-1"
       }
     ]
+  },
+  "Benni-theo": {
+    "name": "Benni theo",
+    "id": "Benni-theo",
+    "isGrouped": false,
+    "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/marcos-photos/benni-theo",
+    "activeFolder": null,
+    "photosDictionary": {
+      "IMG_6544.png": {
+        "pages": [
+          0,
+          1
+        ]
+      },
+      "IMG_6570.png": {
+        "pages": [
+          0,
+          1
+        ]
+      },
+      "IMG_6573.png": {
+        "pages": [
+          0,
+          1
+        ]
+      },
+      "IMG_6585.png": {
+        "pages": [
+          0,
+          1
+        ]
+      }
+    },
+    "pages": [
+      {
+        "photos": [
+          {
+            "fileName": "IMG_6570.png",
+            "folder": null,
+            "styles": []
+          },
+          {
+            "fileName": "IMG_6544.png",
+            "folder": null,
+            "styles": []
+          },
+          {
+            "fileName": "IMG_6573.png",
+            "folder": null,
+            "styles": []
+          },
+          {
+            "fileName": "IMG_6585.png",
+            "folder": null,
+            "styles": []
+          }
+        ],
+        "template": "4-3-3"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_6544.png",
+            "folder": null,
+            "styles": []
+          },
+          {
+            "fileName": "IMG_6570.png",
+            "folder": null,
+            "styles": []
+          },
+          {
+            "fileName": "IMG_6573.png",
+            "folder": null,
+            "styles": []
+          },
+          {
+            "fileName": "IMG_6585.png",
+            "folder": null,
+            "styles": []
+          }
+        ],
+        "template": "4-4-1"
+      }
+    ],
+    "settings": {
+      "padding-top": "0.3",
+      "padding-right": "0.3",
+      "padding-bottom": "0.3",
+      "padding-left": "0.3",
+      "format": {
+        "width": "30",
+        "height": "30"
+      },
+      "gap": "0.3"
+    }
   }
 }

@@ -1,26 +1,30 @@
-<div class="templates">
-    @for (templateGroups of data; track $index) {
-        <div class="template-group">
-            <p class="template-group__title">{{ $index + 1 }} Photo</p>
-            <div class="template-types">
-                @for (group of templateGroups; track $index) {
-                    <div class="template-type">
-                        @for (template of group; track $index) {
-                            <div
-                                class="page-template--{{ template }}"
-                                [title]="template"
-                                (click)="selectTemplate(template)"
-                            >
-                                <ng-container
-                                    *ngFor="let i of getPhotosNumber(template)"
+<div class="modal-card">
+    <div class="templates">
+        @for (templateGroups of data; track $index) {
+            <div class="template-group">
+                <p class="template-group__title">{{ $index + 1 }} Photo</p>
+                <div class="template-types">
+                    @for (group of templateGroups; track $index) {
+                        <div class="template-type">
+                            @for (template of group; track $index) {
+                                <div
+                                    class="page-template--{{ template }}"
+                                    [title]="template"
+                                    (click)="selectTemplate(template)"
                                 >
-                                    <div></div>
-                                </ng-container>
-                            </div>
-                        }
-                    </div>
-                }
+                                    <ng-container
+                                        *ngFor="
+                                            let i of getPhotosNumber(template)
+                                        "
+                                    >
+                                        <div></div>
+                                    </ng-container>
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
             </div>
-        </div>
-    }
+        }
+    </div>
 </div>

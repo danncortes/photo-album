@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
     openNewAlbumDialog() {
         const dialogRef: DialogRef<Album, CreateAlbumFormComponent> =
             this.dialog.open(CreateAlbumFormComponent, {
-                minWidth: '600px',
+                maxWidth: '600px',
             });
 
         dialogRef.closed.subscribe((album: Album | undefined) => {
