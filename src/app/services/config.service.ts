@@ -1,17 +1,27 @@
-import { computed, Injectable, signal, WritableSignal } from '@angular/core';
+import {
+    computed,
+    ElementRef,
+    Injectable,
+    signal,
+    WritableSignal,
+} from '@angular/core';
 import {
     Album,
     AlbumPreview,
     GroupedAlbum,
     GroupedDictionary,
     Pages,
+    PageStyles,
     PhotoConfig,
     PhotosDictionary,
     ShiftDirection,
 } from '../../types';
 import { HttpClient } from '@angular/common/http';
-import { concatMap, Subject } from 'rxjs';
+import { concatMap, Observable, of, Subject } from 'rxjs';
 import { Router } from '@angular/router';
+
+import domtoimage from 'dom-to-image-more';
+import JSZip from 'jszip';
 
 @Injectable({
     providedIn: 'root',
@@ -19,6 +29,7 @@ import { Router } from '@angular/router';
 export class ConfigService {
     albumsPreview: WritableSignal<AlbumPreview[] | null> = signal(null);
     isAlbumPreviewLoading = signal(false);
+    pageDivElements = signal<ElementRef<HTMLElement>[]>([]);
 
     album: WritableSignal<Album | null> = signal(null);
     isAlbumLoading = signal(true);
@@ -72,6 +83,8 @@ export class ConfigService {
             ['5-3-1', '5-3-2', '5-3-3', '5-3-4', '5-3-5'],
         ],
         [['6-1-1', '6-1-2']],
+        [['7-1-1', '7-1-2']],
+        [['8-1-1', '8-1-2']],
     ]);
 
     albumChanged = new Subject<string>();
@@ -819,6 +832,97 @@ export class ConfigService {
 
             this.albumChanged.next('Page position changed');
         }
+    }
+
+    updatePageSettings(
+        pageStyles: PageStyles,
+        pageIndex: number,
+    ): Observable<Album> {
+        const updatedAlbum: Album = {
+            ...this.album()!,
+        };
+
+        delete this.album()!.pages[pageIndex].format;
+        delete this.album()!.pages[pageIndex].gap;
+        delete this.album()!.pages[pageIndex].paddingTop;
+        delete this.album()!.pages[pageIndex].paddingRight;
+        delete this.album()!.pages[pageIndex].paddingBottom;
+        delete this.album()!.pages[pageIndex].paddingLeft;
+
+        updatedAlbum.pages[pageIndex] = {
+            ...this.album()!.pages[pageIndex],
+            ...pageStyles,
+        };
+
+        this.album.set(updatedAlbum);
+        this.albumChanged.next('Page settings changed');
+        return of(updatedAlbum);
+    }
+
+    addPageDivElement(pageDivELement: ElementRef<HTMLElement>) {
+        this.pageDivElements.update((pageDivElements) => [
+            ...pageDivElements,
+            pageDivELement,
+        ]);
+    }
+
+    capturePage(divElement: ElementRef<HTMLElement>) {
+        const element = divElement.nativeElement;
+        return domtoimage.toBlob(element, {
+            width: 3550, // Desired output width in pixels
+            height: 3550, // Desired output height in pixels
+            style: {
+                transform: 'scale(8.87)', // 3550 / 400 = 8.87 (scaling factor)
+                transformOrigin: 'top left',
+            },
+        });
+    }
+
+    async downloadAlbumPage(
+        divElement: ElementRef<HTMLElement>,
+        fileName: string,
+    ) {
+        const blob = await this.capturePage(divElement);
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = fileName;
+        link.click();
+        URL.revokeObjectURL(url);
+    }
+
+    async generatePageImages() {
+        const images: Blob[] = [];
+
+        for (let i = 0; i < this.pageDivElements().length; i++) {
+            try {
+                const blob = await this.capturePage(this.pageDivElements()[i]);
+                images.push(blob);
+            } catch (error) {
+                console.error(`Error capturing element ${i}:`, error);
+            }
+        }
+
+        return images;
+    }
+
+    async downloadAlbumPages(albumName: string) {
+        const images = await this.generatePageImages();
+
+        const zip = new JSZip();
+
+        images.forEach((blob, index) => {
+            zip.file(`${albumName}-${index + 1}.png`, blob);
+        });
+
+        const zipBlob = await zip.generateAsync({ type: 'blob' });
+        const downloadLink = document.createElement('a');
+        downloadLink.href = URL.createObjectURL(zipBlob);
+        downloadLink.download = `${albumName}-images`;
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+        URL.revokeObjectURL(downloadLink.href);
     }
 
     clearAlbum() {

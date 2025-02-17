@@ -1,74 +1,88 @@
 import {
+    AfterContentInit,
     Component,
     computed,
     ElementRef,
     inject,
     input,
-    ViewChild,
+    viewChild,
 } from '@angular/core';
 import { Dialog, DialogRef } from '@angular/cdk/dialog';
-import domtoimage from 'dom-to-image-more';
-
-import { OverlayModule } from '@angular/cdk/overlay';
 
 import { AlbumSettings, Page, ShiftDirection } from '../../../types';
 import { ConfigService } from '../../services/config.service';
 import { TemplatesComponent } from '../templates/templates.component';
 import { PhotoComponent } from '../photo/photo.component';
+import { PageSettingsComponent } from '../page-settings/page-settings.component';
 import { CdkMenu, CdkMenuTrigger } from '@angular/cdk/menu';
 
 @Component({
     selector: 'app-page',
     standalone: true,
-    imports: [PhotoComponent, OverlayModule],
+    imports: [PhotoComponent, CdkMenu, CdkMenuTrigger, PageSettingsComponent],
     templateUrl: './page.component.html',
     styleUrl: './page.component.scss',
 })
-export class PageComponent {
+export class PageComponent implements AfterContentInit {
     page = input.required<Page>();
     pageIndex = input.required<number>();
     pagesLength = input.required<number>();
     dialog = inject(Dialog);
     pageHeight = 400;
     shiftOptions: ShiftDirection[] = ['◀️', '▶️'];
-    isOpen = false;
+    pageExportDiv =
+        viewChild.required<ElementRef<HTMLElement>>('pageExportDiv');
 
     constructor(private configService: ConfigService) {}
 
-    pageFormat = computed(() => {
+    ngAfterContentInit(): void {
+        this.configService.addPageDivElement(this.pageExportDiv());
+    }
+
+    pageHeightInCm = computed(() => {
         return (
-            this.page().format || this.configService.album()!.settings.format
+            this.page().format?.height ||
+            this.configService.album()!.settings.format.height
+        );
+    });
+
+    pageWidthInCm = computed(() => {
+        return (
+            this.page().format?.width ||
+            this.configService.album()!.settings.format.width
         );
     });
 
     pageWidth = computed(() => {
-        const { width, height } = this.pageFormat();
-        const proportion = Number(width) / Number(height);
+        const proportion =
+            Number(this.pageWidthInCm()) / Number(this.pageHeightInCm());
         return this.pageHeight * proportion + 'px';
     });
 
     gap = computed(() => {
-        const { height: pageHeightInCm } = this.pageFormat();
-
         const gapInCm =
-            this.page().gap || this.configService.album()!.settings.gap;
+            this.page().gap ?? this.configService.album()!.settings.gap;
 
         return (
-            (this.pageHeight * Number(gapInCm)) / Number(pageHeightInCm) + 'px'
+            (this.pageHeight * Number(gapInCm)) /
+                Number(this.pageHeightInCm()) +
+            'px'
         );
     });
 
     getPadding(position: string): string {
-        const { height: pageHeightInCm } = this.pageFormat();
-        const paddingPos = `padding-${position}`;
+        const posStr = position.charAt(0).toUpperCase() + position.slice(1);
+        const paddingPos = `padding${posStr}`;
         const padding =
-            this.page()[paddingPos as keyof Page] ||
+            this.page()[paddingPos as keyof Page] ??
             this.configService.album()!.settings[
                 paddingPos as keyof AlbumSettings
             ];
 
         return (
-            (this.pageHeight * Number(padding)) / Number(pageHeightInCm) + 'px'
+            (this.pageHeight * Number(padding)) /
+                Number(this.pageHeightInCm()) +
+            'px'
         );
     }
 
@@ -117,33 +131,12 @@ export class PageComponent {
         );
     }
 
-    @ViewChild('captureDiv', { static: false }) captureDiv!: ElementRef;
-
-    capture() {
-        const element = this.captureDiv.nativeElement;
-
-        // Set width and height directly for high-resolution output
-        domtoimage
-            .toPng(element, {
-                width: 3550, // Desired output width in pixels
-                height: 3550, // Desired output height in pixels
-                style: {
-                    transform: 'scale(8.87)', // 3550 / 400 = 8.87 (scaling factor)
-                    transformOrigin: 'top left',
-                },
-            })
-            .then((dataUrl: string) => {
-                const link = document.createElement('a');
-                link.href = dataUrl;
-                link.download = 'high-resolution-capture.png';
-                link.click();
-            })
-            .catch((error: any) => {
-                console.error('Failed to capture image', error);
-            });
+    downloadPage() {
+        this.configService.downloadAlbumPage(
+            this.pageExportDiv(),
+            `${this.configService.album()!.name}-${this.pageIndex() + 1}.png`,
+        );
     }
-
-    configPage(pageIndex: number) {}
 
     trackByFn(i: number) {
         return i;

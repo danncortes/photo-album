@@ -34,8 +34,11 @@ button.button {
     border-radius: 0.2rem;
 }
 
-button.button:disabled {
+button.button:not(.button--transparent):disabled {
     background-color: rgba(256, 256, 256, 0.7);
+}
+button.button--transparent:disabled {
+    background-color: unset;
 }
 
 button.button:not(:disabled) {
@@ -61,11 +64,16 @@ button.button:not(:disabled) {
     }
 
     &.button--sm {
-        height: 26px;
+        height: 24px;
         padding: 0.2rem 0.5rem;
     }
 
     &.button--md {
+    }
+
+    &.button--transparent {
+        background-color: transparent;
+        padding: 0.2rem 0.2rem;
     }
 }
 
@@ -174,11 +182,9 @@ button.button:not(:disabled) {
 }
 
 .form-group {
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
 
     label {
-        margin-bottom: 6px;
-        font-size: 0.85rem;
     }
 
     &__description {
@@ -193,11 +199,37 @@ button.button:not(:disabled) {
     }
 }
 
+.form-sm {
+    label {
+        font-size: 0.75rem;
+        margin-bottom: 4px;
+    }
+    input.text-input {
+        padding: 0 6px;
+        height: 22px;
+        font-size: 0.8rem;
+    }
+
+    .title {
+        margin-bottom: 0.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+.form-md {
+    label {
+        font-size: 0.85rem;
+        margin-bottom: 6px;
+    }
+    input.text-input {
+        padding: 0 8px;
+        height: 28px;
+    }
+}
+
 input.text-input {
     width: 100%;
-    padding: 4px 8px;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    height: 28px;
     box-sizing: border-box;
     border-radius: 4px;
     background-color: rgba(0, 0, 0, 0.02);

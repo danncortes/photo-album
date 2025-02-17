@@ -39,16 +39,16 @@ export type AlbumPreview = Pick<
 
 export type AlbumSettings = {
     format: PageFormat;
-    'padding-top': string;
-    'padding-bottom': string;
-    'padding-right': string;
-    'padding-left': string;
-    gap: string;
+    paddingTop: number;
+    paddingBottom: number;
+    paddingRight: number;
+    paddingLeft: number;
+    gap: number;
 };
 
 export type PageFormat = {
-    width: string;
-    height: string;
+    width?: number;
+    height?: number;
 };
 
 export type SingleDicc = PhotoInPage;
@@ -65,15 +65,18 @@ export type PhotoConfig = {
     styles: Array<string>;
 };
 
-export type Page = {
+export type PageStyles = {
     format?: PageFormat;
-    'padding-top'?: string;
-    'padding-bottom'?: string;
-    'padding-right'?: string;
-    'padding-left'?: string;
-    gap?: string;
+    paddingTop?: number;
+    paddingBottom?: number;
+    paddingRight?: number;
+    paddingLeft?: number;
+    gap?: number;
+};
+
+export type Page = {
     template: string;
     photos: Array<PhotoConfig>;
-};
+} & PageStyles;
 
 export type ShiftDirection = '◀️' | '▶️';

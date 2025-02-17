@@ -3,15 +3,15 @@
     "name": "2023",
     "id": "2023",
     "settings": {
-      "gap": "0.5",
+      "gap": 0.5,
       "format": {
-        "width": "30",
-        "height": "30"
+        "width": 30,
+        "height": 30
       },
-      "padding-top": "0.5",
-      "padding-right": "0.5",
-      "padding-bottom": "0.5",
-      "padding-left": "0.5"
+      "paddingTop": 0.5,
+      "paddingRight": 0.5,
+      "paddingBottom": 0.5,
+      "paddingLeft": 0.5
     },
     "isGrouped": true,
     "activeFolder": "12-diciembre",
@@ -2284,15 +2284,15 @@
     "name": "2024",
     "id": "2024",
     "settings": {
-      "gap": "0.5",
+      "gap": 0.5,
       "format": {
-        "width": "30",
-        "height": "30"
+        "width": 30,
+        "height": 30
       },
-      "padding-top": "0.5",
-      "padding-right": "0.5",
-      "padding-bottom": "0.5",
-      "padding-left": "0.5"
+      "paddingTop": 0.5,
+      "paddingRight": 0.5,
+      "paddingBottom": 0.5,
+      "paddingLeft": 0.5
     },
     "isGrouped": true,
     "activeFolder": "",
@@ -2302,15 +2302,11 @@
     "name": "Septiembre - Octubre 2022",
     "id": "2022-Sept-Oct",
     "settings": {
-      "gap": "0.4",
+      "gap": 0.4,
       "format": {
-        "width": "30",
-        "height": "30"
-      },
-      "padding-top": "",
-      "padding-right": "",
-      "padding-bottom": "",
-      "padding-left": ""
+        "width": 30,
+        "height": 30
+      }
     },
     "isGrouped": true,
     "activeFolder": "2022-12-diciembre",
@@ -2697,12 +2693,12 @@
         },
         "IMG_0006.png": {
           "pages": [
-            15
+            16
           ]
         },
         "IMG_0020.png": {
           "pages": [
-            15
+            16
           ]
         },
         "IMG_0023.png": {
@@ -2713,22 +2709,22 @@
         },
         "IMG_0027.png": {
           "pages": [
-            15
+            16
           ]
         },
         "IMG_0044.png": {
           "pages": [
-            15
+            16
           ]
         },
         "IMG_0048.png": {
           "pages": [
-            15
+            16
           ]
         },
         "IMG_0050.png": {
           "pages": [
-            15
+            16
           ]
         },
         "IMG_0052.png": {
@@ -2738,7 +2734,9 @@
           "pages": []
         },
         "IMG_0061.png": {
-          "pages": []
+          "pages": [
+            17
+          ]
         },
         "IMG_0068.png": {
           "pages": []
@@ -2747,25 +2745,35 @@
           "pages": []
         },
         "IMG_0076.png": {
-          "pages": []
+          "pages": [
+            17
+          ]
         },
         "IMG_0079.png": {
           "pages": []
         },
         "IMG_0087.png": {
-          "pages": []
+          "pages": [
+            17
+          ]
         },
         "IMG_0103.png": {
-          "pages": []
+          "pages": [
+            17
+          ]
         },
         "IMG_0106.png": {
           "pages": []
         },
         "IMG_0111.png": {
-          "pages": []
+          "pages": [
+            18
+          ]
         },
         "IMG_0123.png": {
-          "pages": []
+          "pages": [
+            18
+          ]
         },
         "IMG_0134.png": {
           "pages": []
@@ -2774,7 +2782,9 @@
           "pages": []
         },
         "IMG_0143.png": {
-          "pages": []
+          "pages": [
+            18
+          ]
         },
         "IMG_0145.png": {
           "pages": []
@@ -2795,10 +2805,14 @@
           "pages": []
         },
         "IMG_0176.png": {
-          "pages": []
+          "pages": [
+            19
+          ]
         },
         "IMG_0197.png": {
-          "pages": []
+          "pages": [
+            19
+          ]
         },
         "IMG_0201.png": {
           "pages": []
@@ -2807,10 +2821,14 @@
           "pages": []
         },
         "IMG_0203.png": {
-          "pages": []
+          "pages": [
+            19
+          ]
         },
         "IMG_0209.png": {
-          "pages": []
+          "pages": [
+            20
+          ]
         },
         "IMG_0214.png": {
           "pages": []
@@ -2819,7 +2837,9 @@
           "pages": []
         },
         "IMG_0244.png": {
-          "pages": []
+          "pages": [
+            20
+          ]
         },
         "IMG_0258.png": {
           "pages": []
@@ -2831,10 +2851,14 @@
           "pages": []
         },
         "IMG_0289.png": {
-          "pages": []
+          "pages": [
+            20
+          ]
         },
         "IMG_0303.png": {
-          "pages": []
+          "pages": [
+            20
+          ]
         },
         "IMG_0312.png": {
           "pages": []
@@ -2846,13 +2870,19 @@
           "pages": []
         },
         "IMG_0335.png": {
-          "pages": []
+          "pages": [
+            21
+          ]
         },
         "IMG_0352.png": {
-          "pages": []
+          "pages": [
+            20
+          ]
         },
         "IMG_0499.png": {
-          "pages": []
+          "pages": [
+            15
+          ]
         },
         "IMG_0506.png": {
           "pages": []
@@ -2861,16 +2891,22 @@
           "pages": []
         },
         "IMG_0518.png": {
-          "pages": []
+          "pages": [
+            21
+          ]
         },
         "IMG_0526.png": {
           "pages": []
         },
         "IMG_0529.png": {
-          "pages": []
+          "pages": [
+            15
+          ]
         },
         "IMG_0536.png": {
-          "pages": []
+          "pages": [
+            15
+          ]
         },
         "IMG_0539.png": {
           "pages": []
@@ -2879,16 +2915,22 @@
           "pages": []
         },
         "IMG_0565.png": {
-          "pages": []
+          "pages": [
+            23
+          ]
         },
         "IMG_0575.png": {
-          "pages": []
+          "pages": [
+            23
+          ]
         },
         "IMG_0588.png": {
           "pages": []
         },
         "IMG_0602.png": {
-          "pages": []
+          "pages": [
+            21
+          ]
         },
         "IMG_0624.png": {
           "pages": []
@@ -2900,25 +2942,37 @@
           "pages": []
         },
         "IMG_0673.png": {
-          "pages": []
+          "pages": [
+            19
+          ]
         },
         "IMG_9755.png": {
-          "pages": []
+          "pages": [
+            21
+          ]
         },
         "IMG_9788.png": {
           "pages": []
         },
         "IMG_9795.png": {
-          "pages": []
+          "pages": [
+            22
+          ]
         },
         "IMG_9819.png": {
-          "pages": []
+          "pages": [
+            21
+          ]
         },
         "IMG_9824.png": {
-          "pages": []
+          "pages": [
+            15
+          ]
         },
         "IMG_9857.png": {
-          "pages": []
+          "pages": [
+            23
+          ]
         },
         "IMG_9889.png": {
           "pages": []
@@ -2936,16 +2990,22 @@
           "pages": []
         },
         "IMG_9945.png": {
-          "pages": []
+          "pages": [
+            23
+          ]
         },
         "IMG_9962.png": {
           "pages": []
         },
         "IMG_9986.png": {
-          "pages": []
+          "pages": [
+            22
+          ]
         },
         "IMG_9997.png": {
-          "pages": []
+          "pages": [
+            22
+          ]
         },
         "a60df48e-7dc4-47e6-83fd-cab9875bc209.png": {
           "pages": []
@@ -3343,6 +3403,35 @@
       {
         "photos": [
           {
+            "fileName": "IMG_0529.png",
+            "folder": "2022-12-diciembre",
+            "styles": [
+              "object-position: top;"
+            ]
+          },
+          {
+            "fileName": "IMG_0536.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_9824.png",
+            "folder": "2022-12-diciembre",
+            "styles": [
+              "object-position: top;"
+            ]
+          },
+          {
+            "fileName": "IMG_0499.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          }
+        ],
+        "template": "4-1"
+      },
+      {
+        "photos": [
+          {
             "fileName": "IMG_0006.png",
             "folder": "2022-12-diciembre",
             "styles": []
@@ -3374,6 +3463,187 @@
           }
         ],
         "template": "6-1-1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_0061.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_0076.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_0087.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_0103.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          }
+        ],
+        "template": "4-1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_0143.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_0123.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_0111.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          }
+        ],
+        "template": "3-1-2"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_0197.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_0203.png",
+            "folder": "2022-12-diciembre",
+            "styles": [
+              "object-position: bottom;"
+            ]
+          },
+          {
+            "fileName": "IMG_0176.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_0673.png",
+            "folder": "2022-12-diciembre",
+            "styles": [
+              "object-position: top;"
+            ]
+          }
+        ],
+        "template": "4-1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_0244.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_0289.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_0352.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_0209.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_0303.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          }
+        ],
+        "template": "5-1-3"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_0602.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_0335.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_0518.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_9755.png",
+            "folder": "2022-12-diciembre",
+            "styles": [
+              "object-position: top;"
+            ]
+          },
+          {
+            "fileName": "IMG_9819.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          }
+        ],
+        "template": "5-3-1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_9997.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_9986.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_9795.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          }
+        ],
+        "template": "3-1-2"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_0575.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_9857.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_9945.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_0565.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          }
+        ],
+        "template": "4-3-3"
       }
     ]
   },
@@ -3381,15 +3651,15 @@
     "name": "prueba-nueva",
     "id": "prueba",
     "settings": {
-      "gap": "0.5",
+      "gap": 0.5,
       "format": {
-        "width": "30",
-        "height": "30"
+        "width": 30,
+        "height": 30
       },
-      "padding-top": "0.5",
-      "padding-right": "0.5",
-      "padding-bottom": "0.5",
-      "padding-left": "0.5"
+      "paddingTop": 0.5,
+      "paddingRight": 0.5,
+      "paddingBottom": 0.5,
+      "paddingLeft": 0.5
     },
     "isGrouped": false,
     "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/marcos-photos/prueba",
@@ -3549,18 +3819,61 @@
           }
         ],
         "template": "4-4-1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          }
+        ],
+        "template": "7-1-1",
+        "format": {
+          "width": 25
+        }
       }
     ],
     "settings": {
-      "padding-top": "0.3",
-      "padding-right": "0.3",
-      "padding-bottom": "0.3",
-      "padding-left": "0.3",
+      "paddingTop": 0.3,
+      "paddingRight": 0.3,
+      "paddingBottom": 0.3,
+      "paddingLeft": 0.3,
       "format": {
-        "width": "30",
-        "height": "30"
+        "width": 30,
+        "height": 30
       },
-      "gap": "0.3"
+      "gap": 0.3
     }
   }
 }

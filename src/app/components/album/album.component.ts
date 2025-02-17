@@ -50,6 +50,11 @@ export class AlbumComponent implements OnInit, OnDestroy {
 
     goHome() {
         this.router.navigate(['/']);
+        this.configService.activeFolder.set(null);
+    }
+
+    downloadPages() {
+        this.configService.downloadAlbumPages(this.configService.album()!.name);
     }
 
     ngOnDestroy(): void {

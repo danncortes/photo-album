@@ -26,8 +26,8 @@ import { CustomInputComponent } from '../custom-input/custom-input.component';
     styleUrl: './create-album-form.component.scss',
 })
 export class CreateAlbumFormComponent implements OnInit {
-    defaultPadding = '0.5';
-    defaultSize = '30';
+    defaultPadding = 0.5;
+    defaultSize = 30;
 
     form = new FormGroup({
         name: new FormControl<string>('', {
@@ -222,10 +222,7 @@ export class CreateAlbumFormComponent implements OnInit {
     }
 
     showNumberFieldError(fieldName: string) {
-        const { touched, invalid } = this.form.get(
-            fieldName,
-        ) as AbstractControl;
-        return touched && invalid;
+        return (this.form.get(fieldName) as AbstractControl).invalid;
     }
 
     numberFieldValidators() {
@@ -283,15 +280,15 @@ export class CreateAlbumFormComponent implements OnInit {
             photosDictionary: {},
             pages: [],
             settings: {
-                'padding-top': String(paddingTop || this.defaultPadding),
-                'padding-right': String(paddingRight || this.defaultPadding),
-                'padding-bottom': String(paddingBottom || this.defaultPadding),
-                'padding-left': String(paddingLeft || this.defaultPadding),
+                paddingTop: paddingTop || this.defaultPadding,
+                paddingRight: paddingRight || this.defaultPadding,
+                paddingBottom: paddingBottom || this.defaultPadding,
+                paddingLeft: paddingLeft || this.defaultPadding,
                 format: {
-                    width: String(pageWidth || this.defaultSize),
-                    height: String(pageHeight || this.defaultSize),
+                    width: pageWidth || this.defaultSize,
+                    height: pageHeight || this.defaultSize,
                 },
-                gap: String(gap || this.defaultPadding),
+                gap: gap || this.defaultPadding,
             },
         };
 

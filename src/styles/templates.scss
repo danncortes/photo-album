@@ -337,6 +337,17 @@ div[class*='page-template--4-2-'] {
         'five six';
 }
 
+.page-template--7-1-1 {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+        'one one one two two two'
+        'one one one two two two'
+        'one one one three four four'
+        'five five six six seven seven'
+        'five five six six seven seven';
+}
+
 div[class*='page-template--'] {
     & > *:nth-child(1) {
         grid-area: one;
@@ -360,5 +371,13 @@ div[class*='page-template--'] {
 
     & > *:nth-child(6) {
         grid-area: six;
+    }
+
+    & > *:nth-child(7) {
+        grid-area: seven;
+    }
+
+    & > *:nth-child(8) {
+        grid-area: eight;
     }
 }
