@@ -7,7 +7,6 @@ import { ConfigService } from '../../services/config.service';
 
 @Component({
     selector: 'app-photo',
-    standalone: true,
     imports: [CdkMenu, CdkMenuTrigger, NgFor],
     templateUrl: './photo.component.html',
     styleUrl: './photo.component.scss',

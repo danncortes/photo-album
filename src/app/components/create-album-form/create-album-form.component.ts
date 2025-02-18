@@ -20,10 +20,9 @@ import { CustomInputComponent } from '../custom-input/custom-input.component';
 
 @Component({
     selector: 'app-create-album-form',
-    standalone: true,
     imports: [FormsModule, ReactiveFormsModule, CustomInputComponent],
     templateUrl: './create-album-form.component.html',
-    styleUrl: './create-album-form.component.scss',
+    styleUrl: './create-album-form.component.scss'
 })
 export class CreateAlbumFormComponent implements OnInit {
     defaultPadding = 0.5;

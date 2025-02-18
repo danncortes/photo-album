@@ -18,10 +18,9 @@ import { CdkMenu, CdkMenuTrigger } from '@angular/cdk/menu';
 
 @Component({
     selector: 'app-page',
-    standalone: true,
     imports: [PhotoComponent, CdkMenu, CdkMenuTrigger, PageSettingsComponent],
     templateUrl: './page.component.html',
-    styleUrl: './page.component.scss',
+    styleUrl: './page.component.scss'
 })
 export class PageComponent implements AfterContentInit {
     page = input.required<Page>();

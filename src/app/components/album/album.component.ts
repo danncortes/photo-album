@@ -10,10 +10,9 @@ import { TemplatesComponent } from '../templates/templates.component';
 
 @Component({
     selector: 'app-album',
-    standalone: true,
     imports: [GalleryComponent, PagesComponent],
     templateUrl: './album.component.html',
-    styleUrl: './album.component.scss',
+    styleUrl: './album.component.scss'
 })
 export class AlbumComponent implements OnInit, OnDestroy {
     dialog = inject(Dialog);

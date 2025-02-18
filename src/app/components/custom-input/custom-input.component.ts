@@ -7,7 +7,6 @@ import {
 
 @Component({
     selector: 'app-custom-input',
-    standalone: true,
     imports: [ReactiveFormsModule],
     providers: [
         {

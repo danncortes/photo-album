@@ -6,10 +6,9 @@ import { GroupedDictionary } from '../../../types';
 
 @Component({
     selector: 'app-folder',
-    standalone: true,
     imports: [NgFor, KeyValuePipe],
     templateUrl: './folder.component.html',
-    styleUrl: './folder.component.scss',
+    styleUrl: './folder.component.scss'
 })
 export class FolderComponent {
     photosDictionary = input.required<GroupedDictionary>();

@@ -12,10 +12,9 @@ import { ConfigService } from '../../services/config.service';
 
 @Component({
     selector: 'app-gallery',
-    standalone: true,
     imports: [NgFor, ThumbnailComponent, FolderComponent],
     templateUrl: './gallery.component.html',
-    styleUrl: './gallery.component.scss',
+    styleUrl: './gallery.component.scss'
 })
 export class GalleryComponent {
     constructor(public configService: ConfigService) {}

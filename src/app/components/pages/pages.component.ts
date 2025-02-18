@@ -5,7 +5,6 @@ import { Pages } from '../../../types';
 
 @Component({
     selector: 'app-pages',
-    standalone: true,
     imports: [PageComponent],
     templateUrl: './pages.component.html',
     styleUrl: './pages.component.scss',

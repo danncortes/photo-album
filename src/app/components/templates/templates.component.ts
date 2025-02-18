@@ -7,10 +7,9 @@ import { Page } from '../../../types';
 
 @Component({
     selector: 'app-templates',
-    standalone: true,
     imports: [NgFor],
     templateUrl: './templates.component.html',
-    styleUrl: './templates.component.scss',
+    styleUrl: './templates.component.scss'
 })
 export class TemplatesComponent {
     dialogRef = inject<DialogRef<string>>(DialogRef<Page>);

@@ -5,10 +5,9 @@ import { ConfigService } from '../../services/config.service';
 
 @Component({
     selector: 'app-thumbnail',
-    standalone: true,
     imports: [CdkMenuTrigger, CdkMenu, CdkMenuItem],
     templateUrl: './thumbnail.component.html',
-    styleUrl: './thumbnail.component.scss',
+    styleUrl: './thumbnail.component.scss'
 })
 export class ThumbnailComponent {
     activeFolder = input<string | null>();

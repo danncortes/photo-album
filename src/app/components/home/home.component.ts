@@ -8,10 +8,9 @@ import { CreateAlbumFormComponent } from '../create-album-form/create-album-form
 
 @Component({
     selector: 'app-home',
-    standalone: true,
     imports: [],
     templateUrl: './home.component.html',
-    styleUrl: './home.component.scss',
+    styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
     dialog = inject(Dialog);

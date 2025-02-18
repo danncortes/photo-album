@@ -10,10 +10,9 @@ import { ConfigService } from '../../services/config.service';
 
 @Component({
     selector: 'app-page-settings',
-    standalone: true,
     imports: [ReactiveFormsModule, CustomInputComponent],
     templateUrl: './page-settings.component.html',
-    styleUrl: './page-settings.component.scss',
+    styleUrl: './page-settings.component.scss'
 })
 export class PageSettingsComponent implements AfterViewInit {
     pageIndex = input.required<number>();
