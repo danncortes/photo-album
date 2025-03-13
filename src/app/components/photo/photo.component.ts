@@ -1,13 +1,14 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { CdkMenu, CdkMenuTrigger } from '@angular/cdk/menu';
-import { NgFor } from '@angular/common';
+import { NgFor, NgForOf } from '@angular/common';
 
 import { PhotoConfig, ShiftDirection } from '../../../types';
 import { ConfigService } from '../../services/config.service';
+import { AlbumStore } from '../../store/albums.store';
 
 @Component({
     selector: 'app-photo',
-    imports: [CdkMenu, CdkMenuTrigger, NgFor],
+    imports: [NgFor, CdkMenu, CdkMenuTrigger],
     templateUrl: './photo.component.html',
     styleUrl: './photo.component.scss',
 })
@@ -16,6 +17,7 @@ export class PhotoComponent {
     photoIndex = input.required<number>();
     pageIndex = input.required<number>();
     pagesPhotosLength = input.required<number>();
+    readonly store = inject(AlbumStore);
 
     alignmentOptions = ['top', 'bottom', 'right', 'left'];
     shiftOptions: ShiftDirection[] = ['◀️', '▶️'];
@@ -24,7 +26,7 @@ export class PhotoComponent {
 
     getPhotoSrc(photo: PhotoConfig) {
         const { folder, fileName } = photo;
-        const { id } = this.configService.album()!;
+        const { id } = this.store.activeAlbum()!;
         return `assets/albums/${id}${folder ? `/${folder}` : ''}/${fileName}`;
     }
 

@@ -1,7 +1,7 @@
-import { Component, input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import { PageComponent } from '../page/page.component';
-import { Pages } from '../../../types';
+import { AlbumStore } from '../../store/albums.store';
 
 @Component({
     selector: 'app-pages',
@@ -10,5 +10,5 @@ import { Pages } from '../../../types';
     styleUrl: './pages.component.scss',
 })
 export class PagesComponent {
-    pages = input.required<Pages>();
+    readonly store = inject(AlbumStore);
 }

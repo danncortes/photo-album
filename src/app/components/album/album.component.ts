@@ -5,27 +5,27 @@ import { Router } from '@angular/router';
 
 import { GalleryComponent } from '../gallery/gallery.component';
 import { PagesComponent } from '../pages/pages.component';
-import { ConfigService } from '../../services/config.service';
 import { TemplatesComponent } from '../templates/templates.component';
+import { AlbumStore } from '../../store/albums.store';
 
 @Component({
     selector: 'app-album',
     imports: [GalleryComponent, PagesComponent],
     templateUrl: './album.component.html',
-    styleUrl: './album.component.scss'
+    styleUrl: './album.component.scss',
 })
 export class AlbumComponent implements OnInit, OnDestroy {
     dialog = inject(Dialog);
+    readonly store = inject(AlbumStore);
 
     constructor(
-        public configService: ConfigService,
         private route: ActivatedRoute,
         private router: Router,
     ) {}
 
     ngOnInit() {
-        this.route.params.subscribe((params) => {
-            this.configService.checkAndGetAlbum(params['id']);
+        this.route.params.subscribe(async (params) => {
+            await this.store.checkAndGetAlbum(params['id']);
         });
     }
 
@@ -33,30 +33,27 @@ export class AlbumComponent implements OnInit, OnDestroy {
         const dialogRef: DialogRef<string, TemplatesComponent> =
             this.dialog.open(TemplatesComponent, {
                 minWidth: '600px',
-                data: this.configService.templates(),
+                data: this.store.templates(),
             });
 
         dialogRef.closed.subscribe((template: string | undefined) => {
             if (template) {
-                this.addPage(template);
+                this.store.addPage(template);
             }
         });
     }
 
-    addPage(template: string) {
-        this.configService.addPage(template);
-    }
-
     goHome() {
         this.router.navigate(['/']);
-        this.configService.activeFolder.set(null);
+        this.store.setActiveFolder(null);
     }
 
     downloadPages() {
-        this.configService.downloadAlbumPages(this.configService.album()!.name);
+        this.store.downloadAlbumPages(this.store.activeAlbum()!.name);
     }
 
     ngOnDestroy(): void {
-        this.configService.clearAlbum();
+        this.store.clearAlbum();
+        this.store.clearPageDivElements();
     }
 }

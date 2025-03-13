@@ -8,25 +8,28 @@ import {
     viewChild,
 } from '@angular/core';
 import { Dialog, DialogRef } from '@angular/cdk/dialog';
+import { CdkMenu, CdkMenuTrigger } from '@angular/cdk/menu';
 
-import { AlbumSettings, Page, ShiftDirection } from '../../../types';
+import { StyleSettings, Page, ShiftDirection } from '../../../types';
 import { ConfigService } from '../../services/config.service';
 import { TemplatesComponent } from '../templates/templates.component';
 import { PhotoComponent } from '../photo/photo.component';
 import { PageSettingsComponent } from '../page-settings/page-settings.component';
-import { CdkMenu, CdkMenuTrigger } from '@angular/cdk/menu';
+import { AlbumStore } from '../../store/albums.store';
 
 @Component({
     selector: 'app-page',
     imports: [PhotoComponent, CdkMenu, CdkMenuTrigger, PageSettingsComponent],
     templateUrl: './page.component.html',
-    styleUrl: './page.component.scss'
+    styleUrl: './page.component.scss',
 })
 export class PageComponent implements AfterContentInit {
     page = input.required<Page>();
     pageIndex = input.required<number>();
     pagesLength = input.required<number>();
     dialog = inject(Dialog);
+    readonly store = inject(AlbumStore);
+
     pageHeight = 400;
     shiftOptions: ShiftDirection[] = ['◀️', '▶️'];
     pageExportDiv =
@@ -35,20 +38,20 @@ export class PageComponent implements AfterContentInit {
     constructor(private configService: ConfigService) {}
 
     ngAfterContentInit(): void {
-        this.configService.addPageDivElement(this.pageExportDiv());
+        this.store.addPageDivElement(this.pageExportDiv());
     }
 
     pageHeightInCm = computed(() => {
         return (
             this.page().format?.height ||
-            this.configService.album()!.settings.format.height
+            this.store.activeAlbum()!.settings.format.height
         );
     });
 
     pageWidthInCm = computed(() => {
         return (
             this.page().format?.width ||
-            this.configService.album()!.settings.format.width
+            this.store.activeAlbum()!.settings.format.width
         );
     });
 
@@ -60,7 +63,7 @@ export class PageComponent implements AfterContentInit {
 
     gap = computed(() => {
         const gapInCm =
-            this.page().gap ?? this.configService.album()!.settings.gap;
+            this.page().gap ?? this.store.activeAlbum()!.settings.gap;
 
         return (
             (this.pageHeight * Number(gapInCm)) /
@@ -74,8 +77,8 @@ export class PageComponent implements AfterContentInit {
         const paddingPos = `padding${posStr}`;
         const padding =
             this.page()[paddingPos as keyof Page] ??
-            this.configService.album()!.settings[
-                paddingPos as keyof AlbumSettings
+            this.store.activeAlbum()!.settings[
+                paddingPos as keyof StyleSettings
             ];
 
         return (
@@ -93,7 +96,7 @@ export class PageComponent implements AfterContentInit {
         const dialogRef: DialogRef<string, TemplatesComponent> =
             this.dialog.open(TemplatesComponent, {
                 minWidth: '600px',
-                data: this.configService.templates(),
+                data: this.store.templates(),
             });
 
         dialogRef.closed.subscribe((template: string | undefined) => {
@@ -105,7 +108,7 @@ export class PageComponent implements AfterContentInit {
 
     changePageTemplate(template: string) {
         if (this.page().template !== template) {
-            this.configService.changePageTemplate({
+            this.store.changePageTemplate({
                 pageIndex: this.pageIndex(),
                 template,
             });
@@ -113,7 +116,7 @@ export class PageComponent implements AfterContentInit {
     }
 
     removePage(): void {
-        this.configService.removePage(this.pageIndex());
+        this.store.removePage(this.pageIndex());
     }
 
     shiftPagePosition(direction: ShiftDirection) {
@@ -133,7 +136,7 @@ export class PageComponent implements AfterContentInit {
     downloadPage() {
         this.configService.downloadAlbumPage(
             this.pageExportDiv(),
-            `${this.configService.album()!.name}-${this.pageIndex() + 1}.png`,
+            `${this.store.activeAlbum()!.name}-${this.pageIndex() + 1}.png`,
         );
     }
 

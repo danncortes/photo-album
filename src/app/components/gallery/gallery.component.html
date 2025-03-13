@@ -1,18 +1,13 @@
 <div class="gallery">
-    @if (this.configService.album()!.isGrouped) {
+    @if (store.activeAlbum()?.isGrouped) {
         <app-folder [photosDictionary]="getGroupedDictionary()" />
     }
 
-    @if (thumbnails().length) {
+    @if (store.thumbnails()) {
         <div class="gallery__thumbnails">
             <app-thumbnail
-                *ngFor="
-                    let thumbnail of thumbnails();
-                    let i = index;
-                    trackBy: trackByFn
-                "
+                *ngFor="let thumbnail of store.thumbnails() | keyvalue"
                 [photo]="thumbnail"
-                [activeFolder]="this.configService.activeFolder()"
             />
         </div>
     }

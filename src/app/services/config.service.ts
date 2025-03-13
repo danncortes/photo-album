@@ -8,7 +8,6 @@ import {
 import {
     Album,
     AlbumPreview,
-    GroupedAlbum,
     GroupedDictionary,
     Pages,
     PageStyles,
@@ -17,7 +16,7 @@ import {
     ShiftDirection,
 } from '../../types';
 import { HttpClient } from '@angular/common/http';
-import { concatMap, Observable, of, Subject } from 'rxjs';
+import { firstValueFrom, Observable, of, Subject } from 'rxjs';
 import { Router } from '@angular/router';
 
 import domtoimage from 'dom-to-image-more';
@@ -40,82 +39,27 @@ export class ConfigService {
         return this.album()?.isGrouped || false;
     });
 
-    galleryPhotos = computed(() => {
-        const album = this.album()!;
-
-        if (album) {
-            if (album.isGrouped && album.activeFolder) {
-                return album.photosDictionary[album.activeFolder];
-            } else {
-                return album.photosDictionary;
-            }
-        } else {
-            return null;
-        }
-    });
-
-    templates: WritableSignal<string[][][]> = signal([
-        [['1']],
-        [['2-1-1', '2-1-2']],
-        [
-            ['3-1-1', '3-1-2', '3-1-3', '3-1-4'],
-            ['3-2-1', '3-2-2', '3-2-3', '3-2-4'],
-            [
-                '3-3-1',
-                '3-3-2',
-                '3-3-3',
-                '3-3-4',
-                '3-3-5',
-                '3-3-6',
-                '3-3-7',
-                '3-3-8',
-            ],
-        ],
-        [
-            ['4-1'],
-            ['4-2-1', '4-2-2', '4-2-3', '4-2-4'],
-            ['4-3-1', '4-3-2', '4-3-3', '4-3-4'],
-            ['4-4-1', '4-4-2', '4-4-3', '4-4-4'],
-        ],
-        [
-            ['5-1-1', '5-1-2', '5-1-3', '5-1-4'],
-            ['5-2-1', '5-2-2', '5-2-3', '5-2-4'],
-            ['5-3-1', '5-3-2', '5-3-3', '5-3-4', '5-3-5'],
-        ],
-        [['6-1-1', '6-1-2']],
-        [['7-1-1', '7-1-2']],
-        [['8-1-1', '8-1-2']],
-    ]);
-
     albumChanged = new Subject<string>();
 
     constructor(
         private http: HttpClient,
         public router: Router,
-    ) {
-        this.albumChanged.subscribe((value) => {
-            console.log('Album changed - ', value);
-            this.saveAlbum();
-        });
+    ) {}
+
+    getAlbums() {
+        return firstValueFrom(this.http.get('http://localhost:3333/albums'));
     }
 
-    selectFolder(folderName: string) {
-        this.activeFolder.set(folderName);
-
-        if (this.album()) {
-            this.album.update(
-                (album) =>
-                    ({
-                        ...album!,
-                        activeFolder: folderName,
-                    }) as GroupedAlbum,
-            );
-            this.albumChanged.next('Folder selected');
-        }
+    checkAlbum(albumId: string) {
+        return firstValueFrom(
+            this.http.get(`http://localhost:3333/album/check/${albumId}`),
+        );
     }
 
-    requestCheckAlbum(id: string) {
-        return this.http.get(`http://localhost:3333/album/check/${id}`);
+    getAlbum(albumId: string) {
+        return firstValueFrom(
+            this.http.get(`http://localhost:3333/album/${albumId}`),
+        );
     }
 
     createAlbum(album: Album) {
@@ -124,69 +68,10 @@ export class ConfigService {
         });
     }
 
-    getAlbums() {
-        const responseSubject = new Subject<void>();
-        this.isAlbumPreviewLoading.set(true);
-        this.http.get('http://localhost:3333/albums').subscribe({
-            next: (response) => {
-                this.albumsPreview.set(response as AlbumPreview[]);
-                this.isAlbumPreviewLoading.set(false);
-                responseSubject.next();
-            },
-            error: (error) => {
-                responseSubject.error(error);
-            },
-        });
-
-        return responseSubject;
-    }
-
-    getAlbum(id: string) {
-        const responseSubject = new Subject<void>();
-        this.http.get(`http://localhost:3333/album/${id}`).subscribe({
-            next: (response) => {
-                this.album.set(response as Album);
-
-                if ((response as Album).isGrouped) {
-                    this.activeFolder.set(
-                        (response as GroupedAlbum).activeFolder,
-                    );
-                }
-
-                responseSubject.next();
-            },
-            error: (error) => {
-                responseSubject.error(error);
-            },
-        });
-
-        return responseSubject;
-    }
-
-    checkAndGetAlbum(id: string) {
-        this.isAlbumLoading.set(true);
-        const responseSubject = new Subject<void>();
-        this.requestCheckAlbum(id)
-            .pipe(concatMap(() => this.getAlbum(id)))
-            .subscribe({
-                next: () => {
-                    responseSubject.next();
-                },
-                error: (error) => {
-                    responseSubject.error(error);
-                },
-            })
-            .add(() => {
-                this.isAlbumLoading.set(false);
-            });
-
-        return responseSubject;
-    }
-
-    saveAlbum() {
+    saveAlbum(album: Album) {
         this.http
             .post('http://localhost:3333/album/save', {
-                config: this.album(),
+                config: album,
             })
             .subscribe(() => {
                 console.log('Config saved');
@@ -194,12 +79,12 @@ export class ConfigService {
     }
 
     addPage(template: string) {
-        const [pageNumbers] = template;
+        const [nPhotos] = template;
 
         const pages: Pages = [
             ...this.album()!.pages,
             {
-                photos: Array.from({ length: Number(pageNumbers) }).map(() => ({
+                photos: Array.from({ length: Number(nPhotos) }).map(() => ({
                     fileName: '',
                     folder: '',
                     styles: [],
@@ -322,79 +207,6 @@ export class ConfigService {
         this.albumChanged.next('Photo removed');
     }
 
-    changePageTemplate({
-        pageIndex,
-        template,
-    }: {
-        pageIndex: number;
-        template: string;
-    }) {
-        const album = this.album()!;
-        const { pages } = album;
-        const [newPhotosNumber] = template;
-        const [currentPhotosNumber] = pages[pageIndex].template;
-
-        pages[pageIndex].template = template;
-
-        const additionalPhotosNumber =
-            Number(newPhotosNumber) - Number(currentPhotosNumber);
-
-        let newPhotosArray = [...pages[pageIndex].photos];
-
-        // If the new template has more photo slots than the current one
-        if (additionalPhotosNumber > 0) {
-            // Only the necessary amount of empty containers are added to fill the new template
-            const photoSlotsToAdd =
-                Number(newPhotosNumber) - pages[pageIndex].photos.length;
-
-            if (photoSlotsToAdd > 0) {
-                newPhotosArray.push(
-                    ...Array.from({
-                        length: Number(additionalPhotosNumber),
-                    }).map(() => ({
-                        fileName: '',
-                        folder: '',
-                        styles: [],
-                    })),
-                );
-            }
-        } else if (additionalPhotosNumber < 0) {
-            // The number of photos in the current template is gotten
-            const photosInPage = pages[pageIndex].photos.filter(
-                (photos) => photos.fileName !== '',
-            );
-
-            if (photosInPage.length >= Number(newPhotosNumber)) {
-                // In case the number of photos is equal or greater than the new slot number template
-                // The photos are kept
-                newPhotosArray = photosInPage;
-            } else {
-                // the currents photos are added and the rest empty containers are added
-                newPhotosArray = [...photosInPage];
-                newPhotosArray.push(
-                    ...Array.from({
-                        length: Number(
-                            Number(newPhotosNumber) - photosInPage.length,
-                        ),
-                    }).map(() => ({
-                        fileName: '',
-                        folder: '',
-                        styles: [],
-                    })),
-                );
-            }
-        }
-
-        pages[pageIndex].photos = newPhotosArray;
-
-        this.album.set({
-            ...album,
-            pages,
-        } as Album);
-
-        this.albumChanged.next('Template changed');
-    }
-
     alignPhoto({
         pageIndex,
         photoIndex,
@@ -514,66 +326,6 @@ export class ConfigService {
         this.albumChanged.next('Photo position changed');
     }
 
-    movePageInDictionary({
-        dictionary,
-        photoFrom,
-        difference,
-    }: {
-        dictionary: PhotosDictionary;
-        photoFrom: string;
-        difference: number;
-    }) {
-        if (photoFrom in dictionary) {
-            const photoPages = dictionary[photoFrom].pages.map(
-                (pageNumber) => pageNumber + difference,
-            );
-
-            dictionary[photoFrom].pages = photoPages;
-        }
-    }
-
-    movePagesInGroupedDictionary({
-        dictionary,
-        photos,
-        difference,
-    }: {
-        dictionary: GroupedDictionary;
-        photos: string[];
-        difference: number;
-    }): GroupedDictionary {
-        for (const folder in dictionary) {
-            for (const photoFrom of photos) {
-                this.movePageInDictionary({
-                    dictionary: dictionary[folder],
-                    photoFrom,
-                    difference,
-                });
-            }
-        }
-
-        return dictionary;
-    }
-
-    movePagesInPhotosDictionary({
-        dictionary,
-        photos,
-        difference,
-    }: {
-        dictionary: PhotosDictionary;
-        photos: string[];
-        difference: number;
-    }): PhotosDictionary {
-        for (const photoFrom of photos) {
-            this.movePageInDictionary({
-                dictionary,
-                photoFrom,
-                difference,
-            });
-        }
-
-        return dictionary;
-    }
-
     shiftPageInDictionary({
         dictionary,
         photoFrom,
@@ -644,120 +396,6 @@ export class ConfigService {
         }
 
         return dictionary;
-    }
-
-    removePageFromDictionary({
-        photoToRemove,
-        photoDicc,
-        pageIndex,
-    }: {
-        photoToRemove: string;
-        photoDicc: PhotosDictionary;
-        pageIndex: number;
-    }) {
-        if (photoToRemove in photoDicc) {
-            const photoPages = photoDicc[photoToRemove].pages;
-            const indexToRemove = photoPages.findIndex(
-                (page) => page === pageIndex,
-            );
-
-            if (indexToRemove >= 0) {
-                photoPages.splice(indexToRemove, 1);
-                photoDicc[photoToRemove].pages = photoPages;
-            }
-        }
-    }
-
-    removePageFromGroupedDictionary({
-        photosToRemove,
-        photoDicc,
-        pageIndex,
-    }: {
-        photosToRemove: string[];
-        photoDicc: GroupedDictionary;
-        pageIndex: number;
-    }): GroupedDictionary {
-        for (const folder in photoDicc) {
-            for (const photoToRemove of photosToRemove) {
-                this.removePageFromDictionary({
-                    photoToRemove,
-                    photoDicc: photoDicc[folder],
-                    pageIndex,
-                });
-            }
-        }
-        return photoDicc;
-    }
-
-    removePageFromPhotosDictionary({
-        photosToRemove,
-        photoDicc,
-        pageIndex,
-    }: {
-        photosToRemove: string[];
-        photoDicc: PhotosDictionary;
-        pageIndex: number;
-    }): PhotosDictionary {
-        for (const photoToRemove of photosToRemove) {
-            this.removePageFromDictionary({
-                photoToRemove,
-                photoDicc: photoDicc,
-                pageIndex,
-            });
-        }
-        return photoDicc;
-    }
-
-    removePage(pageIndex: number) {
-        const album = this.album()!;
-        const { pages } = album;
-        const photosToRemove = pages[pageIndex].photos.map(
-            (photo) => photo.fileName,
-        );
-
-        let { photosDictionary } = album;
-
-        if (album.isGrouped) {
-            photosDictionary = this.removePageFromGroupedDictionary({
-                photosToRemove,
-                photoDicc: photosDictionary as GroupedDictionary,
-                pageIndex,
-            });
-        } else {
-            photosDictionary = this.removePageFromPhotosDictionary({
-                photosToRemove,
-                photoDicc: photosDictionary as PhotosDictionary,
-                pageIndex,
-            });
-        }
-
-        const photosToMove = [...pages]
-            .splice(pageIndex + 1, pages.length - 1)
-            .flatMap((page) => this.getPhotoNames(page.photos));
-
-        if (album.isGrouped) {
-            photosDictionary = this.movePagesInGroupedDictionary({
-                dictionary: photosDictionary as GroupedDictionary,
-                photos: photosToMove,
-                difference: -1,
-            });
-        } else {
-            photosDictionary = this.movePagesInPhotosDictionary({
-                dictionary: photosDictionary as PhotosDictionary,
-                photos: photosToMove,
-                difference: -1,
-            });
-        }
-
-        pages.splice(pageIndex, 1);
-
-        this.album.set({
-            ...album,
-            photosDictionary,
-            pages,
-        } as Album);
-
-        this.albumChanged.next('Page removed');
     }
 
     getPhotoNames(photos: PhotoConfig[]): string[] {

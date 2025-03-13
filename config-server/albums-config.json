@@ -14,7 +14,7 @@
       "paddingLeft": 0.5
     },
     "isGrouped": true,
-    "activeFolder": "12-diciembre",
+    "activeFolder": "08-agosto",
     "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/Albunes Foto Familia/benni/2023",
     "photosDictionary": {
       "08-agosto": {
@@ -2329,7 +2329,9 @@
           ]
         },
         "IMG_0008.png": {
-          "pages": []
+          "pages": [
+            0
+          ]
         },
         "IMG_0018.png": {
           "pages": [
@@ -2423,12 +2425,12 @@
         },
         "IMG_0220.png": {
           "pages": [
-            0
+            1
           ]
         },
         "IMG_8795.jpeg": {
           "pages": [
-            1
+            24
           ]
         },
         "IMG_8833.png": {
@@ -2864,7 +2866,9 @@
           "pages": []
         },
         "IMG_0315.png": {
-          "pages": []
+          "pages": [
+            25
+          ]
         },
         "IMG_0316.png": {
           "pages": []
@@ -3026,7 +3030,7 @@
             ]
           },
           {
-            "fileName": "IMG_0220.png",
+            "fileName": "IMG_0008.png",
             "folder": "2022-09-septiembre",
             "styles": []
           },
@@ -3053,7 +3057,7 @@
       {
         "photos": [
           {
-            "fileName": "IMG_8795.jpeg",
+            "fileName": "IMG_0220.png",
             "folder": "2022-09-septiembre",
             "styles": []
           }
@@ -3644,6 +3648,26 @@
           }
         ],
         "template": "4-3-3"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_8795.jpeg",
+            "folder": "2022-09-septiembre",
+            "styles": []
+          }
+        ],
+        "template": "1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_0315.png",
+            "folder": "2022-12-diciembre",
+            "styles": []
+          }
+        ],
+        "template": "1"
       }
     ]
   },
@@ -3665,7 +3689,9 @@
     "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/marcos-photos/prueba",
     "photosDictionary": {
       "IMG_0389.png": {
-        "pages": []
+        "pages": [
+          1
+        ]
       },
       "IMG_0385.png": {
         "pages": [
@@ -3734,8 +3760,29 @@
           }
         ],
         "template": "4-1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "IMG_0389.png",
+            "folder": null,
+            "styles": []
+          }
+        ],
+        "template": "1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          }
+        ],
+        "template": "1"
       }
-    ]
+    ],
+    "activeFolder": null
   },
   "Benni-theo": {
     "name": "Benni theo",
@@ -3836,29 +3883,9 @@
             "fileName": "",
             "folder": "",
             "styles": []
-          },
-          {
-            "fileName": "",
-            "folder": "",
-            "styles": []
-          },
-          {
-            "fileName": "",
-            "folder": "",
-            "styles": []
-          },
-          {
-            "fileName": "",
-            "folder": "",
-            "styles": []
-          },
-          {
-            "fileName": "",
-            "folder": "",
-            "styles": []
           }
         ],
-        "template": "7-1-1",
+        "template": "3-3-1",
         "format": {
           "width": 25
         }
@@ -3874,6 +3901,91 @@
         "height": 30
       },
       "gap": 0.3
+    }
+  },
+  "die-beste-4": {
+    "name": "die-beste-4",
+    "id": "die-beste-4",
+    "isGrouped": true,
+    "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/Albunes Foto Familia/benni/die-beste-4",
+    "activeFolder": null,
+    "photosDictionary": {},
+    "pages": [],
+    "settings": {
+      "paddingTop": 0.5,
+      "paddingRight": 0.5,
+      "paddingBottom": 0.5,
+      "paddingLeft": 0.5,
+      "format": {
+        "width": 30,
+        "height": 30
+      },
+      "gap": 0.5
+    }
+  },
+  "die-beste-4-2": {
+    "name": "die-beste-4-2",
+    "id": "die-beste-4-2",
+    "isGrouped": false,
+    "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/Albunes Foto Familia/benni/die-beste-4-2",
+    "activeFolder": null,
+    "photosDictionary": {
+      "42d4de0d-99e6-4fbe-8c9e-9836ea409f04.jpg": {
+        "pages": []
+      }
+    },
+    "pages": [
+      {
+        "photos": [
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          }
+        ],
+        "template": "1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          }
+        ],
+        "template": "1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          }
+        ],
+        "template": "1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          }
+        ],
+        "template": "1"
+      }
+    ],
+    "settings": {
+      "paddingTop": 0.5,
+      "paddingRight": 0.5,
+      "paddingBottom": 0.5,
+      "paddingLeft": 0.5,
+      "format": {
+        "width": 30,
+        "height": 30
+      },
+      "gap": 0.5
     }
   }
 }

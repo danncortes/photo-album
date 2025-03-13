@@ -8,7 +8,7 @@ type BaseAlbum = {
     name: string;
     id: string;
     originFolder: string;
-    settings: AlbumSettings;
+    settings: StyleSettings;
 };
 
 export type GroupedAlbum = {
@@ -37,7 +37,7 @@ export type AlbumPreview = Pick<
     'isGrouped' | 'name' | 'id' | 'originFolder' | 'settings'
 >;
 
-export type AlbumSettings = {
+export type StyleSettings = {
     format: PageFormat;
     paddingTop: number;
     paddingBottom: number;
@@ -47,8 +47,8 @@ export type AlbumSettings = {
 };
 
 export type PageFormat = {
-    width?: number;
-    height?: number;
+    width: number;
+    height: number;
 };
 
 export type SingleDicc = PhotoInPage;
@@ -65,13 +65,8 @@ export type PhotoConfig = {
     styles: Array<string>;
 };
 
-export type PageStyles = {
-    format?: PageFormat;
-    paddingTop?: number;
-    paddingBottom?: number;
-    paddingRight?: number;
-    paddingLeft?: number;
-    gap?: number;
+export type PageStyles = Partial<StyleSettings> & {
+    format?: Partial<PageFormat>;
 };
 
 export type Page = {

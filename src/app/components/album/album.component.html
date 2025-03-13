@@ -1,9 +1,9 @@
 <ng-container>
-    @if (configService.isAlbumLoading() && !configService.album()) {
+    @if (store.isActiveAlbumLoading()) {
         <div class="loader-container">
             <span class="loader"></span>
         </div>
-    } @else {
+    } @else if (store.activeAlbum()) {
         <button class="add-page-button" (click)="openAddPageDialog()">
             📄+ Page
         </button>
@@ -13,12 +13,12 @@
             </button>
             <span> / </span>
             <h2 class="album-header__name">
-                {{ configService.album()!.name }}
+                {{ store.activeAlbum()!.name }}
             </h2>
             <span> / </span>
             <button (click)="downloadPages()">💾</button>
         </div>
         <app-gallery />
-        <app-pages [pages]="configService.album()!.pages" />
+        <app-pages />
     }
 </ng-container>

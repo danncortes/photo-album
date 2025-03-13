@@ -1,27 +1,25 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
-import { ConfigService } from '../../services/config.service';
 import { Dialog, DialogRef } from '@angular/cdk/dialog';
+
 import { Album } from '../../../types';
 import { CreateAlbumFormComponent } from '../create-album-form/create-album-form.component';
+import { AlbumStore } from '../../store/albums.store';
 
 @Component({
     selector: 'app-home',
     imports: [],
     templateUrl: './home.component.html',
-    styleUrl: './home.component.scss'
+    styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
     dialog = inject(Dialog);
+    readonly store = inject(AlbumStore);
 
-    constructor(
-        public configService: ConfigService,
-        private router: Router,
-    ) {}
+    constructor(private router: Router) {}
 
     ngOnInit(): void {
-        this.configService.getAlbums();
+        this.store.getAlbumsPreview();
     }
 
     openAlbum(id: string) {
@@ -33,13 +31,5 @@ export class HomeComponent implements OnInit {
             this.dialog.open(CreateAlbumFormComponent, {
                 maxWidth: '600px',
             });
-
-        dialogRef.closed.subscribe((album: Album | undefined) => {
-            if (album) {
-                this.createAlbum(album);
-            }
-        });
     }
-
-    createAlbum(album: Album) {}
 }

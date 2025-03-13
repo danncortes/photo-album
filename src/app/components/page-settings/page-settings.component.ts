@@ -1,4 +1,4 @@
-import { PageStyles } from './../../../types';
+import { Page, PageFormat, PageStyles } from './../../../types';
 import { AfterViewInit, Component, input, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import {
@@ -12,7 +12,7 @@ import { ConfigService } from '../../services/config.service';
     selector: 'app-page-settings',
     imports: [ReactiveFormsModule, CustomInputComponent],
     templateUrl: './page-settings.component.html',
-    styleUrl: './page-settings.component.scss'
+    styleUrl: './page-settings.component.scss',
 })
 export class PageSettingsComponent implements AfterViewInit {
     pageIndex = input.required<number>();
@@ -132,14 +132,16 @@ export class PageSettingsComponent implements AfterViewInit {
             paddingLeft,
         } = this.form.value;
 
-        const pageStyles: PageStyles = {};
+        let pageStyles: PageStyles = {};
 
         if (pageWidth || pageHeight) {
-            pageStyles.format = {};
+            pageStyles = {
+                format: {} as PageFormat,
+            };
             if (this.valueIsNumber(pageHeight))
-                pageStyles.format.height = Number(pageHeight);
+                pageStyles!.format!.height = Number(pageHeight);
             if (this.valueIsNumber(pageWidth))
-                pageStyles.format.width = Number(pageWidth);
+                pageStyles!.format!.width = Number(pageWidth);
         }
         if (this.valueIsNumber(gap)) pageStyles.gap = Number(gap);
         if (this.valueIsNumber(paddingTop))

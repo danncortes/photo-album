@@ -1,12 +1,12 @@
 <ng-content>
     <div [cdkMenuTriggerFor]="menu" class="gallery-thumbnail">
-        <img
-            src="{{ getImgSrc(photo()[0]) }}"
-            [alt]="photo()[0]"
-            [title]="photo()[0]"
-        />
+        @if (isThumbnailLoading()) {
+            <span class="loader loader--tiny"></span>
+        } @else {
+            <img src="{{ src() }}" [alt]="photo().key" [title]="photo().key" />
+        }
         <div class="gallery-thumbnail__pages-container">
-            @for (pageIndex of photo()[1].pages; track $index) {
+            @for (pageIndex of photo().value.pages; track $index) {
                 <div class="gallery-thumbnail__page">
                     {{ pageIndex + 1 }}
                 </div>
@@ -15,7 +15,7 @@
     </div>
     <ng-template #menu>
         <div cdkMenu class="thumbnail-pages-menu">
-            @for (page of getPagesOptions(photo()[1].pages); track $index) {
+            @for (page of getPagesOptions(photo().value.pages); track $index) {
                 <div
                     class="thumbnail-pages-menu__option {{
                         page ? 'active' : ''
@@ -23,7 +23,7 @@
                     cdkMenuItem
                     (click)="
                         addPhotoToPage({
-                            fileName: photo()[0],
+                            fileName: photo().key,
                             pageIndex: $index,
                         })
                     "
