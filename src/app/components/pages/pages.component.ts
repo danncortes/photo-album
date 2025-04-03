@@ -7,7 +7,7 @@ import { AlbumStore } from '../../store/albums.store';
     selector: 'app-pages',
     imports: [PageComponent],
     templateUrl: './pages.component.html',
-    styleUrl: './pages.component.scss',
+    styleUrl: './pages.component.css',
 })
 export class PagesComponent {
     readonly albumStore = inject(AlbumStore);

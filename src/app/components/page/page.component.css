@@ -1,0 +1,31 @@
+.page-format--square {
+    width: 400px;
+}
+
+.page {
+    height: 400px;
+    display: grid;
+    box-sizing: border-box;
+    background-color: white;
+    margin-bottom: 0.6rem;
+    outline: 0.12rem solid white;
+}
+
+.page-controls {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-controls__page {
+    color: #888;
+    padding-left: 0.6rem;
+}
+
+.page-controls__shift-options {
+    gap: 0.4rem;
+}
+
+.page-controls__right {
+    justify-content: end;
+    gap: 0.4rem;
+}

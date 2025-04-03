@@ -12,7 +12,7 @@ import { AlbumStore } from '../../store/albums.store';
     selector: 'app-page-settings',
     imports: [ReactiveFormsModule, CustomInputComponent],
     templateUrl: './page-settings.component.html',
-    styleUrl: './page-settings.component.scss',
+    styleUrl: './page-settings.component.css',
 })
 export class PageSettingsComponent implements AfterViewInit {
     readonly albumStore = inject(AlbumStore);

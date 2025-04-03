@@ -1,0 +1,63 @@
+:host {
+    overflow: hidden;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+:host img.photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.align-section {
+    display: flex;
+    gap: 6px;
+    padding: 6px;
+}
+
+.align-section__option {
+    padding: 2px 5px;
+    border: unset;
+    border: 1px solid #ddd;
+    background-color: transparent;
+}
+
+.align-section__option.active {
+    background-color: cadetblue;
+    color: white;
+}
+
+.shift-section {
+    display: flex;
+    gap: 6px;
+    justify-content: end;
+    align-items: center;
+}
+
+.shift-section__options {
+    display: flex;
+    gap: 5px;
+}
+
+.shift-section__option {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+.align-section:hover,
+.shift-section:hover {
+    cursor: unset;
+    background: unset;
+}
+
+.shift__option {
+    cursor: pointer;
+}
+
+.remove-photo {
+    background-color: transparent;
+    border: transparent;
+    width: 100%;
+}
