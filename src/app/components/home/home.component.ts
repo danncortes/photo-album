@@ -10,7 +10,7 @@ import { AlbumStore } from '../../store/albums.store';
     selector: 'app-home',
     imports: [],
     templateUrl: './home.component.html',
-    styleUrl: './home.component.scss',
+    styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
     dialog = inject(Dialog);

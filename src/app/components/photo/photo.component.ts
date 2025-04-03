@@ -9,7 +9,7 @@ import { AlbumStore } from '../../store/albums.store';
     selector: 'app-photo',
     imports: [NgFor, CdkMenu, CdkMenuTrigger],
     templateUrl: './photo.component.html',
-    styleUrl: './photo.component.scss',
+    styleUrl: './photo.component.css',
 })
 export class PhotoComponent {
     photo = input.required<PhotoConfig>();

@@ -20,7 +20,7 @@ import { AlbumStore } from '../../store/albums.store';
     selector: 'app-page',
     imports: [PhotoComponent, CdkMenu, CdkMenuTrigger, PageSettingsComponent],
     templateUrl: './page.component.html',
-    styleUrl: './page.component.scss',
+    styleUrl: './page.component.css',
 })
 export class PageComponent implements AfterContentInit {
     page = input.required<Page>();

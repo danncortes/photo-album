@@ -1,0 +1,33 @@
+:host {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.folder-button {
+    padding: 0.3rem 0.5rem;
+    display: grid;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.folder-button--active {
+    background-color: white;
+    border: none;
+    margin-bottom: 0;
+    padding-bottom: 0.8rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.folder-button__icon {
+    font-size: 1.4rem;
+}
+
+.folder-button__name {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #666;
+}

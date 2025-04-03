@@ -16,7 +16,7 @@ import {
         },
     ],
     templateUrl: './custom-input.component.html',
-    styleUrl: './custom-input.component.scss',
+    styleUrl: './custom-input.component.css',
 })
 export class CustomInputComponent implements ControlValueAccessor {
     label = input.required<string>();

@@ -10,7 +10,7 @@ import { AlbumStore } from '../../store/albums.store';
     selector: 'app-gallery',
     imports: [NgFor, ThumbnailComponent, FolderComponent, KeyValuePipe],
     templateUrl: './gallery.component.html',
-    styleUrl: './gallery.component.scss',
+    styleUrl: './gallery.component.css',
 })
 export class GalleryComponent {
     constructor() {}

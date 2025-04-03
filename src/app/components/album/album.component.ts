@@ -11,7 +11,7 @@ import { AlbumStore } from '../../store/albums.store';
     selector: 'app-album',
     imports: [GalleryComponent, PagesComponent],
     templateUrl: './album.component.html',
-    styleUrl: './album.component.scss',
+    styleUrl: './album.component.css',
 })
 export class AlbumComponent implements OnInit, OnDestroy {
     dialog = inject(Dialog);

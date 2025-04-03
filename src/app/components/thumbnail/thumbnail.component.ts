@@ -9,7 +9,7 @@ import { PhotoInPage } from '../../../types';
     selector: 'app-thumbnail',
     imports: [CdkMenuTrigger, CdkMenu, CdkMenuItem],
     templateUrl: './thumbnail.component.html',
-    styleUrl: './thumbnail.component.scss',
+    styleUrl: './thumbnail.component.css',
 })
 export class ThumbnailComponent implements OnInit {
     photo = input.required<KeyValue<string, PhotoInPage>>();

@@ -22,7 +22,7 @@ import { AlbumStore } from '../../store/albums.store';
     selector: 'app-create-album-form',
     imports: [FormsModule, ReactiveFormsModule, CustomInputComponent],
     templateUrl: './create-album-form.component.html',
-    styleUrl: './create-album-form.component.scss',
+    styleUrl: './create-album-form.component.css',
 })
 export class CreateAlbumFormComponent implements OnInit {
     defaultPadding = 0.5;

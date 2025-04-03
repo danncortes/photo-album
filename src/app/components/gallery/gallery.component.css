@@ -1,0 +1,14 @@
+.gallery {
+    padding: 1rem;
+}
+
+.gallery__thumbnails {
+    padding: 0.8rem;
+    gap: 0.8rem;
+    display: inline-flex;
+    background-color: white;
+    width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
+    border-radius: 0.3rem;
+}

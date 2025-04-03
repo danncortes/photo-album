@@ -1,0 +1,25 @@
+.home__center {
+    width: min(300px, 80%);
+    display: grid;
+    justify-items: center;
+}
+
+.home__title {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: cadetblue;
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    text-align: center;
+}
+
+.home__albums {
+    display: grid;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+    width: 100%;
+}
+
+.home__albums .button {
+    display: block;
+}

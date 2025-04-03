@@ -9,7 +9,7 @@ import { AlbumStore } from '../../store/albums.store';
     selector: 'app-folder',
     imports: [NgFor, KeyValuePipe],
     templateUrl: './folder.component.html',
-    styleUrl: './folder.component.scss',
+    styleUrl: './folder.component.css',
 })
 export class FolderComponent {
     readonly albumStore = inject(AlbumStore);
