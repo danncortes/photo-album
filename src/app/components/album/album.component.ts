@@ -7,7 +7,6 @@ import { GalleryComponent } from '../gallery/gallery.component';
 import { PagesComponent } from '../pages/pages.component';
 import { TemplatesComponent } from '../templates/templates.component';
 import { AlbumStore } from '../../store/albums.store';
-
 @Component({
     selector: 'app-album',
     imports: [GalleryComponent, PagesComponent],
@@ -16,7 +15,7 @@ import { AlbumStore } from '../../store/albums.store';
 })
 export class AlbumComponent implements OnInit, OnDestroy {
     dialog = inject(Dialog);
-    readonly store = inject(AlbumStore);
+    readonly albumStore = inject(AlbumStore);
 
     constructor(
         private route: ActivatedRoute,
@@ -25,7 +24,7 @@ export class AlbumComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.route.params.subscribe(async (params) => {
-            await this.store.checkAndGetAlbum(params['id']);
+            await this.albumStore.checkAndGetAlbum(params['id']);
         });
     }
 
@@ -33,27 +32,27 @@ export class AlbumComponent implements OnInit, OnDestroy {
         const dialogRef: DialogRef<string, TemplatesComponent> =
             this.dialog.open(TemplatesComponent, {
                 minWidth: '600px',
-                data: this.store.templates(),
+                data: this.albumStore.templates(),
             });
 
         dialogRef.closed.subscribe((template: string | undefined) => {
             if (template) {
-                this.store.addPage(template);
+                this.albumStore.addPage(template);
             }
         });
     }
 
     goHome() {
         this.router.navigate(['/']);
-        this.store.setActiveFolder(null);
+        this.albumStore.setActiveFolder(null);
     }
 
     downloadPages() {
-        this.store.downloadAlbumPages(this.store.activeAlbum()!.name);
+        this.albumStore.downloadAlbumPages(this.albumStore.activeAlbum()!.name);
     }
 
     ngOnDestroy(): void {
-        this.store.clearAlbum();
-        this.store.clearPageDivElements();
+        this.albumStore.clearAlbum();
+        this.albumStore.clearPageDivElements();
     }
 }

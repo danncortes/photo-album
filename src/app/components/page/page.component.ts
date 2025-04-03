@@ -11,7 +11,6 @@ import { Dialog, DialogRef } from '@angular/cdk/dialog';
 import { CdkMenu, CdkMenuTrigger } from '@angular/cdk/menu';
 
 import { StyleSettings, Page, ShiftDirection } from '../../../types';
-import { ConfigService } from '../../services/config.service';
 import { TemplatesComponent } from '../templates/templates.component';
 import { PhotoComponent } from '../photo/photo.component';
 import { PageSettingsComponent } from '../page-settings/page-settings.component';
@@ -28,30 +27,30 @@ export class PageComponent implements AfterContentInit {
     pageIndex = input.required<number>();
     pagesLength = input.required<number>();
     dialog = inject(Dialog);
-    readonly store = inject(AlbumStore);
+    readonly albumStore = inject(AlbumStore);
 
     pageHeight = 400;
     shiftOptions: ShiftDirection[] = ['◀️', '▶️'];
     pageExportDiv =
         viewChild.required<ElementRef<HTMLElement>>('pageExportDiv');
 
-    constructor(private configService: ConfigService) {}
+    constructor() {}
 
     ngAfterContentInit(): void {
-        this.store.addPageDivElement(this.pageExportDiv());
+        this.albumStore.addPageDivElement(this.pageExportDiv());
     }
 
     pageHeightInCm = computed(() => {
         return (
             this.page().format?.height ||
-            this.store.activeAlbum()!.settings.format.height
+            this.albumStore.activeAlbum()!.settings.format.height
         );
     });
 
     pageWidthInCm = computed(() => {
         return (
             this.page().format?.width ||
-            this.store.activeAlbum()!.settings.format.width
+            this.albumStore.activeAlbum()!.settings.format.width
         );
     });
 
@@ -63,7 +62,7 @@ export class PageComponent implements AfterContentInit {
 
     gap = computed(() => {
         const gapInCm =
-            this.page().gap ?? this.store.activeAlbum()!.settings.gap;
+            this.page().gap ?? this.albumStore.activeAlbum()!.settings.gap;
 
         return (
             (this.pageHeight * Number(gapInCm)) /
@@ -77,15 +76,17 @@ export class PageComponent implements AfterContentInit {
         const paddingPos = `padding${posStr}`;
         const padding =
             this.page()[paddingPos as keyof Page] ??
-            this.store.activeAlbum()!.settings[
+            (this.albumStore.activeAlbum()!.settings[
                 paddingPos as keyof StyleSettings
-            ];
+            ] ||
+                0);
 
-        return (
+        const paddingInPx =
             (this.pageHeight * Number(padding)) /
                 Number(this.pageHeightInCm()) +
-            'px'
-        );
+            'px';
+
+        return paddingInPx;
     }
 
     padding = computed(() => {
@@ -96,7 +97,7 @@ export class PageComponent implements AfterContentInit {
         const dialogRef: DialogRef<string, TemplatesComponent> =
             this.dialog.open(TemplatesComponent, {
                 minWidth: '600px',
-                data: this.store.templates(),
+                data: this.albumStore.templates(),
             });
 
         dialogRef.closed.subscribe((template: string | undefined) => {
@@ -108,7 +109,7 @@ export class PageComponent implements AfterContentInit {
 
     changePageTemplate(template: string) {
         if (this.page().template !== template) {
-            this.store.changePageTemplate({
+            this.albumStore.changePageTemplate({
                 pageIndex: this.pageIndex(),
                 template,
             });
@@ -116,11 +117,11 @@ export class PageComponent implements AfterContentInit {
     }
 
     removePage(): void {
-        this.store.removePage(this.pageIndex());
+        this.albumStore.removePage(this.pageIndex());
     }
 
     shiftPagePosition(direction: ShiftDirection) {
-        this.configService.shiftPagePosition({
+        this.albumStore.shiftPagePosition({
             pageIndex: this.pageIndex(),
             direction,
         });
@@ -134,9 +135,9 @@ export class PageComponent implements AfterContentInit {
     }
 
     downloadPage() {
-        this.configService.downloadAlbumPage(
+        this.albumStore.downloadAlbumPage(
             this.pageExportDiv(),
-            `${this.store.activeAlbum()!.name}-${this.pageIndex() + 1}.png`,
+            `${this.albumStore.activeAlbum()!.name}-${this.pageIndex() + 1}.png`,
         );
     }
 

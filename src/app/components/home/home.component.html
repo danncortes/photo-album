@@ -1,10 +1,10 @@
-@if (store.isAppLoading()) {
+@if (albumStore.isAppLoading()) {
     <p>Loading...</p>
 } @else {
     <div class="home__center">
         <h1 class="home__title">Albums</h1>
         <div class="home__albums">
-            @for (album of store.albumsPreview(); track $index) {
+            @for (album of albumStore.albumsPreview(); track $index) {
                 <button
                     class="button button--default"
                     (click)="openAlbum(album.id)"

@@ -14,10 +14,11 @@ import { AlbumStore } from '../../store/albums.store';
 })
 export class GalleryComponent {
     constructor() {}
-    readonly store = inject(AlbumStore);
+    readonly albumStore = inject(AlbumStore);
 
     getGroupedDictionary(): GroupedDictionary {
-        return this.store.activeAlbum()!.photosDictionary as GroupedDictionary;
+        return this.albumStore.activeAlbum()!
+            .photosDictionary as GroupedDictionary;
     }
 
     trackByFn(i: number) {

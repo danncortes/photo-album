@@ -8,9 +8,12 @@ import {
     Album,
     GroupedDictionary,
     Pages,
+    PageStyles,
     PhotoConfig,
     PhotosDictionary,
+    ShiftDirection,
 } from '../../types';
+import { Observable, Subject } from 'rxjs';
 
 type RemovePageFromDictionaries<T> = (params: {
     photosToRemove: string[];
@@ -23,6 +26,52 @@ type MovePagesInDictionaries<T> = (params: {
     photos: string[];
     difference: number;
 }) => T;
+
+export type ShiftPageInDictionaryParams = {
+    dictionary: PhotosDictionary;
+    photoFrom: string;
+    toIndex: number;
+    fromIndex: number;
+};
+
+export type ShiftPagePositionParams = {
+    pageIndex: number;
+    direction: ShiftDirection;
+};
+
+type shiftPageBase<T> = {
+    dictionary: T;
+    photos: string[];
+    toIndex: number;
+    fromIndex: number;
+};
+
+export type shiftPageInGroupedDictionary = shiftPageBase<GroupedDictionary>;
+
+export type shiftPageInPhotosDictionary = shiftPageBase<PhotosDictionary>;
+
+type BasePhotoParam = {
+    pageIndex: number;
+    photoIndex: number;
+};
+
+export type AlignPhotoParams = BasePhotoParam & {
+    alignment: string;
+};
+
+export type RemovePhotoParams = BasePhotoParam & {
+    photo: PhotoConfig;
+};
+
+export type ShiftPhotoPositionParams = BasePhotoParam & {
+    direction: ShiftDirection;
+};
+
+export type AddPhotoParams = {
+    pageIndex: number;
+    fileName: string;
+    folderName: string | null;
+};
 
 export const clearPageDivElements = (
     store: WritableStateSource<AlbumState>,
@@ -84,19 +133,6 @@ const capturePage = (divElement: ElementRef<HTMLElement>) => {
     });
 };
 
-const downloadAlbumPage = async (
-    divElement: ElementRef<HTMLElement>,
-    fileName: string,
-) => {
-    const blob = await capturePage(divElement);
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = fileName;
-    link.click();
-    URL.revokeObjectURL(url);
-};
-
 const generatePageImages = async (
     pageDivElements: ElementRef<HTMLElement>[],
 ) => {
@@ -131,6 +167,20 @@ export const downloadAlbumPages = async (
     const downloadLink = document.createElement('a');
     downloadLink.href = URL.createObjectURL(zipBlob);
     downloadLink.download = `${albumName}-images`;
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+    URL.revokeObjectURL(downloadLink.href);
+};
+
+export const downloadAlbumPage = async (
+    divElement: ElementRef<HTMLElement>,
+    fileName: string,
+) => {
+    const blob = await capturePage(divElement);
+    const downloadLink = document.createElement('a');
+    downloadLink.href = URL.createObjectURL(blob);
+    downloadLink.download = fileName;
     document.body.appendChild(downloadLink);
     downloadLink.click();
     document.body.removeChild(downloadLink);
@@ -368,6 +418,388 @@ export const removePage = (pageIndex: number, store: Store) => {
         }
 
         pages.splice(pageIndex, 1);
+
+        return {
+            ...state,
+            activeAlbum: {
+                ...album,
+                photosDictionary,
+                pages,
+            } as Album,
+        };
+    });
+};
+
+export const shiftPageInDictionary = ({
+    dictionary,
+    photoFrom,
+    toIndex,
+    fromIndex,
+}: ShiftPageInDictionaryParams) => {
+    if (photoFrom in dictionary) {
+        const photoPages = dictionary[photoFrom].pages;
+        const indexToChange = photoPages.findIndex(
+            (page) => page === fromIndex,
+        );
+
+        if (indexToChange >= 0) {
+            photoPages[indexToChange] = toIndex;
+            dictionary[photoFrom].pages = photoPages;
+        }
+    }
+};
+
+export const shiftPageInGroupedDictionary = ({
+    dictionary,
+    photos,
+    toIndex,
+    fromIndex,
+}: shiftPageInGroupedDictionary): GroupedDictionary => {
+    for (const folder in dictionary) {
+        for (const photoFrom of photos) {
+            shiftPageInDictionary({
+                dictionary: dictionary[folder],
+                photoFrom,
+                toIndex,
+                fromIndex,
+            });
+        }
+    }
+
+    return dictionary;
+};
+
+export const shiftPageInPhotosDictionary = ({
+    dictionary,
+    photos,
+    toIndex,
+    fromIndex,
+}: shiftPageInPhotosDictionary): PhotosDictionary => {
+    for (const photoFrom of photos) {
+        shiftPageInDictionary({
+            dictionary,
+            photoFrom,
+            toIndex,
+            fromIndex,
+        });
+    }
+
+    return dictionary;
+};
+
+export const shiftPagePosition = (
+    params: ShiftPagePositionParams,
+    store: Store,
+) => {
+    patchState(store, (state) => {
+        const album = state.activeAlbum!;
+        const { pages } = album;
+        let photosDictionary = album.photosDictionary;
+        let shiftValue = 1;
+
+        const { direction, pageIndex } = params;
+
+        if (direction === '◀️') {
+            shiftValue = -1;
+        }
+
+        const toIndex = pageIndex + shiftValue;
+
+        if (pages[toIndex]) {
+            const photosFrom = getPhotoNames(pages[pageIndex].photos);
+            const photosTo = getPhotoNames(pages[toIndex].photos);
+
+            if (album.isGrouped) {
+                photosDictionary = shiftPageInGroupedDictionary({
+                    dictionary: photosDictionary as GroupedDictionary,
+                    photos: photosFrom,
+                    toIndex: toIndex,
+                    fromIndex: pageIndex,
+                });
+                photosDictionary = shiftPageInGroupedDictionary({
+                    dictionary: photosDictionary as GroupedDictionary,
+                    photos: photosTo,
+                    toIndex: pageIndex,
+                    fromIndex: toIndex,
+                });
+            } else {
+                photosDictionary = shiftPageInPhotosDictionary({
+                    dictionary: photosDictionary as PhotosDictionary,
+                    photos: photosFrom,
+                    toIndex: toIndex,
+                    fromIndex: pageIndex,
+                });
+                photosDictionary = shiftPageInPhotosDictionary({
+                    dictionary: photosDictionary as PhotosDictionary,
+                    photos: photosTo,
+                    toIndex: pageIndex,
+                    fromIndex: toIndex,
+                });
+            }
+
+            [pages[pageIndex], pages[toIndex]] = [
+                pages[toIndex],
+                pages[pageIndex],
+            ];
+
+            return {
+                ...state,
+                activeAlbum: {
+                    ...album,
+                    photosDictionary,
+                    pages,
+                } as Album,
+            };
+        }
+
+        return state;
+    });
+};
+
+export const updatePageSettings = (
+    {
+        pageStyles,
+        pageIndex,
+    }: {
+        pageStyles: PageStyles;
+        pageIndex: number;
+    },
+    store: Store,
+): Observable<Album> => {
+    const sub = new Subject<Album>();
+
+    patchState(store, (state) => {
+        const updatedAlbum: Album = { ...state.activeAlbum! };
+        const activeAlbum = state.activeAlbum!;
+
+        delete activeAlbum!.pages[pageIndex].format;
+        delete activeAlbum!.pages[pageIndex].gap;
+        delete activeAlbum!.pages[pageIndex].paddingTop;
+        delete activeAlbum!.pages[pageIndex].paddingRight;
+        delete activeAlbum!.pages[pageIndex].paddingBottom;
+        delete activeAlbum!.pages[pageIndex].paddingLeft;
+
+        updatedAlbum.pages[pageIndex] = {
+            ...activeAlbum!.pages[pageIndex],
+            ...pageStyles,
+        };
+
+        sub.next(updatedAlbum);
+
+        return {
+            ...state,
+            activeAlbum: updatedAlbum,
+        };
+    });
+
+    return sub.asObservable();
+};
+
+export const alignPhoto = (
+    { pageIndex, photoIndex, alignment }: AlignPhotoParams,
+    store: Store,
+) => {
+    patchState(store, (state) => {
+        const album = state.activeAlbum!;
+        const { pages } = album;
+        const { styles } = pages[pageIndex].photos[photoIndex];
+        const objectPositionProp = 'object-position';
+
+        const indexObjectPosStyle = styles.findIndex((style) =>
+            style.includes(objectPositionProp),
+        );
+        if (indexObjectPosStyle < 0) {
+            styles.push(`${objectPositionProp}: ${alignment};`);
+        } else {
+            const objectPosition = styles[indexObjectPosStyle];
+            const objectPositionValue = objectPosition
+                .split(': ')[1]
+                .replace(';', '')
+                .split(' ');
+
+            if (alignment === 'top' || alignment === 'bottom') {
+                if (objectPositionValue.includes(alignment)) {
+                    objectPositionValue.shift();
+                } else if (
+                    (objectPositionValue.includes('bottom') &&
+                        alignment === 'top') ||
+                    (objectPositionValue.includes('top') &&
+                        alignment === 'bottom')
+                ) {
+                    objectPositionValue[0] = alignment;
+                } else {
+                    objectPositionValue.unshift(alignment);
+                }
+            } else {
+                if (objectPositionValue.includes(alignment)) {
+                    objectPositionValue.pop();
+                } else if (
+                    (objectPositionValue.includes('right') &&
+                        alignment === 'left') ||
+                    (objectPositionValue.includes('left') &&
+                        alignment === 'right')
+                ) {
+                    if (objectPositionValue.length === 1) {
+                        objectPositionValue[0] = alignment;
+                    } else {
+                        objectPositionValue[1] = alignment;
+                    }
+                } else {
+                    objectPositionValue.push(alignment);
+                }
+            }
+
+            if (objectPositionValue.length === 0) {
+                styles.splice(indexObjectPosStyle, 1);
+            } else {
+                styles[indexObjectPosStyle] =
+                    `${objectPositionProp}: ${objectPositionValue.join(' ')};`;
+            }
+        }
+
+        pages[pageIndex].photos[photoIndex].styles = styles;
+
+        return {
+            ...state,
+            activeAlbum: {
+                ...album,
+                pages,
+            } as Album,
+        };
+    });
+};
+
+export const removePhoto = (
+    { pageIndex, photoIndex, photo }: RemovePhotoParams,
+    store: Store,
+) => {
+    patchState(store, (state) => {
+        const album = state.activeAlbum!;
+        const { pages, photosDictionary } = album;
+
+        pages[pageIndex].photos[photoIndex] = {
+            fileName: '',
+            folder: '',
+            styles: [],
+        };
+
+        let indexToRemove = null;
+
+        if (album.isGrouped) {
+            indexToRemove = (photosDictionary as GroupedDictionary)[
+                photo.folder!
+            ][photo.fileName].pages.findIndex(
+                (page: number) => page === pageIndex,
+            );
+
+            (photosDictionary as GroupedDictionary)[photo.folder!][
+                photo.fileName
+            ].pages.splice(indexToRemove, 1);
+        } else {
+            indexToRemove = (photosDictionary as PhotosDictionary)[
+                photo.fileName
+            ].pages.findIndex((page: number) => page === pageIndex);
+
+            (photosDictionary as PhotosDictionary)[photo.fileName].pages.splice(
+                indexToRemove,
+                1,
+            );
+        }
+
+        return {
+            ...state,
+            activeAlbum: {
+                ...album,
+                pages,
+                photosDictionary,
+            } as Album,
+        };
+    });
+};
+
+export const shiftPhotoPosition = (
+    { pageIndex, photoIndex, direction }: ShiftPhotoPositionParams,
+    store: Store,
+) => {
+    patchState(store, (state) => {
+        const album = state.activeAlbum!;
+        const { pages } = album;
+        const photos = [...pages[pageIndex].photos];
+
+        const fromIndex = photoIndex;
+
+        if (
+            (direction === '◀️' && photoIndex === 0) ||
+            (direction === '▶️' && photoIndex === photos.length - 1)
+        ) {
+            return state;
+        }
+
+        let toIndex = photoIndex + 1;
+
+        if (direction === '◀️') {
+            toIndex = photoIndex - 1;
+        }
+
+        [photos[fromIndex], photos[toIndex]] = [
+            photos[toIndex],
+            photos[fromIndex],
+        ];
+
+        pages[pageIndex].photos = photos;
+
+        return {
+            ...state,
+            activeAlbum: {
+                ...album,
+                pages,
+            } as Album,
+        };
+    });
+};
+
+export const addPhoto = (
+    { pageIndex, fileName, folderName }: AddPhotoParams,
+    store: Store,
+) => {
+    patchState(store, (state) => {
+        const newPhoto = {
+            fileName,
+            folder: folderName,
+            styles: [],
+        };
+
+        const album = state.activeAlbum!;
+        const emptyPhotoSlotIndex = album.pages[pageIndex].photos.findIndex(
+            (photo) => photo.fileName === '',
+        );
+        const photos = album.pages[pageIndex].photos;
+        let page = album.pages[pageIndex];
+
+        if (emptyPhotoSlotIndex >= 0) {
+            photos.splice(emptyPhotoSlotIndex, 1, newPhoto);
+        } else {
+            photos.push(newPhoto);
+        }
+
+        page = {
+            ...page,
+            photos,
+        };
+
+        const { photosDictionary, pages } = album;
+
+        if (album.isGrouped) {
+            (photosDictionary as GroupedDictionary)[folderName!][
+                fileName
+            ].pages.push(pageIndex);
+        } else {
+            (photosDictionary as PhotosDictionary)[fileName].pages.push(
+                pageIndex,
+            );
+        }
+
+        pages.splice(pageIndex, 1, page);
 
         return {
             ...state,

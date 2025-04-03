@@ -68,9 +68,6 @@ button.button:not(:disabled) {
         padding: 0.2rem 0.5rem;
     }
 
-    &.button--md {
-    }
-
     &.button--transparent {
         background-color: transparent;
         padding: 0.2rem 0.2rem;
@@ -196,9 +193,6 @@ button.button:not(:disabled) {
 
 .form-group {
     margin-bottom: 0.8rem;
-
-    label {
-    }
 
     &__description {
         font-size: 0.8rem;

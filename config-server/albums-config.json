@@ -3668,6 +3668,21 @@
           }
         ],
         "template": "1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          }
+        ],
+        "template": "2-1-2"
       }
     ]
   },
@@ -3690,7 +3705,7 @@
     "photosDictionary": {
       "IMG_0389.png": {
         "pages": [
-          1
+          0
         ]
       },
       "IMG_0385.png": {
@@ -3719,9 +3734,7 @@
         ]
       },
       "IMG_0444.png": {
-        "pages": [
-          0
-        ]
+        "pages": []
       },
       "IMG_0450.png": {
         "pages": [
@@ -3739,12 +3752,12 @@
       {
         "photos": [
           {
-            "fileName": "IMG_0385.png",
+            "fileName": "IMG_0430.png",
             "folder": null,
             "styles": []
           },
           {
-            "fileName": "IMG_0430.png",
+            "fileName": "IMG_0385.png",
             "folder": null,
             "styles": []
           },
@@ -3754,7 +3767,7 @@
             "styles": []
           },
           {
-            "fileName": "IMG_0444.png",
+            "fileName": "IMG_0389.png",
             "folder": null,
             "styles": []
           }
@@ -3764,8 +3777,8 @@
       {
         "photos": [
           {
-            "fileName": "IMG_0389.png",
-            "folder": null,
+            "fileName": "",
+            "folder": "",
             "styles": []
           }
         ],

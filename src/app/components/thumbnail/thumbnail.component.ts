@@ -1,9 +1,8 @@
 import { Component, inject, input, OnInit, signal } from '@angular/core';
 import { CdkMenu, CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
 
-import { ConfigService } from '../../services/config.service';
 import { AlbumStore } from '../../store/albums.store';
-import { AsyncPipe, KeyValue } from '@angular/common';
+import { KeyValue } from '@angular/common';
 import { PhotoInPage } from '../../../types';
 
 @Component({
@@ -14,11 +13,9 @@ import { PhotoInPage } from '../../../types';
 })
 export class ThumbnailComponent implements OnInit {
     photo = input.required<KeyValue<string, PhotoInPage>>();
-    readonly store = inject(AlbumStore);
+    readonly albumStore = inject(AlbumStore);
     src = signal('');
     isThumbnailLoading = signal(false);
-
-    constructor(private configService: ConfigService) {}
 
     async ngOnInit(): Promise<void> {
         this.loadThumbNail();
@@ -32,8 +29,8 @@ export class ThumbnailComponent implements OnInit {
     }
 
     getImgSrc(fileName: string): string {
-        const { id } = this.store.activeAlbum()!;
-        return `assets/albums/${id}${this.store.activeFolder() ? `/${this.store.activeFolder()}` : ''}/${fileName}`;
+        const { id } = this.albumStore.activeAlbum()!;
+        return `assets/albums/${id}${this.albumStore.activeFolder() ? `/${this.albumStore.activeFolder()}` : ''}/${fileName}`;
     }
 
     getThumbnailSrc(
@@ -89,7 +86,7 @@ export class ThumbnailComponent implements OnInit {
     }
 
     getPagesOptions(pagesPerThumbnail: number[]): boolean[] | undefined {
-        return this.store
+        return this.albumStore
             .activeAlbum()!
             .pages.map((page, index) => pagesPerThumbnail.includes(index));
     }
@@ -101,10 +98,10 @@ export class ThumbnailComponent implements OnInit {
         pageIndex: number;
         fileName: string;
     }) {
-        this.configService.addPhoto({
+        this.albumStore.addPhoto({
             pageIndex,
             fileName,
-            folderName: this.configService.activeFolder(),
+            folderName: this.albumStore.activeFolder(),
         });
     }
 }

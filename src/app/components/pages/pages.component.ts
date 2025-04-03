@@ -10,5 +10,5 @@ import { AlbumStore } from '../../store/albums.store';
     styleUrl: './pages.component.scss',
 })
 export class PagesComponent {
-    readonly store = inject(AlbumStore);
+    readonly albumStore = inject(AlbumStore);
 }

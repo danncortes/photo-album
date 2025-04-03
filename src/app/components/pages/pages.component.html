@@ -1,11 +1,11 @@
 <div class="pages-container">
     <div class="pages">
-        @for (page of store.activeAlbum()!.pages; track $index) {
+        @for (page of albumStore.activeAlbum()!.pages; track $index) {
             <div class="page-container">
                 <app-page
                     [page]="page"
                     [pageIndex]="$index"
-                    [pagesLength]="store.activeAlbum()!.pages.length"
+                    [pagesLength]="albumStore.activeAlbum()!.pages.length"
                 />
             </div>
         }

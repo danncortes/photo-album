@@ -15,14 +15,26 @@ import {
     setActiveFolder,
     setIsPreviewAlbumLoading,
 } from './album-store.methods';
-import { Album, AlbumPreview, GroupedAlbum } from '../../types';
+import { Album, AlbumPreview, GroupedAlbum, PageStyles } from '../../types';
 import {
     addPage,
     addPageDivElement,
+    addPhoto,
+    AddPhotoParams,
+    alignPhoto,
+    AlignPhotoParams,
     changePageTemplate,
     clearPageDivElements,
+    downloadAlbumPage,
     downloadAlbumPages,
     removePage,
+    removePhoto,
+    RemovePhotoParams,
+    shiftPagePosition,
+    ShiftPagePositionParams,
+    shiftPhotoPosition,
+    ShiftPhotoPositionParams,
+    updatePageSettings,
 } from './page-store.methods';
 
 export type Store = WritableStateSource<AlbumState>;
@@ -134,6 +146,7 @@ export const AlbumStore = signalStore(
         });
 
         return {
+            createAlbum: (album: Album) => configService.createAlbum(album),
             setIsPreviewAlbumLoading: (isLoading: boolean) =>
                 setIsPreviewAlbumLoading(isLoading, store),
             getAlbumsPreview: () => getAlbumsPreview(configService, store),
@@ -149,6 +162,10 @@ export const AlbumStore = signalStore(
             addPage: (template: string) => addPage(template, store),
             downloadAlbumPages: async (albumName: string) =>
                 await downloadAlbumPages(albumName, store.pageDivElements()),
+            downloadAlbumPage: async (
+                divElement: ElementRef<HTMLElement>,
+                fileName: string,
+            ) => downloadAlbumPage(divElement, fileName),
             changePageTemplate: ({
                 pageIndex,
                 template,
@@ -157,6 +174,40 @@ export const AlbumStore = signalStore(
                 template: string;
             }) => changePageTemplate({ pageIndex, template, store }),
             removePage: (index: number) => removePage(index, store),
+            shiftPagePosition: ({
+                pageIndex,
+                direction,
+            }: ShiftPagePositionParams) =>
+                shiftPagePosition(
+                    {
+                        pageIndex,
+                        direction,
+                    },
+                    store,
+                ),
+            updatePageSettings: ({
+                pageStyles,
+                pageIndex,
+            }: {
+                pageStyles: PageStyles;
+                pageIndex: number;
+            }) =>
+                updatePageSettings(
+                    {
+                        pageStyles,
+                        pageIndex,
+                    },
+                    store,
+                ),
+            alignPhoto: (alignPhotoParams: AlignPhotoParams) =>
+                alignPhoto(alignPhotoParams, store),
+            removePhoto: (removePhotoParams: RemovePhotoParams) =>
+                removePhoto(removePhotoParams, store),
+            shiftPhotoPosition: (
+                shiftPhotoPositionParams: ShiftPhotoPositionParams,
+            ) => shiftPhotoPosition(shiftPhotoPositionParams, store),
+            addPhoto: (addPhotoParams: AddPhotoParams) =>
+                addPhoto(addPhotoParams, store),
         };
     }),
 );

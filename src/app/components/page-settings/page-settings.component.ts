@@ -1,12 +1,12 @@
-import { Page, PageFormat, PageStyles } from './../../../types';
-import { AfterViewInit, Component, input, signal } from '@angular/core';
+import { AfterViewInit, Component, inject, input, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import {
     isNumberValidator,
     isNumberPositiveValidator,
 } from '../../helpers/validators';
+import { PageFormat, PageStyles } from './../../../types';
 import { CustomInputComponent } from '../custom-input/custom-input.component';
-import { ConfigService } from '../../services/config.service';
+import { AlbumStore } from '../../store/albums.store';
 
 @Component({
     selector: 'app-page-settings',
@@ -15,6 +15,7 @@ import { ConfigService } from '../../services/config.service';
     styleUrl: './page-settings.component.scss',
 })
 export class PageSettingsComponent implements AfterViewInit {
+    readonly albumStore = inject(AlbumStore);
     pageIndex = input.required<number>();
     defaultHeight = signal<number | ''>('');
     defaultWidth = signal<number | ''>('');
@@ -50,7 +51,7 @@ export class PageSettingsComponent implements AfterViewInit {
         }),
     });
 
-    constructor(private configService: ConfigService) {}
+    constructor() {}
 
     ngAfterViewInit(): void {
         this.setDefaultValues();
@@ -58,7 +59,7 @@ export class PageSettingsComponent implements AfterViewInit {
     }
 
     setDefaultValues() {
-        const album = this.configService.album();
+        const album = this.albumStore.activeAlbum();
         const page = album!.pages[this.pageIndex()];
         const {
             format,
@@ -153,8 +154,8 @@ export class PageSettingsComponent implements AfterViewInit {
         if (this.valueIsNumber(paddingLeft))
             pageStyles.paddingLeft = Number(paddingLeft);
 
-        this.configService
-            .updatePageSettings(pageStyles, this.pageIndex())
+        this.albumStore
+            .updatePageSettings({ pageStyles, pageIndex: this.pageIndex() })
             .subscribe(() => {
                 this.setDefaultValues();
                 this.setDefaultValuesInForm();

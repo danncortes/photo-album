@@ -1,8 +1,7 @@
-import { patchState, WritableStateSource } from '@ngrx/signals';
-import { ElementRef } from '@angular/core';
+import { patchState } from '@ngrx/signals';
 
-import { Album, AlbumPreview, GroupedAlbum } from '../../types';
-import { AlbumState, AlbumStore, Store } from './albums.store';
+import { Album, AlbumPreview } from '../../types';
+import { Store } from './albums.store';
 import { ConfigService } from '../services/config.service';
 
 export const setIsPreviewAlbumLoading = (isLoading: boolean, store: Store) => {

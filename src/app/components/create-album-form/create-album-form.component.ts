@@ -7,7 +7,6 @@ import {
     ReactiveFormsModule,
     Validators,
 } from '@angular/forms';
-import { ConfigService } from '../../services/config.service';
 import { Router } from '@angular/router';
 import { DialogRef } from '@angular/cdk/dialog';
 import { debounceTime, Subscription } from 'rxjs';
@@ -17,12 +16,13 @@ import {
     isNumberValidator,
 } from '../../helpers/validators';
 import { CustomInputComponent } from '../custom-input/custom-input.component';
+import { AlbumStore } from '../../store/albums.store';
 
 @Component({
     selector: 'app-create-album-form',
     imports: [FormsModule, ReactiveFormsModule, CustomInputComponent],
     templateUrl: './create-album-form.component.html',
-    styleUrl: './create-album-form.component.scss'
+    styleUrl: './create-album-form.component.scss',
 })
 export class CreateAlbumFormComponent implements OnInit {
     defaultPadding = 0.5;
@@ -80,9 +80,9 @@ export class CreateAlbumFormComponent implements OnInit {
     savingAlbum = signal(false);
     subcriptions: Subscription[] = [];
     private destroyRef = inject(DestroyRef);
+    readonly albumStore = inject(AlbumStore);
 
     constructor(
-        private configService: ConfigService,
         private router: Router,
         private dialogRef: DialogRef<CreateAlbumFormComponent>,
     ) {}
@@ -124,7 +124,7 @@ export class CreateAlbumFormComponent implements OnInit {
     }
 
     albumFieldExists(value: string, field: string) {
-        return this.configService?.albumsPreview()?.some((album) => {
+        return this.albumStore?.albumsPreview()?.some((album) => {
             return album[field as keyof AlbumPreview] === value;
         });
     }
@@ -292,7 +292,7 @@ export class CreateAlbumFormComponent implements OnInit {
         };
 
         this.subcriptions.push(
-            this.configService.createAlbum(newAlbum).subscribe({
+            this.albumStore.createAlbum(newAlbum).subscribe({
                 next: () => {
                     this.resetForm();
                     console.log('New Album saved');

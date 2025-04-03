@@ -14,12 +14,12 @@ import { AlbumStore } from '../../store/albums.store';
 })
 export class HomeComponent implements OnInit {
     dialog = inject(Dialog);
-    readonly store = inject(AlbumStore);
+    readonly albumStore = inject(AlbumStore);
 
     constructor(private router: Router) {}
 
     ngOnInit(): void {
-        this.store.getAlbumsPreview();
+        this.albumStore.getAlbumsPreview();
     }
 
     openAlbum(id: string) {

@@ -1,6 +1,6 @@
 <button
     class="folder-button {{
-        store.activeFolder() === folder.key ? 'folder-button--active' : ''
+        albumStore.activeFolder() === folder.key ? 'folder-button--active' : ''
     }}"
     (click)="selectFolder(folder.key)"
     *ngFor="let folder of photosDictionary() | keyvalue"

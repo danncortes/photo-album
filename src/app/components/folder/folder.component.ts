@@ -12,12 +12,12 @@ import { AlbumStore } from '../../store/albums.store';
     styleUrl: './folder.component.scss',
 })
 export class FolderComponent {
-    readonly store = inject(AlbumStore);
+    readonly albumStore = inject(AlbumStore);
     photosDictionary = input.required<GroupedDictionary>();
 
     constructor(public configService: ConfigService) {}
 
     selectFolder(folderName: string) {
-        this.store.setActiveFolder(folderName);
+        this.albumStore.setActiveFolder(folderName);
     }
 }
