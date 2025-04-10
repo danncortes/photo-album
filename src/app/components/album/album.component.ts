@@ -1,4 +1,4 @@
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { Dialog, DialogRef } from '@angular/cdk/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
@@ -12,10 +12,14 @@ import { AlbumStore } from '../../store/albums.store';
     imports: [GalleryComponent, PagesComponent],
     templateUrl: './album.component.html',
     styleUrl: './album.component.css',
+    host: {
+        class: 'block h-full bg-gray-100',
+    },
 })
 export class AlbumComponent implements OnInit, OnDestroy {
     dialog = inject(Dialog);
     readonly albumStore = inject(AlbumStore);
+    isDownloadingPages = signal(false);
 
     constructor(
         private route: ActivatedRoute,
@@ -47,8 +51,12 @@ export class AlbumComponent implements OnInit, OnDestroy {
         this.albumStore.setActiveFolder(null);
     }
 
-    downloadPages() {
-        this.albumStore.downloadAlbumPages(this.albumStore.activeAlbum()!.name);
+    async downloadPages() {
+        this.isDownloadingPages.set(true);
+        await this.albumStore.downloadAlbumPages(
+            this.albumStore.activeAlbum()!.name,
+        );
+        this.isDownloadingPages.set(false);
     }
 
     ngOnDestroy(): void {

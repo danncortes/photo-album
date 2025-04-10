@@ -1,95 +1,75 @@
-<div class="p-3">
+<div class="bg-base-100 rounded-md p-3 shadow-md">
     <form
         [formGroup]="form"
         (ngSubmit)="onFormSubmit()"
         class="page-settings-form form-sm"
     >
-        <div>
-            <div class="form-group form-group--row">
-                <app-custom-input
-                    class="grid"
-                    label="Gap"
-                    id="gap"
-                    type="number"
-                    formControlName="gap"
-                />
-            </div>
-            <h4 class="title">Page size (cm)</h4>
-            <div class="form-columns">
-                <div class="form-group form-group--row">
-                    <app-custom-input
-                        class="grid"
-                        label="Width"
-                        id="page-width"
-                        type="number"
-                        formControlName="pageWidth"
-                    />
-                </div>
-                <div class="form-group form-group--row">
-                    <app-custom-input
-                        class="grid"
-                        label="Height"
-                        id="page-height"
-                        type="number"
-                        formControlName="pageHeight"
-                    />
-                </div>
-            </div>
-            <h4 class="title">Page padding (cm)</h4>
-            <div class="form-columns">
-                <div class="form-group form-group--row">
-                    <app-custom-input
-                        class="grid"
-                        label="Padding Top"
-                        id="padding-top"
-                        type="number"
-                        formControlName="paddingTop"
-                    />
-                </div>
-                <div class="form-group form-group--row">
-                    <app-custom-input
-                        class="grid"
-                        label="Padding Right"
-                        id="padding-right"
-                        type="number"
-                        formControlName="paddingRight"
-                    />
-                </div>
-            </div>
-            <div class="form-columns">
-                <div class="form-group form-group--row">
-                    <app-custom-input
-                        class="grid"
-                        label="Padding Left"
-                        id="padding-left"
-                        type="number"
-                        formControlName="paddingLeft"
-                    />
-                </div>
-                <div class="form-group form-group--row">
-                    <app-custom-input
-                        class="grid"
-                        label="Padding Bottom"
-                        id="padding-bottom"
-                        type="number"
-                        formControlName="paddingBottom"
-                    />
-                </div>
-            </div>
+        <app-custom-input
+            class="mb-4"
+            label="Gap"
+            id="gap"
+            type="number"
+            formControlName="gap"
+        />
+        <h4 class="title">Page size (cm)</h4>
+        <div class="flex gap-4 mb-4">
+            <app-custom-input
+                class="grid"
+                label="Width"
+                id="page-width"
+                type="number"
+                formControlName="pageWidth"
+            />
+            <app-custom-input
+                class="grid"
+                label="Height"
+                id="page-height"
+                type="number"
+                formControlName="pageHeight"
+            />
         </div>
-        <div class="page-settings-form__controls flex">
+        <h4 class="title">Page padding (cm)</h4>
+        <div class="flex gap-4">
+            <app-custom-input
+                class="grid"
+                label="Padding Top"
+                id="padding-top"
+                type="number"
+                formControlName="paddingTop"
+            />
+            <app-custom-input
+                class="grid"
+                label="Padding Right"
+                id="padding-right"
+                type="number"
+                formControlName="paddingRight"
+            />
+        </div>
+        <div class="flex gap-4 mb-4">
+            <app-custom-input
+                class="grid"
+                label="Padding Left"
+                id="padding-left"
+                type="number"
+                formControlName="paddingLeft"
+            />
+            <app-custom-input
+                class="grid"
+                label="Padding Bottom"
+                id="padding-bottom"
+                type="number"
+                formControlName="paddingBottom"
+            />
+        </div>
+        <div class="flex justify-between">
             <!-- This button could be type="reset" but that would clear the form completely -->
-            <button type="reset" class="clear button button--sm">Clear</button>
-            <div class="flex">
-                <button
-                    type="button"
-                    class="clear button button--sm"
-                    (click)="resetForm()"
-                >
+            <button type="reset" class="btn btn-sm">Clear</button>
+            <div class="flex gap-2">
+                <button type="button" class="btn btn-sm" (click)="resetForm()">
                     Reset
                 </button>
                 <button
-                    class="create button button--sm"
+                    class="btn btn-sm btn-secondary"
                     [disabled]="isSaveButtonDisabled()"
                     type="submit"
                 >

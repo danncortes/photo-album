@@ -495,15 +495,9 @@ export const shiftPagePosition = (
         const album = state.activeAlbum!;
         const { pages } = album;
         let photosDictionary = album.photosDictionary;
-        let shiftValue = 1;
-
         const { direction, pageIndex } = params;
 
-        if (direction === '◀️') {
-            shiftValue = -1;
-        }
-
-        const toIndex = pageIndex + shiftValue;
+        const toIndex = pageIndex + direction;
 
         if (pages[toIndex]) {
             const photosFrom = getPhotoNames(pages[pageIndex].photos);
@@ -729,17 +723,13 @@ export const shiftPhotoPosition = (
         const fromIndex = photoIndex;
 
         if (
-            (direction === '◀️' && photoIndex === 0) ||
-            (direction === '▶️' && photoIndex === photos.length - 1)
+            (direction === -1 && photoIndex === 0) ||
+            (direction === 1 && photoIndex === photos.length - 1)
         ) {
             return state;
         }
 
-        let toIndex = photoIndex + 1;
-
-        if (direction === '◀️') {
-            toIndex = photoIndex - 1;
-        }
+        let toIndex = photoIndex + direction;
 
         [photos[fromIndex], photos[toIndex]] = [
             photos[toIndex],

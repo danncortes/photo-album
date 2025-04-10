@@ -1,0 +1,7 @@
+<div class="page-preview page-template--{{ page().template }}">
+    @for (photo of page().photos; track $index) {
+        <div class="page-preview__photo-container">
+            <img class="photo" [src]="getPhotoSrc(photo)" alt="" />
+        </div>
+    }
+</div>

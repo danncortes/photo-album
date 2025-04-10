@@ -1,31 +1,3 @@
-.templates {
-    display: inline-flex;
-    gap: var(--gap);
-    flex-wrap: wrap;
-    max-width: 620px;
-}
-
-.template-group__title {
-    font-size: 0.8rem;
-    line-height: unset;
-    font-weight: 400;
-    margin: 0 0 4px 0;
-}
-
-.template-types {
-    gap: var(--gap);
-    flex-wrap: wrap;
-}
-
-.template-type {
-    gap: calc(var(--gap) / 2);
-}
-
-.template-types,
-.template-type {
-    display: inline-flex;
-}
-
 div[class^='page-template--'] {
     display: grid;
     gap: 5px;
@@ -36,7 +8,7 @@ div[class^='page-template--'] {
     cursor: pointer;
 
     &:hover {
-        background-color: cornflowerblue;
+        background-color: var(--color-pink-400);
     }
 
     & > div {

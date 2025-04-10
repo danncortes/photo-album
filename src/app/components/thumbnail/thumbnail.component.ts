@@ -37,7 +37,7 @@ export class ThumbnailComponent implements OnInit {
         imageUrl: string,
         maxWidth: number = 300,
         maxHeight: number = 200,
-    ): Promise<string> {
+    ): Promise<any> {
         const url = this.getImgSrc(imageUrl);
 
         return new Promise((resolve, reject) => {

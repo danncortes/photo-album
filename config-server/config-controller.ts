@@ -39,6 +39,17 @@ export async function getAlbums(req: Request, res: Response) {
 
         for (const key in albumsConfig) {
             const album = albumsConfig[key];
+            let previewPage = album.pages?.find(
+                (page) => page.photos.length > 0,
+            );
+
+            if (!previewPage) {
+                previewPage = {
+                    template: '1-1-1',
+                    photos: [],
+                };
+            }
+
             const {
                 id,
                 name,
@@ -53,6 +64,7 @@ export async function getAlbums(req: Request, res: Response) {
                 isGrouped: grouped,
                 settings,
                 originFolder,
+                previewPage,
             });
         }
 

@@ -22,6 +22,7 @@ export class CustomInputComponent implements ControlValueAccessor {
     label = input.required<string>();
     id = input.required<string>();
     type = input.required<string>();
+    class = input<string>('');
     showError = input<boolean>();
     errorMessage = input<string | null>();
     value = signal('');

@@ -1,24 +1,41 @@
 <ng-content>
-    <div [cdkMenuTriggerFor]="menu" class="gallery-thumbnail">
+    <div
+        [cdkMenuTriggerFor]="menu"
+        class="gallery-thumbnail w-max rounded-md bg-base-100 card-xs shadow-md p-1.5 border border-gray-200 cursor-pointer"
+    >
         @if (isThumbnailLoading()) {
-            <span class="loader loader--tiny"></span>
+            <div class="h-25 w-25 flex items-center justify-center">
+                <span
+                    class="loading loading-spinner loading-lg text-secondary"
+                ></span>
+            </div>
         } @else {
-            <img src="{{ src() }}" [alt]="photo().key" [title]="photo().key" />
+            <img
+                class="h-30 rounded-xs mb-1.5"
+                src="{{ src() }}"
+                [alt]="photo().key"
+                [title]="photo().key"
+            />
         }
-        <div class="gallery-thumbnail__pages-container">
+        <div class="flex gap-1.5">
             @for (pageIndex of photo().value.pages; track $index) {
-                <div class="gallery-thumbnail__page">
+                <div
+                    class="rounded-xs bg-base-300 text-gray-500 px-2 py-0.5 text-xs border border-gray-300"
+                >
                     {{ pageIndex + 1 }}
                 </div>
             }
         </div>
     </div>
     <ng-template #menu>
-        <div cdkMenu class="thumbnail-pages-menu">
+        <div
+            cdkMenu
+            class="thumbnail-pages-menu bg-base-100 rounded-sm p-2 grid grid-cols-5 gap-2 shadow-md"
+        >
             @for (page of getPagesOptions(photo().value.pages); track $index) {
                 <div
-                    class="thumbnail-pages-menu__option {{
-                        page ? 'active' : ''
+                    class="thumbnail-pages-menu__option rounded-xs bg-base-300 text-gray-500 px-1 text-sm border border-gray-300 cursor-pointer w-7 text-center {{
+                        page ? 'bg-pink-100 border-pink-300 text-pink-500' : ''
                     }}"
                     cdkMenuItem
                     (click)="

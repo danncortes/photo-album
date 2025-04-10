@@ -1,1 +1,6 @@
+@if (albumStore.isAppLoading()) {
+    <div class="overlay">
+        <span class="loading loading-spinner text-secondary loading-xl"></span>
+    </div>
+}
 <router-outlet />

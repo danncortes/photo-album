@@ -35,7 +35,9 @@ export type PhotosDictionary = {
 export type AlbumPreview = Pick<
     Album,
     'isGrouped' | 'name' | 'id' | 'originFolder' | 'settings'
->;
+> & {
+    previewPage: Page;
+};
 
 export type StyleSettings = {
     format: PageFormat;
@@ -74,4 +76,4 @@ export type Page = {
     photos: Array<PhotoConfig>;
 } & PageStyles;
 
-export type ShiftDirection = '◀️' | '▶️';
+export type ShiftDirection = -1 | 1;

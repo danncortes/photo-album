@@ -30,7 +30,7 @@ export class PageComponent implements AfterContentInit {
     readonly albumStore = inject(AlbumStore);
 
     pageHeight = 400;
-    shiftOptions: ShiftDirection[] = ['◀️', '▶️'];
+    shiftOptions: ShiftDirection[] = [-1, 1];
     pageExportDiv =
         viewChild.required<ElementRef<HTMLElement>>('pageExportDiv');
 
@@ -129,8 +129,8 @@ export class PageComponent implements AfterContentInit {
 
     isShiftPageDisabled(direction: ShiftDirection, pageIndex: number) {
         return (
-            (direction === '◀️' && pageIndex === 0) ||
-            (direction === '▶️' && pageIndex === this.pagesLength() - 1)
+            (direction === -1 && pageIndex === 0) ||
+            (direction === 1 && pageIndex === this.pagesLength() - 1)
         );
     }
 

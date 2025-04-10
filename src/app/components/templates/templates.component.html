@@ -1,11 +1,11 @@
-<div class="modal-card">
-    <div class="templates">
+<div class="bg-base-100 shadow-sm p-4 rounded-md">
+    <div class="templates flex gap-3 flex-wrap max-w-xl">
         @for (templateGroups of data; track $index) {
-            <div class="template-group">
-                <p class="template-group__title">{{ $index + 1 }} Photo</p>
-                <div class="template-types">
+            <div>
+                <p class="text-sm mb-1">{{ $index + 1 }} Photo</p>
+                <div class="template-types flex gap-6 flex-wrap">
                     @for (group of templateGroups; track $index) {
-                        <div class="template-type">
+                        <div class="template-type flex gap-1.5">
                             @for (template of group; track $index) {
                                 <div
                                     class="page-template--{{ template }}"
