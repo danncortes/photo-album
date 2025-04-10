@@ -1331,7 +1331,7 @@
     },
     "pages": [
       {
-        "template": "1",
+        "template": "1-1-1",
         "photos": [
           {
             "folder": "08-agosto",
@@ -3063,7 +3063,7 @@
             "styles": []
           }
         ],
-        "template": "1"
+        "template": "1-1-1"
       },
       {
         "photos": [
@@ -3658,7 +3658,7 @@
             "styles": []
           }
         ],
-        "template": "1"
+        "template": "1-1-1"
       },
       {
         "photos": [
@@ -3668,7 +3668,7 @@
             "styles": []
           }
         ],
-        "template": "1"
+        "template": "1-1-1"
       },
       {
         "photos": [
@@ -3759,7 +3759,7 @@
             "styles": []
           }
         ],
-        "template": "1"
+        "template": "1-1-1"
       },
       {
         "photos": [
@@ -3894,6 +3894,46 @@
         "format": {
           "width": 25
         }
+      },
+      {
+        "photos": [
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "folder": "",
+            "styles": []
+          }
+        ],
+        "template": "7-1-1"
       }
     ],
     "settings": {
