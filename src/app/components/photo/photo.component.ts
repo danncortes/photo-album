@@ -10,6 +10,9 @@ import { AlbumStore } from '../../store/albums.store';
     imports: [NgFor, CdkMenu, CdkMenuTrigger],
     templateUrl: './photo.component.html',
     styleUrl: './photo.component.css',
+    host: {
+        class: 'overflow-hidden cursor-pointer bg-gray-200',
+    },
 })
 export class PhotoComponent {
     photo = input.required<PhotoConfig>();
@@ -19,7 +22,7 @@ export class PhotoComponent {
     readonly albumStore = inject(AlbumStore);
 
     alignmentOptions = ['top', 'bottom', 'right', 'left'];
-    shiftOptions: ShiftDirection[] = ['◀️', '▶️'];
+    shiftOptions: ShiftDirection[] = [-1, 1];
 
     getPhotoSrc(photo: PhotoConfig) {
         const { folder, fileName } = photo;
@@ -70,10 +73,10 @@ export class PhotoComponent {
         });
     }
 
-    isShiftDisabled(direction: string, photoIndex: number): boolean {
+    isShiftDisabled(direction: number, photoIndex: number): boolean {
         return (
-            (direction === '◀️' && photoIndex === 0) ||
-            (direction === '▶️' && photoIndex === this.pagesPhotosLength() - 1)
+            (direction === -1 && photoIndex === 0) ||
+            (direction === 1 && photoIndex === this.pagesPhotosLength() - 1)
         );
     }
 

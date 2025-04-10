@@ -1,20 +1,31 @@
-@if (albumStore.isAppLoading()) {
-    <p>Loading...</p>
-} @else {
-    <div class="home__center">
-        <h1 class="home__title">Albums</h1>
-        <div class="home__albums">
+@if (!albumStore.isAppLoading()) {
+    <div class="home">
+        <div class="fixed-header">
+            <h1 class="dynamic-title font-bold">Albums</h1>
+            <button class="btn" (click)="openNewAlbumDialog()">
+                + New album
+            </button>
+        </div>
+        <div class="masonry-grid">
             @for (album of albumStore.albumsPreview(); track $index) {
                 <button
-                    class="button button--default"
+                    [class]="
+                        'home__album-button' +
+                        ' ' +
+                        'home__album-button-span-' +
+                        albumSpans[$index]
+                    "
                     (click)="openAlbum(album.id)"
                 >
-                    {{ album.name }}
+                    <div class="home__album-name">
+                        {{ album.name }}
+                    </div>
+                    <app-page-preview
+                        [albumId]="album.id"
+                        [page]="album.previewPage"
+                    ></app-page-preview>
                 </button>
             }
         </div>
-        <button class="button home__new-album" (click)="openNewAlbumDialog()">
-            New album
-        </button>
     </div>
 }

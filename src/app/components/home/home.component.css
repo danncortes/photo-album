@@ -1,25 +1,116 @@
-.home__center {
-    width: min(300px, 80%);
-    display: grid;
-    justify-items: center;
+.home {
+    --padding: 1.5rem;
+    --header-height: 3.5rem;
+    --animation-range: 0 100px;
 }
 
-.home__title {
-    font-size: 1.8rem;
-    font-weight: 300;
-    color: cadetblue;
-    margin-top: 0;
-    margin-bottom: 0.6rem;
-    text-align: center;
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: var(--padding);
+    display: flex;
+    align-items: center;
+
+    background-image: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.8) 100%
+    );
+    gap: var(--padding);
+    z-index: 10;
+    height: var(--header-height);
+    box-sizing: content-box;
+    animation: resize-padding linear both;
+    animation-timeline: scroll();
+    animation-range: var(--animation-range);
 }
 
-.home__albums {
-    display: grid;
-    gap: 0.5rem;
-    margin-bottom: 0.6rem;
-    width: 100%;
+.home__album-button {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
 }
 
-.home__albums .button {
-    display: block;
+.home__album-button-span-2 {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.home__album-name {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: end;
+    padding: 0.8rem 1.3rem;
+    color: white;
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-align: left;
+    transition: opacity 1s ease;
+}
+
+.home__album-name::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 40%,
+        rgba(50, 0, 0, 0.8) 90%
+    );
+    opacity: 1;
+    transition: opacity 0.6s ease;
+    z-index: -1;
+}
+
+.home__album-name:hover::after {
+    opacity: 0.5;
+}
+
+.masonry-grid {
+    margin-top: calc(var(--header-height) + (var(--padding) * 2));
+    gap: var(--padding);
+    padding: var(--padding);
+    min-height: unset;
+    grid-template-rows: unset;
+}
+
+.dynamic-title {
+    animation: resize-text linear both;
+    animation-timeline: scroll();
+    animation-range: var(--animation-range);
+    font-size: 2rem;
+}
+
+@keyframes resize-text {
+    from {
+        font-size: 4rem;
+    }
+    to {
+        height: 40px;
+        line-height: 2.8rem;
+        font-size: 2rem;
+    }
+}
+
+@keyframes resize-padding {
+    from {
+        padding-top: var(--padding);
+        padding-bottom: var(--padding);
+    }
+    to {
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
+    }
 }

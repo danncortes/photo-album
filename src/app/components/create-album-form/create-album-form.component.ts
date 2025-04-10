@@ -185,7 +185,7 @@ export class CreateAlbumFormComponent implements OnInit {
 
     get showIdError() {
         const { invalid, value } = this.form.controls.id;
-        return value && invalid;
+        return !!value && invalid;
     }
 
     get directoryPathError() {

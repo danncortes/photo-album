@@ -1,52 +1,47 @@
-<div class="modal-card">
-    <h2>Create a new Album</h2>
-    <form
-        [formGroup]="form"
-        (ngSubmit)="onFormSubmit()"
-        class="create-album-form form-md"
-    >
-        <div class="form-columns">
-            <div class="form-group form-group--row">
-                <label for="name">Name</label>
-                <input
-                    formControlName="name"
-                    class="text-input"
-                    [class]="{ 'input-error': showNameError }"
-                    type="text"
-                    id="name"
-                    required
-                />
-                @if (showNameError) {
-                    <div class="control-error">{{ nameError }}</div>
-                }
-            </div>
-            <div class="form-group form-group--row">
-                <label for="id">Id</label>
-                <input
-                    formControlName="id"
-                    class="text-input"
-                    [class]="{ 'input-error': showIdError }"
-                    type="text"
-                    id="id"
-                    required
-                />
-                @if (showIdError) {
-                    <div class="control-error">{{ idError }}</div>
-                }
-            </div>
+<div class="bg-base-100 p-6 rounded-md shadow-md">
+    <h2 class="text-xl font-semibold mb-2">Create a new Album</h2>
+    <form [formGroup]="form" (ngSubmit)="onFormSubmit()">
+        <div class="flex gap-6 mb-2">
+            <app-custom-input
+                class="w-full"
+                label="Name"
+                id="name"
+                type="text"
+                formControlName="name"
+                [showError]="showNameError"
+                [errorMessage]="nameError"
+            />
+            <app-custom-input
+                class="w-full"
+                label="Id"
+                id="id"
+                type="text"
+                formControlName="id"
+                [showError]="showIdError"
+                [errorMessage]="idError"
+            />
         </div>
-        <div class="form-group">
-            <label for="grouped">Grouped</label>
-            <input type="checkbox" id="grouped" formControlName="grouped" />
-            <p class="form-group__description">
+        <fieldset class="fieldset">
+            <label class="fieldset-label" for="grouped">
+                <input
+                    class="checkbox"
+                    type="checkbox"
+                    id="grouped"
+                    formControlName="grouped"
+                />
+                Grouped
+            </label>
+            <p class="text-xs text-gray-500">
                 It will show the gallery grouped by one level deep folders
                 inside the directory (Subfolders won't be taken)
             </p>
-        </div>
-        <div class="form-group form-group--row">
-            <label for="directory-path">Photos directory</label>
+        </fieldset>
+        <fieldset class="fieldset mb-4">
+            <label class="fieldset-legend" for="directory-path"
+                >Photos directory
+            </label>
             <input
-                class="text-input"
+                class="input input-sm w-full"
                 [class]="{ 'input-error': showDirectoryPathError }"
                 type="text"
                 id="directory-path"
@@ -55,112 +50,100 @@
                 required
             />
             @if (showDirectoryPathError) {
-                <div class="control-error">{{ directoryPathError }}</div>
+                <div class="fielset-label text-xs text-red-500 mt-1">
+                    {{ directoryPathError }}
+                </div>
             }
-        </div>
-        <h3>Settings</h3>
-        <div class="form-columns">
+        </fieldset>
+
+        <h3 class="text-lg font-semibold">Settings</h3>
+        <div class="flex gap-6 mb-4">
             <div>
-                <div class="form-group form-group--row">
+                <app-custom-input
+                    class="mb-2"
+                    label="Gap"
+                    id="gap"
+                    type="number"
+                    formControlName="gap"
+                    [showError]="showNumberFieldError('gap')"
+                    [errorMessage]="numberFieldError('gap')"
+                />
+                <h4 class="text-md font-semibold">Page size (cm)</h4>
+                <div class="flex gap-4">
                     <app-custom-input
                         class="grid"
-                        label="Gap"
-                        id="gap"
+                        label="Width"
+                        id="page-width"
                         type="number"
-                        formControlName="gap"
-                        [showError]="showNumberFieldError('gap')"
-                        [errorMessage]="numberFieldError('gap')"
+                        formControlName="pageWidth"
+                        [showError]="showNumberFieldError('pageWidth')"
+                        [errorMessage]="numberFieldError('pageWidth')"
                     />
-                </div>
-                <h4>Page size (cm)</h4>
-                <div class="form-columns">
-                    <div class="form-group form-group--row">
-                        <app-custom-input
-                            class="grid"
-                            label="Width"
-                            id="page-width"
-                            type="number"
-                            formControlName="pageWidth"
-                            [showError]="showNumberFieldError('pageWidth')"
-                            [errorMessage]="numberFieldError('pageWidth')"
-                        />
-                    </div>
-                    <div class="form-group form-group--row">
-                        <app-custom-input
-                            class="grid"
-                            label="Height"
-                            id="page-height"
-                            type="number"
-                            formControlName="pageHeight"
-                            [showError]="showNumberFieldError('pageHeight')"
-                            [errorMessage]="numberFieldError('pageHeight')"
-                        />
-                    </div>
+                    <app-custom-input
+                        class="grid"
+                        label="Height"
+                        id="page-height"
+                        type="number"
+                        formControlName="pageHeight"
+                        [showError]="showNumberFieldError('pageHeight')"
+                        [errorMessage]="numberFieldError('pageHeight')"
+                    />
                 </div>
             </div>
             <div>
-                <h4>Page padding (cm)</h4>
-                <div class="form-columns">
-                    <div class="form-group form-group--row">
-                        <app-custom-input
-                            class="grid"
-                            label="Padding Top"
-                            id="padding-top"
-                            type="number"
-                            formControlName="paddingTop"
-                            [showError]="showNumberFieldError('paddingTop')"
-                            [errorMessage]="numberFieldError('paddingTop')"
-                        />
-                    </div>
-                    <div class="form-group form-group--row">
-                        <app-custom-input
-                            class="grid"
-                            label="Padding Right"
-                            id="padding-right"
-                            type="number"
-                            formControlName="paddingRight"
-                            [showError]="showNumberFieldError('paddingRight')"
-                            [errorMessage]="numberFieldError('paddingRight')"
-                        />
-                    </div>
+                <h4 class="text-md font-semibold pt-2">Page padding (cm)</h4>
+                <div class="flex gap-4">
+                    <app-custom-input
+                        class="grid"
+                        label="Padding Top"
+                        id="padding-top"
+                        type="number"
+                        formControlName="paddingTop"
+                        [showError]="showNumberFieldError('paddingTop')"
+                        [errorMessage]="numberFieldError('paddingTop')"
+                    />
+                    <app-custom-input
+                        class="grid"
+                        label="Padding Right"
+                        id="padding-right"
+                        type="number"
+                        formControlName="paddingRight"
+                        [showError]="showNumberFieldError('paddingRight')"
+                        [errorMessage]="numberFieldError('paddingRight')"
+                    />
                 </div>
-
-                <div class="form-columns">
-                    <div class="form-group form-group--row">
-                        <app-custom-input
-                            class="grid"
-                            label="Padding Left"
-                            id="padding-left"
-                            type="number"
-                            formControlName="paddingLeft"
-                            [showError]="showNumberFieldError('paddingLeft')"
-                            [errorMessage]="numberFieldError('paddingLeft')"
-                        />
-                    </div>
-                    <div class="form-group form-group--row">
-                        <app-custom-input
-                            class="grid"
-                            label="Padding Bottom"
-                            id="padding-bottom"
-                            type="number"
-                            formControlName="paddingBottom"
-                            [showError]="showNumberFieldError('paddingBottom')"
-                            [errorMessage]="numberFieldError('paddingBottom')"
-                        />
-                    </div>
+                <div class="flex gap-4">
+                    <app-custom-input
+                        class="grid"
+                        label="Padding Left"
+                        id="padding-left"
+                        type="number"
+                        formControlName="paddingLeft"
+                        [showError]="showNumberFieldError('paddingLeft')"
+                        [errorMessage]="numberFieldError('paddingLeft')"
+                    />
+                    <app-custom-input
+                        class="grid"
+                        label="Padding Bottom"
+                        id="padding-bottom"
+                        type="number"
+                        formControlName="paddingBottom"
+                        [showError]="showNumberFieldError('paddingBottom')"
+                        [errorMessage]="numberFieldError('paddingBottom')"
+                    />
                 </div>
             </div>
         </div>
         @if (creationError()) {
-            <div class="creation-error">{{ creationError() }}</div>
+            <div class="text-sm text-red-500 mb-2">{{ creationError() }}</div>
         }
-        <div class="create-album-form__controls">
+        <div class="flex gap-4 justify-end">
             <!-- This button could be type="reset" but that would clear the form completely -->
-            <button type="button" class="clear button" (click)="resetForm()">
+            <button type="button" class="btn btn-sm" (click)="resetForm()">
                 Reset
             </button>
             <button
-                class="create button"
+                class="btn btn-sm btn-secondary"
                 [disabled]="isFormInvalid"
                 type="submit"
             >

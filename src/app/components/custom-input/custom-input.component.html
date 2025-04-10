@@ -1,15 +1,17 @@
-<label [for]="id()">{{ label() }}</label>
-<input
-    class="text-input"
-    [class]="{ 'input-error': showError() }"
-    [type]="type()"
-    [id]="id()"
-    [value]="value()"
-    (input)="onInput($any($event.target).value)"
-    (blur)="onTouched()"
-/>
-@if (showError()) {
-    <div class="control-error">
-        {{ errorMessage() }}
-    </div>
-}
+<fieldset [class]="'fieldset' + ' ' + class()">
+    <label [for]="id()" class="fieldset-legend">{{ label() }}</label>
+    <input
+        class="input input-sm"
+        [class]="{ 'input-error': showError() }"
+        [type]="type()"
+        [id]="id()"
+        [value]="value()"
+        (input)="onInput($any($event.target).value)"
+        (blur)="onTouched()"
+    />
+    @if (showError()) {
+        <div class="fielset-label text-xs text-red-500">
+            {{ errorMessage() }}
+        </div>
+    }
+</fieldset>

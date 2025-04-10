@@ -1,5 +1,5 @@
-<div class="pages-container">
-    <div class="pages">
+<div class="pages-container w-full overflow-x-auto">
+    <div class="pages flex p-6 gap-8">
         @for (page of albumStore.activeAlbum()!.pages; track $index) {
             <div class="page-container">
                 <app-page

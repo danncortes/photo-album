@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AlbumStore } from './store/albums.store';
 
@@ -11,6 +11,7 @@ import { AlbumStore } from './store/albums.store';
 })
 export class AppComponent {
     title = 'photo-album';
+    albumStore = inject(AlbumStore);
 
     constructor() {}
 }
