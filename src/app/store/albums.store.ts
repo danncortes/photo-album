@@ -1,4 +1,5 @@
 import {
+    patchState,
     signalStore,
     withComputed,
     withMethods,
@@ -9,13 +10,19 @@ import { computed, effect, ElementRef, inject } from '@angular/core';
 
 import { ConfigService } from '../services/config.service';
 import {
-    checkAndGetAlbum,
+    getAlbumAndDirectory,
     clearAlbum,
     getAlbumsPreview,
     setActiveFolder,
     setIsPreviewAlbumLoading,
 } from './album-store.methods';
-import { Album, AlbumPreview, GroupedAlbum, PageStyles } from '../../types';
+import {
+    Album,
+    AlbumPreview,
+    Directory,
+    PageStyles,
+    PhotosDictionary,
+} from '../../types';
 import {
     addPage,
     addPageDivElement,
@@ -36,24 +43,29 @@ import {
     ShiftPhotoPositionParams,
     updatePageSettings,
 } from './page-store.methods';
+import { Subject } from 'rxjs';
 
 export type Store = WritableStateSource<AlbumState>;
 
 export type AlbumState = {
     albumsPreview: AlbumPreview[];
     activeAlbum: Album | null;
+    albumDirectory: Directory;
     isAlbumPreviewLoading: boolean;
     isActiveAlbumLoading: boolean;
     templates: string[][][];
     pageDivElements: ElementRef<HTMLElement>[];
+    updatedAlbumStatus: string | null;
 };
 
 const initialState: AlbumState = {
     albumsPreview: [],
     activeAlbum: null,
+    albumDirectory: [],
     isAlbumPreviewLoading: false,
     isActiveAlbumLoading: false,
     pageDivElements: [],
+    updatedAlbumStatus: null,
     /* template Structure e.g.
         5-1-1-3-0-2
         [nPhotos]-[id]-[variant]-[nHorizontalPhotos]-[nVerticalPhotos]-[nSquarePhotos]
@@ -99,53 +111,43 @@ export const AlbumStore = signalStore(
         isAppLoading: computed(
             () => store.isAlbumPreviewLoading() || store.isActiveAlbumLoading(),
         ),
-        galleryPhotos: computed(() => {
-            const album = store.activeAlbum();
+        photosInPage: computed(() => {
+            const photosDicc: PhotosDictionary = {};
 
-            if (album) {
-                if (album.isGrouped && album.activeFolder) {
-                    return album.photosDictionary[album.activeFolder];
-                } else {
-                    return album.photosDictionary;
-                }
-            } else {
-                return null;
-            }
-        }),
-        activeFolder: computed(() => {
-            const activeAlbum = store.activeAlbum();
-            if (activeAlbum) {
-                return (activeAlbum as GroupedAlbum).activeFolder;
-            } else {
-                return null;
-            }
-        }),
-        thumbnails: computed(() => {
-            const activeAlbum = store.activeAlbum();
-
-            if (activeAlbum) {
-                if (activeAlbum.isGrouped) {
-                    if (activeAlbum.activeFolder) {
-                        return activeAlbum.photosDictionary[
-                            activeAlbum.activeFolder
-                        ];
+            for (let [pageIndex, page] of Object.entries(
+                store.activeAlbum()?.pages || [],
+            )) {
+                for (let photo of page.photos) {
+                    if (photo.fileName in photosDicc) {
+                        photosDicc[photo.fileName].push(parseInt(pageIndex));
+                    } else {
+                        photosDicc[photo.fileName] = [parseInt(pageIndex)];
                     }
-                    return {};
-                } else {
-                    return activeAlbum.photosDictionary;
                 }
             }
-            return {};
+            return photosDicc;
         }),
     })),
     withMethods((store, configService = inject(ConfigService)) => {
-        const saveAlbum = (album: Album) => {
-            configService.saveAlbum(album);
-        };
         effect(() => {
             const activeAlbum = store.activeAlbum();
-            if (activeAlbum) {
-                saveAlbum(activeAlbum);
+            const updatedAlbumStatus = store.updatedAlbumStatus();
+
+            if (updatedAlbumStatus && activeAlbum) {
+                configService.saveAlbum(activeAlbum).subscribe({
+                    next: () => {
+                        console.log('Album Saved - ', updatedAlbumStatus);
+                    },
+                    error: (error) => {
+                        console.error(updatedAlbumStatus, '- ' + error.message);
+                    },
+                    complete: () => {
+                        patchState(store, (state) => ({
+                            ...state,
+                            updatedAlbumStatus: null,
+                        }));
+                    },
+                });
             }
         });
 
@@ -154,8 +156,8 @@ export const AlbumStore = signalStore(
             setIsPreviewAlbumLoading: (isLoading: boolean) =>
                 setIsPreviewAlbumLoading(isLoading, store),
             getAlbumsPreview: () => getAlbumsPreview(configService, store),
-            checkAndGetAlbum: (albumId: string) =>
-                checkAndGetAlbum(albumId, configService, store),
+            getAlbumAndDirectory: (albumId: string) =>
+                getAlbumAndDirectory(albumId, configService, store),
             setActiveFolder: (folder: string | null) =>
                 setActiveFolder(folder, store),
             clearPageDivElements: () => clearPageDivElements(store),

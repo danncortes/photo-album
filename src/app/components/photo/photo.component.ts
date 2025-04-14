@@ -11,7 +11,7 @@ import { AlbumStore } from '../../store/albums.store';
     templateUrl: './photo.component.html',
     styleUrl: './photo.component.css',
     host: {
-        class: 'overflow-hidden cursor-pointer bg-gray-200',
+        class: 'overflow-hidden cursor-pointer bg-gray-200 relative',
     },
 })
 export class PhotoComponent {
@@ -25,9 +25,9 @@ export class PhotoComponent {
     shiftOptions: ShiftDirection[] = [-1, 1];
 
     getPhotoSrc(photo: PhotoConfig) {
-        const { folder, fileName } = photo;
+        const { path, fileName } = photo;
         const { id } = this.albumStore.activeAlbum()!;
-        return `assets/albums/${id}${folder ? `/${folder}` : ''}/${fileName}`;
+        return `assets/albums/${id}${path}/${fileName}`;
     }
 
     getImgStyles(styles: string[]): string {

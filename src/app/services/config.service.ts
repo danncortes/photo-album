@@ -1,20 +1,7 @@
-import {
-    computed,
-    ElementRef,
-    inject,
-    Injectable,
-    signal,
-    WritableSignal,
-} from '@angular/core';
-import {
-    Album,
-    AlbumPreview,
-    GroupedDictionary,
-    PhotosDictionary,
-    ShiftDirection,
-} from '../../types';
+import { inject, Injectable } from '@angular/core';
+import { Album } from '../../types';
 import { HttpClient } from '@angular/common/http';
-import { firstValueFrom, Observable, of, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -25,19 +12,17 @@ export class ConfigService {
     router = inject(Router);
 
     getAlbums() {
-        return firstValueFrom(this.http.get('http://localhost:3333/albums'));
+        return this.http.get('http://localhost:3333/albums');
     }
 
-    checkAlbum(albumId: string) {
-        return firstValueFrom(
-            this.http.get(`http://localhost:3333/album/check/${albumId}`),
+    getAlbumDirectory(albumId: string) {
+        return this.http.get(
+            `http://localhost:3333/album/directory/${albumId}`,
         );
     }
 
     getAlbum(albumId: string) {
-        return firstValueFrom(
-            this.http.get(`http://localhost:3333/album/${albumId}`),
-        );
+        return this.http.get(`http://localhost:3333/album/${albumId}`);
     }
 
     createAlbum(album: Album) {
@@ -47,13 +32,9 @@ export class ConfigService {
     }
 
     saveAlbum(album: Album) {
-        this.http
-            .post('http://localhost:3333/album/save', {
-                config: album,
-            })
-            .subscribe(() => {
-                console.log('Config saved');
-            });
+        return this.http.post('http://localhost:3333/album/save', {
+            config: album,
+        });
     }
 
     test(val: any) {

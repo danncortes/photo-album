@@ -1,8 +1,9 @@
 import { patchState } from '@ngrx/signals';
 
-import { Album, AlbumPreview } from '../../types';
+import { Album, AlbumPreview, Directory } from '../../types';
 import { Store } from './albums.store';
 import { ConfigService } from '../services/config.service';
+import { forkJoin } from 'rxjs';
 
 export const setIsPreviewAlbumLoading = (isLoading: boolean, store: Store) => {
     patchState(store, (state) => ({
@@ -18,23 +19,26 @@ export const setIsAlbumLoading = (isLoading: boolean, store: Store) => {
     }));
 };
 
-export const getAlbumsPreview = async (
+export const getAlbumsPreview = (
     configService: ConfigService,
     store: Store,
 ) => {
-    try {
-        setIsPreviewAlbumLoading(true, store);
-        const previewAlbums =
-            (await configService.getAlbums()) as AlbumPreview[];
-        patchState(store, (state) => ({
-            ...state,
-            albumsPreview: previewAlbums,
-        }));
-    } catch (e) {
-        console.error(e);
-    } finally {
-        setIsPreviewAlbumLoading(false, store);
-    }
+    setIsPreviewAlbumLoading(true, store);
+
+    configService.getAlbums().subscribe({
+        next: (previewAlbums) => {
+            patchState(store, (state) => ({
+                ...state,
+                albumsPreview: previewAlbums as AlbumPreview[],
+            }));
+        },
+        error: (error) => {
+            console.error(error);
+        },
+        complete: () => {
+            setIsPreviewAlbumLoading(false, store);
+        },
+    });
 };
 
 export const setActiveFolder = (folder: string | null, store: Store) => {
@@ -47,25 +51,31 @@ export const setActiveFolder = (folder: string | null, store: Store) => {
     }));
 };
 
-export const checkAndGetAlbum = async (
+export const getAlbumAndDirectory = (
     albumId: string,
     configService: ConfigService,
     store: Store,
 ) => {
-    try {
-        setIsAlbumLoading(true, store);
-        await configService.checkAlbum(albumId);
-        const album = (await configService.getAlbum(albumId)) as Album;
+    setIsAlbumLoading(true, store);
 
-        patchState(store, (state) => ({
-            ...state,
-            activeAlbum: album,
-        }));
-    } catch (error) {
-        console.error(error);
-    } finally {
-        setIsAlbumLoading(false, store);
-    }
+    forkJoin([
+        configService.getAlbumDirectory(albumId),
+        configService.getAlbum(albumId),
+    ]).subscribe({
+        next: ([albumDirectory, album]) => {
+            patchState(store, (state) => ({
+                ...state,
+                albumDirectory: albumDirectory as Directory,
+                activeAlbum: album as Album,
+            }));
+        },
+        error: (error) => {
+            console.error(error);
+        },
+        complete: () => {
+            setIsAlbumLoading(false, store);
+        },
+    });
 };
 
 export const clearAlbum = (store: Store) => {

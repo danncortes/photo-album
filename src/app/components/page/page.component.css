@@ -1,5 +1,9 @@
-.page {
-    outline: 0.12rem solid white;
+:host {
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: auto min-content;
+    height: 100%;
+    min-height: 400px;
 }
 
 .page-controls button {

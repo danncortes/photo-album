@@ -5,6 +5,7 @@ import {
     ElementRef,
     inject,
     input,
+    signal,
     viewChild,
 } from '@angular/core';
 import { Dialog, DialogRef } from '@angular/cdk/dialog';
@@ -27,6 +28,8 @@ export class PageComponent implements AfterContentInit {
     pageIndex = input.required<number>();
     pagesLength = input.required<number>();
     dialog = inject(Dialog);
+    isPageDownloading = signal(false);
+    iconSize = 'size-6';
     readonly albumStore = inject(AlbumStore);
 
     pageHeight = 400;
@@ -54,10 +57,8 @@ export class PageComponent implements AfterContentInit {
         );
     });
 
-    pageWidth = computed(() => {
-        const proportion =
-            Number(this.pageWidthInCm()) / Number(this.pageHeightInCm());
-        return this.pageHeight * proportion + 'px';
+    proportion = computed(() => {
+        return Number(this.pageWidthInCm()) / Number(this.pageHeightInCm());
     });
 
     gap = computed(() => {
@@ -134,11 +135,13 @@ export class PageComponent implements AfterContentInit {
         );
     }
 
-    downloadPage() {
-        this.albumStore.downloadAlbumPage(
+    async downloadPage() {
+        this.isPageDownloading.set(true);
+        await this.albumStore.downloadAlbumPage(
             this.pageExportDiv(),
             `${this.albumStore.activeAlbum()!.name}-${this.pageIndex() + 1}.png`,
         );
+        this.isPageDownloading.set(false);
     }
 
     trackByFn(i: number) {

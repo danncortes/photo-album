@@ -12,7 +12,7 @@ export class PagePreviewComponent {
     albumId = input.required<string>();
 
     getPhotoSrc(photo: PhotoConfig) {
-        const subFolder = photo.folder ? `/${photo.folder}` : '';
-        return `assets/albums/${this.albumId()}${subFolder}/${photo.fileName}`;
+        const { path, fileName } = photo;
+        return `assets/albums/${this.albumId()}${path}/${fileName}`;
     }
 }
