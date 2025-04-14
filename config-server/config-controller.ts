@@ -1,12 +1,7 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import { Request, Response } from 'express';
-import {
-    Album,
-    AlbumPreview,
-    AlbumsConfig,
-    PhotosDictionary,
-} from '../src/types';
+import { Album, AlbumPreview, AlbumsConfig, Directory } from '../src/types';
 
 const supportedImageExtensions = ['jpg', 'jpeg', 'png', 'gif'];
 
@@ -50,18 +45,11 @@ export async function getAlbums(req: Request, res: Response) {
                 };
             }
 
-            const {
-                id,
-                name,
-                isGrouped: grouped,
-                settings,
-                originFolder,
-            } = album;
+            const { id, name, settings, originFolder } = album;
 
             albumsPreview.push({
                 id,
                 name,
-                isGrouped: grouped,
                 settings,
                 originFolder,
                 previewPage,
@@ -155,86 +143,58 @@ export async function createAlbum(req: Request, res: Response) {
     }
 }
 
-async function updatePhotosDictionary(
-    photosDictionary: PhotosDictionary,
-    directoryPath: string,
-): Promise<PhotosDictionary> {
+async function buildDirectory(
+    path: string,
+    pathStart: string,
+): Promise<Directory> {
+    let directory: Directory = [];
     try {
-        const photoFilesFromFolder = await fs.readdir(directoryPath);
-        const newPhotosDictionary: PhotosDictionary = { ...photosDictionary };
-        // Filter only supported image files
-        const supportedFilesFromFolder = photoFilesFromFolder.filter(
-            (fileName) => {
-                const extention = fileName.split('.').pop();
-                if (extention) {
-                    return supportedImageExtensions.includes(extention);
+        const files = await fs.readdir(path, { withFileTypes: true });
+        for (const file of files) {
+            const fullPath = `${path}/${file.name}`;
+            const relativePath = path.split(pathStart).pop() || '';
+            if (file.isDirectory()) {
+                directory.push({
+                    type: 'folder',
+                    name: file.name,
+                    path: relativePath,
+                    sub: await buildDirectory(fullPath, pathStart),
+                });
+            } else {
+                const [, extension] = file.name.split('.');
+                if (
+                    ['png', 'jpg', 'jpeg', 'gif'].includes(
+                        extension?.toLowerCase(),
+                    )
+                ) {
+                    directory.push({
+                        type: 'img',
+                        name: file.name,
+                        path: relativePath,
+                    });
                 }
-                return false;
-            },
-        );
-
-        const photoFilesListFromAlbum = Object.keys(photosDictionary);
-
-        const newPhotos = supportedFilesFromFolder.filter(
-            (fileName) => !photoFilesListFromAlbum.includes(fileName),
-        );
-
-        const removedPhotos = photoFilesListFromAlbum.filter(
-            (photo) => !supportedFilesFromFolder.includes(photo),
-        );
-
-        for (const photo of removedPhotos) {
-            if (photosDictionary[photo].pages.length === 0) {
-                delete newPhotosDictionary[photo];
             }
         }
-
-        for (const photo of newPhotos) {
-            newPhotosDictionary[photo] = { pages: [] };
-        }
-
-        return newPhotosDictionary;
+        return directory;
     } catch (error) {
-        throw `Error updating photos dictionary: ${error}`;
+        console.error(`Error building directory ${path}:`, error);
+        throw `Error building directory ${path}: ${error}`;
     }
 }
 
-export async function checkAlbum(req: Request, res: Response): Promise<void> {
+export async function getAlbumDirectory(
+    req: Request,
+    res: Response,
+): Promise<any> {
     const { id } = req.params;
-
     try {
         const albumsConfig: AlbumsConfig = await loadAlbumConfigData();
-        const album = albumsConfig[id];
-        const newAlbum = { ...album };
+        const { originFolder } = albumsConfig[id];
 
-        if (album.isGrouped) {
-            for (const folder in album.photosDictionary) {
-                const path = `${album.originFolder}/${folder}`;
-                const photosDictionary: PhotosDictionary =
-                    album.photosDictionary[folder];
-                const newDictionary = await updatePhotosDictionary(
-                    photosDictionary,
-                    path,
-                );
+        let directory: Directory = await buildDirectory(originFolder, id);
 
-                newAlbum.photosDictionary[folder] = newDictionary;
-            }
-        } else {
-            const path = `${album.originFolder}`;
-            const photosDictionary: PhotosDictionary = album.photosDictionary;
-            const newDictionary = await updatePhotosDictionary(
-                photosDictionary,
-                path,
-            );
-
-            newAlbum.photosDictionary = newDictionary;
-        }
-
-        albumsConfig[id] = newAlbum;
-
-        await saveAlbumsConfigDataFile(configPath, albumsConfig);
-        res.status(200).send();
+        res.status(200).send(directory);
     } catch (error) {
-        throw `Error checking album ${id}: ${error}`;
+        res.status(500).send('Error');
     }
 }

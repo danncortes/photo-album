@@ -3,13 +3,17 @@ import { Dialog, DialogRef } from '@angular/cdk/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 
-import { GalleryComponent } from '../gallery/gallery.component';
 import { PagesComponent } from '../pages/pages.component';
 import { TemplatesComponent } from '../templates/templates.component';
 import { AlbumStore } from '../../store/albums.store';
+import { DirectoryGalleryComponent } from '../directory-gallery/directory-gallery.component';
 @Component({
     selector: 'app-album',
-    imports: [GalleryComponent, PagesComponent],
+    imports: [
+        PagesComponent,
+        DirectoryGalleryComponent,
+        DirectoryGalleryComponent,
+    ],
     templateUrl: './album.component.html',
     styleUrl: './album.component.css',
     host: {
@@ -28,7 +32,7 @@ export class AlbumComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.route.params.subscribe(async (params) => {
-            await this.albumStore.checkAndGetAlbum(params['id']);
+            this.albumStore.getAlbumAndDirectory(params['id']);
         });
     }
 

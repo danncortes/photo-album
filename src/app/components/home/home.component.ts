@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, computed, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Dialog, DialogRef } from '@angular/cdk/dialog';
 
@@ -16,15 +16,15 @@ import { PagePreviewComponent } from '../page-preview/page-preview.component';
 export class HomeComponent implements OnInit {
     dialog = inject(Dialog);
     readonly albumStore = inject(AlbumStore);
-    albumSpans: number[] = [];
+
+    albumSpans = computed(() => {
+        return this.albumStore.albumsPreview().map(() => this.getGridSpan());
+    });
 
     constructor(private router: Router) {}
 
-    async ngOnInit() {
-        await this.albumStore.getAlbumsPreview();
-        this.albumSpans = this.albumStore
-            .albumsPreview()
-            .map(() => this.getGridSpan());
+    ngOnInit() {
+        this.albumStore.getAlbumsPreview();
     }
 
     openAlbum(id: string) {

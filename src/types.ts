@@ -2,39 +2,38 @@ export type AlbumsConfig = {
     [key: string]: Album;
 };
 
-export type Album = GroupedAlbum | UngroupedAlbum;
+type FileDirBase = {
+    name: string;
+    path: string;
+};
 
-type BaseAlbum = {
+export type FolderDir = {
+    type: 'folder';
+    sub: Array<FolderDir | FileDir>;
+} & FileDirBase;
+
+export type FileDir = {
+    type: 'img';
+} & FileDirBase;
+
+export type Directory = Array<FolderDir | FileDir>;
+
+export type Album = {
     name: string;
     id: string;
     originFolder: string;
+    activeFolder: string | null;
+    pages: Pages;
     settings: StyleSettings;
 };
 
-export type GroupedAlbum = {
-    isGrouped: true; // `isGrouped` is `true`
-    activeFolder: string | null;
-    photosDictionary: GroupedDictionary; // `photosDictionary` is `GroupedDictionary`
-    pages: Pages;
-} & BaseAlbum;
-
-export type UngroupedAlbum = {
-    isGrouped: false; // `isGrouped` is `false`
-    photosDictionary: PhotosDictionary; // `photosDictionary` is `PhotosDictionary`
-    pages: Pages;
-} & BaseAlbum;
-
-export type GroupedDictionary = {
-    [key: string]: PhotosDictionary;
-};
-
 export type PhotosDictionary = {
-    [key: string]: PhotoInPage;
+    [key: string]: Array<number>;
 };
 
 export type AlbumPreview = Pick<
     Album,
-    'isGrouped' | 'name' | 'id' | 'originFolder' | 'settings'
+    'name' | 'id' | 'originFolder' | 'settings'
 > & {
     previewPage: Page;
 };
@@ -53,16 +52,10 @@ export type PageFormat = {
     height: number;
 };
 
-export type SingleDicc = PhotoInPage;
-
 export type Pages = Array<Page>;
 
-export type PhotoInPage = {
-    pages: Array<number>;
-};
-
 export type PhotoConfig = {
-    folder: string | null;
+    path: string;
     fileName: string;
     styles: Array<string>;
 };

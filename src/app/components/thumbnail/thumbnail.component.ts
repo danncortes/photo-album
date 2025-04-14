@@ -2,8 +2,6 @@ import { Component, inject, input, OnInit, signal } from '@angular/core';
 import { CdkMenu, CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
 
 import { AlbumStore } from '../../store/albums.store';
-import { KeyValue } from '@angular/common';
-import { PhotoInPage } from '../../../types';
 
 @Component({
     selector: 'app-thumbnail',
@@ -12,7 +10,9 @@ import { PhotoInPage } from '../../../types';
     styleUrl: './thumbnail.component.css',
 })
 export class ThumbnailComponent implements OnInit {
-    photo = input.required<KeyValue<string, PhotoInPage>>();
+    path = input.required<string>();
+    name = input.required<string>();
+    pages = input.required<number[]>();
     readonly albumStore = inject(AlbumStore);
     src = signal('');
     isThumbnailLoading = signal(false);
@@ -23,14 +23,13 @@ export class ThumbnailComponent implements OnInit {
 
     async loadThumbNail() {
         this.isThumbnailLoading.set(true);
-        const src = await this.getThumbnailSrc(this.photo().key);
+
+        const { id } = this.albumStore.activeAlbum()!;
+        const src = await this.getThumbnailSrc(
+            `assets/albums/${id}${this.path()}/${this.name()}`,
+        );
         this.isThumbnailLoading.set(false);
         this.src.set(src);
-    }
-
-    getImgSrc(fileName: string): string {
-        const { id } = this.albumStore.activeAlbum()!;
-        return `assets/albums/${id}${this.albumStore.activeFolder() ? `/${this.albumStore.activeFolder()}` : ''}/${fileName}`;
     }
 
     getThumbnailSrc(
@@ -38,8 +37,6 @@ export class ThumbnailComponent implements OnInit {
         maxWidth: number = 300,
         maxHeight: number = 200,
     ): Promise<any> {
-        const url = this.getImgSrc(imageUrl);
-
         return new Promise((resolve, reject) => {
             const img = new Image();
             img.crossOrigin = 'Anonymous'; // Avoid CORS issues if loading from another domain
@@ -75,7 +72,7 @@ export class ThumbnailComponent implements OnInit {
                     reject('Canvas context is not supported');
                 }
             };
-            img.src = url;
+            img.src = imageUrl;
 
             img.onerror = (error) => reject(error);
         });
@@ -101,7 +98,7 @@ export class ThumbnailComponent implements OnInit {
         this.albumStore.addPhoto({
             pageIndex,
             fileName,
-            folderName: this.albumStore.activeFolder(),
+            folderName: this.path(),
         });
     }
 }
