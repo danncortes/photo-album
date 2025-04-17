@@ -7,6 +7,7 @@ import { Observable, Subject } from 'rxjs';
 import { AlbumState, AlbumStore, Store } from './albums.store';
 import {
     Album,
+    Page,
     Pages,
     PageStyles,
     PhotoConfig,
@@ -78,6 +79,24 @@ export const addPage = (
                 template,
             },
         ];
+
+        return {
+            ...state,
+            activeAlbum: {
+                ...state.activeAlbum!,
+                pages,
+            },
+            updatedAlbumStatus: 'Add Page',
+        };
+    });
+};
+
+export const addPageWithPhotos = (
+    page: Page,
+    store: WritableStateSource<AlbumState>,
+) => {
+    patchState(store, (state) => {
+        const pages: Pages = [...state.activeAlbum!.pages, page];
 
         return {
             ...state,

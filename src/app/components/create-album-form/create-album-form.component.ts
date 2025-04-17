@@ -102,6 +102,14 @@ export class CreateAlbumFormComponent implements OnInit {
                     );
                 }
             }),
+            this.form.controls.directoryPath.valueChanges.subscribe((value) => {
+                if (value) {
+                    this.form.controls.directoryPath.setValue(
+                        value.replace(/^['"]+|['"]+$/g, ''),
+                        { emitEvent: false },
+                    );
+                }
+            }),
         ];
 
         const savedAlbum = window.localStorage.getItem('newAlbum');

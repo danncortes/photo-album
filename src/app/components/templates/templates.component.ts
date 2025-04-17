@@ -10,6 +10,9 @@ import { Page } from '../../../types';
     imports: [NgFor],
     templateUrl: './templates.component.html',
     styleUrl: './templates.component.css',
+    host: {
+        class: 'h-full overflow-y-auto',
+    },
 })
 export class TemplatesComponent {
     dialogRef = inject<DialogRef<string>>(DialogRef<Page>);

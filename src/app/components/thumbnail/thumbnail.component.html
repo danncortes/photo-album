@@ -1,6 +1,6 @@
 <ng-content>
     <div
-        [cdkMenuTriggerFor]="menu"
+        [cdkMenuTriggerFor]="getMenuTemplate()"
         class="gallery-thumbnail w-max rounded-md bg-base-100 card-xs shadow-md p-1.5 border border-gray-200 cursor-pointer"
     >
         @if (isThumbnailLoading()) {
@@ -10,12 +10,22 @@
                 ></span>
             </div>
         } @else {
-            <img
-                class="h-30 rounded-xs mb-1.5"
-                [src]="src()"
-                [alt]="name()"
-                [title]="name()"
-            />
+            <div class="relative">
+                @if (isSelectionEnabled()) {
+                    <input
+                        type="radio"
+                        [name]="'radio' + name()"
+                        class="radio radio-xs absolute index-10 top-1 left-1 radio-secondary shadow-md outline outline-base-100"
+                        [checked]="selected()"
+                    />
+                }
+                <img
+                    class="h-30 rounded-xs mb-1.5"
+                    [src]="src()"
+                    [alt]="name()"
+                    [title]="name()"
+                />
+            </div>
         }
         <div class="flex gap-1.5">
             @for (pageIndex of pages(); track $index) {

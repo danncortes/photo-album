@@ -1,4 +1,13 @@
-import { Component, inject, input, OnInit, signal } from '@angular/core';
+import {
+    Component,
+    computed,
+    inject,
+    input,
+    OnInit,
+    signal,
+    TemplateRef,
+    viewChild,
+} from '@angular/core';
 import { CdkMenu, CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
 
 import { AlbumStore } from '../../store/albums.store';
@@ -10,9 +19,12 @@ import { AlbumStore } from '../../store/albums.store';
     styleUrl: './thumbnail.component.css',
 })
 export class ThumbnailComponent implements OnInit {
+    menu = viewChild<TemplateRef<any>>('menu');
     path = input.required<string>();
     name = input.required<string>();
     pages = input.required<number[]>();
+    selected = input.required<boolean>();
+    isSelectionEnabled = input.required<boolean>();
     readonly albumStore = inject(AlbumStore);
     src = signal('');
     isThumbnailLoading = signal(false);
@@ -20,6 +32,13 @@ export class ThumbnailComponent implements OnInit {
     async ngOnInit(): Promise<void> {
         this.loadThumbNail();
     }
+
+    getMenuTemplate = computed(() => {
+        return this.isSelectionEnabled() ||
+            this.albumStore.activeAlbum()!.pages.length === 0
+            ? null
+            : this.menu();
+    });
 
     async loadThumbNail() {
         this.isThumbnailLoading.set(true);

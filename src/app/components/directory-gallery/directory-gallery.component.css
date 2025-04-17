@@ -1,0 +1,7 @@
+.toggle:checked {
+    border-color: var(--color-secondary);
+}
+
+.toggle:checked::before {
+    background-color: var(--color-secondary);
+}
