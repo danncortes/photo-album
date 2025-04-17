@@ -63,6 +63,10 @@ export type PhotoConfig = {
 export type PageStyles = Partial<StyleSettings> & {
     format?: Partial<PageFormat>;
 };
+export type Template = {
+    name: string;
+    order: Proportion[];
+};
 
 export type Page = {
     template: string;
@@ -70,3 +74,5 @@ export type Page = {
 } & PageStyles;
 
 export type ShiftDirection = -1 | 1;
+
+export type Proportion = 'l' | 'p' | 's';

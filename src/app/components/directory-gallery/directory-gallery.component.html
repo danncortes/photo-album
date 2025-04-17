@@ -1,27 +1,49 @@
 <div class="p-6 pt-4">
-    <div class="breadcrumbs text-sm pb-4">
-        <ul>
-            @for (folder of activeDirectoryPath(); track $index) {
-                <li>
-                    <a (click)="setDirectoryActive($index)">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            class="h-4 w-4 stroke-current"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
-                            ></path>
-                        </svg>
-                        {{ folder.name }}
-                    </a>
-                </li>
+    <div class="flex justify-between">
+        <div class="breadcrumbs text-sm pb-4">
+            <ul>
+                @for (folder of activeDirectoryPath(); track $index) {
+                    <li>
+                        <a (click)="setDirectoryActive($index)">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                class="h-4 w-4 stroke-current"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+                                ></path>
+                            </svg>
+                            {{ folder.name }}
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="flex items-center">
+            @if (thereAreSelectedPhotos()) {
+                <button
+                    class="btn btn-sm mr-4"
+                    (click)="openAddPagePhotosDialog()"
+                >
+                    Add {{ this.albumStore.selectedPhotos().size }} selected
+                    photos to a new page
+                </button>
             }
-        </ul>
+            <div class="flex items-center">
+                <span class="text-sm pr-2">Select photos</span>
+                <input
+                    type="checkbox"
+                    [checked]="isPhotoSelectionEnabled()"
+                    class="toggle"
+                    (click)="toggleSelection()"
+                />
+            </div>
+        </div>
     </div>
     <div
         class="flex gap-3 w-full rounded-md p-4 overflow-x-auto inset-shadow-sm inset-shadow-gray-400/50 bg-gray-200"
@@ -58,8 +80,13 @@
                     [path]="dir.path"
                     [name]="dir.name"
                     [pages]="albumStore.photosInPage()[dir.name]"
+                    [selected]="isThumbnailSelected(dir)"
+                    [isSelectionEnabled]="isPhotoSelectionEnabled()"
+                    (click)="togglePhotoSelection(dir)"
                 />
             }
+        } @empty {
+            <p>There are no items in this directory</p>
         }
     </div>
 </div>

@@ -40,7 +40,15 @@ export class AlbumComponent implements OnInit, OnDestroy {
         const dialogRef: DialogRef<string, TemplatesComponent> =
             this.dialog.open(TemplatesComponent, {
                 minWidth: '600px',
+                maxHeight: '90vh',
+                autoFocus: false,
                 data: this.albumStore.templates(),
+                panelClass: [
+                    'overflow-y-auto',
+                    'p-6',
+                    'bg-base-100',
+                    'rounded-sm',
+                ],
             });
 
         dialogRef.closed.subscribe((template: string | undefined) => {

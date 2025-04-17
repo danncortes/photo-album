@@ -1,7 +1,9 @@
 import { Component, computed, inject, input, signal } from '@angular/core';
-import { Directory, FileDir, FolderDir } from '../../../types';
+import { Directory, FileDir, FolderDir, Page } from '../../../types';
 import { ThumbnailComponent } from '../thumbnail/thumbnail.component';
 import { AlbumStore } from '../../store/albums.store';
+import { Dialog, DialogRef } from '@angular/cdk/dialog';
+import { AddPagePhotosComponent } from '../add-page-photos/add-page-photos.component';
 
 type activeDirectory = {
     name: string;
@@ -18,8 +20,10 @@ type activeDirectory = {
     },
 })
 export class DirectoryGalleryComponent {
+    dialog = inject(Dialog);
     readonly albumStore = inject(AlbumStore);
     directory = input.required<Directory>();
+    isPhotoSelectionEnabled = signal<boolean>(false);
     activeDirectoryPath = signal<activeDirectory[]>([
         {
             name: 'Home',
@@ -44,6 +48,10 @@ export class DirectoryGalleryComponent {
         return directory;
     });
 
+    thereAreSelectedPhotos = computed(() => {
+        return this.albumStore.selectedPhotos().size > 0;
+    });
+
     getInDirectory(dir: FolderDir, index: number) {
         if (dir.type === 'folder') {
             this.activeDirectoryPath.update((activeDirectoryPath) => {
@@ -55,6 +63,43 @@ export class DirectoryGalleryComponent {
     setDirectoryActive(index: number) {
         this.activeDirectoryPath.update((activeDirectoryPath) => {
             return activeDirectoryPath.slice(0, index + 1);
+        });
+    }
+
+    toggleSelection() {
+        this.isPhotoSelectionEnabled.update((isPhotoSelectionEnabled) => {
+            if (isPhotoSelectionEnabled) {
+                this.albumStore.clearSelectedPhotos();
+            }
+            return !isPhotoSelectionEnabled;
+        });
+    }
+
+    togglePhotoSelection(photo: FileDir) {
+        if (this.isPhotoSelectionEnabled()) {
+            this.albumStore.togglePhotoSelection(photo);
+        }
+    }
+
+    isThumbnailSelected(photo: FileDir) {
+        return this.albumStore.selectedPhotos().has(photo);
+    }
+
+    openAddPagePhotosDialog() {
+        const dialogRef: DialogRef<Page, AddPagePhotosComponent> =
+            this.dialog.open(AddPagePhotosComponent, {
+                minWidth: '600px',
+                data: {
+                    albumId: this.albumStore.activeAlbum()?.id,
+                    photos: this.albumStore.selectedPhotos(),
+                },
+            });
+
+        dialogRef.closed.subscribe((page: Page | undefined) => {
+            if (page) {
+                this.albumStore.addPageWithPhotos(page);
+                this.albumStore.clearSelectedPhotos();
+            }
         });
     }
 }

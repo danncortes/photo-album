@@ -152,6 +152,8 @@ async function buildDirectory(
         const files = await fs.readdir(path, { withFileTypes: true });
         for (const file of files) {
             const fullPath = `${path}/${file.name}`;
+            console.log('🚀 ~ pathStart:', pathStart);
+            console.log('🚀 ~ path:', path);
             const relativePath = path.split(pathStart).pop() || '';
             if (file.isDirectory()) {
                 directory.push({
@@ -191,7 +193,12 @@ export async function getAlbumDirectory(
         const albumsConfig: AlbumsConfig = await loadAlbumConfigData();
         const { originFolder } = albumsConfig[id];
 
-        let directory: Directory = await buildDirectory(originFolder, id);
+        const pathStart = originFolder.split('/').slice(-1)[0];
+
+        let directory: Directory = await buildDirectory(
+            originFolder,
+            pathStart,
+        );
 
         res.status(200).send(directory);
     } catch (error) {

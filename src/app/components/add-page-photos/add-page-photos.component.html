@@ -1,0 +1,17 @@
+<div class="px-10 py-8 bg-base-100 rounded-md">
+    <h3 class="mb-6 text-lg font-medium">Select a page</h3>
+    <div class="flex max-w-3xl gap-10 overflow-x-auto h-60 mb-6">
+        @for (page of suggestedPages(); track $index) {
+            <div
+                class="w-full h-full cursor-pointer"
+                (click)="selectTemplate(page)"
+            >
+                <app-page-preview
+                    [albumId]="data.albumId"
+                    [page]="page"
+                    class="h-full flex shadow-md shadow-gray-400"
+                ></app-page-preview>
+            </div>
+        }
+    </div>
+</div>

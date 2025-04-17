@@ -12,10 +12,11 @@ import { Dialog, DialogRef } from '@angular/cdk/dialog';
 import { CdkMenu, CdkMenuTrigger } from '@angular/cdk/menu';
 
 import { StyleSettings, Page, ShiftDirection } from '../../../types';
-import { TemplatesComponent } from '../templates/templates.component';
 import { PhotoComponent } from '../photo/photo.component';
 import { PageSettingsComponent } from '../page-settings/page-settings.component';
 import { AlbumStore } from '../../store/albums.store';
+import { AddPagePhotosComponent } from '../add-page-photos/add-page-photos.component';
+import { TemplatesComponent } from '../templates/templates.component';
 
 @Component({
     selector: 'app-page',
