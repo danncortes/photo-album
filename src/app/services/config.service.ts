@@ -1,7 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { Album } from '../../types';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -35,9 +34,5 @@ export class ConfigService {
         return this.http.post('http://localhost:3333/album/save', {
             config: album,
         });
-    }
-
-    test(val: any) {
-        console.log('🚀 ~ ConfigService ~ test ~ val', val);
     }
 }

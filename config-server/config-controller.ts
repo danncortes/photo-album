@@ -152,8 +152,6 @@ async function buildDirectory(
         const files = await fs.readdir(path, { withFileTypes: true });
         for (const file of files) {
             const fullPath = `${path}/${file.name}`;
-            console.log('🚀 ~ pathStart:', pathStart);
-            console.log('🚀 ~ path:', path);
             const relativePath = path.split(pathStart).pop() || '';
             if (file.isDirectory()) {
                 directory.push({

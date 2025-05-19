@@ -166,16 +166,28 @@ const initialState: AlbumState = {
         ],
         [
             [
-                { name: '7-1-1-2-5', order: [] },
-                { name: '7-1-2-4-3', order: [] },
-                { name: '7-1-3', order: [] },
-                { name: '7-1-4', order: [] },
+                {
+                    name: '7-1-1-2-5',
+                    order: ['p', 'l', 'p', 'l', 'p', 'p', 'p'],
+                },
+                {
+                    name: '7-1-2-5-2',
+                    order: ['l', 'l', 'l', 'l', 'l', 'p', 'p'],
+                },
+                {
+                    name: '7-1-3-2-5',
+                    order: ['p', 'p', 'p', 'l', 'p', 'l', 'p'],
+                },
+                {
+                    name: '7-1-4-5-2',
+                    order: ['p', 'p', 'l', 'l', 'l', 'l', 'l'],
+                },
             ],
             [
                 { name: '7-2-1-2-5', order: [] },
-                { name: '7-2-2', order: [] },
-                { name: '7-2-3', order: [] },
-                { name: '7-2-4', order: [] },
+                // { name: '7-2-2', order: [] },
+                // { name: '7-2-3', order: [] },
+                // { name: '7-2-4', order: [] },
             ],
         ],
         [

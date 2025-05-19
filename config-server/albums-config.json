@@ -2019,7 +2019,49 @@
     "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/Albunes Foto Familia/benni/Familie und Freunde",
     "activeFolder": null,
     "photosDictionary": {},
-    "pages": [],
+    "pages": [
+      {
+        "template": "7-1-4-5-2",
+        "photos": [
+          {
+            "path": "/2024",
+            "fileName": "IMG_6888.png",
+            "styles": []
+          },
+          {
+            "path": "/2024",
+            "fileName": "IMG_7108.png",
+            "styles": []
+          },
+          {
+            "path": "/2024",
+            "fileName": "IMG_5482.png",
+            "styles": []
+          },
+          {
+            "path": "/2024",
+            "fileName": "IMG_6021.png",
+            "styles": []
+          },
+          {
+            "path": "/2024",
+            "fileName": "IMG_6570.png",
+            "styles": []
+          },
+          {
+            "path": "/2024",
+            "fileName": "IMG_7704.png",
+            "styles": []
+          },
+          {
+            "path": "/2024",
+            "fileName": "IMG_8645.png",
+            "styles": []
+          }
+        ],
+        "gap": 0.3
+      }
+    ],
     "settings": {
       "paddingTop": "0",
       "paddingRight": "0",
@@ -2031,5 +2073,57 @@
       },
       "gap": 0.5
     }
+  },
+  "mutter-tag-2025": {
+    "name": "mutter-tag-2025",
+    "id": "mutter-tag-2025",
+    "isGrouped": false,
+    "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/Albunes Foto Familia/tarjetas/muttertag-2025",
+    "activeFolder": null,
+    "photosDictionary": {},
+    "pages": [
+      {
+        "photos": [
+          {
+            "fileName": "IMG_4987.png",
+            "path": "",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_6486.png",
+            "path": "",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_6009.png",
+            "path": "",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_8874.png",
+            "path": "",
+            "styles": []
+          },
+          {
+            "fileName": "IMG_8881.png",
+            "path": "",
+            "styles": []
+          }
+        ],
+        "template": "5-2-5-3-2"
+      }
+    ],
+    "settings": {
+      "paddingTop": "0.3",
+      "paddingRight": "0.3",
+      "paddingBottom": "0.3",
+      "paddingLeft": "0.3",
+      "format": {
+        "width": 30,
+        "height": 30
+      },
+      "gap": "0.3"
+    },
+    "updatedAlbumStatus": "Change Page Template"
   }
 }
