@@ -1,9 +1,10 @@
 @import '@angular/cdk/overlay-prebuilt.css';
-@import url(./templates.css);
-@import url(./helpers.css);
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@import './templates.css';
+@import './helpers.css';
+@plugin "daisyui" {
+    themes: light --default;
+}
 
 html {
     height: 100vh;
