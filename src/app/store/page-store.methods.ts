@@ -115,7 +115,7 @@ const capturePage = (divElement: ElementRef<HTMLElement>) => {
         width: 3550, // Desired output width in pixels
         height: 3550, // Desired output height in pixels
         style: {
-            transform: 'scale(8.87)', // 3550 / 400 = 8.87 (scaling factor)
+            transform: 'scale(9.08)', // 3550 / 400 = 8.87 (scaling factor)
             transformOrigin: 'top left',
         },
     });
@@ -164,7 +164,26 @@ export const downloadAlbumPage = async (
     divElement: ElementRef<HTMLElement>,
     fileName: string,
 ) => {
+    // Force some styles for the exported page
+    divElement.nativeElement.style.width = '390px';
+    divElement.nativeElement.style.height = '390px';
+    divElement.nativeElement.style.border = '0.0001px solid white';
+
+    const photos = divElement.nativeElement.querySelectorAll('img');
+    photos.forEach((photo) => {
+        photo!.style.border = '0px solid white';
+    });
+
     const blob = await capturePage(divElement);
+
+    // Reset the styles after exporting
+    divElement.nativeElement.style.width = 'unset';
+    divElement.nativeElement.style.height = 'unset';
+    divElement.nativeElement.style.border = 'unset';
+    photos.forEach((photo) => {
+        photo!.style.border = 'unset';
+    });
+
     const downloadLink = document.createElement('a');
     downloadLink.href = URL.createObjectURL(blob);
     downloadLink.download = fileName;

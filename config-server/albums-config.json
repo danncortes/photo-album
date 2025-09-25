@@ -1,2129 +1,2047 @@
 {
-  "2023": {
-    "name": "2023",
-    "id": "2023",
-    "settings": {
-      "gap": 0.5,
-      "format": {
-        "width": 30,
-        "height": 30
-      },
-      "paddingTop": 0.5,
-      "paddingRight": 0.5,
-      "paddingBottom": 0.5,
-      "paddingLeft": 0.5
+    "2023": {
+        "name": "2023",
+        "id": "2023",
+        "settings": {
+            "gap": 0.5,
+            "format": {
+                "width": 30,
+                "height": 30
+            },
+            "paddingTop": 0.5,
+            "paddingRight": 0.5,
+            "paddingBottom": 0.5,
+            "paddingLeft": 0.5
+        },
+        "isGrouped": true,
+        "activeFolder": "08-agosto",
+        "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/Albunes Foto Familia/benni/2023",
+        "pages": [
+            {
+                "template": "1-1-1",
+                "photos": [
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2081.png",
+                        "styles": []
+                    }
+                ]
+            },
+            {
+                "template": "5-1-1",
+                "photos": [
+                    {
+                        "fileName": "IMG_2092.png",
+                        "path": "/08-agosto",
+                        "styles": []
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2093.png",
+                        "styles": []
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2087.png",
+                        "styles": []
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2088.png",
+                        "styles": ["object-position: left;"]
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2090.png",
+                        "styles": ["object-position: left;"]
+                    }
+                ]
+            },
+            {
+                "template": "5-1-2",
+                "photos": [
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2106.png",
+                        "styles": []
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2109.png",
+                        "styles": ["object-position: top;"]
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2111.png",
+                        "styles": []
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2116.png",
+                        "styles": []
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2096.png",
+                        "styles": ["object-position: top;"]
+                    }
+                ]
+            },
+            {
+                "template": "4-2-3-2-2-0",
+                "photos": [
+                    {
+                        "fileName": "IMG_2119.png",
+                        "path": "/08-agosto",
+                        "styles": []
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2133.png",
+                        "styles": ["object-position: right;"]
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2063.png",
+                        "styles": []
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2073.png",
+                        "styles": []
+                    }
+                ]
+            },
+            {
+                "template": "5-1-2",
+                "photos": [
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2535.png",
+                        "styles": ["object-position: top"]
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2154.png",
+                        "styles": ["object-position: top"]
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2155.png",
+                        "styles": ["object-position: top;"]
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2510.png",
+                        "styles": ["object-position: bottom"]
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2527.png",
+                        "styles": ["object-position: top"]
+                    }
+                ]
+            },
+            {
+                "template": "4-1",
+                "photos": [
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2216.png",
+                        "styles": [""]
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2219.png",
+                        "styles": ["object-position: right"]
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2217.png",
+                        "styles": ["object-position: right"]
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2221.png",
+                        "styles": []
+                    }
+                ]
+            },
+            {
+                "template": "6-1-1",
+                "photos": [
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2596.png",
+                        "styles": [""]
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2590.png",
+                        "styles": []
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2657.png",
+                        "styles": []
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_3112.png",
+                        "styles": []
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_3145.png",
+                        "styles": []
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_2659.png",
+                        "styles": []
+                    }
+                ]
+            },
+            {
+                "template": "5-1-2",
+                "photos": [
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_3193.png",
+                        "styles": [""]
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_3207.png",
+                        "styles": []
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_3196.png",
+                        "styles": []
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_3215.png",
+                        "styles": []
+                    },
+                    {
+                        "path": "/08-agosto",
+                        "fileName": "IMG_3148.png",
+                        "styles": ["object-position: bottom;"]
+                    }
+                ]
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_2436.png",
+                        "path": "/09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_2373.png",
+                        "path": "/09-septiembre",
+                        "styles": ["object-position: top"]
+                    },
+                    {
+                        "fileName": "IMG_2338.png",
+                        "path": "/09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_2401.png",
+                        "path": "/09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_2395.png",
+                        "path": "/09-septiembre",
+                        "styles": []
+                    }
+                ],
+                "template": "5-1-2"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_2450.png",
+                        "path": "/09-septiembre",
+                        "styles": ["object-position: top"]
+                    },
+                    {
+                        "fileName": "IMG_2452.png",
+                        "path": "/09-septiembre",
+                        "styles": ["object-position: top"]
+                    },
+                    {
+                        "fileName": "IMG_2441.png",
+                        "path": "/09-septiembre",
+                        "styles": ["object-position: top"]
+                    }
+                ],
+                "template": "3-1-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_3226.png",
+                        "path": "/09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3231.png",
+                        "path": "/09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_2524.png",
+                        "path": "/09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_2515.png",
+                        "path": "/09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3220.png",
+                        "path": "/09-septiembre",
+                        "styles": []
+                    }
+                ],
+                "template": "5-3-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_3250.png",
+                        "path": "/09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3252.png",
+                        "path": "/09-septiembre",
+                        "styles": ["object-position: right"]
+                    },
+                    {
+                        "fileName": "IMG_3254.png",
+                        "path": "/09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3237.png",
+                        "path": "/09-septiembre",
+                        "styles": ["object-position: left"]
+                    },
+                    {
+                        "fileName": "IMG_3284.png",
+                        "path": "/09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3296.png",
+                        "path": "/09-septiembre",
+                        "styles": []
+                    }
+                ],
+                "template": "6-1-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_3391.png",
+                        "path": "/09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3401.png",
+                        "path": "/09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3405.png",
+                        "path": "/09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3417.png",
+                        "path": "/09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3422.png",
+                        "path": "/09-septiembre",
+                        "styles": []
+                    }
+                ],
+                "template": "5-1-3"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_3442.png",
+                        "path": "/09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3455.png",
+                        "path": "/09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3466.png",
+                        "path": "/09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3470.png",
+                        "path": "/09-septiembre",
+                        "styles": []
+                    }
+                ],
+                "template": "4-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_2592.png",
+                        "path": "/10-octubre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_2668.png",
+                        "path": "/10-octubre",
+                        "styles": ["object-position: bottom"]
+                    },
+                    {
+                        "fileName": "IMG_2555.png",
+                        "path": "/10-octubre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_2692.png",
+                        "path": "/10-octubre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_2694.png",
+                        "path": "/10-octubre",
+                        "styles": []
+                    }
+                ],
+                "template": "5-3-5"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_3510.png",
+                        "path": "/10-octubre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3519.png",
+                        "path": "/10-octubre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3548.png",
+                        "path": "/10-octubre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3551.png",
+                        "path": "/10-octubre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3558.png",
+                        "path": "/10-octubre",
+                        "styles": []
+                    }
+                ],
+                "template": "5-1-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_3615.png",
+                        "path": "/10-octubre",
+                        "styles": ["object-position: top;"]
+                    },
+                    {
+                        "fileName": "IMG_3560.png",
+                        "path": "/10-octubre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3566.png",
+                        "path": "/10-octubre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3639.png",
+                        "path": "/10-octubre",
+                        "styles": ["object-position: top"]
+                    }
+                ],
+                "template": "4-3-4"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_3577.png",
+                        "path": "/10-octubre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3619.png",
+                        "path": "/10-octubre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3585.png",
+                        "path": "/10-octubre",
+                        "styles": []
+                    }
+                ],
+                "template": "3-1-4"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_3672.png",
+                        "path": "/11-noviembre",
+                        "styles": ["object-position: bottom"]
+                    },
+                    {
+                        "fileName": "IMG_3667.png",
+                        "path": "/11-noviembre",
+                        "styles": ["object-position: bottom"]
+                    },
+                    {
+                        "fileName": "IMG_3675.png",
+                        "path": "/11-noviembre",
+                        "styles": ["object-position: bottom"]
+                    }
+                ],
+                "template": "3-1-2"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_3688.png",
+                        "path": "/11-noviembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3690.png",
+                        "path": "/11-noviembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3684.png",
+                        "path": "/11-noviembre",
+                        "styles": []
+                    }
+                ],
+                "template": "3-1-4"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_3696.png",
+                        "path": "/11-noviembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3825.png",
+                        "path": "/11-noviembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3836.png",
+                        "path": "/11-noviembre",
+                        "styles": []
+                    }
+                ],
+                "template": "3-1-2"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_3851.png",
+                        "path": "/11-noviembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3860.png",
+                        "path": "/11-noviembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3863.png",
+                        "path": "/11-noviembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3865.png",
+                        "path": "/11-noviembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3867.png",
+                        "path": "/11-noviembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3874.png",
+                        "path": "/11-noviembre",
+                        "styles": []
+                    }
+                ],
+                "template": "6-1-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "2023-dic1.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "2023-dic16.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "2023-dic12.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "2023-dic11.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    }
+                ],
+                "template": "4-3-3"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_2874.png",
+                        "path": "/12-diciembre",
+                        "styles": ["object-position: top"]
+                    },
+                    {
+                        "fileName": "IMG_3943.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3893.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3901.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3964.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    }
+                ],
+                "template": "5-1-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_2885.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_2926.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_4084.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_2898.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    }
+                ],
+                "template": "4-2-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_3446.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_2844.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_4447.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_4140.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    }
+                ],
+                "template": "4-3-3"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "2023-dic4.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "2023-dic13.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_2967.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "2023-dic5.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    }
+                ],
+                "template": "4-3-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_4155.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_4161.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_4167.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_4171.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    }
+                ],
+                "template": "4-3-3"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_2960.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_4178.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_2979.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_2965.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "2023-dic17.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    }
+                ],
+                "template": "5-3-5"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_3067.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_4255.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3078.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3081.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_4326.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    }
+                ],
+                "template": "5-3-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_2993.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_4223.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_4262.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_4310.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_4312.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    }
+                ],
+                "template": "5-3-5"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_3065.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "2023-dic14.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3091.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3097.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_4432.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    }
+                ],
+                "template": "5-3-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "2023-dic9.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_3156.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_4257.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_4520.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_4535.png",
+                        "path": "/12-diciembre",
+                        "styles": []
+                    }
+                ],
+                "template": "5-1-2"
+            }
+        ]
     },
-    "isGrouped": true,
-    "activeFolder": "08-agosto",
-    "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/Albunes Foto Familia/benni/2023",
-    "pages": [
-      {
-        "template": "1-1-1",
-        "photos": [
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2081.png",
-            "styles": []
-          }
-        ]
-      },
-      {
-        "template": "5-1-1",
-        "photos": [
-          {
-            "fileName": "IMG_2092.png",
-            "path": "/08-agosto",
-            "styles": []
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2093.png",
-            "styles": []
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2087.png",
-            "styles": []
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2088.png",
-            "styles": [
-              "object-position: left;"
-            ]
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2090.png",
-            "styles": [
-              "object-position: left;"
-            ]
-          }
-        ]
-      },
-      {
-        "template": "5-1-2",
-        "photos": [
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2106.png",
-            "styles": []
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2109.png",
-            "styles": [
-              "object-position: top;"
-            ]
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2111.png",
-            "styles": []
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2116.png",
-            "styles": []
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2096.png",
-            "styles": [
-              "object-position: top;"
-            ]
-          }
-        ]
-      },
-      {
-        "template": "4-2-3-2-2-0",
-        "photos": [
-          {
-            "fileName": "IMG_2119.png",
-            "path": "/08-agosto",
-            "styles": []
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2133.png",
-            "styles": [
-              "object-position: right;"
-            ]
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2063.png",
-            "styles": []
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2073.png",
-            "styles": []
-          }
-        ]
-      },
-      {
-        "template": "5-1-2",
-        "photos": [
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2535.png",
-            "styles": [
-              "object-position: top"
-            ]
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2154.png",
-            "styles": [
-              "object-position: top"
-            ]
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2155.png",
-            "styles": [
-              "object-position: top;"
-            ]
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2510.png",
-            "styles": [
-              "object-position: bottom"
-            ]
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2527.png",
-            "styles": [
-              "object-position: top"
-            ]
-          }
-        ]
-      },
-      {
-        "template": "4-1",
-        "photos": [
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2216.png",
-            "styles": [
-              ""
-            ]
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2219.png",
-            "styles": [
-              "object-position: right"
-            ]
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2217.png",
-            "styles": [
-              "object-position: right"
-            ]
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2221.png",
-            "styles": []
-          }
-        ]
-      },
-      {
-        "template": "6-1-1",
-        "photos": [
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2596.png",
-            "styles": [
-              ""
-            ]
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2590.png",
-            "styles": []
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2657.png",
-            "styles": []
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_3112.png",
-            "styles": []
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_3145.png",
-            "styles": []
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_2659.png",
-            "styles": []
-          }
-        ]
-      },
-      {
-        "template": "5-1-2",
-        "photos": [
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_3193.png",
-            "styles": [
-              ""
-            ]
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_3207.png",
-            "styles": []
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_3196.png",
-            "styles": []
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_3215.png",
-            "styles": []
-          },
-          {
-            "path": "/08-agosto",
-            "fileName": "IMG_3148.png",
-            "styles": [
-              "object-position: bottom;"
-            ]
-          }
-        ]
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_2436.png",
-            "path": "/09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_2373.png",
-            "path": "/09-septiembre",
-            "styles": [
-              "object-position: top"
-            ]
-          },
-          {
-            "fileName": "IMG_2338.png",
-            "path": "/09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_2401.png",
-            "path": "/09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_2395.png",
-            "path": "/09-septiembre",
-            "styles": []
-          }
+    "2024": {
+        "name": "2024",
+        "id": "2024",
+        "isGrouped": false,
+        "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/Albunes Foto Familia/benni/2024",
+        "activeFolder": null,
+        "photosDictionary": {},
+        "pages": [
+            {
+                "template": "5-1-1-2-3",
+                "photos": [
+                    {
+                        "fileName": "IMG_5203.png",
+                        "path": "/11 noviembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_5219.png",
+                        "path": "/11 noviembre",
+                        "styles": []
+                    },
+                    {
+                        "path": "/11 noviembre",
+                        "fileName": "IMG_7231.png",
+                        "styles": []
+                    },
+                    {
+                        "path": "/11 noviembre",
+                        "fileName": "IMG_7271.png",
+                        "styles": []
+                    },
+                    {
+                        "path": "/11 noviembre",
+                        "fileName": "IMG_7224.png",
+                        "styles": []
+                    }
+                ]
+            },
+            {
+                "template": "5-2-2-2-3",
+                "photos": [
+                    {
+                        "path": "/11 noviembre",
+                        "fileName": "IMG_7371.png",
+                        "styles": []
+                    },
+                    {
+                        "path": "/11 noviembre",
+                        "fileName": "IMG_7374.png",
+                        "styles": []
+                    },
+                    {
+                        "path": "/11 noviembre",
+                        "fileName": "IMG_5213.png",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_7222.png",
+                        "path": "/11 noviembre",
+                        "styles": []
+                    },
+                    {
+                        "path": "/11 noviembre",
+                        "fileName": "IMG_7290.png",
+                        "styles": []
+                    }
+                ]
+            },
+            {
+                "template": "3-1-2-0-3",
+                "photos": [
+                    {
+                        "fileName": "IMG_7310.png",
+                        "path": "/11 noviembre",
+                        "styles": []
+                    },
+                    {
+                        "path": "/11 noviembre",
+                        "fileName": "IMG_7307.png",
+                        "styles": []
+                    },
+                    {
+                        "path": "/11 noviembre",
+                        "fileName": "IMG_7229.png",
+                        "styles": []
+                    }
+                ]
+            },
+            {
+                "template": "4-3-2-2-2",
+                "photos": [
+                    {
+                        "path": "/11 noviembre",
+                        "fileName": "IMG_7344.png",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "e6ae667d-06ec-4947-8795-b7f8624766d9.png",
+                        "path": "/11 noviembre",
+                        "styles": []
+                    },
+                    {
+                        "path": "/11 noviembre",
+                        "fileName": "IMG_7341.png",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_7345.png",
+                        "path": "/11 noviembre",
+                        "styles": []
+                    }
+                ]
+            },
+            {
+                "template": "3-3-3-1-2",
+                "photos": [
+                    {
+                        "path": "/11 noviembre",
+                        "fileName": "IMG_7304.png",
+                        "styles": []
+                    },
+                    {
+                        "path": "/11 noviembre",
+                        "fileName": "IMG_7328.png",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_7317.png",
+                        "path": "/11 noviembre",
+                        "styles": []
+                    }
+                ]
+            }
         ],
-        "template": "5-1-2"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_2450.png",
-            "path": "/09-septiembre",
-            "styles": [
-              "object-position: top"
-            ]
-          },
-          {
-            "fileName": "IMG_2452.png",
-            "path": "/09-septiembre",
-            "styles": [
-              "object-position: top"
-            ]
-          },
-          {
-            "fileName": "IMG_2441.png",
-            "path": "/09-septiembre",
-            "styles": [
-              "object-position: top"
-            ]
-          }
-        ],
-        "template": "3-1-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_3226.png",
-            "path": "/09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3231.png",
-            "path": "/09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_2524.png",
-            "path": "/09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_2515.png",
-            "path": "/09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3220.png",
-            "path": "/09-septiembre",
-            "styles": []
-          }
-        ],
-        "template": "5-3-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_3250.png",
-            "path": "/09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3252.png",
-            "path": "/09-septiembre",
-            "styles": [
-              "object-position: right"
-            ]
-          },
-          {
-            "fileName": "IMG_3254.png",
-            "path": "/09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3237.png",
-            "path": "/09-septiembre",
-            "styles": [
-              "object-position: left"
-            ]
-          },
-          {
-            "fileName": "IMG_3284.png",
-            "path": "/09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3296.png",
-            "path": "/09-septiembre",
-            "styles": []
-          }
-        ],
-        "template": "6-1-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_3391.png",
-            "path": "/09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3401.png",
-            "path": "/09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3405.png",
-            "path": "/09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3417.png",
-            "path": "/09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3422.png",
-            "path": "/09-septiembre",
-            "styles": []
-          }
-        ],
-        "template": "5-1-3"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_3442.png",
-            "path": "/09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3455.png",
-            "path": "/09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3466.png",
-            "path": "/09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3470.png",
-            "path": "/09-septiembre",
-            "styles": []
-          }
-        ],
-        "template": "4-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_2592.png",
-            "path": "/10-octubre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_2668.png",
-            "path": "/10-octubre",
-            "styles": [
-              "object-position: bottom"
-            ]
-          },
-          {
-            "fileName": "IMG_2555.png",
-            "path": "/10-octubre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_2692.png",
-            "path": "/10-octubre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_2694.png",
-            "path": "/10-octubre",
-            "styles": []
-          }
-        ],
-        "template": "5-3-5"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_3510.png",
-            "path": "/10-octubre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3519.png",
-            "path": "/10-octubre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3548.png",
-            "path": "/10-octubre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3551.png",
-            "path": "/10-octubre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3558.png",
-            "path": "/10-octubre",
-            "styles": []
-          }
-        ],
-        "template": "5-1-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_3615.png",
-            "path": "/10-octubre",
-            "styles": [
-              "object-position: top;"
-            ]
-          },
-          {
-            "fileName": "IMG_3560.png",
-            "path": "/10-octubre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3566.png",
-            "path": "/10-octubre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3639.png",
-            "path": "/10-octubre",
-            "styles": [
-              "object-position: top"
-            ]
-          }
-        ],
-        "template": "4-3-4"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_3577.png",
-            "path": "/10-octubre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3619.png",
-            "path": "/10-octubre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3585.png",
-            "path": "/10-octubre",
-            "styles": []
-          }
-        ],
-        "template": "3-1-4"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_3672.png",
-            "path": "/11-noviembre",
-            "styles": [
-              "object-position: bottom"
-            ]
-          },
-          {
-            "fileName": "IMG_3667.png",
-            "path": "/11-noviembre",
-            "styles": [
-              "object-position: bottom"
-            ]
-          },
-          {
-            "fileName": "IMG_3675.png",
-            "path": "/11-noviembre",
-            "styles": [
-              "object-position: bottom"
-            ]
-          }
-        ],
-        "template": "3-1-2"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_3688.png",
-            "path": "/11-noviembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3690.png",
-            "path": "/11-noviembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3684.png",
-            "path": "/11-noviembre",
-            "styles": []
-          }
-        ],
-        "template": "3-1-4"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_3696.png",
-            "path": "/11-noviembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3825.png",
-            "path": "/11-noviembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3836.png",
-            "path": "/11-noviembre",
-            "styles": []
-          }
-        ],
-        "template": "3-1-2"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_3851.png",
-            "path": "/11-noviembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3860.png",
-            "path": "/11-noviembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3863.png",
-            "path": "/11-noviembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3865.png",
-            "path": "/11-noviembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3867.png",
-            "path": "/11-noviembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3874.png",
-            "path": "/11-noviembre",
-            "styles": []
-          }
-        ],
-        "template": "6-1-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "2023-dic1.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "2023-dic16.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "2023-dic12.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "2023-dic11.png",
-            "path": "/12-diciembre",
-            "styles": []
-          }
-        ],
-        "template": "4-3-3"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_2874.png",
-            "path": "/12-diciembre",
-            "styles": [
-              "object-position: top"
-            ]
-          },
-          {
-            "fileName": "IMG_3943.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3893.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3901.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3964.png",
-            "path": "/12-diciembre",
-            "styles": []
-          }
-        ],
-        "template": "5-1-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_2885.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_2926.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_4084.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_2898.png",
-            "path": "/12-diciembre",
-            "styles": []
-          }
-        ],
-        "template": "4-2-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_3446.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_2844.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_4447.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_4140.png",
-            "path": "/12-diciembre",
-            "styles": []
-          }
-        ],
-        "template": "4-3-3"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "2023-dic4.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "2023-dic13.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_2967.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "2023-dic5.png",
-            "path": "/12-diciembre",
-            "styles": []
-          }
-        ],
-        "template": "4-3-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_4155.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_4161.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_4167.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_4171.png",
-            "path": "/12-diciembre",
-            "styles": []
-          }
-        ],
-        "template": "4-3-3"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_2960.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_4178.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_2979.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_2965.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "2023-dic17.png",
-            "path": "/12-diciembre",
-            "styles": []
-          }
-        ],
-        "template": "5-3-5"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_3067.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_4255.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3078.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3081.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_4326.png",
-            "path": "/12-diciembre",
-            "styles": []
-          }
-        ],
-        "template": "5-3-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_2993.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_4223.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_4262.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_4310.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_4312.png",
-            "path": "/12-diciembre",
-            "styles": []
-          }
-        ],
-        "template": "5-3-5"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_3065.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "2023-dic14.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3091.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3097.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_4432.png",
-            "path": "/12-diciembre",
-            "styles": []
-          }
-        ],
-        "template": "5-3-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "2023-dic9.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_3156.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_4257.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_4520.png",
-            "path": "/12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_4535.png",
-            "path": "/12-diciembre",
-            "styles": []
-          }
-        ],
-        "template": "5-1-2"
-      }
-    ]
-  },
-  "2024": {
-    "name": "2024",
-    "id": "2024",
-    "isGrouped": false,
-    "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/Albunes Foto Familia/benni/2024",
-    "activeFolder": null,
-    "photosDictionary": {},
-    "pages": [
-      {
-        "template": "5-1-1-2-3",
-        "photos": [
-          {
-            "fileName": "IMG_5203.png",
-            "path": "/11 noviembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_5219.png",
-            "path": "/11 noviembre",
-            "styles": []
-          },
-          {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7231.png",
-            "styles": []
-          },
-          {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7271.png",
-            "styles": []
-          },
-          {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7224.png",
-            "styles": []
-          }
-        ]
-      },
-      {
-        "template": "5-2-2-2-3",
-        "photos": [
-          {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7371.png",
-            "styles": []
-          },
-          {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7374.png",
-            "styles": []
-          },
-          {
-            "path": "/11 noviembre",
-            "fileName": "IMG_5213.png",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_7222.png",
-            "path": "/11 noviembre",
-            "styles": []
-          },
-          {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7290.png",
-            "styles": []
-          }
-        ]
-      },
-      {
-        "template": "3-1-2-0-3",
-        "photos": [
-          {
-            "fileName": "IMG_7310.png",
-            "path": "/11 noviembre",
-            "styles": []
-          },
-          {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7307.png",
-            "styles": []
-          },
-          {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7229.png",
-            "styles": []
-          }
-        ]
-      },
-      {
-        "template": "4-3-2-2-2",
-        "photos": [
-          {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7344.png",
-            "styles": []
-          },
-          {
-            "fileName": "e6ae667d-06ec-4947-8795-b7f8624766d9.png",
-            "path": "/11 noviembre",
-            "styles": []
-          },
-          {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7341.png",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_7345.png",
-            "path": "/11 noviembre",
-            "styles": []
-          }
-        ]
-      },
-      {
-        "template": "3-3-3-1-2",
-        "photos": [
-          {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7304.png",
-            "styles": []
-          },
-          {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7328.png",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_7317.png",
-            "path": "/11 noviembre",
-            "styles": []
-          }
-        ]
-      }
-    ],
-    "settings": {
-      "paddingTop": "0",
-      "paddingRight": "0",
-      "paddingBottom": "0",
-      "paddingLeft": "0",
-      "format": {
-        "width": 30,
-        "height": 30
-      },
-      "gap": 0.5
+        "settings": {
+            "paddingTop": "0",
+            "paddingRight": "0",
+            "paddingBottom": "0",
+            "paddingLeft": "0",
+            "format": {
+                "width": 30,
+                "height": 30
+            },
+            "gap": 0.5
+        },
+        "updatedAlbumStatus": "Change Page Template"
     },
-    "updatedAlbumStatus": "Change Page Template"
-  },
-  "2022-Sept-Oct": {
-    "name": "Septiembre - Octubre 2022",
-    "id": "2022-Sept-Oct",
-    "settings": {
-      "gap": 0.4,
-      "format": {
-        "width": 30,
-        "height": 30
-      }
+    "2022-Sept-Oct": {
+        "name": "Septiembre - Octubre 2022",
+        "id": "2022-Sept-Oct",
+        "settings": {
+            "gap": 0.4,
+            "format": {
+                "width": 30,
+                "height": 30
+            }
+        },
+        "isGrouped": true,
+        "activeFolder": "2022-12-diciembre",
+        "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/Albunes Foto Familia/benni/2022-Sept-Oct",
+        "pages": [
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_0039.png",
+                        "path": "/2022-09-septiembre",
+                        "styles": ["object-position: right;"]
+                    },
+                    {
+                        "fileName": "IMG_0008.png",
+                        "path": "/2022-09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0005.png",
+                        "path": "/2022-09-septiembre",
+                        "styles": ["object-position: right;"]
+                    },
+                    {
+                        "fileName": "IMG_0018.png",
+                        "path": "/2022-09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0218.png",
+                        "path": "/2022-09-septiembre",
+                        "styles": []
+                    }
+                ],
+                "template": "5-1-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_0220.png",
+                        "path": "/2022-09-septiembre",
+                        "styles": []
+                    }
+                ],
+                "template": "1-1-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "d8e3478c-437a-4063-a34f-078eac66f454.png",
+                        "path": "/2022-09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0139.png",
+                        "path": "/2022-09-septiembre",
+                        "styles": ["object-position: right;"]
+                    },
+                    {
+                        "fileName": "IMG_0132.png",
+                        "path": "/2022-09-septiembre",
+                        "styles": ["object-position: right;"]
+                    }
+                ],
+                "template": "3-1-2"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_0147.png",
+                        "path": "/2022-09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0150.png",
+                        "path": "/2022-09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0146.png",
+                        "path": "/2022-09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0114.png",
+                        "path": "/2022-09-septiembre",
+                        "styles": []
+                    }
+                ],
+                "template": "4-4-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "8ad22635-aa33-4c6d-9b4b-73062acc361e.png",
+                        "path": "/2022-09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_8835.png",
+                        "path": "/2022-09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0165.png",
+                        "path": "/2022-09-septiembre",
+                        "styles": []
+                    }
+                ],
+                "template": "3-1-2"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_8844.png",
+                        "path": "/2022-09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "3a6e944a-318f-49bb-b8b7-12ce38124526.png",
+                        "path": "/2022-09-septiembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0083.png",
+                        "path": "/2022-09-septiembre",
+                        "styles": ["object-position: right;"]
+                    },
+                    {
+                        "fileName": "IMG_0167.png",
+                        "path": "/2022-09-septiembre",
+                        "styles": []
+                    }
+                ],
+                "template": "4-4-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "79e4f00e-b555-46a9-82aa-b9663eb5919c.png",
+                        "path": "/2022-10-octubre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "FullSizeRender.png",
+                        "path": "/2022-10-octubre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0266.png",
+                        "path": "/2022-10-octubre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0268.png",
+                        "path": "/2022-10-octubre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0275.png",
+                        "path": "/2022-10-octubre",
+                        "styles": []
+                    }
+                ],
+                "template": "5-3-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_0300.png",
+                        "path": "/2022-10-octubre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0301.png",
+                        "path": "/2022-10-octubre",
+                        "styles": ["object-position: bottom;"]
+                    },
+                    {
+                        "fileName": "IMG_0304.png",
+                        "path": "/2022-10-octubre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0302.png",
+                        "path": "/2022-10-octubre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0303.png",
+                        "path": "/2022-10-octubre",
+                        "styles": []
+                    }
+                ],
+                "template": "5-1-2"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_9186.png",
+                        "path": "/2022-10-octubre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_9218.png",
+                        "path": "/2022-10-octubre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_9196.png",
+                        "path": "/2022-10-octubre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_9213.png",
+                        "path": "/2022-10-octubre",
+                        "styles": []
+                    }
+                ],
+                "template": "4-2-3"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_9237.png",
+                        "path": "/2022-10-octubre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_9241.png",
+                        "path": "/2022-10-octubre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_9224.png",
+                        "path": "/2022-10-octubre",
+                        "styles": ["object-position: right;"]
+                    },
+                    {
+                        "fileName": "IMG_9225.png",
+                        "path": "/2022-10-octubre",
+                        "styles": ["object-position: right;"]
+                    },
+                    {
+                        "fileName": "IMG_9230.png",
+                        "path": "/2022-10-octubre",
+                        "styles": []
+                    }
+                ],
+                "template": "5-3-5"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_0366.png",
+                        "path": "/2022-11-noviembre",
+                        "styles": ["object-position: top;"]
+                    },
+                    {
+                        "fileName": "IMG_0378.png",
+                        "path": "/2022-11-noviembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0380.png",
+                        "path": "/2022-11-noviembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0385.png",
+                        "path": "/2022-11-noviembre",
+                        "styles": ["object-position: top;"]
+                    }
+                ],
+                "template": "4-2-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_0420.png",
+                        "path": "/2022-11-noviembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0412.png",
+                        "path": "/2022-11-noviembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0410.png",
+                        "path": "/2022-11-noviembre",
+                        "styles": []
+                    }
+                ],
+                "template": "3-3-5"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_0446.png",
+                        "path": "/2022-11-noviembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0454.png",
+                        "path": "/2022-11-noviembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0458.png",
+                        "path": "/2022-11-noviembre",
+                        "styles": []
+                    }
+                ],
+                "template": "3-1-2"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_9514.png",
+                        "path": "/2022-11-noviembre",
+                        "styles": ["object-position: bottom;"]
+                    },
+                    {
+                        "fileName": "IMG_9574.png",
+                        "path": "/2022-11-noviembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_9463.png",
+                        "path": "/2022-11-noviembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_9722.png",
+                        "path": "/2022-11-noviembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_9705.png",
+                        "path": "/2022-11-noviembre",
+                        "styles": []
+                    }
+                ],
+                "template": "5-3-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "96710c41-dc23-488d-b18c-64c909abf10b.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": ["object-position: bottom;"]
+                    },
+                    {
+                        "fileName": "34df4193-8826-47e1-8959-039b4e5f05fe.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "74110190-3cb2-40fb-90e2-ce4df83720cf.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    }
+                ],
+                "template": "3-3-6"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_0529.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": ["object-position: top;"]
+                    },
+                    {
+                        "fileName": "IMG_0536.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_9824.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": ["object-position: top;"]
+                    },
+                    {
+                        "fileName": "IMG_0499.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    }
+                ],
+                "template": "4-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_0006.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0020.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0027.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0044.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0048.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0050.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    }
+                ],
+                "template": "6-1-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_0061.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0076.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0087.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0103.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    }
+                ],
+                "template": "4-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_0143.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0123.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0111.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    }
+                ],
+                "template": "3-1-2"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_0197.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0203.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": ["object-position: bottom;"]
+                    },
+                    {
+                        "fileName": "IMG_0176.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0673.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": ["object-position: top;"]
+                    }
+                ],
+                "template": "4-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_0244.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0289.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0352.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0209.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0303.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    }
+                ],
+                "template": "5-1-3"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_0602.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0335.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0518.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_9755.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": ["object-position: top;"]
+                    },
+                    {
+                        "fileName": "IMG_9819.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    }
+                ],
+                "template": "5-3-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_9997.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_9986.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_9795.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    }
+                ],
+                "template": "3-1-2"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_0575.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_9857.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_9945.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0565.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    }
+                ],
+                "template": "4-3-3"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_8795.jpeg",
+                        "path": "/2022-09-septiembre",
+                        "styles": []
+                    }
+                ],
+                "template": "1-1-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_0315.png",
+                        "path": "/2022-12-diciembre",
+                        "styles": []
+                    }
+                ],
+                "template": "1-1-1"
+            }
+        ]
     },
-    "isGrouped": true,
-    "activeFolder": "2022-12-diciembre",
-    "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/Albunes Foto Familia/benni/2022-Sept-Oct",
-    "pages": [
-      {
-        "photos": [
-          {
-            "fileName": "IMG_0039.png",
-            "path": "/2022-09-septiembre",
-            "styles": [
-              "object-position: right;"
-            ]
-          },
-          {
-            "fileName": "IMG_0008.png",
-            "path": "/2022-09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0005.png",
-            "path": "/2022-09-septiembre",
-            "styles": [
-              "object-position: right;"
-            ]
-          },
-          {
-            "fileName": "IMG_0018.png",
-            "path": "/2022-09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0218.png",
-            "path": "/2022-09-septiembre",
-            "styles": []
-          }
+    "prueba": {
+        "name": "prueba-nueva",
+        "id": "prueba",
+        "settings": {
+            "gap": 0.5,
+            "format": {
+                "width": 30,
+                "height": 30
+            },
+            "paddingTop": 0.5,
+            "paddingRight": 0.5,
+            "paddingBottom": 0.5,
+            "paddingLeft": 0.5
+        },
+        "isGrouped": false,
+        "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/marcos-photos/prueba",
+        "pages": [
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_0389.png",
+                        "path": "",
+                        "styles": []
+                    }
+                ],
+                "template": "1-1-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_0430.png",
+                        "path": "",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0385.png",
+                        "path": "",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0450.png",
+                        "path": "",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_0389.png",
+                        "path": "",
+                        "styles": []
+                    }
+                ],
+                "template": "4-1"
+            }
         ],
-        "template": "5-1-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_0220.png",
-            "path": "/2022-09-septiembre",
-            "styles": []
-          }
-        ],
-        "template": "1-1-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "d8e3478c-437a-4063-a34f-078eac66f454.png",
-            "path": "/2022-09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0139.png",
-            "path": "/2022-09-septiembre",
-            "styles": [
-              "object-position: right;"
-            ]
-          },
-          {
-            "fileName": "IMG_0132.png",
-            "path": "/2022-09-septiembre",
-            "styles": [
-              "object-position: right;"
-            ]
-          }
-        ],
-        "template": "3-1-2"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_0147.png",
-            "path": "/2022-09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0150.png",
-            "path": "/2022-09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0146.png",
-            "path": "/2022-09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0114.png",
-            "path": "/2022-09-septiembre",
-            "styles": []
-          }
-        ],
-        "template": "4-4-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "8ad22635-aa33-4c6d-9b4b-73062acc361e.png",
-            "path": "/2022-09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_8835.png",
-            "path": "/2022-09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0165.png",
-            "path": "/2022-09-septiembre",
-            "styles": []
-          }
-        ],
-        "template": "3-1-2"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_8844.png",
-            "path": "/2022-09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "3a6e944a-318f-49bb-b8b7-12ce38124526.png",
-            "path": "/2022-09-septiembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0083.png",
-            "path": "/2022-09-septiembre",
-            "styles": [
-              "object-position: right;"
-            ]
-          },
-          {
-            "fileName": "IMG_0167.png",
-            "path": "/2022-09-septiembre",
-            "styles": []
-          }
-        ],
-        "template": "4-4-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "79e4f00e-b555-46a9-82aa-b9663eb5919c.png",
-            "path": "/2022-10-octubre",
-            "styles": []
-          },
-          {
-            "fileName": "FullSizeRender.png",
-            "path": "/2022-10-octubre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0266.png",
-            "path": "/2022-10-octubre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0268.png",
-            "path": "/2022-10-octubre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0275.png",
-            "path": "/2022-10-octubre",
-            "styles": []
-          }
-        ],
-        "template": "5-3-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_0300.png",
-            "path": "/2022-10-octubre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0301.png",
-            "path": "/2022-10-octubre",
-            "styles": [
-              "object-position: bottom;"
-            ]
-          },
-          {
-            "fileName": "IMG_0304.png",
-            "path": "/2022-10-octubre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0302.png",
-            "path": "/2022-10-octubre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0303.png",
-            "path": "/2022-10-octubre",
-            "styles": []
-          }
-        ],
-        "template": "5-1-2"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_9186.png",
-            "path": "/2022-10-octubre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_9218.png",
-            "path": "/2022-10-octubre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_9196.png",
-            "path": "/2022-10-octubre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_9213.png",
-            "path": "/2022-10-octubre",
-            "styles": []
-          }
-        ],
-        "template": "4-2-3"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_9237.png",
-            "path": "/2022-10-octubre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_9241.png",
-            "path": "/2022-10-octubre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_9224.png",
-            "path": "/2022-10-octubre",
-            "styles": [
-              "object-position: right;"
-            ]
-          },
-          {
-            "fileName": "IMG_9225.png",
-            "path": "/2022-10-octubre",
-            "styles": [
-              "object-position: right;"
-            ]
-          },
-          {
-            "fileName": "IMG_9230.png",
-            "path": "/2022-10-octubre",
-            "styles": []
-          }
-        ],
-        "template": "5-3-5"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_0366.png",
-            "path": "/2022-11-noviembre",
-            "styles": [
-              "object-position: top;"
-            ]
-          },
-          {
-            "fileName": "IMG_0378.png",
-            "path": "/2022-11-noviembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0380.png",
-            "path": "/2022-11-noviembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0385.png",
-            "path": "/2022-11-noviembre",
-            "styles": [
-              "object-position: top;"
-            ]
-          }
-        ],
-        "template": "4-2-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_0420.png",
-            "path": "/2022-11-noviembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0412.png",
-            "path": "/2022-11-noviembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0410.png",
-            "path": "/2022-11-noviembre",
-            "styles": []
-          }
-        ],
-        "template": "3-3-5"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_0446.png",
-            "path": "/2022-11-noviembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0454.png",
-            "path": "/2022-11-noviembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0458.png",
-            "path": "/2022-11-noviembre",
-            "styles": []
-          }
-        ],
-        "template": "3-1-2"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_9514.png",
-            "path": "/2022-11-noviembre",
-            "styles": [
-              "object-position: bottom;"
-            ]
-          },
-          {
-            "fileName": "IMG_9574.png",
-            "path": "/2022-11-noviembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_9463.png",
-            "path": "/2022-11-noviembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_9722.png",
-            "path": "/2022-11-noviembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_9705.png",
-            "path": "/2022-11-noviembre",
-            "styles": []
-          }
-        ],
-        "template": "5-3-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "96710c41-dc23-488d-b18c-64c909abf10b.png",
-            "path": "/2022-12-diciembre",
-            "styles": [
-              "object-position: bottom;"
-            ]
-          },
-          {
-            "fileName": "34df4193-8826-47e1-8959-039b4e5f05fe.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "74110190-3cb2-40fb-90e2-ce4df83720cf.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          }
-        ],
-        "template": "3-3-6"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_0529.png",
-            "path": "/2022-12-diciembre",
-            "styles": [
-              "object-position: top;"
-            ]
-          },
-          {
-            "fileName": "IMG_0536.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_9824.png",
-            "path": "/2022-12-diciembre",
-            "styles": [
-              "object-position: top;"
-            ]
-          },
-          {
-            "fileName": "IMG_0499.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          }
-        ],
-        "template": "4-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_0006.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0020.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0027.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0044.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0048.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0050.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          }
-        ],
-        "template": "6-1-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_0061.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0076.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0087.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0103.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          }
-        ],
-        "template": "4-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_0143.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0123.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0111.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          }
-        ],
-        "template": "3-1-2"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_0197.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0203.png",
-            "path": "/2022-12-diciembre",
-            "styles": [
-              "object-position: bottom;"
-            ]
-          },
-          {
-            "fileName": "IMG_0176.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0673.png",
-            "path": "/2022-12-diciembre",
-            "styles": [
-              "object-position: top;"
-            ]
-          }
-        ],
-        "template": "4-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_0244.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0289.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0352.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0209.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0303.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          }
-        ],
-        "template": "5-1-3"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_0602.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0335.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0518.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_9755.png",
-            "path": "/2022-12-diciembre",
-            "styles": [
-              "object-position: top;"
-            ]
-          },
-          {
-            "fileName": "IMG_9819.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          }
-        ],
-        "template": "5-3-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_9997.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_9986.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_9795.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          }
-        ],
-        "template": "3-1-2"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_0575.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_9857.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_9945.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0565.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          }
-        ],
-        "template": "4-3-3"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_8795.jpeg",
-            "path": "/2022-09-septiembre",
-            "styles": []
-          }
-        ],
-        "template": "1-1-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_0315.png",
-            "path": "/2022-12-diciembre",
-            "styles": []
-          }
-        ],
-        "template": "1-1-1"
-      }
-    ]
-  },
-  "prueba": {
-    "name": "prueba-nueva",
-    "id": "prueba",
-    "settings": {
-      "gap": 0.5,
-      "format": {
-        "width": 30,
-        "height": 30
-      },
-      "paddingTop": 0.5,
-      "paddingRight": 0.5,
-      "paddingBottom": 0.5,
-      "paddingLeft": 0.5
+        "activeFolder": null
     },
-    "isGrouped": false,
-    "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/marcos-photos/prueba",
-    "pages": [
-      {
-        "photos": [
-          {
-            "fileName": "IMG_0389.png",
-            "path": "",
-            "styles": []
-          }
+    "Benni-theo": {
+        "name": "Benni theo",
+        "id": "Benni-theo",
+        "isGrouped": false,
+        "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/marcos-photos/Benni-theo",
+        "activeFolder": null,
+        "pages": [
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_6570.png",
+                        "path": "",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_6544.png",
+                        "path": "",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_6573.png",
+                        "path": "",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_6585.png",
+                        "path": "",
+                        "styles": []
+                    }
+                ],
+                "template": "4-3-3"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_6544.png",
+                        "path": "",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_6570.png",
+                        "path": "",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_6573.png",
+                        "path": "",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_6585.png",
+                        "path": "",
+                        "styles": []
+                    }
+                ],
+                "template": "4-4-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_6570.png",
+                        "path": "",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_6585.png",
+                        "path": "",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "",
+                        "path": "",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "",
+                        "path": "",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "",
+                        "path": "",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "",
+                        "path": "",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "",
+                        "path": "",
+                        "styles": []
+                    }
+                ],
+                "template": "7-1-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_6585.png",
+                        "path": "",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_6573.png",
+                        "path": "",
+                        "styles": []
+                    }
+                ],
+                "template": "2-1-2-0-2-0",
+                "format": {
+                    "width": 20
+                }
+            }
         ],
-        "template": "1-1-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_0430.png",
-            "path": "",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0385.png",
-            "path": "",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0450.png",
-            "path": "",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_0389.png",
-            "path": "",
-            "styles": []
-          }
-        ],
-        "template": "4-1"
-      }
-    ],
-    "activeFolder": null
-  },
-  "Benni-theo": {
-    "name": "Benni theo",
-    "id": "Benni-theo",
-    "isGrouped": false,
-    "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/marcos-photos/Benni-theo",
-    "activeFolder": null,
-    "pages": [
-      {
-        "photos": [
-          {
-            "fileName": "IMG_6570.png",
-            "path": "",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_6544.png",
-            "path": "",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_6573.png",
-            "path": "",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_6585.png",
-            "path": "",
-            "styles": []
-          }
-        ],
-        "template": "4-3-3"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_6544.png",
-            "path": "",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_6570.png",
-            "path": "",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_6573.png",
-            "path": "",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_6585.png",
-            "path": "",
-            "styles": []
-          }
-        ],
-        "template": "4-4-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_6570.png",
-            "path": "",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_6585.png",
-            "path": "",
-            "styles": []
-          },
-          {
-            "fileName": "",
-            "path": "",
-            "styles": []
-          },
-          {
-            "fileName": "",
-            "path": "",
-            "styles": []
-          },
-          {
-            "fileName": "",
-            "path": "",
-            "styles": []
-          },
-          {
-            "fileName": "",
-            "path": "",
-            "styles": []
-          },
-          {
-            "fileName": "",
-            "path": "",
-            "styles": []
-          }
-        ],
-        "template": "7-1-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "IMG_6585.png",
-            "path": "",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_6573.png",
-            "path": "",
-            "styles": []
-          }
-        ],
-        "template": "2-1-2-0-2-0",
-        "format": {
-          "width": 20
+        "settings": {
+            "paddingTop": 0.3,
+            "paddingRight": 0.3,
+            "paddingBottom": 0.3,
+            "paddingLeft": 0.3,
+            "format": {
+                "width": 30,
+                "height": 30
+            },
+            "gap": 0.3
         }
-      }
-    ],
-    "settings": {
-      "paddingTop": 0.3,
-      "paddingRight": 0.3,
-      "paddingBottom": 0.3,
-      "paddingLeft": 0.3,
-      "format": {
-        "width": 30,
-        "height": 30
-      },
-      "gap": 0.3
-    }
-  },
-  "die-beste-4": {
-    "name": "die beste 4",
-    "id": "die-beste-4",
-    "isGrouped": false,
-    "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/Albunes Foto Familia/benni/die-beste-4",
-    "activeFolder": null,
-    "pages": [
-      {
-        "photos": [
-          {
-            "fileName": "42d4de0d-99e6-4fbe-8c9e-9836ea409f04.jpg",
-            "path": "/2021",
-            "styles": []
-          }
-        ],
-        "template": "1-1-1-0-0-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "",
-            "path": "",
-            "styles": []
-          }
-        ],
-        "template": "1-1-1-0-0-1"
-      },
-      {
-        "photos": [
-          {
-            "fileName": "",
-            "path": "",
-            "styles": []
-          }
-        ],
-        "template": "1-1-1-0-0-1"
-      }
-    ],
-    "settings": {
-      "paddingTop": 0.5,
-      "paddingRight": 0.5,
-      "paddingBottom": 0.5,
-      "paddingLeft": 0.5,
-      "format": {
-        "width": 30,
-        "height": 30
-      },
-      "gap": 0.5
-    }
-  },
-  "Familie-und-Freunde": {
-    "name": "Familie und Freunde",
-    "id": "Familie-und-Freunde",
-    "isGrouped": false,
-    "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/Albunes Foto Familia/benni/Familie und Freunde",
-    "activeFolder": null,
-    "photosDictionary": {},
-    "pages": [
-      {
-        "template": "7-1-4-5-2",
-        "photos": [
-          {
-            "path": "/2024",
-            "fileName": "IMG_6888.png",
-            "styles": []
-          },
-          {
-            "path": "/2024",
-            "fileName": "IMG_7108.png",
-            "styles": []
-          },
-          {
-            "path": "/2024",
-            "fileName": "IMG_5482.png",
-            "styles": []
-          },
-          {
-            "path": "/2024",
-            "fileName": "IMG_6021.png",
-            "styles": []
-          },
-          {
-            "path": "/2024",
-            "fileName": "IMG_6570.png",
-            "styles": []
-          },
-          {
-            "path": "/2024",
-            "fileName": "IMG_7704.png",
-            "styles": []
-          },
-          {
-            "path": "/2024",
-            "fileName": "IMG_8645.png",
-            "styles": []
-          }
-        ],
-        "gap": 0.3
-      }
-    ],
-    "settings": {
-      "paddingTop": "0",
-      "paddingRight": "0",
-      "paddingBottom": "0",
-      "paddingLeft": "0",
-      "format": {
-        "width": 30,
-        "height": 30
-      },
-      "gap": 0.5
-    }
-  },
-  "mutter-tag-2025": {
-    "name": "mutter-tag-2025",
-    "id": "mutter-tag-2025",
-    "isGrouped": false,
-    "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/Albunes Foto Familia/tarjetas/muttertag-2025",
-    "activeFolder": null,
-    "photosDictionary": {},
-    "pages": [
-      {
-        "photos": [
-          {
-            "fileName": "IMG_4987.png",
-            "path": "",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_6486.png",
-            "path": "",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_6009.png",
-            "path": "",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_8874.png",
-            "path": "",
-            "styles": []
-          },
-          {
-            "fileName": "IMG_8881.png",
-            "path": "",
-            "styles": []
-          }
-        ],
-        "template": "5-2-5-3-2"
-      }
-    ],
-    "settings": {
-      "paddingTop": "0.3",
-      "paddingRight": "0.3",
-      "paddingBottom": "0.3",
-      "paddingLeft": "0.3",
-      "format": {
-        "width": 30,
-        "height": 30
-      },
-      "gap": "0.3"
     },
-    "updatedAlbumStatus": "Change Page Template"
-  }
+    "die-beste-4": {
+        "name": "die beste 4",
+        "id": "die-beste-4",
+        "isGrouped": false,
+        "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/Albunes Foto Familia/benni/die-beste-4",
+        "activeFolder": null,
+        "pages": [
+            {
+                "photos": [
+                    {
+                        "fileName": "42d4de0d-99e6-4fbe-8c9e-9836ea409f04.jpg",
+                        "path": "/2021",
+                        "styles": []
+                    }
+                ],
+                "template": "1-1-1-0-0-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "",
+                        "path": "",
+                        "styles": []
+                    }
+                ],
+                "template": "1-1-1-0-0-1"
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "",
+                        "path": "",
+                        "styles": []
+                    }
+                ],
+                "template": "1-1-1-0-0-1"
+            }
+        ],
+        "settings": {
+            "paddingTop": 0.5,
+            "paddingRight": 0.5,
+            "paddingBottom": 0.5,
+            "paddingLeft": 0.5,
+            "format": {
+                "width": 30,
+                "height": 30
+            },
+            "gap": 0.5
+        }
+    },
+    "Familie-und-Freunde": {
+        "name": "Familie und Freunde",
+        "id": "Familie-und-Freunde",
+        "isGrouped": false,
+        "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/Albunes Foto Familia/benni/Familie und Freunde",
+        "activeFolder": null,
+        "photosDictionary": {},
+        "pages": [
+            {
+                "template": "7-1-4-5-2",
+                "photos": [
+                    {
+                        "path": "/2024",
+                        "fileName": "IMG_6888.png",
+                        "styles": ["object-position: top;"]
+                    },
+                    {
+                        "path": "/2024",
+                        "fileName": "IMG_7108.png",
+                        "styles": []
+                    },
+                    {
+                        "path": "/2024",
+                        "fileName": "IMG_5482.png",
+                        "styles": ["object-position: top;"]
+                    },
+                    {
+                        "path": "/2024",
+                        "fileName": "IMG_6021.png",
+                        "styles": ["object-position: bottom;"]
+                    },
+                    {
+                        "path": "/2024",
+                        "fileName": "IMG_6570.png",
+                        "styles": ["object-position: top;"]
+                    },
+                    {
+                        "path": "/2024",
+                        "fileName": "IMG_7704.png",
+                        "styles": []
+                    },
+                    {
+                        "path": "/2024",
+                        "fileName": "IMG_8645.png",
+                        "styles": []
+                    }
+                ],
+                "gap": 0.3
+            },
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_6544.png",
+                        "path": "/2024",
+                        "styles": []
+                    }
+                ],
+                "template": "1-1-1-1-1"
+            }
+        ],
+        "settings": {
+            "paddingTop": "0",
+            "paddingRight": "0",
+            "paddingBottom": "0",
+            "paddingLeft": "0",
+            "format": {
+                "width": 30,
+                "height": 30
+            },
+            "gap": 0.5
+        }
+    },
+    "mutter-tag-2025": {
+        "name": "mutter-tag-2025",
+        "id": "mutter-tag-2025",
+        "isGrouped": false,
+        "originFolder": "/Users/danncortes/Library/CloudStorage/Dropbox/Photos/Albunes Foto Familia/tarjetas/muttertag-2025",
+        "activeFolder": null,
+        "photosDictionary": {},
+        "pages": [
+            {
+                "photos": [
+                    {
+                        "fileName": "IMG_4987.png",
+                        "path": "",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_6486.png",
+                        "path": "",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_6009.png",
+                        "path": "",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_8874.png",
+                        "path": "",
+                        "styles": []
+                    },
+                    {
+                        "fileName": "IMG_8881.png",
+                        "path": "",
+                        "styles": []
+                    }
+                ],
+                "template": "5-2-5-3-2"
+            }
+        ],
+        "settings": {
+            "paddingTop": "0.3",
+            "paddingRight": "0.3",
+            "paddingBottom": "0.3",
+            "paddingLeft": "0.3",
+            "format": {
+                "width": 30,
+                "height": 30
+            },
+            "gap": "0.3"
+        },
+        "updatedAlbumStatus": "Change Page Template"
+    }
 }

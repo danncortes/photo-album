@@ -46,6 +46,7 @@
             class=""
             (click)="downloadPage()"
             [disabled]="isPageDownloading()"
+            title="Download Page"
         >
             @if (isPageDownloading()) {
                 <span class="loading loading-xs loading-spinner"></span>
