@@ -474,6 +474,102 @@ div[class*='page-template--6-1-2'] {
         'five six';
 }
 
+div[class*='page-template--6-2-1'] {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+        'one one four four four four'
+        'one one four four four four'
+        'two two four four four four'
+        'two two five five six six'
+        'three three five five six six'
+        'three three five five six six';
+}
+
+div[class*='page-template--6-2-2'] {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+        'one one one one four four'
+        'one one one one four four'
+        'one one one one five five'
+        'two two three three five five'
+        'two two three three six six'
+        'two two three three six six';
+}
+
+div[class*='page-template--6-2-3'] {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+        'one one four four five five'
+        'one one four four five five'
+        'two two four four five five'
+        'two two six six six six'
+        'three three six six six six'
+        'three three six six six six';
+}
+
+div[class*='page-template--6-2-4'] {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+        'one one two two four four'
+        'one one two two four four'
+        'one one two two five five'
+        'three three three three five five'
+        'three three three three six six'
+        'three three three three six six';
+}
+
+div[class*='page-template--6-2-5'] {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+        'one one two two three three'
+        'one one two two three three'
+        'four four four six six six'
+        'four four four six six six'
+        'five five five six six six'
+        'five five five six six six';
+}
+
+div[class*='page-template--6-2-6'] {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+        'one one two two three three'
+        'one one two two three three'
+        'four four four five five five'
+        'four four four five five five'
+        'four four four six six six'
+        'four four four six six six';
+}
+
+div[class*='page-template--6-2-7'] {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+        'one one one three three three'
+        'one one one three three three'
+        'two two two three three three'
+        'two two two three three three'
+        'four four five five six six'
+        'four four five five six six';
+}
+
+div[class*='page-template--6-2-8'] {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+        'one one one two two two'
+        'one one one two two two'
+        'one one one three three three'
+        'one one one three three three'
+        'four four five five six six'
+        'four four five five six six';
+}
+
 div[class*='page-template--7-1-1'] {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(5, 1fr);

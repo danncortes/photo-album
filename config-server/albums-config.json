@@ -976,106 +976,232 @@
     "photosDictionary": {},
     "pages": [
       {
-        "template": "5-1-1-2-3",
+        "template": "6-1-1-0-6",
         "photos": [
           {
-            "fileName": "IMG_5203.png",
-            "path": "/11 noviembre",
+            "path": "/01 enero",
+            "fileName": "IMG_3172.png",
             "styles": []
           },
           {
-            "fileName": "IMG_5219.png",
-            "path": "/11 noviembre",
+            "path": "/01 enero",
+            "fileName": "IMG_3208.png",
             "styles": []
           },
           {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7231.png",
+            "path": "/01 enero",
+            "fileName": "IMG_4652.png",
             "styles": []
           },
           {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7271.png",
+            "path": "/01 enero",
+            "fileName": "IMG_4667.png",
             "styles": []
           },
           {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7224.png",
+            "path": "/01 enero",
+            "fileName": "IMG_4578.png",
+            "styles": []
+          },
+          {
+            "path": "/01 enero",
+            "fileName": "IMG_4672.png",
             "styles": []
           }
         ]
       },
       {
-        "template": "5-2-2-2-3",
+        "template": "5-1-3-2-3",
         "photos": [
           {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7371.png",
+            "path": "/01 enero",
+            "fileName": "IMG_3184.png",
             "styles": []
           },
           {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7374.png",
+            "path": "/01 enero",
+            "fileName": "IMG_3203.png",
             "styles": []
           },
           {
-            "path": "/11 noviembre",
-            "fileName": "IMG_5213.png",
+            "path": "/01 enero",
+            "fileName": "IMG_4575.png",
             "styles": []
           },
           {
-            "fileName": "IMG_7222.png",
-            "path": "/11 noviembre",
+            "path": "/01 enero",
+            "fileName": "IMG_3236.png",
             "styles": []
           },
           {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7290.png",
+            "path": "/01 enero",
+            "fileName": "IMG_4655.png",
             "styles": []
           }
         ]
       },
       {
-        "template": "3-1-2-0-3",
+        "template": "5-2-1-2-3",
         "photos": [
           {
-            "fileName": "IMG_7310.png",
-            "path": "/11 noviembre",
+            "path": "/01 enero",
+            "fileName": "IMG_3232.png",
             "styles": []
           },
           {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7307.png",
+            "path": "/01 enero",
+            "fileName": "IMG_4614.png",
             "styles": []
           },
           {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7229.png",
+            "path": "/01 enero",
+            "fileName": "IMG_4629.png",
+            "styles": []
+          },
+          {
+            "path": "/01 enero",
+            "fileName": "IMG_4593.png",
+            "styles": []
+          },
+          {
+            "path": "/01 enero",
+            "fileName": "IMG_4599.png",
             "styles": []
           }
         ]
       },
       {
-        "template": "4-3-2-2-2",
+        "template": "4-2-1-2-2",
         "photos": [
           {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7344.png",
+            "path": "/02 febrero",
+            "fileName": "IMG_3281.png",
             "styles": []
           },
           {
-            "fileName": "e6ae667d-06ec-4947-8795-b7f8624766d9.png",
-            "path": "/11 noviembre",
+            "path": "/02 febrero",
+            "fileName": "IMG_3286.png",
+            "styles": [
+              "object-position: top;"
+            ]
+          },
+          {
+            "path": "/02 febrero",
+            "fileName": "IMG_3339.png",
+            "styles": [
+              "object-position: right;"
+            ]
+          },
+          {
+            "path": "/02 febrero",
+            "fileName": "IMG_4696.png",
+            "styles": []
+          }
+        ]
+      },
+      {
+        "template": "3-1-4-0-3",
+        "photos": [
+          {
+            "path": "/02 febrero",
+            "fileName": "IMG_4729.png",
             "styles": []
           },
           {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7341.png",
+            "path": "/02 febrero",
+            "fileName": "IMG_4734.png",
             "styles": []
           },
           {
-            "fileName": "IMG_7345.png",
-            "path": "/11 noviembre",
+            "path": "/02 febrero",
+            "fileName": "IMG_3321.png",
+            "styles": [
+              "object-position: top;"
+            ]
+          }
+        ]
+      },
+      {
+        "template": "6-1-1-0-6",
+        "photos": [
+          {
+            "path": "/02 febrero",
+            "fileName": "IMG_4810.png",
+            "styles": []
+          },
+          {
+            "path": "/02 febrero",
+            "fileName": "IMG_4689.png",
+            "styles": []
+          },
+          {
+            "path": "/02 febrero",
+            "fileName": "IMG_4684.png",
+            "styles": []
+          },
+          {
+            "path": "/02 febrero",
+            "fileName": "IMG_3369.png",
+            "styles": []
+          },
+          {
+            "path": "/02 febrero",
+            "fileName": "IMG_3368.png",
+            "styles": []
+          },
+          {
+            "path": "/02 febrero",
+            "fileName": "IMG_3367.png",
+            "styles": []
+          }
+        ]
+      },
+      {
+        "template": "4-1-1-4-4",
+        "photos": [
+          {
+            "path": "/02 febrero",
+            "fileName": "IMG_4815.png",
+            "styles": []
+          },
+          {
+            "path": "/02 febrero",
+            "fileName": "IMG_4818.png",
+            "styles": []
+          },
+          {
+            "path": "/02 febrero",
+            "fileName": "IMG_4801.png",
+            "styles": []
+          },
+          {
+            "path": "/02 febrero",
+            "fileName": "IMG_4765.png",
+            "styles": []
+          }
+        ]
+      },
+      {
+        "template": "4-1-1-4-4",
+        "photos": [
+          {
+            "path": "/02 febrero",
+            "fileName": "IMG_4737.png",
+            "styles": []
+          },
+          {
+            "path": "/02 febrero",
+            "fileName": "IMG_4743.png",
+            "styles": []
+          },
+          {
+            "path": "/02 febrero",
+            "fileName": "IMG_4747.png",
+            "styles": []
+          },
+          {
+            "path": "/02 febrero",
+            "fileName": "IMG_4748.png",
             "styles": []
           }
         ]
@@ -1084,18 +1210,530 @@
         "template": "3-3-3-1-2",
         "photos": [
           {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7304.png",
+            "path": "/02 febrero",
+            "fileName": "IMG_4785.png",
             "styles": []
           },
           {
-            "path": "/11 noviembre",
-            "fileName": "IMG_7328.png",
+            "path": "/02 febrero",
+            "fileName": "IMG_4789.png",
             "styles": []
           },
           {
-            "fileName": "IMG_7317.png",
-            "path": "/11 noviembre",
+            "path": "/02 febrero",
+            "fileName": "IMG_4725.png",
+            "styles": []
+          }
+        ]
+      },
+      {
+        "template": "5-3-1-1-4",
+        "photos": [
+          {
+            "path": "/03 marzo",
+            "fileName": "IMG_4873.png",
+            "styles": []
+          },
+          {
+            "path": "/03 marzo",
+            "fileName": "IMG_3438.png",
+            "styles": []
+          },
+          {
+            "path": "/03 marzo",
+            "fileName": "IMG_3496.png",
+            "styles": []
+          },
+          {
+            "path": "/03 marzo",
+            "fileName": "IMG_3498.png",
+            "styles": []
+          },
+          {
+            "path": "/03 marzo",
+            "fileName": "IMG_4900.png",
+            "styles": []
+          }
+        ]
+      },
+      {
+        "template": "5-1-4-3-2",
+        "photos": [
+          {
+            "path": "/03 marzo",
+            "fileName": "IMG_4976.png",
+            "styles": []
+          },
+          {
+            "path": "/03 marzo",
+            "fileName": "IMG_4989.png",
+            "styles": []
+          },
+          {
+            "path": "/03 marzo",
+            "fileName": "IMG_3505.png",
+            "styles": [
+              "object-position: top;"
+            ]
+          },
+          {
+            "path": "/03 marzo",
+            "fileName": "IMG_4968.png",
+            "styles": [
+              "object-position: top;"
+            ]
+          },
+          {
+            "path": "/03 marzo",
+            "fileName": "IMG_4983.png",
+            "styles": [
+              "object-position: top;"
+            ]
+          }
+        ]
+      },
+      {
+        "template": "3-3-6-1-2",
+        "photos": [
+          {
+            "path": "/03 marzo",
+            "fileName": "IMG_5028.png",
+            "styles": []
+          },
+          {
+            "path": "/03 marzo",
+            "fileName": "IMG_4977.png",
+            "styles": []
+          },
+          {
+            "path": "/03 marzo",
+            "fileName": "IMG_5045.png",
+            "styles": []
+          }
+        ]
+      },
+      {
+        "template": "4-2-1-2-2",
+        "photos": [
+          {
+            "path": "/03 marzo",
+            "fileName": "IMG_5026.png",
+            "styles": []
+          },
+          {
+            "path": "/03 marzo",
+            "fileName": "IMG_4999.png",
+            "styles": []
+          },
+          {
+            "path": "/03 marzo",
+            "fileName": "IMG_5020.png",
+            "styles": []
+          },
+          {
+            "path": "/03 marzo",
+            "fileName": "IMG_5005.png",
+            "styles": []
+          }
+        ]
+      },
+      {
+        "template": "4-2-3-2-2",
+        "photos": [
+          {
+            "path": "/04 abril",
+            "fileName": "50bf433d-dd9c-43b1-9700-c4f497bdb9bc.png",
+            "styles": []
+          },
+          {
+            "path": "/04 abril",
+            "fileName": "690ae9c8-23dc-4fab-8e2b-56c09f973072.png",
+            "styles": []
+          },
+          {
+            "path": "/04 abril",
+            "fileName": "933474a3-cc6d-4411-b8c6-cb85cd733947.png",
+            "styles": []
+          },
+          {
+            "path": "/04 abril",
+            "fileName": "94e81247-09e9-4fa3-abbb-854f78d510bd.png",
+            "styles": [
+              "object-position: top;"
+            ]
+          }
+        ]
+      },
+      {
+        "template": "4-2-2-2-2",
+        "photos": [
+          {
+            "path": "/04 abril",
+            "fileName": "IMG_3833.png",
+            "styles": []
+          },
+          {
+            "path": "/04 abril",
+            "fileName": "a5c77967-b9e8-42e3-a5bf-028a068206be.png",
+            "styles": [
+              "object-position: left;"
+            ]
+          },
+          {
+            "path": "/04 abril",
+            "fileName": "IMG_3834.png",
+            "styles": []
+          },
+          {
+            "path": "/04 abril",
+            "fileName": "IMG_3835.png",
+            "styles": []
+          }
+        ]
+      },
+      {
+        "template": "5-3-3-1-4",
+        "photos": [
+          {
+            "path": "/04 abril",
+            "fileName": "IMG_5368.png",
+            "styles": []
+          },
+          {
+            "path": "/04 abril",
+            "fileName": "IMG_5384.png",
+            "styles": [
+              "object-position: top;"
+            ]
+          },
+          {
+            "fileName": "IMG_5417.png",
+            "path": "/04 abril",
+            "styles": []
+          },
+          {
+            "fileName": "00951674-e318-448c-a430-45bf028c0907.png",
+            "path": "/04 abril",
+            "styles": []
+          },
+          {
+            "path": "/04 abril",
+            "fileName": "IMG_3846.png",
+            "styles": []
+          }
+        ]
+      },
+      {
+        "template": "4-2-4-2-2",
+        "photos": [
+          {
+            "path": "/04 abril",
+            "fileName": "IMG_5436.png",
+            "styles": []
+          },
+          {
+            "path": "/04 abril",
+            "fileName": "f59f9bef-8143-4afb-85ca-eaab093f41fc.png",
+            "styles": []
+          },
+          {
+            "path": "/04 abril",
+            "fileName": "IMG_3894.png",
+            "styles": [
+              "object-position: top;"
+            ]
+          },
+          {
+            "path": "/04 abril",
+            "fileName": "IMG_3900.png",
+            "styles": [
+              "object-position: top;"
+            ]
+          }
+        ]
+      },
+      {
+        "template": "5-3-2-1-4",
+        "photos": [
+          {
+            "path": "/04 abril",
+            "fileName": "IMG_5498.png",
+            "styles": []
+          },
+          {
+            "path": "/04 abril",
+            "fileName": "IMG_5512.png",
+            "styles": []
+          },
+          {
+            "path": "/04 abril",
+            "fileName": "IMG_5526.png",
+            "styles": [
+              "object-position: left;"
+            ]
+          },
+          {
+            "path": "/04 abril",
+            "fileName": "IMG_5518.png",
+            "styles": []
+          },
+          {
+            "path": "/04 abril",
+            "fileName": "IMG_5514.png",
+            "styles": []
+          }
+        ]
+      },
+      {
+        "template": "4-2-2-2-2",
+        "photos": [
+          {
+            "path": "/04 abril",
+            "fileName": "IMG_5389.png",
+            "styles": []
+          },
+          {
+            "path": "/04 abril",
+            "fileName": "IMG_5431.png",
+            "styles": []
+          },
+          {
+            "path": "/04 abril",
+            "fileName": "IMG_5419.png",
+            "styles": []
+          },
+          {
+            "path": "/04 abril",
+            "fileName": "a17a88b9-abf0-462e-a3eb-86400ce3cb4d.png",
+            "styles": []
+          }
+        ]
+      },
+      {
+        "template": "5-3-2-1-4",
+        "photos": [
+          {
+            "path": "/04 abril",
+            "fileName": "IMG_5427.png",
+            "styles": []
+          },
+          {
+            "path": "/04 abril",
+            "fileName": "IMG_5404.png",
+            "styles": []
+          },
+          {
+            "path": "/04 abril",
+            "fileName": "IMG_5399.png",
+            "styles": []
+          },
+          {
+            "path": "/04 abril",
+            "fileName": "IMG_5397.png",
+            "styles": []
+          },
+          {
+            "path": "/04 abril",
+            "fileName": "IMG_5392.png",
+            "styles": []
+          }
+        ]
+      },
+      {
+        "template": "6-2-3-1-5",
+        "photos": [
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_5592.png",
+            "styles": []
+          },
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_5599.png",
+            "styles": []
+          },
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_5596.png",
+            "styles": []
+          },
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_5650.png",
+            "styles": []
+          },
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_5632.png",
+            "styles": []
+          },
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_3973.png",
+            "styles": []
+          }
+        ]
+      },
+      {
+        "template": "5-2-8-3-2",
+        "photos": [
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_3962.png",
+            "styles": [
+              "object-position: right;"
+            ]
+          },
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_3987.png",
+            "styles": [
+              "object-position: left;"
+            ]
+          },
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_5546.png",
+            "styles": []
+          },
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_5691.png",
+            "styles": []
+          },
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_5683.png",
+            "styles": []
+          }
+        ]
+      },
+      {
+        "template": "3-1-4-0-3",
+        "photos": [
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_3946.png",
+            "styles": []
+          },
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_5626.png",
+            "styles": []
+          },
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_5660.png",
+            "styles": []
+          }
+        ]
+      },
+      {
+        "template": "5-3-7-4-1",
+        "photos": [
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_5562.png",
+            "styles": []
+          },
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_5566.png",
+            "styles": []
+          },
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_5726.png",
+            "styles": []
+          },
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_5721.png",
+            "styles": []
+          },
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_5552.png",
+            "styles": []
+          }
+        ]
+      },
+      {
+        "template": "4-2-1-2-2",
+        "photos": [
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_5639.png",
+            "styles": []
+          },
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_5647.png",
+            "styles": []
+          },
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_5644.png",
+            "styles": []
+          },
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_5693.png",
+            "styles": []
+          }
+        ]
+      },
+      {
+        "template": "4-1-1-4-4",
+        "photos": [
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_5793.png",
+            "styles": []
+          },
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_5814.png",
+            "styles": []
+          },
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_5835.png",
+            "styles": []
+          },
+          {
+            "path": "/05 mayo",
+            "fileName": "IMG_5776.png",
+            "styles": []
+          }
+        ]
+      },
+      {
+        "template": "5-1-3-2-3",
+        "photos": [
+          {
+            "path": "/06 junio",
+            "fileName": "IMG_4068.png",
+            "styles": []
+          },
+          {
+            "path": "/06 junio",
+            "fileName": "IMG_4073.png",
+            "styles": []
+          },
+          {
+            "path": "/06 junio",
+            "fileName": "IMG_4077.png",
+            "styles": []
+          },
+          {
+            "path": "/06 junio",
+            "fileName": "IMG_4059.png",
+            "styles": []
+          },
+          {
+            "path": "/06 junio",
+            "fileName": "IMG_4081.png",
             "styles": []
           }
         ]
@@ -2103,32 +2741,92 @@
       {
         "photos": [
           {
-            "fileName": "IMG_4987.png",
+            "fileName": "download (1).jpeg",
             "path": "",
             "styles": []
           },
           {
-            "fileName": "IMG_6486.png",
+            "fileName": "download (2).jpeg",
             "path": "",
             "styles": []
           },
           {
-            "fileName": "IMG_6009.png",
+            "fileName": "download (3).jpeg",
             "path": "",
             "styles": []
           },
           {
-            "fileName": "IMG_8874.png",
+            "fileName": "download (4).jpeg",
             "path": "",
             "styles": []
           },
           {
-            "fileName": "IMG_8881.png",
+            "fileName": "download (5).jpeg",
             "path": "",
             "styles": []
           }
         ],
-        "template": "5-2-5-3-2"
+        "template": "5-2-3-2-3"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "download (6).jpeg",
+            "path": "",
+            "styles": []
+          },
+          {
+            "fileName": "download (7).jpeg",
+            "path": "",
+            "styles": []
+          },
+          {
+            "fileName": "download (8).jpeg",
+            "path": "",
+            "styles": []
+          }
+        ],
+        "template": "3-3-8-2-1"
+      },
+      {
+        "photos": [
+          {
+            "fileName": "download (7).jpeg",
+            "path": "",
+            "styles": []
+          },
+          {
+            "fileName": "download (8).jpeg",
+            "path": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "path": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "path": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "path": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "path": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "path": "",
+            "styles": []
+          }
+        ],
+        "template": "7-1-4-5-2"
       }
     ],
     "settings": {

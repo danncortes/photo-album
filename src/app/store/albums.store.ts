@@ -147,21 +147,54 @@ const initialState: AlbumState = {
                 { name: '5-2-8-3-2', order: ['l', 'l', 'l', 'p', 'p'] },
             ],
             [
-                // Verify
-                // { name: '5-3-1-1-4', order: [] },
-                // { name: '5-3-2-4-1', order: [] },
-                // { name: '5-3-3', order: [] },
-                // { name: '5-3-4', order: [] },
-                // { name: '5-3-5-1-4', order: [] },
-                // { name: '5-3-6-1-4', order: [] },
-                // { name: '5-3-7-1-4', order: [] },
-                // { name: '5-3-8-1-4', order: [] },
+                { name: '5-3-1-1-4', order: ['l', 'p', 'p', 'p', 'p'] },
+                { name: '5-3-2-1-4', order: ['p', 'l', 'p', 'p', 'p'] },
+                { name: '5-3-3-1-4', order: ['p', 'p', 'p', 'p', 'l'] },
+                { name: '5-3-4-1-4', order: ['p', 'p', 'p', 'l', 'p'] },
+                { name: '5-3-5-4-1', order: ['l', 'l', 'l', 'p', 'l'] },
+                { name: '5-3-6-4-1', order: ['p', 'l', 'l', 'l', 'l'] },
+                { name: '5-3-7-4-1', order: ['l', 'l', 'l', 'l', 'p'] },
+                { name: '5-3-8-4-1', order: ['l', 'p', 'l', 'l', 'l'] },
             ],
         ],
         [
             [
                 { name: '6-1-1-0-6', order: ['p', 'p', 'p', 'p', 'p', 'p'] },
                 { name: '6-1-2-6-0', order: ['l', 'l', 'l', 'l', 'l', 'l'] },
+            ],
+            [
+                {
+                    name: '6-2-1-1-5',
+                    order: ['p', 'p', 'p', 'l', 'p', 'p'],
+                },
+                {
+                    name: '6-2-2-1-5',
+                    order: ['l', 'p', 'p', 'p', 'p', 'p'],
+                },
+                {
+                    name: '6-2-3-1-5',
+                    order: ['p', 'p', 'p', 'p', 'p', 'l'],
+                },
+                {
+                    name: '6-2-4-1-5',
+                    order: ['p', 'p', 'l', 'p', 'p', 'p'],
+                },
+                {
+                    name: '6-2-5-5-1',
+                    order: ['l', 'l', 'l', 'l', 'l', 'p'],
+                },
+                {
+                    name: '6-2-6-5-1',
+                    order: ['l', 'l', 'l', 'p', 'l', 'l'],
+                },
+                {
+                    name: '6-2-7-5-1',
+                    order: ['l', 'l', 'p', 'l', 'l', 'l'],
+                },
+                {
+                    name: '6-2-8-5-1',
+                    order: ['p', 'l', 'l', 'l', 'l', 'l'],
+                },
             ],
         ],
         [
@@ -182,18 +215,6 @@ const initialState: AlbumState = {
                     name: '7-1-4-5-2',
                     order: ['p', 'p', 'l', 'l', 'l', 'l', 'l'],
                 },
-            ],
-            [
-                { name: '7-2-1-2-5', order: [] },
-                // { name: '7-2-2', order: [] },
-                // { name: '7-2-3', order: [] },
-                // { name: '7-2-4', order: [] },
-            ],
-        ],
-        [
-            [
-                { name: '8-1-1', order: [] },
-                { name: '8-1-2', order: [] },
             ],
         ],
     ],
