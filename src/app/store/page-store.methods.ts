@@ -121,6 +121,32 @@ const capturePage = (divElement: ElementRef<HTMLElement>) => {
     });
 };
 
+const setElementStylesToExport = function (
+    divElement: ElementRef<HTMLElement>,
+) {
+    divElement.nativeElement.style.width = '390px';
+    divElement.nativeElement.style.height = '390px';
+    divElement.nativeElement.style.border = '0.0001px solid white';
+
+    const photos = divElement.nativeElement.querySelectorAll('img');
+    photos.forEach((photo) => {
+        photo!.style.border = '0px solid white';
+    });
+};
+
+const restoreElementStylesToExport = function (
+    divElement: ElementRef<HTMLElement>,
+) {
+    // Reset the styles after exporting
+    divElement.nativeElement.style.width = 'unset';
+    divElement.nativeElement.style.height = 'unset';
+    divElement.nativeElement.style.border = 'unset';
+    const photos = divElement.nativeElement.querySelectorAll('img');
+    photos.forEach((photo) => {
+        photo!.style.border = 'unset';
+    });
+};
+
 const generatePageImages = async (
     pageDivElements: ElementRef<HTMLElement>[],
 ) => {
@@ -128,8 +154,10 @@ const generatePageImages = async (
 
     for (let i = 0; i < pageDivElements.length; i++) {
         try {
+            setElementStylesToExport(pageDivElements[i]);
             const blob = await capturePage(pageDivElements[i]);
             images.push(blob);
+            restoreElementStylesToExport(pageDivElements[i]);
         } catch (error) {
             console.error(`Error capturing element ${i}:`, error);
         }
@@ -174,15 +202,9 @@ export const downloadAlbumPage = async (
         photo!.style.border = '0px solid white';
     });
 
+    setElementStylesToExport(divElement);
     const blob = await capturePage(divElement);
-
-    // Reset the styles after exporting
-    divElement.nativeElement.style.width = 'unset';
-    divElement.nativeElement.style.height = 'unset';
-    divElement.nativeElement.style.border = 'unset';
-    photos.forEach((photo) => {
-        photo!.style.border = 'unset';
-    });
+    restoreElementStylesToExport(divElement);
 
     const downloadLink = document.createElement('a');
     downloadLink.href = URL.createObjectURL(blob);

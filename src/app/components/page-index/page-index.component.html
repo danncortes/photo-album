@@ -1,0 +1,14 @@
+<div
+    class="page-index-container flex gap-0.5 justify-start px-6 flex-wrap items-center"
+>
+    <p class="text-sm">Pages:</p>
+    @for (page of [].constructor(totalPages()); track $index) {
+        <button
+            class="btn btn-xs btn-circle hover:bg-secondary hover:text-white"
+            (click)="scrollToPage($index)"
+            type="button"
+        >
+            {{ $index + 1 }}
+        </button>
+    }
+</div>

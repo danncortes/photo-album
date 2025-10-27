@@ -1,6 +1,12 @@
-<div class="pages-container w-full h-full overflow-x-auto flex p-6 gap-12">
+@if (showPageIndex()) {
+    <app-page-index [totalPages]="albumStore.activeAlbum()!.pages.length" />
+}
+<div
+    #pagesContainer
+    class="pages-container w-full overflow-x-auto flex p-6 gap-12 flex-1"
+>
     @for (page of albumStore.activeAlbum()!.pages; track $index) {
-        <div class="page-container">
+        <div class="page-container" id="page-{{ $index }}" #pageContainer>
             <app-page
                 [page]="page"
                 [pageIndex]="$index"
