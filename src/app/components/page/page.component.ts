@@ -100,6 +100,12 @@ export class PageComponent implements AfterContentInit {
             this.dialog.open(TemplatesComponent, {
                 minWidth: '600px',
                 data: this.albumStore.templates(),
+                panelClass: [
+                    'overflow-y-auto',
+                    'p-6',
+                    'bg-base-100',
+                    'rounded-sm',
+                ],
             });
 
         dialogRef.closed.subscribe((template: string | undefined) => {

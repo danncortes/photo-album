@@ -1,7 +1,9 @@
 <div class="templates flex gap-3 flex-wrap max-w-xl">
     @for (templateGroups of data; track $index) {
         <div>
-            <p class="text-sm mb-1">{{ $index + 1 }} Photo</p>
+            <p class="text-sm mb-1">
+                {{ $index + 1 }} Photo{{ $index ? 's' : '' }}
+            </p>
             <div class="template-types flex gap-6 flex-wrap">
                 @for (group of templateGroups; track $index) {
                     <div class="template-type flex gap-1.5">
