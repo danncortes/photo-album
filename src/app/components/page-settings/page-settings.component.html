@@ -62,11 +62,15 @@
             />
         </div>
         <div class="flex justify-between">
-            <!-- This button could be type="reset" but that would clear the form completely -->
-            <button type="reset" class="btn btn-sm">Clear</button>
+            <button type="button" class="btn btn-sm" (click)="cancelForm()">
+                Cancel
+            </button>
             <div class="flex gap-2">
+                <button type="button" class="btn btn-sm" (click)="clearForm()">
+                    Clear all
+                </button>
                 <button type="button" class="btn btn-sm" (click)="resetForm()">
-                    Reset
+                    Revert
                 </button>
                 <button
                     class="btn btn-sm btn-secondary"

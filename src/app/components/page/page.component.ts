@@ -37,6 +37,7 @@ export class PageComponent implements AfterContentInit {
     shiftOptions: ShiftDirection[] = [-1, 1];
     pageExportDiv =
         viewChild.required<ElementRef<HTMLElement>>('pageExportDiv');
+    menuTrigger = viewChild(CdkMenuTrigger);
 
     constructor() {}
 
@@ -153,5 +154,9 @@ export class PageComponent implements AfterContentInit {
 
     trackByFn(i: number) {
         return i;
+    }
+
+    closeSettingsMenu() {
+        this.menuTrigger()?.close();
     }
 }

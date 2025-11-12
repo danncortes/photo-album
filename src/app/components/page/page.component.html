@@ -144,6 +144,9 @@
 </div>
 <ng-template #menu>
     <div cdkMenu class="options-menu">
-        <app-page-settings [pageIndex]="pageIndex()" />
+        <app-page-settings
+            [pageIndex]="pageIndex()"
+            (closeMenu)="closeSettingsMenu()"
+        />
     </div>
 </ng-template>

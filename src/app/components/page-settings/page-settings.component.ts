@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, inject, input, signal } from '@angular/core';
+import { AfterViewInit, Component, inject, input, output, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import {
     isNumberValidator,
@@ -17,6 +17,7 @@ import { AlbumStore } from '../../store/albums.store';
 export class PageSettingsComponent implements AfterViewInit {
     readonly albumStore = inject(AlbumStore);
     pageIndex = input.required<number>();
+    closeMenu = output<void>();
     defaultHeight = signal<number | ''>('');
     defaultWidth = signal<number | ''>('');
     defaultGap = signal<number | ''>('');
@@ -168,6 +169,15 @@ export class PageSettingsComponent implements AfterViewInit {
 
     resetForm() {
         this.setDefaultValuesInForm();
+    }
+
+    cancelForm() {
+        this.resetForm();
+        this.closeMenu.emit();
+    }
+
+    clearForm() {
+        this.form.reset();
     }
 
     numberFieldValidators() {
