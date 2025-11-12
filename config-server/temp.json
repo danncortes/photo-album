@@ -1,0 +1,152 @@
+[
+    {
+        "template": "5-1-1-2-3",
+        "photos": [
+            {
+                "fileName": "IMG_5203.png",
+                "path": "/11 noviembre",
+                "styles": []
+            },
+            {
+                "fileName": "IMG_5219.png",
+                "path": "/11 noviembre",
+                "styles": []
+            },
+            {
+                "path": "/11 noviembre",
+                "fileName": "IMG_7231.png",
+                "styles": []
+            },
+            {
+                "path": "/11 noviembre",
+                "fileName": "IMG_7271.png",
+                "styles": []
+            },
+            {
+                "path": "/11 noviembre",
+                "fileName": "IMG_7224.png",
+                "styles": []
+            }
+        ]
+    },
+    {
+        "template": "5-2-2-2-3",
+        "photos": [
+            {
+                "path": "/11 noviembre",
+                "fileName": "IMG_7371.png",
+                "styles": []
+            },
+            {
+                "path": "/11 noviembre",
+                "fileName": "IMG_7374.png",
+                "styles": []
+            },
+            {
+                "path": "/11 noviembre",
+                "fileName": "IMG_5213.png",
+                "styles": []
+            },
+            {
+                "fileName": "IMG_7222.png",
+                "path": "/11 noviembre",
+                "styles": []
+            },
+            {
+                "path": "/11 noviembre",
+                "fileName": "IMG_7290.png",
+                "styles": []
+            }
+        ]
+    },
+    {
+        "template": "3-1-2-0-3",
+        "photos": [
+            {
+                "fileName": "IMG_7310.png",
+                "path": "/11 noviembre",
+                "styles": []
+            },
+            {
+                "path": "/11 noviembre",
+                "fileName": "IMG_7307.png",
+                "styles": []
+            },
+            {
+                "path": "/11 noviembre",
+                "fileName": "IMG_7229.png",
+                "styles": []
+            }
+        ]
+    },
+    {
+        "template": "4-3-2-2-2",
+        "photos": [
+            {
+                "path": "/11 noviembre",
+                "fileName": "IMG_7344.png",
+                "styles": []
+            },
+            {
+                "fileName": "e6ae667d-06ec-4947-8795-b7f8624766d9.png",
+                "path": "/11 noviembre",
+                "styles": []
+            },
+            {
+                "path": "/11 noviembre",
+                "fileName": "IMG_7341.png",
+                "styles": []
+            },
+            {
+                "fileName": "IMG_7345.png",
+                "path": "/11 noviembre",
+                "styles": []
+            }
+        ]
+    },
+    {
+        "template": "3-3-3-1-2",
+        "photos": [
+            {
+                "path": "/11 noviembre",
+                "fileName": "IMG_7304.png",
+                "styles": []
+            },
+            {
+                "path": "/11 noviembre",
+                "fileName": "IMG_7328.png",
+                "styles": []
+            },
+            {
+                "fileName": "IMG_7317.png",
+                "path": "/11 noviembre",
+                "styles": []
+            }
+        ]
+    },
+    {
+        "template": "4-3-4-2-2",
+        "photos": [
+            {
+                "path": "/11 noviembre",
+                "fileName": "IMG_5219.png",
+                "styles": []
+            },
+            {
+                "path": "/11 noviembre",
+                "fileName": "IMG_7222.png",
+                "styles": []
+            },
+            {
+                "path": "/11 noviembre",
+                "fileName": "IMG_7224.png",
+                "styles": []
+            },
+            {
+                "path": "/11 noviembre",
+                "fileName": "IMG_5216.png",
+                "styles": []
+            }
+        ]
+    }
+]

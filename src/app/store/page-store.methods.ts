@@ -109,13 +109,22 @@ export const addPageWithPhotos = (
     });
 };
 
-const capturePage = (divElement: ElementRef<HTMLElement>) => {
+const capturePage = (
+    divElement: ElementRef<HTMLElement>,
+    width: number,
+    height: number,
+) => {
     const element = divElement.nativeElement;
+    const { clientHeight } = element;
+
+    // Calculate scale factor based on desired output height
+    const scale = height / clientHeight;
+
     return domtoimage.toBlob(element, {
-        width: 3550, // Desired output width in pixels
-        height: 3550, // Desired output height in pixels
+        width, // Desired output width in pixels (maintains aspect ratio)
+        height, // Desired output height in pixels
         style: {
-            transform: 'scale(9.08)', // 3550 / 400 = 8.87 (scaling factor)
+            transform: `scale(${scale})`,
             transformOrigin: 'top left',
         },
     });
@@ -124,14 +133,21 @@ const capturePage = (divElement: ElementRef<HTMLElement>) => {
 const setElementStylesToExport = function (
     divElement: ElementRef<HTMLElement>,
 ) {
-    divElement.nativeElement.style.width = '390px';
-    divElement.nativeElement.style.height = '390px';
+    const { clientHeight, clientWidth } = divElement.nativeElement;
+    const aspectRatio = clientWidth / clientHeight;
+    const normalizedHeight = 390;
+    const normalizedWidth = aspectRatio * normalizedHeight;
+
+    divElement.nativeElement.style.height = `${normalizedHeight}px`;
+    divElement.nativeElement.style.width = `${normalizedWidth}px`;
     divElement.nativeElement.style.border = '0.0001px solid white';
 
     const photos = divElement.nativeElement.querySelectorAll('img');
     photos.forEach((photo) => {
         photo!.style.border = '0px solid white';
     });
+
+    return { width: normalizedWidth, height: normalizedHeight };
 };
 
 const restoreElementStylesToExport = function (
@@ -151,11 +167,22 @@ const generatePageImages = async (
     pageDivElements: ElementRef<HTMLElement>[],
 ) => {
     const images: Blob[] = [];
+    const OUTPUT_HEIGHT = 3550; // High-resolution output height
 
     for (let i = 0; i < pageDivElements.length; i++) {
         try {
-            setElementStylesToExport(pageDivElements[i]);
-            const blob = await capturePage(pageDivElements[i]);
+            const { width: normalizedWidth, height: normalizedHeight } =
+                setElementStylesToExport(pageDivElements[i]);
+
+            // Calculate high-res dimensions maintaining aspect ratio
+            const aspectRatio = normalizedWidth / normalizedHeight;
+            const outputWidth = OUTPUT_HEIGHT * aspectRatio;
+
+            const blob = await capturePage(
+                pageDivElements[i],
+                outputWidth,
+                OUTPUT_HEIGHT,
+            );
             images.push(blob);
             restoreElementStylesToExport(pageDivElements[i]);
         } catch (error) {
@@ -192,18 +219,16 @@ export const downloadAlbumPage = async (
     divElement: ElementRef<HTMLElement>,
     fileName: string,
 ) => {
-    // Force some styles for the exported page
-    divElement.nativeElement.style.width = '390px';
-    divElement.nativeElement.style.height = '390px';
-    divElement.nativeElement.style.border = '0.0001px solid white';
+    const OUTPUT_HEIGHT = 3550; // High-resolution output height
 
-    const photos = divElement.nativeElement.querySelectorAll('img');
-    photos.forEach((photo) => {
-        photo!.style.border = '0px solid white';
-    });
+    const { width: normalizedWidth, height: normalizedHeight } =
+        setElementStylesToExport(divElement);
 
-    setElementStylesToExport(divElement);
-    const blob = await capturePage(divElement);
+    // Calculate high-res dimensions maintaining aspect ratio
+    const aspectRatio = normalizedWidth / normalizedHeight;
+    const outputWidth = OUTPUT_HEIGHT * aspectRatio;
+
+    const blob = await capturePage(divElement, outputWidth, OUTPUT_HEIGHT);
     restoreElementStylesToExport(divElement);
 
     const downloadLink = document.createElement('a');

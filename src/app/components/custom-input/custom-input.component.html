@@ -1,13 +1,13 @@
 <fieldset [class]="'fieldset' + ' ' + class()">
     <label [for]="id()" class="fieldset-legend">{{ label() }}</label>
     <input
+        #inputElement
         class="input input-sm"
         [class]="{ 'input-error': showError() }"
         [type]="type()"
         [id]="id()"
-        [value]="value()"
         (input)="onInput($any($event.target).value)"
-        (blur)="onTouched()"
+        (blur)="onBlur()"
     />
     @if (showError()) {
         <div class="fielset-label text-xs text-red-500">

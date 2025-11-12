@@ -1,4 +1,10 @@
-import { Component, forwardRef, input, signal } from '@angular/core';
+import {
+    Component,
+    forwardRef,
+    input,
+    viewChild,
+    ElementRef,
+} from '@angular/core';
 import {
     ControlValueAccessor,
     NG_VALUE_ACCESSOR,
@@ -25,15 +31,20 @@ export class CustomInputComponent implements ControlValueAccessor {
     class = input<string>('');
     showError = input<boolean>();
     errorMessage = input<string | null>();
-    value = signal('');
+
+    inputElement = viewChild<ElementRef>('inputElement');
 
     onChange = (value: string) => {};
+    onTouched = () => {};
 
     writeValue(value: string): void {
-        this.value.set(value);
+        const input = this.inputElement()?.nativeElement;
+        if (input && input.value !== value) {
+            input.value = value || '';
+        }
     }
 
-    registerOnChange(fn: () => void): void {
+    registerOnChange(fn: (value: string) => void): void {
         this.onChange = fn;
     }
 
@@ -42,13 +53,10 @@ export class CustomInputComponent implements ControlValueAccessor {
     }
 
     onInput(value: string): void {
-        this.value.set(value);
-        // Call the registered onChange function to notify Angular of the change
         this.onChange(value);
     }
 
-    onTouched(): void {
-        // Call the registered onTouched function to notify Angular
+    onBlur(): void {
         this.onTouched();
     }
 }

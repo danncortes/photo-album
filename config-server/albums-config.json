@@ -3218,7 +3218,11 @@
             "styles": []
           }
         ],
-        "gap": 0.3
+        "format": {
+          "height": 19,
+          "width": 17
+        },
+        "gap": "0.3"
       },
       {
         "photos": [
@@ -3226,9 +3230,44 @@
             "fileName": "IMG_6544.png",
             "path": "/2024",
             "styles": []
+          },
+          {
+            "fileName": "",
+            "path": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "path": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "path": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "path": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "path": "",
+            "styles": []
+          },
+          {
+            "fileName": "",
+            "path": "",
+            "styles": []
           }
         ],
-        "template": "1-1-1-1-1"
+        "template": "7-1-4-5-2",
+        "format": {
+          "height": 19,
+          "width": 17
+        },
+        "gap": 0.2
       }
     ],
     "settings": {
@@ -3241,7 +3280,8 @@
         "height": 30
       },
       "gap": 0.5
-    }
+    },
+    "updatedAlbumStatus": "Change Page Template"
   },
   "mutter-tag-2025": {
     "name": "mutter-tag-2025",
