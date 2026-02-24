@@ -1,0 +1,9 @@
+<div class="mb-4">
+    <app-page-select
+        [pages]="pages()"
+        [selectedIndex]="afterPageIndex()"
+        label="Add after page"
+        (selectionChange)="onPagePositionChange($event)"
+    />
+</div>
+<app-templates />

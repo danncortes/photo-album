@@ -37,18 +37,25 @@
             </p>
         </fieldset>
         <fieldset class="fieldset mb-4">
-            <label class="fieldset-legend" for="directory-path"
-                >Photos directory
-            </label>
-            <input
-                class="input input-sm w-full"
-                [class]="{ 'input-error': showDirectoryPathError }"
-                type="text"
-                id="directory-path"
-                formControlName="directoryPath"
-                placeholder="/path/to/your/album/directory"
-                required
-            />
+            <label class="fieldset-legend">Photos directory</label>
+            <div class="flex items-center gap-2">
+                <input
+                    class="input input-sm w-full"
+                    [class]="{ 'input-error': showDirectoryPathError }"
+                    type="text"
+                    id="directory-path"
+                    formControlName="directoryPath"
+                    placeholder="No folder selected"
+                    readonly
+                />
+                <button
+                    type="button"
+                    class="btn btn-sm btn-outline"
+                    (click)="pickFolder()"
+                >
+                    Browse
+                </button>
+            </div>
             @if (showDirectoryPathError) {
                 <div class="fielset-label text-xs text-red-500 mt-1">
                     {{ directoryPathError }}

@@ -1,5 +1,6 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
+import { exec } from 'child_process';
 import { Request, Response } from 'express';
 import { Album, AlbumPreview, AlbumsConfig, Directory } from '../src/types';
 
@@ -180,6 +181,19 @@ async function buildDirectory(
         console.error(`Error building directory ${path}:`, error);
         throw `Error building directory ${path}: ${error}`;
     }
+}
+
+export function pickFolder(req: Request, res: Response) {
+    const command = `osascript -e 'POSIX path of (choose folder with prompt "Select photos directory")'`;
+
+    exec(command, (error: any, stdout: string) => {
+        if (error) {
+            res.status(400).send({ error: 'No folder selected' });
+            return;
+        }
+        const selectedPath = stdout.trim().replace(/\/$/, '');
+        res.status(200).send({ path: selectedPath });
+    });
 }
 
 export async function getAlbumDirectory(

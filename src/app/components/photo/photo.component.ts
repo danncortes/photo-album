@@ -1,17 +1,19 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
 import { CdkMenu, CdkMenuTrigger } from '@angular/cdk/menu';
 import { NgFor } from '@angular/common';
 
 import { PhotoConfig, ShiftDirection } from '../../../types';
 import { AlbumStore } from '../../store/albums.store';
+import { IconComponent } from '../icon/icon.component';
 
 @Component({
     selector: 'app-photo',
-    imports: [NgFor, CdkMenu, CdkMenuTrigger],
+    imports: [NgFor, CdkMenu, CdkMenuTrigger, IconComponent],
     templateUrl: './photo.component.html',
     styleUrl: './photo.component.css',
     host: {
         class: 'overflow-hidden cursor-pointer bg-gray-200 relative',
+        '[style.border-radius.mm]': 'resolvedBorderRadius()',
     },
 })
 export class PhotoComponent {
@@ -19,7 +21,12 @@ export class PhotoComponent {
     photoIndex = input.required<number>();
     pageIndex = input.required<number>();
     pagesPhotosLength = input.required<number>();
+    borderRadius = input<number>(0);
     readonly albumStore = inject(AlbumStore);
+
+    resolvedBorderRadius = computed(() => {
+        return this.photo().photoBorderRadius ?? this.borderRadius();
+    });
 
     alignmentOptions = ['top', 'bottom', 'right', 'left'];
     shiftOptions: ShiftDirection[] = [-1, 1];
@@ -78,6 +85,23 @@ export class PhotoComponent {
             (direction === -1 && photoIndex === 0) ||
             (direction === 1 && photoIndex === this.pagesPhotosLength() - 1)
         );
+    }
+
+    updateBorderRadius(value: string) {
+        const numValue = Number(value);
+        this.albumStore.updatePhotoBorderRadius({
+            pageIndex: this.pageIndex(),
+            photoIndex: this.photoIndex(),
+            borderRadius: isNaN(numValue) ? undefined : numValue,
+        });
+    }
+
+    clearBorderRadius() {
+        this.albumStore.updatePhotoBorderRadius({
+            pageIndex: this.pageIndex(),
+            photoIndex: this.photoIndex(),
+            borderRadius: undefined,
+        });
     }
 
     isAlignmentActive({ alignment }: { alignment: string }) {

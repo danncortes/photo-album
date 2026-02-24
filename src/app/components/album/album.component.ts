@@ -1,18 +1,36 @@
-import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
+import {
+    Component,
+    inject,
+    Injector,
+    OnDestroy,
+    OnInit,
+    signal,
+} from '@angular/core';
 import { Dialog, DialogRef } from '@angular/cdk/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 
 import { PagesComponent } from '../pages/pages.component';
-import { TemplatesComponent } from '../templates/templates.component';
+import {
+    AddPageComponent,
+    AddPageResult,
+} from '../add-page/add-page.component';
+import { StyleSettingsComponent } from '../style-settings/style-settings.component';
+import {
+    SectionsDialogComponent,
+    SectionsDialogData,
+} from '../sections-dialog/sections-dialog.component';
 import { AlbumStore } from '../../store/albums.store';
+import { SectionsConfig } from '../../../types';
 import { DirectoryGalleryComponent } from '../directory-gallery/directory-gallery.component';
+import { IconComponent } from '../icon/icon.component';
 @Component({
     selector: 'app-album',
     imports: [
         PagesComponent,
         DirectoryGalleryComponent,
         DirectoryGalleryComponent,
+        IconComponent,
     ],
     templateUrl: './album.component.html',
     styleUrl: './album.component.css',
@@ -21,7 +39,8 @@ import { DirectoryGalleryComponent } from '../directory-gallery/directory-galler
     },
 })
 export class AlbumComponent implements OnInit, OnDestroy {
-    dialog = inject(Dialog);
+    private dialog = inject(Dialog);
+    private injector = inject(Injector);
     readonly albumStore = inject(AlbumStore);
     isDownloadingPages = signal(false);
 
@@ -37,11 +56,13 @@ export class AlbumComponent implements OnInit, OnDestroy {
     }
 
     openAddPageDialog() {
-        const dialogRef: DialogRef<string, TemplatesComponent> =
-            this.dialog.open(TemplatesComponent, {
+        const dialogRef: DialogRef<AddPageResult, AddPageComponent> =
+            this.dialog.open(AddPageComponent, {
                 minWidth: '600px',
+                maxWidth: '90vw',
                 maxHeight: '90vh',
                 autoFocus: false,
+                injector: this.injector,
                 data: this.albumStore.templates(),
                 panelClass: [
                     'overflow-y-auto',
@@ -51,10 +72,50 @@ export class AlbumComponent implements OnInit, OnDestroy {
                 ],
             });
 
-        dialogRef.closed.subscribe((template: string | undefined) => {
-            if (template) {
-                this.albumStore.addPage(template);
+        dialogRef.closed.subscribe((result: AddPageResult | undefined) => {
+            if (result) {
+                this.albumStore.addPage(result.template, result.afterPageIndex);
             }
+        });
+    }
+
+    openSectionsDialog() {
+        const dialogRef: DialogRef<SectionsConfig, SectionsDialogComponent> =
+            this.dialog.open(SectionsDialogComponent, {
+                minWidth: '600px',
+                maxWidth: '90vw',
+                maxHeight: '90vh',
+                autoFocus: false,
+                injector: this.injector,
+                data: {
+                    sections: this.albumStore.activeAlbum()?.sections,
+                    pageCount:
+                        this.albumStore.activeAlbum()?.pages?.length ?? 0,
+                } as SectionsDialogData,
+                panelClass: [
+                    'overflow-y-auto',
+                    'p-6',
+                    'bg-base-100',
+                    'rounded-sm',
+                ],
+            });
+
+        dialogRef.closed.subscribe(
+            (result: SectionsConfig | undefined) => {
+                if (result) {
+                    this.albumStore.updateAlbumSections(result);
+                }
+            },
+        );
+    }
+
+    openAlbumSettingsDialog() {
+        this.dialog.open(StyleSettingsComponent, {
+            minWidth: '400px',
+            maxHeight: '90vh',
+            autoFocus: false,
+            injector: this.injector,
+            data: { mode: 'album' },
         });
     }
 

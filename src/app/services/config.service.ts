@@ -35,4 +35,10 @@ export class ConfigService {
             config: album,
         });
     }
+
+    pickFolder() {
+        return this.http.get<{ path: string }>(
+            'http://localhost:3333/pick-folder',
+        );
+    }
 }

@@ -25,6 +25,7 @@ export type Album = {
     activeFolder: string | null;
     pages: Pages;
     settings: StyleSettings;
+    sections?: SectionsConfig;
 };
 
 export type PhotosDictionary = {
@@ -45,6 +46,7 @@ export type StyleSettings = {
     paddingRight: number;
     paddingLeft: number;
     gap: number;
+    photoBorderRadius?: number;
 };
 
 export type PageFormat = {
@@ -58,6 +60,7 @@ export type PhotoConfig = {
     path: string;
     fileName: string;
     styles: Array<string>;
+    photoBorderRadius?: number;
 };
 
 export type PageStyles = Partial<StyleSettings> & {
@@ -76,3 +79,28 @@ export type Page = {
 export type ShiftDirection = -1 | 1;
 
 export type Proportion = 'l' | 'p' | 's';
+
+export type SectionPosition = 'top' | 'bottom' | 'lateral';
+
+export type Subsection = {
+    name: string;
+    from: number;
+    to: number;
+};
+
+export type Section = {
+    name: string;
+    from: number;
+    to: number;
+    color: string;
+    subsections: Subsection[];
+};
+
+export type SectionsConfig = {
+    sections: Section[];
+    position: SectionPosition;
+    padding: number;
+    margin: number;
+    borderRadius: number;
+    fontSize: number;
+};

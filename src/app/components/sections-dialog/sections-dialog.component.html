@@ -1,0 +1,127 @@
+<div class="sections-dialog">
+    <h2 class="text-xl font-semibold mb-4">Sections</h2>
+
+    @if (sections().length === 0) {
+        <p class="text-gray-500 mb-4">
+            No sections yet. Add a section to group pages.
+        </p>
+    }
+
+    <div class="sections-list mb-4">
+        @for (section of sections(); track $index; let sectionIndex = $index) {
+            <div class="section-group mb-3 border border-base-300 rounded p-2">
+                <app-section-row
+                    [name]="section.name"
+                    [from]="section.from"
+                    [to]="section.to"
+                    [color]="section.color"
+                    [pageCount]="pageCount()"
+                    [showColorPicker]="true"
+                    [showAddSubsection]="true"
+                    (nameChange)="updateSection(sectionIndex, { name: $event })"
+                    (fromChange)="updateSection(sectionIndex, { from: $event })"
+                    (toChange)="updateSection(sectionIndex, { to: $event })"
+                    (colorChange)="
+                        updateSection(sectionIndex, { color: $event })
+                    "
+                    (addSubsection)="addSubsection(sectionIndex)"
+                    (remove)="removeSection(sectionIndex)"
+                />
+
+                @for (sub of section.subsections; track $index) {
+                    <app-section-row
+                        [name]="sub.name"
+                        [from]="sub.from"
+                        [to]="sub.to"
+                        [pageCount]="pageCount()"
+                        [minPage]="section.from"
+                        [maxPage]="section.to"
+                        (nameChange)="
+                            updateSubsection(sectionIndex, $index, {
+                                name: $event,
+                            })
+                        "
+                        (fromChange)="
+                            updateSubsection(sectionIndex, $index, {
+                                from: $event,
+                            })
+                        "
+                        (toChange)="
+                            updateSubsection(sectionIndex, $index, {
+                                to: $event,
+                            })
+                        "
+                        (remove)="removeSubsection(sectionIndex, $index)"
+                    />
+                }
+            </div>
+        }
+    </div>
+
+    <button class="btn btn-sm mb-6" (click)="addSection()">
+        + Add Section
+    </button>
+
+    <h3 class="text-lg font-semibold mb-3">Display Settings</h3>
+
+    <div class="grid grid-cols-2 gap-3 mb-6">
+        <label class="flex flex-col gap-1 text-sm">
+            Position
+            <select
+                class="select select-sm select-bordered"
+                [ngModel]="position()"
+                (ngModelChange)="position.set($event)"
+            >
+                <option value="top">Top</option>
+                <option value="bottom">Bottom</option>
+                <option value="lateral">Lateral</option>
+            </select>
+        </label>
+        <label class="flex flex-col gap-1 text-sm">
+            Padding (cm)
+            <input
+                class="input input-sm input-bordered"
+                type="number"
+                min="0"
+                [ngModel]="padding()"
+                (ngModelChange)="padding.set($event)"
+            />
+        </label>
+        <label class="flex flex-col gap-1 text-sm">
+            Margin (cm)
+            <input
+                class="input input-sm input-bordered"
+                type="number"
+                min="0"
+                [ngModel]="margin()"
+                (ngModelChange)="margin.set($event)"
+            />
+        </label>
+        <label class="flex flex-col gap-1 text-sm">
+            Border Radius (cm)
+            <input
+                class="input input-sm input-bordered"
+                type="number"
+                min="0"
+                [ngModel]="borderRadius()"
+                (ngModelChange)="borderRadius.set($event)"
+            />
+        </label>
+        <label class="flex flex-col gap-1 text-sm">
+            Font Size (cm)
+            <input
+                class="input input-sm input-bordered"
+                type="number"
+                min="0"
+                step="0.1"
+                [ngModel]="fontSize()"
+                (ngModelChange)="fontSize.set($event)"
+            />
+        </label>
+    </div>
+
+    <div class="flex justify-end gap-2">
+        <button class="btn btn-sm btn-ghost" (click)="cancel()">Cancel</button>
+        <button class="btn btn-sm btn-primary" (click)="save()">Save</button>
+    </div>
+</div>

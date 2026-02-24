@@ -17,6 +17,7 @@ import {
 } from '../../helpers/validators';
 import { CustomInputComponent } from '../custom-input/custom-input.component';
 import { AlbumStore } from '../../store/albums.store';
+import { ConfigService } from '../../services/config.service';
 
 @Component({
     selector: 'app-create-album-form',
@@ -80,6 +81,7 @@ export class CreateAlbumFormComponent implements OnInit {
     savingAlbum = signal(false);
     subcriptions: Subscription[] = [];
     private destroyRef = inject(DestroyRef);
+    private configService = inject(ConfigService);
     readonly albumStore = inject(AlbumStore);
 
     constructor(
@@ -99,14 +101,6 @@ export class CreateAlbumFormComponent implements OnInit {
                         {
                             emitEvent: false,
                         },
-                    );
-                }
-            }),
-            this.form.controls.directoryPath.valueChanges.subscribe((value) => {
-                if (value) {
-                    this.form.controls.directoryPath.setValue(
-                        value.replace(/^['"]+|['"]+$/g, ''),
-                        { emitEvent: false },
                     );
                 }
             }),
@@ -242,6 +236,17 @@ export class CreateAlbumFormComponent implements OnInit {
 
     get isFormInvalid(): boolean {
         return this.form.invalid;
+    }
+
+    pickFolder() {
+        this.subcriptions.push(
+            this.configService.pickFolder().subscribe({
+                next: (result) => {
+                    this.form.controls.directoryPath.setValue(result.path);
+                    this.form.controls.directoryPath.markAsTouched();
+                },
+            }),
+        );
     }
 
     resetForm() {

@@ -19,6 +19,11 @@ export type ShiftPagePositionParams = {
     direction: ShiftDirection;
 };
 
+export type MovePageParams = {
+    fromIndex: number;
+    afterIndex: number;
+};
+
 type BasePhotoParam = {
     pageIndex: number;
     photoIndex: number;
@@ -64,21 +69,27 @@ export const addPageDivElement = (
 export const addPage = (
     template: string,
     store: WritableStateSource<AlbumState>,
+    afterPageIndex?: number,
 ) => {
     patchState(store, (state) => {
         const [nPhotos] = template;
 
-        const pages: Pages = [
-            ...state.activeAlbum!.pages,
-            {
-                photos: Array.from({ length: Number(nPhotos) }).map(() => ({
-                    fileName: '',
-                    path: '',
-                    styles: [],
-                })),
-                template,
-            },
-        ];
+        const newPage: Page = {
+            photos: Array.from({ length: Number(nPhotos) }).map(() => ({
+                fileName: '',
+                path: '',
+                styles: [],
+            })),
+            template,
+        };
+
+        const pages: Pages = [...state.activeAlbum!.pages];
+
+        if (afterPageIndex !== undefined) {
+            pages.splice(afterPageIndex + 1, 0, newPage);
+        } else {
+            pages.push(newPage);
+        }
 
         return {
             ...state,
@@ -143,8 +154,13 @@ const setElementStylesToExport = function (
     divElement.nativeElement.style.border = '0.0001px solid white';
 
     const photos = divElement.nativeElement.querySelectorAll('img');
+    const allElements = divElement.nativeElement.querySelectorAll('*');
     photos.forEach((photo) => {
         photo!.style.border = '0px solid white';
+    });
+
+    allElements.forEach((element) => {
+        (element as HTMLElement).style.border = '0px solid white';
     });
 
     return { width: normalizedWidth, height: normalizedHeight };
@@ -370,6 +386,29 @@ export const shiftPagePosition = (
     });
 };
 
+export const movePage = (
+    { fromIndex, afterIndex }: MovePageParams,
+    store: Store,
+) => {
+    patchState(store, (state) => {
+        const album = state.activeAlbum!;
+        const pages = [...album.pages];
+        const [page] = pages.splice(fromIndex, 1);
+        const insertIndex =
+            afterIndex >= fromIndex ? afterIndex : afterIndex + 1;
+        pages.splice(insertIndex, 0, page);
+
+        return {
+            ...state,
+            updatedAlbumStatus: 'Move Page',
+            activeAlbum: {
+                ...album,
+                pages,
+            } as Album,
+        };
+    });
+};
+
 export const updatePageSettings = (
     {
         pageStyles,
@@ -392,6 +431,7 @@ export const updatePageSettings = (
         delete activeAlbum!.pages[pageIndex].paddingRight;
         delete activeAlbum!.pages[pageIndex].paddingBottom;
         delete activeAlbum!.pages[pageIndex].paddingLeft;
+        delete activeAlbum!.pages[pageIndex].photoBorderRadius;
 
         updatedAlbum.pages[pageIndex] = {
             ...activeAlbum!.pages[pageIndex],
@@ -588,6 +628,38 @@ export const addPhoto = (
                 pages,
             } as Album,
             updatedAlbumStatus: 'Add Photo',
+        };
+    });
+};
+
+export type UpdatePhotoBorderRadiusParams = BasePhotoParam & {
+    borderRadius: number | undefined;
+};
+
+export const updatePhotoBorderRadius = (
+    { pageIndex, photoIndex, borderRadius }: UpdatePhotoBorderRadiusParams,
+    store: Store,
+) => {
+    patchState(store, (state) => {
+        const album = state.activeAlbum!;
+        const { pages } = album;
+        const photo = { ...pages[pageIndex].photos[photoIndex] };
+
+        if (borderRadius !== undefined) {
+            photo.photoBorderRadius = borderRadius;
+        } else {
+            delete photo.photoBorderRadius;
+        }
+
+        pages[pageIndex].photos[photoIndex] = photo;
+
+        return {
+            ...state,
+            activeAlbum: {
+                ...album,
+                pages,
+            } as Album,
+            updatedAlbumStatus: 'Update Photo Border Radius',
         };
     });
 };

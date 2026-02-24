@@ -1,6 +1,12 @@
 import { patchState } from '@ngrx/signals';
 
-import { Album, AlbumPreview, Directory } from '../../types';
+import {
+    Album,
+    AlbumPreview,
+    Directory,
+    SectionsConfig,
+    StyleSettings,
+} from '../../types';
 import { Store } from './albums.store';
 import { ConfigService } from '../services/config.service';
 import { forkJoin } from 'rxjs';
@@ -76,6 +82,31 @@ export const getAlbumAndDirectory = (
             setIsAlbumLoading(false, store);
         },
     });
+};
+
+export const updateAlbumSettings = (settings: StyleSettings, store: Store) => {
+    patchState(store, (state) => ({
+        ...state,
+        activeAlbum: {
+            ...state.activeAlbum!,
+            settings,
+        },
+        updatedAlbumStatus: 'Update Album Settings',
+    }));
+};
+
+export const updateAlbumSections = (
+    sections: SectionsConfig,
+    store: Store,
+) => {
+    patchState(store, (state) => ({
+        ...state,
+        activeAlbum: {
+            ...state.activeAlbum!,
+            sections,
+        },
+        updatedAlbumStatus: 'Update Album Sections',
+    }));
 };
 
 export const clearAlbum = (store: Store) => {

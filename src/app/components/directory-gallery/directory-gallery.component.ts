@@ -4,6 +4,7 @@ import { ThumbnailComponent } from '../thumbnail/thumbnail.component';
 import { AlbumStore } from '../../store/albums.store';
 import { Dialog, DialogRef } from '@angular/cdk/dialog';
 import { AddPagePhotosComponent } from '../add-page-photos/add-page-photos.component';
+import { IconComponent } from '../icon/icon.component';
 
 type activeDirectory = {
     name: string;
@@ -12,7 +13,7 @@ type activeDirectory = {
 
 @Component({
     selector: 'app-directory-gallery',
-    imports: [ThumbnailComponent],
+    imports: [ThumbnailComponent, IconComponent],
     templateUrl: './directory-gallery.component.html',
     styleUrl: './directory-gallery.component.css',
     host: {

@@ -1,16 +1,25 @@
-<div class="bg-base-100 rounded-md p-3 shadow-md">
+<div class="bg-base-100 rounded-md p-6 shadow-md">
     <form
         [formGroup]="form"
         (ngSubmit)="onFormSubmit()"
         class="page-settings-form form-sm"
     >
-        <app-custom-input
-            class="mb-4"
-            label="Gap"
-            id="gap"
-            type="number"
-            formControlName="gap"
-        />
+        <div class="flex gap-4 mb-4">
+            <app-custom-input
+                class="grid"
+                label="Gap"
+                id="gap"
+                type="number"
+                formControlName="gap"
+            />
+            <app-custom-input
+                class="grid"
+                label="Border Radius (mm)"
+                id="photo-border-radius"
+                type="number"
+                formControlName="photoBorderRadius"
+            />
+        </div>
         <h4 class="title">Page size (cm)</h4>
         <div class="flex gap-4 mb-4">
             <app-custom-input
@@ -63,7 +72,7 @@
         </div>
         <div class="flex justify-between">
             <button type="button" class="btn btn-sm" (click)="cancelForm()">
-                Cancel
+                Close
             </button>
             <div class="flex gap-2">
                 <button type="button" class="btn btn-sm" (click)="clearForm()">

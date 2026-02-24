@@ -1,4 +1,4 @@
-<div class="templates flex gap-3 flex-wrap max-w-xl">
+<div class="templates flex gap-3 flex-wrap">
     @for (templateGroups of data; track $index) {
         <div>
             <p class="text-sm mb-1">
@@ -10,6 +10,7 @@
                         @for (template of group; track $index) {
                             <div
                                 class="page-template--{{ template.name }}"
+                                [style.width]="templateWidth()"
                                 [title]="template.name"
                                 (click)="selectTemplate(template.name)"
                             >

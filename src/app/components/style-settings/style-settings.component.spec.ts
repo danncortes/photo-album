@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DirectoryGalleryComponent } from './directory-gallery.component';
+import { StyleSettingsComponent } from './style-settings.component';
 
-describe('DirectoryGalleryComponent', () => {
-    let component: DirectoryGalleryComponent;
-    let fixture: ComponentFixture<DirectoryGalleryComponent>;
+describe('StyleSettingsComponent', () => {
+    let component: StyleSettingsComponent;
+    let fixture: ComponentFixture<StyleSettingsComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [DirectoryGalleryComponent],
+            imports: [StyleSettingsComponent],
         }).compileComponents();
 
-        fixture = TestBed.createComponent(DirectoryGalleryComponent);
+        fixture = TestBed.createComponent(StyleSettingsComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

@@ -15,6 +15,8 @@ import {
     getAlbumsPreview,
     setActiveFolder,
     setIsPreviewAlbumLoading,
+    updateAlbumSettings,
+    updateAlbumSections,
 } from './album-store.methods';
 import {
     Album,
@@ -24,6 +26,8 @@ import {
     Page,
     PageStyles,
     PhotosDictionary,
+    SectionsConfig,
+    StyleSettings,
     Template,
 } from '../../types';
 import {
@@ -38,6 +42,8 @@ import {
     clearPageDivElements,
     downloadAlbumPage,
     downloadAlbumPages,
+    movePage,
+    MovePageParams,
     removePage,
     removePhoto,
     RemovePhotoParams,
@@ -46,6 +52,8 @@ import {
     shiftPhotoPosition,
     ShiftPhotoPositionParams,
     updatePageSettings,
+    updatePhotoBorderRadius,
+    UpdatePhotoBorderRadiusParams,
 } from './page-store.methods';
 
 export type Store = WritableStateSource<AlbumState>;
@@ -278,10 +286,15 @@ export const AlbumStore = signalStore(
                 setActiveFolder(folder, store),
             clearPageDivElements: () => clearPageDivElements(store),
             clearAlbum: () => clearAlbum(store),
+            updateAlbumSettings: (settings: StyleSettings) =>
+                updateAlbumSettings(settings, store),
+            updateAlbumSections: (sections: SectionsConfig) =>
+                updateAlbumSections(sections, store),
             // Page Methods
             addPageDivElement: (pageDivElement: ElementRef<HTMLElement>) =>
                 addPageDivElement(pageDivElement, store),
-            addPage: (template: string) => addPage(template, store),
+            addPage: (template: string, afterPageIndex?: number) =>
+                addPage(template, store, afterPageIndex),
             addPageWithPhotos: (page: Page) => addPageWithPhotos(page, store),
             downloadAlbumPages: async (albumName: string) =>
                 await downloadAlbumPages(albumName, store.pageDivElements()),
@@ -296,6 +309,8 @@ export const AlbumStore = signalStore(
                 pageIndex: number;
                 template: string;
             }) => changePageTemplate({ pageIndex, template, store }),
+            movePage: ({ fromIndex, afterIndex }: MovePageParams) =>
+                movePage({ fromIndex, afterIndex }, store),
             removePage: (index: number) => removePage(index, store),
             shiftPagePosition: ({
                 pageIndex,
@@ -331,6 +346,8 @@ export const AlbumStore = signalStore(
             ) => shiftPhotoPosition(shiftPhotoPositionParams, store),
             addPhoto: (addPhotoParams: AddPhotoParams) =>
                 addPhoto(addPhotoParams, store),
+            updatePhotoBorderRadius: (params: UpdatePhotoBorderRadiusParams) =>
+                updatePhotoBorderRadius(params, store),
             togglePhotoSelection: (photo: FileDir) => {
                 const selectedPhotos = store.selectedPhotos();
                 if (selectedPhotos.has(photo)) {
