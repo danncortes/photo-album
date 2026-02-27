@@ -93,20 +93,18 @@ export class AlbumComponent implements OnInit, OnDestroy {
                         this.albumStore.activeAlbum()?.pages?.length ?? 0,
                 } as SectionsDialogData,
                 panelClass: [
-                    'overflow-y-auto',
+                    'overflow-auto',
                     'p-6',
                     'bg-base-100',
                     'rounded-sm',
                 ],
             });
 
-        dialogRef.closed.subscribe(
-            (result: SectionsConfig | undefined) => {
-                if (result) {
-                    this.albumStore.updateAlbumSections(result);
-                }
-            },
-        );
+        dialogRef.closed.subscribe((result: SectionsConfig | undefined) => {
+            if (result) {
+                this.albumStore.updateAlbumSections(result);
+            }
+        });
     }
 
     openAlbumSettingsDialog() {

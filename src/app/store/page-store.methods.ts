@@ -151,7 +151,7 @@ const setElementStylesToExport = function (
 
     divElement.nativeElement.style.height = `${normalizedHeight}px`;
     divElement.nativeElement.style.width = `${normalizedWidth}px`;
-    divElement.nativeElement.style.border = '0.0001px solid white';
+    divElement.nativeElement.style.border = '0px solid white';
 
     const photos = divElement.nativeElement.querySelectorAll('img');
     const allElements = divElement.nativeElement.querySelectorAll('*');

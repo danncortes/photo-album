@@ -7,12 +7,34 @@
         (input)="onNameChange($event)"
     />
     @if (showColorPicker()) {
-        <input
-            class="w-8 h-8 cursor-pointer rounded"
-            type="color"
-            [value]="color()"
-            (input)="onColorChange($event)"
-        />
+        <label class="flex items-center gap-1 text-xs text-gray-500">
+            BG
+            <input
+                class="w-8 h-8 cursor-pointer rounded"
+                type="color"
+                [value]="colorHex()"
+                (input)="onColorHexChange($event)"
+            />
+            <input
+                class="w-14 cursor-pointer"
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                title="Opacity"
+                [value]="colorAlpha()"
+                (input)="onColorAlphaChange($event)"
+            />
+        </label>
+        <label class="flex items-center gap-1 text-xs text-gray-500">
+            Font
+            <input
+                class="w-8 h-8 cursor-pointer rounded"
+                type="color"
+                [value]="fontColor()"
+                (input)="onFontColorChange($event)"
+            />
+        </label>
     }
     <label class="flex items-center gap-1 text-sm">
         From
@@ -38,15 +60,6 @@
             }
         </select>
     </label>
-    @if (showAddSubsection()) {
-        <button
-            class="btn btn-sm"
-            title="Add subsection"
-            (click)="addSubsection.emit()"
-        >
-            <app-icon name="plus" size="size-4" />
-        </button>
-    }
     <button
         class="btn btn-sm text-error"
         title="Remove"

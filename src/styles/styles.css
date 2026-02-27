@@ -29,3 +29,7 @@ body {
     justify-content: center;
     display: flex;
 }
+
+.cdk-dialog-container {
+    max-height: unset !important;
+}

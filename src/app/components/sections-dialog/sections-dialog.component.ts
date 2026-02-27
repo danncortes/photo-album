@@ -44,6 +44,7 @@ export class SectionsDialogComponent {
                 from: 0,
                 to: lastPage,
                 color: '#3b82f6',
+                fontColor: '#ffffff',
                 subsections: [],
             },
         ]);

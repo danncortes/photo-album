@@ -93,6 +93,7 @@ export type Section = {
     from: number;
     to: number;
     color: string;
+    fontColor?: string;
     subsections: Subsection[];
 };
 

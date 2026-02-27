@@ -5,6 +5,9 @@
     @for (page of [].constructor(totalPages()); track $index) {
         <button
             class="btn btn-xs btn-circle hover:bg-secondary hover:text-white"
+            [style.background-color]="pageColors()?.[+$index]?.backgroundColor"
+            [style.color]="pageColors()?.[+$index]?.color"
+            [style.border-color]="pageColors()?.[+$index]?.backgroundColor"
             (click)="scrollToPage($index)"
             type="button"
         >

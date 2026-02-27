@@ -35,11 +35,37 @@ export class AddPagePhotosComponent implements OnInit {
             const { name, order } = template;
             const [nPhotos, , , nLandscapePhotos, nPortraitPhotos] =
                 name.split('-');
+
+            function hasTheSameNPhotoSlots() {
+                return Number(nPhotos) === photos.length;
+            }
+
+            const hasSamePortraitsAndLandscapes = () => {
+                return (
+                    Number(nLandscapePhotos) === this.landscapePhotos() &&
+                    Number(nPortraitPhotos) === this.portraitPhotos()
+                );
+            };
+
+            function allSlotsAreSquare() {
+                return order.every((prop) => prop === 's');
+            }
+
+            const squareSlots = order.filter((o) => o === 's');
             let isTemplateValid =
-                Number(nPhotos) === photos.length &&
-                (Number(nLandscapePhotos) === this.landscapePhotos() ||
-                    Number(nPortraitPhotos) === this.portraitPhotos() ||
-                    order.every((prop) => prop === 's'));
+                hasTheSameNPhotoSlots() &&
+                (hasSamePortraitsAndLandscapes() ||
+                    allSlotsAreSquare() ||
+                    (squareSlots.length &&
+                        (squareSlots.length ===
+                            Number(
+                                nLandscapePhotos &&
+                                    Number(nPortraitPhotos) ===
+                                        this.portraitPhotos(),
+                            ) ||
+                            (squareSlots.length === Number(nPortraitPhotos) &&
+                                Number(nLandscapePhotos) ===
+                                    this.landscapePhotos()))));
 
             if (isTemplateValid) {
                 let page = {
@@ -104,6 +130,7 @@ export class AddPagePhotosComponent implements OnInit {
     ): PhotoConfig[] {
         const sortedPhotos: PhotoConfig[] = [];
         const photoOrderCopy: Array<Proportion | null> = [...photosOrder];
+        const templateOrderCopy: Array<Proportion | null> = [...templateOrder];
 
         if (templateOrder.every((prop) => prop === 's')) {
             return photos.map((photo) => {
@@ -115,15 +142,30 @@ export class AddPagePhotosComponent implements OnInit {
             });
         }
 
-        for (let prop of templateOrder) {
-            const index = photoOrderCopy.indexOf(prop);
+        const templatePriorityOder = [...templateOrder].sort();
+        console.log(
+            '🚀 ~ AddPagePhotosComponent ~ getSortedPhotosInTemplate ~ templatePriorityOder:',
+            templatePriorityOder,
+        );
+
+        for (let orientation of templatePriorityOder) {
+            const templatePositionIndex =
+                templateOrderCopy.indexOf(orientation);
+
+            const index = photoOrderCopy.findIndex((order) => {
+                if (orientation === 's') {
+                    return order === 'l' || order === 'p';
+                }
+                return orientation === order;
+            });
             const photo = {
                 path: photos[index].path,
                 fileName: photos[index].name,
                 styles: [],
             };
-            sortedPhotos.push(photo);
+            sortedPhotos[templatePositionIndex] = photo;
             photoOrderCopy[index] = null;
+            templateOrderCopy[templatePositionIndex] = null;
         }
 
         return sortedPhotos;

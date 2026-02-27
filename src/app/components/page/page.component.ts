@@ -111,6 +111,40 @@ export class PageComponent implements AfterContentInit {
         return this.cmToPx(Number(gapInCm)) + 'px';
     });
 
+    getPageGridMode(pageIndex: number): string {
+        if (!this.pageSection()) {
+            return '';
+        }
+
+        const { position } = this.pageSection()!.config;
+
+        if (position === 'top') {
+            return 'auto-rows-auto grid-rows-[auto_1fr]';
+        }
+
+        if (position === 'bottom') {
+            return 'auto-rows-auto grid-rows-[1fr_auto]';
+        }
+
+        if (pageIndex % 2) {
+            return 'auto-columns-auto grid-cols-[1fr_auto]';
+        }
+        return 'auto-columns-auto grid-cols-[auto_1fr]';
+    }
+
+    getSectionClass(pageIndex: number): string {
+        const { position } = this.pageSection()!.config;
+
+        if (
+            position === 'top' ||
+            (position === 'lateral' && !(pageIndex % 2))
+        ) {
+            return '-order-1';
+        }
+
+        return '';
+    }
+
     getPadding(position: string): string {
         const posStr = position.charAt(0).toUpperCase() + position.slice(1);
         const paddingPos = `padding${posStr}`;

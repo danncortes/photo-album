@@ -131,10 +131,10 @@ const initialState: AlbumState = {
                 { name: '4-3-4-2-2', order: ['l', 'p', 'p', 'l'] },
             ],
             [
-                { name: '4-4-1-3-1', order: ['p', 'l', 'l', 'l'] },
-                { name: '4-4-2-4-0', order: ['l', 'l', 'l', 'l'] },
-                { name: '4-4-3-3-1', order: ['l', 'l', 'l', 'p'] },
-                { name: '4-4-4-4-0', order: ['l', 'l', 'l', 'l'] },
+                { name: '4-4-1-3-1', order: ['p', 's', 's', 's'] },
+                { name: '4-4-2-1-3', order: ['l', 's', 's', 's'] },
+                { name: '4-4-3-3-1', order: ['s', 's', 's', 'p'] },
+                { name: '4-4-4-1-3', order: ['s', 's', 's', 'l'] },
             ],
         ],
         [

@@ -1,60 +1,48 @@
 <div
-    class="page page-template--{{
-        page().template
-    }} shadow-lg shadow-gray-400 box-border grid bg-white flex"
-    #pageExportDiv
+    [class]="`page ${getPageGridMode(this.pageIndex())}`"
     [style.aspect-ratio]="proportion() / 1"
-    [style.gap]="gap()"
-    [style.padding]="padding()"
+    #pageExportDiv
 >
-    @for (photo of page().photos; track $index) {
-        <app-photo
-            [photoIndex]="$index"
-            [photo]="photo"
-            [pageIndex]="pageIndex()"
-            [pagesPhotosLength]="page().photos.length"
-            [borderRadius]="photoBorderRadius()"
-        />
-    }
-    @if (pageSection(); as pageSections) {
+    <div
+        class="page-template page-template--{{
+            page().template
+        }} shadow-lg shadow-gray-400 box-border grid bg-white flex"
+        [style.gap]="gap()"
+        [style.padding]="padding()"
+    >
+        @for (photo of page().photos; track $index) {
+            <app-photo
+                [photoIndex]="$index"
+                [photo]="photo"
+                [pageIndex]="pageIndex()"
+                [pagesPhotosLength]="page().photos.length"
+                [borderRadius]="photoBorderRadius()"
+            />
+        }
+    </div>
+    @if (pageSection(); as pageSection) {
         <div
-            class="section-overlay"
-            [style.padding]="getSectionMargin(pageSections.config.margin)"
-            [class.section-overlay--top]="
-                pageSections.config.position === 'top'
-            "
-            [class.section-overlay--bottom]="
-                pageSections.config.position === 'bottom'
-            "
+            [class]="`section-overlay ${getSectionClass(this.pageIndex())}`"
             [class.section-overlay--lateral]="
-                pageSections.config.position === 'lateral'
-            "
-            [class.section-overlay--right]="
-                pageSections.config.position === 'lateral' &&
-                pageIndex() % 2 !== 0
-            "
-            [class.section-overlay--left]="
-                pageSections.config.position === 'lateral' &&
-                pageIndex() % 2 === 0
+                pageSection.config.position === 'lateral'
             "
         >
             <div
                 class="section-label"
-                [style.padding]="getSectionPadding(pageSections.config)"
-                [style.background-color]="pageSections.section.color"
+                [style.padding]="getSectionPadding(pageSection.config)"
+                [style.background-color]="pageSection.section.color"
+                [style.color]="pageSection.section.fontColor"
                 [style.border-radius]="
-                    getSectionBorderRadius(pageSections.config.borderRadius)
+                    getSectionBorderRadius(pageSection.config.borderRadius)
                 "
                 [style.font-size]="
-                    getSectionFontSize(pageSections.config.fontSize)
+                    getSectionFontSize(pageSection.config.fontSize)
                 "
             >
-                <span class="section-name">{{
-                    pageSections.section.name
-                }}</span>
-                @if (pageSections.subsection) {
+                <span class="section-name">{{ pageSection.section.name }}</span>
+                @if (pageSection.subsection) {
                     <span class="subsection-name">{{
-                        pageSections.subsection.name
+                        pageSection.subsection.name
                     }}</span>
                 }
             </div>

@@ -7,38 +7,10 @@
 }
 
 .page {
-    position: relative;
+    display: grid;
 }
 
 .section-overlay {
-    position: absolute;
-    z-index: 10;
-    pointer-events: none;
-}
-
-.section-overlay--top {
-    top: 0;
-    left: 0;
-    right: 0;
-}
-
-.section-overlay--bottom {
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
-.section-overlay--lateral {
-    top: 0;
-    bottom: 0;
-}
-
-.section-overlay--left {
-    left: 0;
-}
-
-.section-overlay--right {
-    right: 0;
 }
 
 .section-label {
@@ -46,10 +18,13 @@
     white-space: nowrap;
 }
 
+.section-overlay--lateral {
+    display: flex;
+}
+
 .section-overlay--lateral .section-label {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    height: 100%;
 }
 
 .section-name {
