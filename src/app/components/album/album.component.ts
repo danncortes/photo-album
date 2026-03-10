@@ -7,6 +7,7 @@ import {
     signal,
 } from '@angular/core';
 import { Dialog, DialogRef } from '@angular/cdk/dialog';
+import { CdkMenu, CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 
@@ -21,6 +22,7 @@ import {
     SectionsDialogData,
 } from '../sections-dialog/sections-dialog.component';
 import { AlbumStore } from '../../store/albums.store';
+import { DownloadResolution } from '../../store/page-store.methods';
 import { SectionsConfig } from '../../../types';
 import { DirectoryGalleryComponent } from '../directory-gallery/directory-gallery.component';
 import { IconComponent } from '../icon/icon.component';
@@ -31,6 +33,9 @@ import { IconComponent } from '../icon/icon.component';
         DirectoryGalleryComponent,
         DirectoryGalleryComponent,
         IconComponent,
+        CdkMenu,
+        CdkMenuItem,
+        CdkMenuTrigger,
     ],
     templateUrl: './album.component.html',
     styleUrl: './album.component.css',
@@ -122,10 +127,11 @@ export class AlbumComponent implements OnInit, OnDestroy {
         this.albumStore.setActiveFolder(null);
     }
 
-    async downloadPages() {
+    async downloadPages(resolution: DownloadResolution) {
         this.isDownloadingPages.set(true);
         await this.albumStore.downloadAlbumPages(
             this.albumStore.activeAlbum()!.name,
+            resolution,
         );
         this.isDownloadingPages.set(false);
     }

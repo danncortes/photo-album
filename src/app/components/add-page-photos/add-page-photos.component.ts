@@ -143,10 +143,6 @@ export class AddPagePhotosComponent implements OnInit {
         }
 
         const templatePriorityOder = [...templateOrder].sort();
-        console.log(
-            '🚀 ~ AddPagePhotosComponent ~ getSortedPhotosInTemplate ~ templatePriorityOder:',
-            templatePriorityOder,
-        );
 
         for (let orientation of templatePriorityOder) {
             const templatePositionIndex =

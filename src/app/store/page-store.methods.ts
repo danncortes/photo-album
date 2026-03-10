@@ -179,25 +179,31 @@ const restoreElementStylesToExport = function (
     });
 };
 
+export type DownloadResolution = 'full' | 'draft';
+
+const OUTPUT_HEIGHTS: Record<DownloadResolution, number> = {
+    full: 3550,
+    draft: 1200,
+};
+
 const generatePageImages = async (
     pageDivElements: ElementRef<HTMLElement>[],
+    outputHeight: number,
 ) => {
     const images: Blob[] = [];
-    const OUTPUT_HEIGHT = 3550; // High-resolution output height
 
     for (let i = 0; i < pageDivElements.length; i++) {
         try {
             const { width: normalizedWidth, height: normalizedHeight } =
                 setElementStylesToExport(pageDivElements[i]);
 
-            // Calculate high-res dimensions maintaining aspect ratio
             const aspectRatio = normalizedWidth / normalizedHeight;
-            const outputWidth = OUTPUT_HEIGHT * aspectRatio;
+            const outputWidth = outputHeight * aspectRatio;
 
             const blob = await capturePage(
                 pageDivElements[i],
                 outputWidth,
-                OUTPUT_HEIGHT,
+                outputHeight,
             );
             images.push(blob);
             restoreElementStylesToExport(pageDivElements[i]);
@@ -212,8 +218,10 @@ const generatePageImages = async (
 export const downloadAlbumPages = async (
     albumName: string,
     pageDivElements: ElementRef<HTMLElement>[],
+    resolution: DownloadResolution = 'full',
 ) => {
-    const images = await generatePageImages(pageDivElements);
+    const outputHeight = OUTPUT_HEIGHTS[resolution];
+    const images = await generatePageImages(pageDivElements, outputHeight);
 
     const zip = new JSZip();
 

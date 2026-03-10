@@ -42,6 +42,7 @@ import {
     clearPageDivElements,
     downloadAlbumPage,
     downloadAlbumPages,
+    DownloadResolution,
     movePage,
     MovePageParams,
     removePage,
@@ -296,8 +297,15 @@ export const AlbumStore = signalStore(
             addPage: (template: string, afterPageIndex?: number) =>
                 addPage(template, store, afterPageIndex),
             addPageWithPhotos: (page: Page) => addPageWithPhotos(page, store),
-            downloadAlbumPages: async (albumName: string) =>
-                await downloadAlbumPages(albumName, store.pageDivElements()),
+            downloadAlbumPages: async (
+                albumName: string,
+                resolution: DownloadResolution,
+            ) =>
+                await downloadAlbumPages(
+                    albumName,
+                    store.pageDivElements(),
+                    resolution,
+                ),
             downloadAlbumPage: async (
                 divElement: ElementRef<HTMLElement>,
                 fileName: string,

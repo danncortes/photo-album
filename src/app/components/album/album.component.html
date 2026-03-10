@@ -22,17 +22,37 @@
                 Add Page
             </button>
             <button
-                class="mr-2 cursor-pointer"
-                (click)="downloadPages()"
+                class="mr-2 cursor-pointer download-all-pages"
+                [cdkMenuTriggerFor]="downloadMenu"
                 [disabled]="isDownloadingPages()"
             >
                 @if (isDownloadingPages()) {
                     <span class="loading loading-xs loading-spinner"></span>
-                    loading
                 } @else {
                     <app-icon name="arrow-down-tray" />
                 }
             </button>
+            <ng-template #downloadMenu>
+                <div
+                    cdkMenu
+                    class="flex flex-col bg-base-100 rounded shadow-lg border border-base-300 py-1 z-50"
+                >
+                    <button
+                        cdkMenuItem
+                        class="px-4 py-2 text-sm text-left hover:bg-base-200"
+                        (click)="downloadPages('full')"
+                    >
+                        Full res
+                    </button>
+                    <button
+                        cdkMenuItem
+                        class="px-4 py-2 text-sm text-left hover:bg-base-200"
+                        (click)="downloadPages('draft')"
+                    >
+                        Draft
+                    </button>
+                </div>
+            </ng-template>
             <button class="cursor-pointer" (click)="openAlbumSettingsDialog()">
                 <app-icon name="cog-6-tooth" />
             </button>
